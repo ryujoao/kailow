@@ -2,20 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .nav-container {
     height: 90px;
     width: 100%;
+    margin: 0 auto;
     background-color: #245270;
     display: flex; 
     align-items: center;    
-    padding: 0 20px; 
+    justify-content: center;    
 }
 
-.foto-home img {
-    height: 90px;
-    width: 150px;
+.logo{
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+    margin-right: 763px;
+}
+
+.logo img {    
+    width: 13%;
+    height: 15%;
+    margin-top: 5px;
+}
+
+.logo h1 {
+    margin-top: 16px;
 }
 
 .nav-categorias {
@@ -23,6 +37,7 @@
     gap: 100px; 
     margin-left: 300px;
 }
+
 
 .nav-categorias a {
     color: white; 
@@ -35,4 +50,8 @@
 .nav-categorias a:hover {
     background-color: rgba(255, 255, 255, 0.1); 
     border-radius: 5px; 
+}
+
+kailow-nav-nome {
+    margin-right: 400px;
 }
