@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-container {
+    height: 90px;
+    width: 100%;
+    background-color: #245270;
+    display: flex; 
+    align-items: center;    
+    padding: 0 20px; 
+}
+
+.foto-home img {
+    height: 90px;
+    width: 150px;
+}
+
+.nav-categorias {
+    display: flex; 
+    gap: 100px; 
+    margin-left: 300px;
+}
+
+.nav-categorias a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 18px; 
+    padding: 5px 10px; 
+    transition: background-color 0.3s; 
+}
+
+.nav-categorias a:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 5px; 
+}
