@@ -19,7 +19,6 @@
     display: flex;
     max-width: 400px;
     width: 100%;
-    margin-right: 763px;
 }
 
 .logo img {    
@@ -32,10 +31,14 @@
     margin-top: 16px;
 }
 
+.buttons {
+    justify-content: center;
+}
+
 .nav-categorias {
     display: flex; 
     gap: 100px; 
-    margin-left: 300px;
+    margin-left: 40%;
 }
 
 
@@ -44,7 +47,7 @@
     text-decoration: none; 
     font-size: 18px; 
     padding: 5px 10px; 
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;  
 }
 
 .nav-categorias a:hover {
@@ -54,4 +57,40 @@
 
 kailow-nav-nome {
     margin-right: 400px;
+}
+
+.card {
+    width: 450px;
+    height: 100px;
+    background-color: #245270;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 60px;
+    margin-left: 50px;    
+}
+ 
+.card h1 {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+}
+ 
+.sao-paulo-home {
+    margin-top: 5px;
+    display: flex;
+    font-size: 12px;
+    justify-content: left;
+    margin-left: 70px;
+    color: white;
+}
+
+.sao-paulo-home, card {
+    display: flex;
+}
+.card-todos-home{
+    display: flex;
+    gap: ;
 }
