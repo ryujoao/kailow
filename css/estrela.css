@@ -1,0 +1,8 @@
+.fill{
+    cursor: pointer;
+    max-width: 1dvh;
+}
+
+.starFill {
+    display: none;
+}

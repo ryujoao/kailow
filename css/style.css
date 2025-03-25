@@ -1,3 +1,4 @@
+/* Estilos gerais */
 * {
   margin: 0;
   padding: 0;
@@ -84,13 +85,13 @@
   opacity: 1;
 }
 
-.fotoUsuario {
+.icons {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.fotoUsuario img {
+.icons img {
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -111,8 +112,7 @@
 /* CARDS */
 .card-todos-home {
   display: flex;
-  justify-content: center;
-  gap: 353px;
+  justify-content: space-evenly;
   margin-top: 50px;
 }
 
@@ -132,11 +132,19 @@
   margin-bottom: 10px;
 }
 
+.card3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .card h5 {
   margin-right: 223px;
   margin-top: -12px;
 }
 
+/*SÃO PAULO HOME */
 .sao-paulo-home {
   display: flex;
   align-items: center;
@@ -147,4 +155,27 @@
 .sao-paulo-home img {
   width: 16px;
   margin-right: 5px;
+}
+
+/* RATING VIEW SELLS */
+
+.ratingReviewSells {
+  display: flex;
+  gap: 100px;
+  margin-left: 11px;
+  margin-top: 15px;
+}
+
+.ratingReviewSells img {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.rangeHome {
+  width: 100%;
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

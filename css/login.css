@@ -1,0 +1,117 @@
+body {
+    font-family: monospace;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background:linear-gradient(white, #245270);
+   
+}
+ 
+.container {
+    width: 150px;
+    background-color: #245270;
+    padding: 18px;
+    border-radius: 10px;
+    width: 500px;
+    margin-right: 250px;
+    height:380px;
+    margin-bottom: 200px;
+   
+   
+}
+.container button {
+    color: black;
+}
+ 
+h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #fff;
+    padding-left: 82px;
+}
+ 
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+ 
+input.senha {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-left:50px ;
+}
+button {
+    width: 85%;
+    padding: 17px;
+    background-color: #fff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    align-items: center;
+    margin-left: 30px;
+}
+ 
+ 
+.forgot-password {
+    display: block;
+    margin: 10px 0;
+    color: #64beff;
+    text-decoration: none;
+    margin-bottom: 12%;
+ 
+}
+ 
+.forgot-password:hover {
+    text-decoration: underline;
+}
+ 
+ 
+ 
+ 
+a.forgot-password{
+    color: #64beff;
+    text-decoration: none;
+    justify-content: center;
+    padding-left: 36%;
+   
+}
+ 
+p{
+    color: #fff;
+    padding-left: 20%;
+}
+a{
+    color:#64beff
+}
+ 
+ 
+h2{
+    font-size: 36px;
+    margin-left: 15px;
+    margin-bottom: 160px;
+    font-family: cursive;
+    color: #484141;
+}
+r{
+    font-size: 36px;
+    margin-left: 75px;
+    margin-bottom: 160px;
+    font-family: cursive;
+    color: #484141;
+}
+
+#homeclick {
+    margin-right: 100px;
+    margin-bottom: 800px;
+}
+ 
