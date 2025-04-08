@@ -4,11 +4,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  
+
 }
 
-/* NAV BAR */
+
 .nav-container {
-  height: 90px;
+  height: 70px;
   width: 100%;
   margin: 0 auto;
   background-color: #245270;
@@ -25,8 +27,8 @@
 }
 
 .logo img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 }
 
@@ -36,11 +38,11 @@
 
 .nav-categorias {
   display: flex;
-  gap: 20px;
+  gap: 100px;
 }
 
 .nav-categorias a {
-  color: #cfcbcb;
+  color: whitesmoke;
   text-decoration: none;
   font-size: 18px;
   padding: 5px 10px;
@@ -97,23 +99,34 @@
   cursor: pointer;
 }
 
+/*-------------------------------------------------------------------------------------*/
+
+.comunidadeHome {
+  margin-left: 100px;
+  margin-top: 12px;
+  width: 400px;
+}
+
 /* IMAGEM HOME */
 .imagemHome {
-  background-color: #f0f0f0;
   width: 100%;
   height: 370px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #245270;
+  background-color: #ffc0d4;
   font-size: 24px;
 }
 
+/*-------------------------------------------------------------------------------------*/
+
 /* CARDS */
 .card-todos-home {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 50px;
+   display: flex;
+    justify-content: space-evenly;  
+    padding-top: 7vh;
+    height: 60vh;
 }
 
 .card {
@@ -144,6 +157,8 @@
   margin-top: -12px;
 }
 
+/*-------------------------------------------------------------------------------------*/
+
 /*SÃO PAULO HOME */
 .sao-paulo-home {
   display: flex;
@@ -156,6 +171,8 @@
   width: 16px;
   margin-right: 5px;
 }
+
+/*-------------------------------------------------------------------------------------*/
 
 /* RATING VIEW SELLS */
 
@@ -179,3 +196,143 @@
   justify-content: center;
   align-items: center;
 }
+
+/*-------------------------------------------------------------------------------------*/
+
+/* FOOTER */
+
+footer{
+  background-color: gray;
+  padding: 50px 0;
+}
+.container-footer{
+  max-width: 1500px;
+  margin: auto;
+}
+.row-footer{
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.footer-col{
+  width: 25%;
+}
+
+.footer-col h4{
+  font-size: 22px;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500;
+  position: relative; /*Posiciona um elemento em relação à sua posição original, ou seja, relativa a si mesmo*/
+  text-transform: uppercase; /*Deixar todas as letras de um texto em maiúsculas*/
+}
+
+
+.footer-col ul{
+  list-style: none;
+}
+.footer-col ul li{
+  margin: 10px 0;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize; /*Coloca em maiúscula a primeira letra de cada palavra no texto selecionado*/
+  color: white;
+  text-decoration: none; /* remove a decoração de texto, como o sublinhado*/
+  font-weight: 300;
+  display: block; /* define que um elemento deve ocupar uma linha inteira, como um bloco, na página*/
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #cecdcd;
+  padding-left: 10px;
+}
+.footer-col .medias-socias{
+  margin-top: 30px;
+}
+.footer-col .medias-socias a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid white;
+  transition: all 0.5s ease;
+}
+.footer-col .medias-socias a i{
+  font-size: 20px;
+}
+
+.footer-col .medias-socias a:hover{
+  color: gray;
+  background-color: white;
+}
+.footer-col .form-sub input{
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  background-color: gray;
+}
+.footer-col .form-sub input::placeholder{
+  color: white;
+}
+.footer-col .form-sub button{
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px; 
+  font-size: 17px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: gray;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: white;        
+}
+/* Responsivo */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+@media (max-width:600px) {
+  .footer-col{
+      width: 100%;
+  }
+
+  }
+
+
+#footerHome {
+  background-color: gray;
+  height: 522px;
+}
+
+.primeiraLinhaFooter {
+  margin-bottom: 100px;
+}
+
+.primeiraLinhaFooter p {
+display: flex;
+justify-content: center;
+}
+
+.logoFooter {
+  display: flex;
+  align-items: center;
+  color: black;
+  justify-content: center;
+
+}
+
+.logoFooter img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+
+/*-------------------------------------------------------------------------------------*/

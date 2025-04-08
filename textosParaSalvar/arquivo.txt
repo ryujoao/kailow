@@ -80,3 +80,12 @@
                   <a href="#">Config.</a>
               </div>
           </div>
+
+
+
+
+          <li><a href="#"> Quem somos </a></li>
+                      <li><a href=""> nossos serviços </a></li>
+                      <li><a href=""> política de privacidade </a></li>
+                      <li><a href=""> programa de afiliados</a></li>
+                      <li><a href=""> Suporte ao Freelancer</a></li>

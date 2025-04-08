@@ -1,0 +1,59 @@
+.editPerfil {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 2px 10px;
+    width: 85%;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    justify-content: center;
+}
+
+  .feedPerfil{
+    margin:40px;
+    font-size: 12px;
+  }
+  .cardPerfil {
+   
+    width: 900px;
+    height: 530px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+  
+  }
+h1.perfil{
+ font-size: 18px;
+margin-bottom: 9  0px;
+  
+}
+
+  
+
+  .H1{
+    padding-left: 400px;
+  
+  }
+  .imageperfil{
+    display: flex;
+    color: #000;
+    justify-content: end;
+    width: 52px;
+  }
+  
+
+  
+      <div class="feedPerfil">
+        <h1 class="H1"> Seu Feed</h1>
+      <div class="cardPerfil">
+        <img class="imageperfil"
+        id="icon-perfil"
+        src="../img/perfil.svg"
+
+        alt="Acessibilidade">
+       <h1 class="perfil">você publicou isso</h1> 
+        
+      </div>
+    </div>
