@@ -3,10 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white
   }
 
   .tema {
-    margin-left: 700px;
+    margin-left: 800px;
   }
   .pera-la{background: rgba(36, 82, 112, 0.39);
    border-radius: 10px;
@@ -14,7 +15,13 @@
    backdrop-filter: blur(8.5px);
    -webkit-backdrop-filter: blur(8.5px);
    border: 1px solid rgba(36, 82, 112, 1);
+   width: 900px;
+   height: 500px;
+   margin-left: 500px;
   }
+ p{
+font-size: 30px;
+ }
 
   .nav-container {
     height: 70px;

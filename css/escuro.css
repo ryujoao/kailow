@@ -126,7 +126,7 @@
     justify-content: space-evenly;  
     padding-top: 7vh;
     background: linear-gradient(#2e485a, #032238);
-    height: 48vh;
+    height: 70vh;
   }
   
   .card {
@@ -334,3 +334,5 @@
   }
 
 /*-------------------------------------------------------------------------------------*/
+
+

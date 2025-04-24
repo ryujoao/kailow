@@ -138,13 +138,14 @@
   font-size: 20px;
   color: #665e5e;
   margin-bottom: 20px;
-  margin-left: 150px;
+ line-height: 1.5;
 }
 
 /* Informações do dono do perfil */
 .profileDescription {
   margin-bottom: 20px;
   line-height: 1.5;
+  
 }
 
 /* Quais tipos de estágios buscados*/
@@ -160,10 +161,14 @@
 
 .interestList {
   list-style-type: none;
+  display: flex;
+  
 }
 
 .interestList li {
-  padding: 5px 0;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 10px ;
   padding-left: 15px;
   position: relative;
 }
@@ -176,7 +181,7 @@
 .profileResume {
   margin: 15px 0;
   font-size: 18px;
-  margin-left: 100px;
+  margin-left: 90px;
   text-decoration: underline;
 }
 
