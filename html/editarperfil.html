@@ -4,8 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/editarperfil.css">
 </head>
 <body>
+    <header>
+        <nav>
+          <div class="nav-container">
+            <div class="logo">
+              <img src="../img/kaliwo_icon.png" alt="Logo" />
+              <h1 id="kailow-nav-nome">Kailow</h1>
+            </div>
+  
+            <div class="nav-categorias">
+              <a href="./index.html">Home</a>
+              <a href="./sobre.html">Sobre</a>
+              <a href="./comunidades.html">Minhas Comunidades</a>
+              <a href="#">Contato</a>
+            </div>
+  
+            <div class="pesquisa">
+              <input type="text" placeholder="Pesquisar..." />
+              <button>🔍</button>
+            </div>
+            <div class="fotoUsuario">
+              <a href="./telaHome2.html"><img src="../img/lightbulb.svg" alt="temaClaroOuEscuro"></a>
+              <img src="../img/circle-user-round2.png" alt="Usuário" />
+              <img
+                id="icon-acessibilidade"
+                src="../img/person-standing.png"
+                alt="Acessibilidade"
+              />
+
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+
+              <h2 id="textSeuPerfil">Seu Perfil</h2>
+            <div class="fotoEditarPerfil">
+               <img src="../img/iconeDapaginaPErfil.jpg" alt="">
+               <h3>Antonio Kobayashi <img src="../img/camera.svg" alt=""></h3>
+            </div>
+
+            <div class="formEditarPerfil">
+              <form action="/atualizarPerfil" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" value="Antonio Kobayashi" required>
+            
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" value="antonio@email.com" required>
+            
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua nova senha">
+            
+                <button type="submit">Salvar Alterações</button>
+              </form>
+            </div>
+
+            
+  
     
+
+            <input type="file" id="fileInput" style="display: none;" accept="image/*">
+
+            <script>
+              const cameraIcon = document.querySelector(".fotoEditarPerfil h3 img");
+              const fileInput = document.getElementById("fileInput");
+            
+              cameraIcon.addEventListener("click", () => {
+                fileInput.click(); // Abre o seletor de arquivos
+              });
+            
+              fileInput.addEventListener("change", (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                  alert(`Arquivo selecionado: ${file.name}`);
+                  // Aqui você pode implementar a lógica para enviar ou exibir a imagem
+                }
+              });
+            </script>
 </body>
 </html>

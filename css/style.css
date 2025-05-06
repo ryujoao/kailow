@@ -99,6 +99,7 @@
   cursor: pointer;
 }
 
+
 /*-------------------------------------------------------------------------------------*/
 
 .comunidadeHome {
@@ -153,9 +154,15 @@
 }
 
 .card h5 {
-  margin-right: 223px;
+  margin-right: 3px;
   margin-top: -12px;
 }
+
+.meubottom {
+
+}
+
+
 
 /*-------------------------------------------------------------------------------------*/
 
@@ -250,7 +257,7 @@ footer{
 .footer-col .medias-socias{
   margin-top: 30px;
 }
-.footer-col .medias-socias a{
+.footer-col .medias-socias {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -259,15 +266,13 @@ footer{
   margin: 0 10px 10px 0;
   text-decoration: none;
   border-radius: 50%;
-  color: white;
-  border: 1px solid white;
-  transition: all 0.5s ease;
+
 }
-.footer-col .medias-socias a i{
+.footer-col .medias-socias  i{
   font-size: 20px;
 }
 
-.footer-col .medias-socias a:hover{
+.footer-col .medias-socias :hover{
   color: gray;
   background-color: white;
 }

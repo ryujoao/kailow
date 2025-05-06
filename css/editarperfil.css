@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  
+  }
+  
+  
+  .nav-container {
+    height: 70px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #245270;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .logo h1 {
+    margin: 0;
+  }
+  
+  .nav-categorias {
+    display: flex;
+    gap: 100px;
+  }
+  
+  .nav-categorias a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-categorias a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .pesquisa {
+    display: flex;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .pesquisa input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cfcbcb;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    color: #245270;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .pesquisa button {
+    margin-left: -35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #245270;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .pesquisa button:hover {
+    opacity: 1;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icons img {
+    height: 40px;
+    cursor: pointer;
+  }
+/* -------------------------------------------------------------*/
+
+
+
+
+.fotoEditarPerfil {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em coluna */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Espaçamento superior opcional */
+}
+
+.fotoEditarPerfil img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 10px; /* Espaçamento entre a imagem e o nome */
+}
+
+.fotoEditarPerfil h3 {
+  font-size: 20px;
+  color: #245270;
+  text-align: center;
+  margin: 0; /* Remove margens extras */
+  display: flex; /* Alinha o texto e o ícone lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 5px; /* Espaçamento entre o texto e o ícone */
+}
+
+.fotoEditarPerfil h3 img {
+  width: 24px; /* Aumente o tamanho da largura */
+  height: 50px; /* Aumente o tamanho da altura */
+  cursor: pointer; /* Mantém o cursor de ponteiro */
+}
+
+  #textSeuPerfil {
+    font-size: 30px;    
+    color: #245270;
+    text-align: center;
+    margin-top: 20px;
+  }
+ 
+  .formEditarPerfil {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formEditarPerfil label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #245270;
+}
+
+.formEditarPerfil input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.formEditarPerfil button {
+  width: 100%;
+  padding: 10px;
+  background-color: #245270;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formEditarPerfil button:hover {
+  background-color: #1b3a4b;
+}
+
+ 
