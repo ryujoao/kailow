@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -18,7 +17,7 @@
     "google-fonts": "^1.0.0",
     "lucide": "^0.475.0",
     "lucide-react": "^0.479.0",
-    "node": "^23.9.0",
+    "node": "^23.11.0",
     "react": "^19.0.0",
     "react-bootstrap-icons": "^1.11.5",
     "react-dom": "^19.0.0",

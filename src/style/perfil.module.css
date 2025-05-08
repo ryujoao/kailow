@@ -3,7 +3,6 @@
     padding: 30px;
     gap: 40px;
     margin: 0 auto;
-    background-color: #ffffff;
 }
 
 /* Parte das informações do perfil*/
@@ -107,20 +106,10 @@
 }
 
 .feedTitle {
-    font-size: 24px;
+    font-size: 6dvh;
     margin-bottom: 25px;
-    color: #665e5e;
+    color: #ffffff;
     margin-left: 250px;
-}
-
-
-
-.vertical {
-    width: 1px;
-    height: 600px;
-    border: none;
-    background-color: #ddd;
-    margin: 0 auto
 }
 
 .postCard {
@@ -138,7 +127,7 @@
 
 }
 
-.horas {
+.postHoras {
     font-size: 10px;
     color: #665e5e;
     margin-bottom: 10px;
@@ -150,5 +139,5 @@
     border-radius: 8px;
     margin-bottom: 20px;
     width: 600px;
-    height: 300px;
+    height: 300px; 
 }

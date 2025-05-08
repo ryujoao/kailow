@@ -2,7 +2,7 @@ import { Cards } from '../components/cards'
 import { Nav } from '../components/navbar'
 // import { BannerHome } from '../components/bannerHome'
 import style from '../style/home.module.css'
-import Perfil from './perfil'
+import Perfil from '../components/perfil'
 
 
 export default function Home() {

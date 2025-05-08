@@ -5,7 +5,7 @@ import Home from './pages/home'
 import Recuperar from './pages/recuperar'
 import Cadastro from './pages/cadastro'
 import { Sobre } from './pages/sobre'
-import Perfil from './pages/perfil'
+import Perfil from './components/perfil'
 
 function App() {
   return (
