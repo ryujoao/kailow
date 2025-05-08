@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+
+  }
+  
+.homeContainer {
+    font-family: "Montserrat", sans-serif;
+    /* background-color: #071739; */
+    background: linear-gradient(90deg, #071739, #1545aa);
+    line-height: 1.6;
+    position: relative;
+  }
+  
+  .cardsTitulo {
+    font-optical-sizing: auto; 
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3.5dvh;
+    color: #665e5e;
+    margin-top: 3dvh;
+    margin-left: 11dvh;
+    
+  }
+  
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+
