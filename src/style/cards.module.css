@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-.montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* ou qualquer peso desejado */
-  font-style: normal;
-}
-
-.card {
+  .card {
   min-width: fit-content;
   max-width: 80dvh;
   width: 50dvh;
@@ -15,9 +6,9 @@
   background-color: #245270;
   padding: 20px;
   border-radius: 16px;
-  color: #fff;
+  color: #F0FBFA;
   text-align: left;
-  /* padding: 3dvh 2dvh 3dvh 2dvh;  */
+  margin-bottom: 2dvh;
 }
 
 .card h1 {
@@ -48,4 +39,14 @@
 
 .numberIcon{
   display: flex;
+}
+
+.cardText {
+  color: #F0FBFA;
+  display: flex;
+  text-align: center;
+}
+
+.numCurtidas, .numComentarios {
+  color: #F0FBFA;
 }

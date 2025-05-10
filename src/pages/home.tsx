@@ -9,16 +9,24 @@ export default function Home() {
   return (
     <div className={style.homeContainer}>
       <Nav />
+      <div className={style.homeBody}>
       {/* <BannerHome /> */}
       <section>
         <h1 className={style.cardsTitulo}>Comunidades para você</h1>
-        <div className={style.cardsContainer}>
+        <div className={style.cardsContainerHome}>
           <Cards />
           <Cards />
           <Cards />
         </div>
+        </section>
+
+        <section>
+        <h2 className={style.feedTitle}>Seu Feed</h2>
+        <Perfil />
+        <Perfil />
         <Perfil />
       </section>
+      </div>
     </div>
   )
 }

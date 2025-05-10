@@ -1,8 +1,9 @@
 nav {
-  height: 10.5dvh;
+  height: 11dvh;
   max-height: 12dvh;
   width: 100%;
-  background-color: transparent;
+    background: linear-gradient(90deg, #071739, #1545aa);
+  /* background-color: #0717396f; */
   display: flex;
   justify-content: center;
   line-height: 1.4dvh;

@@ -3,7 +3,7 @@ import style from "../style/navbar.module.css"
 import { useNavigate } from "react-router-dom";
 
 export function Nav() {
-    
+
     const [isFilled, setIsFilled] = useState(false);
     const Menu = () => {
         setIsFilled(!isFilled);
@@ -12,10 +12,10 @@ export function Nav() {
 
     function home() {
         navigate('/home')
-      }
+    }
 
     return (
-        
+
         <><nav>
             <div className={style.navContainer}>
                 <div className={style.navLogo} onClick={home}>
@@ -23,11 +23,12 @@ export function Nav() {
                     <h1 className={style.kailow}>Kailow</h1>
                 </div>
                 <div className={style.navCategorias}>
-                    {/* <a href="/home">Home</a>
-                    <a href="/sobre">Sobre</a> */}
+                    <a href="/sobre">Sobre</a>
+                    <a href="/sobre">Comunidades</a>
+                    <a href="/sobre">Perfil</a>
                 </div>
 
-                {/* <form className={style.formSearch}>
+                <form className={style.formSearch}>
                     <label className={style.labelSearch} htmlFor="search">
                         <input className={style.inputSearch} type="text" placeholder="Pesquisa" id="search" />
                         <div className={style.fancyBg}></div>
@@ -39,7 +40,7 @@ export function Nav() {
                             </svg>
                         </div>
                     </label>
-                </form> */}
+                </form>
 
                 <section className={style.navIcons}>
                     <div className={style.fotoUsuario} onClick={Menu}>

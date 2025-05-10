@@ -1,116 +1,12 @@
 .mainContainer {
     display: flex;
+    justify-content: center;
     padding: 30px;
-    gap: 40px;
-    margin: 0 auto;
-}
-
-/* Parte das informações do perfil*/
-.profileSection {
-    flex: 1;
-    width: 1000px;
-}
-
-/* O título escrito "perfil" */
-.profileTitle {
-    font-size: 24px;
-    margin-bottom: 25px;
-    color: #665e5e;
-    margin-left: 230px;
-}
-
-
-/* A escrita depois da foto*/
-.profileInfo {
-    padding: 20px;
-    border-radius: 8px;
-}
-
-
-/* Nome do dono do perfil*/
-.profileName {
-    font-size: 20px;
-    color: #665e5e;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-/* Informações do dono do perfil */
-.profileDescription {
-    margin-bottom: 20px;
-    line-height: 1.5;
-
-}
-
-/* Quais tipos de estágios buscados*/
-.profileInterests {
-    margin: 20px 0;
-}
-
-.profileInterests h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #665e5e;
-}
-
-.interestList {
-    list-style-type: none;
-    display: flex;
-    gap: 15px;
-
-}
-
-.interestList li {
-    background-color: #ddd;
-    border-radius: 30px;
-    padding: 10px;
-    padding-left: 15px;
-    position: relative;
-}
-
-.interestList li:before {
-    position: absolute;
-    left: 0;
-}
-
-.profileResume {
-    margin: 15px 0;
-    font-size: 18px;
-    margin-left: 90px;
-    text-decoration: underline;
-    
-}
-
-/* Botão de editar perfil */
-.editProfileButton {
-    background-color: #ddd;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-    width: 100%;
-    margin-top: 15px;
-}
-
-.editProfileButtpn:hover {
-    background-color: #1a3d56;
 }
 
 /* Parte do feed */
-.feedSection {
-    flex: 2;
-    margin-left: 200px;
-}
 
-.feedTitle {
-    font-size: 6dvh;
-    margin-bottom: 25px;
-    color: #ffffff;
-    margin-left: 250px;
-}
+
 
 .postCard {
     background-color: #f7f7f7;
@@ -119,18 +15,26 @@
     margin-bottom: 20px;
     width: 800px;
     height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
-.postHeader {
+.postUser {
     font-size: 16px;
     color: #665e5e;
-
+    text-align: left;
 }
 
 .postHoras {
     font-size: 10px;
+    color: #665e5e; 
+    text-align: left;
+}
+
+.postDescricao {
+    font-size: 14px;
     color: #665e5e;
-    margin-bottom: 10px;
+    text-align: left;
 }
 
 .postBody {
@@ -138,6 +42,9 @@
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    width: 600px;
+    margin-top: 20px;
+    width: 700px;
     height: 300px; 
+    align-self: center;
 }
+
