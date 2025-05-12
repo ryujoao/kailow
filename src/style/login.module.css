@@ -112,6 +112,7 @@
 
 .cadastre {
     color: #64beff;
+    cursor: pointer;
 }
 
 .cadastre:hover {

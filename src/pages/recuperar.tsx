@@ -29,7 +29,7 @@ export default function Recuperar() {
                         <h1 className={style.tituloLogin}>Recuperar senha</h1>
 
                         <form>
-                            <label className={style.labelLogin} htmlFor="email">E-mail ou Telefone</label>
+                            <label className={style.labelLogin} htmlFor="email">E-mail</label>
                             <input className={style.inputLogin} id="email" type="text" required />
 
                             <label className={style.labelLogin} htmlFor="senha">Senha</label>

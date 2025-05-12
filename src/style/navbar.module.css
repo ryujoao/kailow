@@ -159,9 +159,46 @@ nav {
   position: absolute;
 }
 
-.navIcons {
+/* .navIcons {
   cursor: pointer;
   display: flex;
   gap: 7dvh;
   padding: 15px
+} */
+
+.navIcons {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdownHome {
+  position: absolute;
+  background-color: #CBE4ED;
+  padding: 20px;
+  width: 90px;
+  top: 11dvh;
+  text-align: center;
+  border-radius: 30px;
+  min-height: fit-content;
+}
+
+.dropdownHomeElements li{
+  list-style: none;
+  line-height: 1;
+  font-size: 15px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dropdownHomeElements li:hover{
+  background-color: #87ADC6;
+
+}
+
+.dropdownHomeElements {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
 }

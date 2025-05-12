@@ -1,7 +1,7 @@
 
-import style from "../style/perfil.module.css"
+import style from "../style/perfilHome.module.css"
 
-export default function Perfil() {
+export default function PerfilHome() {
     return (
         <>
             <div className={style.perfilContainer}>

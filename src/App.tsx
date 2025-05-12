@@ -4,8 +4,8 @@ import Home from './pages/home'
 // import ProtectedRoute from './pages/protectedRoute'
 import Recuperar from './pages/recuperar'
 import Cadastro from './pages/cadastro'
-import { Sobre } from './pages/sobre'
-import Perfil from './components/perfil'
+import Sobre from './pages/sobre'
+import EditarPerfil from './pages/editarPerfil'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Route path="/cadastro" element={<Cadastro />} />
         
       <Route path="/sobre" element={<Sobre />} />
-      <Route path="/perfil" element={<Perfil />} />
+      <Route path='/editar' element={<EditarPerfil />} />
       {/* <Route path="/home" element={
         <ProtectedRoute>
           <Home />

@@ -1,7 +1,7 @@
 import { Nav } from "../components/navbar"
 import style from "../style/sobre.module.css"
 
-export function Sobre() {
+export default function Sobre() {
     return (
         <div className={style.bodySobre}>
             <Nav />
