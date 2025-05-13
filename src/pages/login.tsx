@@ -35,6 +35,9 @@ export default function Login() {
     <>
       <div className={style.bodyLogin}>
         <div className={style.containerLogin}>
+          <div className={style.fraseLoginDiv}>
+            <h2 className={style.fraseLogin}>Encontre oportunidades desde cedo na sua região!</h2>
+          </div>
           <div className={style.cardLogin}>
             <h1 className={style.tituloLogin}>Bem vindo(a)!</h1>
 
@@ -65,9 +68,6 @@ export default function Login() {
             </form>
           </div>
 
-          <div className={style.fraseLoginDiv}>
-            <h2 className={style.fraseLogin}>Encontre oportunidades desde cedo na sua região!</h2>
-          </div>
         </div>
       </div>
     </>

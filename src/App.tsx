@@ -7,6 +7,7 @@ import Cadastro from './pages/cadastro'
 import Sobre from './pages/sobre'
 import EditarPerfil from './pages/editarPerfil'
 import Perfil from './pages/perfil'
+import Comunidades from './pages/comunidades'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/perfil' element={<Perfil />} />
       <Route path="/sobre" element={<Sobre />} />
       <Route path='/editar' element={<EditarPerfil />} />
+      <Route path='/comunidades' element={<Comunidades/>} />
       {/* <Route path="/home" element={
         <ProtectedRoute>
           <Home />

@@ -19,12 +19,14 @@ const DropdownHome = () => {
 
     return (
         <div className={style.dropdownHome}>
+            <div className={style.dropdownHomeCard}>
             <ul className={style.dropdownHomeElements}>
                 <li onClick={Editar}>Config. pefil</li>
                 <li onClick={cadastro}>Config. avançadas</li>
                 <li onClick={cadastro}>Acess.</li>
                 <li onClick={login}>Sair</li>
             </ul>
+        </div>
         </div>
     );
 }

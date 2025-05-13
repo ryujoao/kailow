@@ -1,3 +1,4 @@
+import { Footer } from "../components/footer";
 import { Nav } from "../components/navbar"
 import style from "../style/sobre.module.css"
 
@@ -21,6 +22,7 @@ export default function Sobre() {
                     </p>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

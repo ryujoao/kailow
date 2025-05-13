@@ -1,65 +1,117 @@
-import { useState } from "react";
-import style from "../style/cards.module.css";
+import styles from "../style/comunidades.module.css";
 import * as Icon from 'react-bootstrap-icons'
 
 
 export function Cards() {
-  const [isFilled, setIsFilled] = useState(false);
-  const Fill = () => {
-    setIsFilled(!isFilled);
-  };
+  // const [isFilled, setIsFilled] = useState(false);
+  // const Fill = () => {
+  //   setIsFilled(!isFilled);
+  // };
 
-  const [isFilled2, setIsFilled2] = useState(false);
-  const Fill2 = () => {
-    setIsFilled2(!isFilled2);
-  };
+  // const [isFilled2, setIsFilled2] = useState(false);
+  // const Fill2 = () => {
+  //   setIsFilled2(!isFilled2);
+  // };
 
 
   return (
     <>
 
-      <div className={style.containerCard}>
-        <div className={style.card}>
-          <h1>Programa de estágio Bradesco</h1>
+      <div className={styles.cardBody}>
 
-          <section className={style.localCard}>
-            <Icon.GeoAltFill />
-            <h2>São Paulo - SP</h2>
+        <div className={styles.cardComuContainer}>
+          {/* Minhas Comunidades */}
+          <section className={styles.myComunidades}>
+
+            <div className={styles.cardsComunidades}>
+
+              {/* Card 1 */}
+              <div className={styles.card}>
+                <div className={styles.imgContainer}>
+                  <img
+                    src="../public/img/restaurante.jpg"
+                    className={styles.imgComunidaderes}
+                    alt="Imagem de fundo"
+                  />
+                  <img
+                    src="../public/img/restaurante.jpg"
+                    className={styles.imgComunidaderee}
+                    alt="Imagem sobreposta"
+                  />
+                </div>
+                <div className={styles.comunidadesInfo}>
+                  <h2 className={styles.comunidadeSlogan} >Restaurante Seringueira</h2>
+                  <h5 className={styles.comunidadeLocal}>
+                    <Icon.GeoAltFill className={styles.iconMapComunidades} />
+                    Lapa
+                  </h5>
+                  <p className={styles.comunidadeDescricao}>
+                    Descubra oportunidades de trabalho e aprendizado no setor de
+                    gastronomia.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className={styles.card}>
+                <div className={styles.imgContainer}>
+                  <img
+                    src="../public/img/desenvolvedores.jpg"
+                    className={styles.imgComunidaderes}
+                    alt="Imagem de fundo"
+                  />
+                  <img
+                    src="../public/img/desenvolvedores.jpg"
+                    className={styles.imgComunidaderee}
+                    alt="Imagem sobreposta"
+                  />
+                </div>
+                <div className={styles.comunidadesInfo}>
+                  <h2 className={styles.comunidadeSlogan} >Desenvolvedores Taparoxo</h2>
+                  <h5 className={styles.comunidadeLocal}>
+                    <Icon.GeoAltFill className={styles.iconMapComunidades} />
+                    São Paulo
+                  </h5>
+                  <p className={styles.comunidadeDescricao}>
+                    Uma comunidade para jovens programadores explorarem novas
+                    tecnologias e projetos.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className={styles.card}>
+                <div className={styles.imgContainer}>
+                  <img
+                    src="../public/img/artigoesportes.jpg"
+                    className={styles.imgComunidaderes}
+                    alt="Imagem de fundo"
+                  />
+                  <img
+                    src="../public/img/artigoesportes.jpg"
+                    className={styles.imgComunidaderee}
+                    alt="Imagem sobreposta"
+                  />
+                </div>
+                <div className={styles.comunidadesInfo}>
+                  <h2 className={styles.comunidadeSlogan} >Loja de artigos esportivos Inter League</h2>
+                  <h5 className={styles.comunidadeLocal}>
+                    <Icon.GeoAltFill className={styles.iconMapComunidades} />
+                    Vila Madalena
+                  </h5>
+                  <p className={styles.comunidadeDescricao}>
+                    Conecte-se com profissionais do setor esportivo e explore
+                    oportunidades de trabalho.
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </section>
         </div>
 
-        <div className={style.cardIcons}>
-
-          <div className={style.like} onClick={Fill2}>
-            <p className={style.cardText}>Curtir</p>
-
-            <section className={style.numberIcon}>
-              <section className={style.icon} style={{ display: isFilled2 ? "none" : "block" , color: "#fff", paddingRight: "1dvh"}}>
-                <Icon.HandThumbsUp />
-              </section>
-
-              <section className={style.iconFill} style={{ display: isFilled2 ? "block" : "none", color: "#0d6efd", paddingRight: "1dvh"}}>
-                <Icon.HandThumbsUpFill />
-              </section>
-              <p className={style.numCurtidas}>538</p>
-            </section>
-          </div>
-
-          <div className={style.comment} onClick={Fill}>
-            <p className={style.cardText}>Comentários</p>
-
-            <section className={style.numberIcon}>
-              <section className={style.icon} style={{ display: isFilled ? "none" : "block" , color: "#fff", paddingRight: "1dvh"}}>
-                <Icon.Chat />
-              </section>
-
-              <section className={style.iconFill} style={{ display: isFilled ? "block" : "none" , color: "#0d6efd", paddingRight: "1dvh"}}>
-                <Icon.ChatFill />
-              </section>
-              <p className={style.numComentarios}>223</p>
-            </section>
-          </div>
-
+        <div className={styles.btnVerMais}>
+          <button>Ver Mais </button>
         </div>
       </div>
     </>

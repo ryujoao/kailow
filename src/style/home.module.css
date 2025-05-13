@@ -7,7 +7,6 @@
 .homeContainer {
   font-family: "Montserrat", sans-serif;
   background: linear-gradient(90deg, #071739, #1545aa);
-  line-height: 1.6;
   position: relative;
   justify-content: center;
 }
@@ -18,8 +17,8 @@
 
 .cardsTitulo {
   font-size: 5.5dvh;
-  margin: 10dvh;
-  color: #ffffff;
+  margin-bottom: 14dvh;
+  color: #cdd5db;
   text-align: center;
 }
 
@@ -27,12 +26,4 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 2rem;
-}
-
-.feedTitle {
-  font-size: 5.5dvh;
-  margin: 10dvh;
-  color: #ffffff;
-  text-align: center;
 }

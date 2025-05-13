@@ -1,6 +1,6 @@
 .loaderContainer {
     box-sizing: border-box;
-    background-color: #A4B5C4;
+    background-color: #071739;
     /* background: linear-gradient(90deg, #071739, #1545aa); */
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@
     font-size: 3em;
     font-weight: bold;
     position: relative;
-    background: linear-gradient(90deg, #486382 0%, #CDD5DB 20%, #486382 40%);
+    background: linear-gradient(90deg, #071739 0%, #CDD5DB 20%, #071739 40%);
     background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;

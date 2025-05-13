@@ -13,13 +13,11 @@ export default function Home() {
         <h1 className={style.cardsTitulo}>Comunidades para você</h1>
         <div className={style.cardsContainerHome}>
           <Cards />
-          <Cards />
-          <Cards />
         </div>
         </section>
 
         <section>
-        <h2 className={style.feedTitle}>Seu Feed</h2>
+        <h2 className={style.cardsTitulo}>Seu Feed</h2>
         <PerfilHome />
         <PerfilHome />
         <PerfilHome />

@@ -1,18 +1,11 @@
 .bodyLogin {
     box-sizing: border-box;
-    background-color: #f4f4f4;
+    background: linear-gradient(90deg, #071739, #1545aa);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    /* background-image: url("./public/img/oceano.jpg"); */
-    /* background: radial-gradient( 
-        ellipse 100% 150% at 80% 95%,
-        rgba(83, 83, 179, 0.575) 5%,
-        rgba(74, 203, 203, 0.52) 20%,
-        #f0f7fa 30%
-        ); */
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -131,7 +124,8 @@
 .fraseLoginDiv {
     width: 90dvh;
     display: flex;
-    
+    align-self: center;
+
 }
 
 .fraseLogin {
@@ -139,7 +133,7 @@
     text-align: center;
     font-weight: 370;
     /* color: #484141; */
-    color: #245270;
+    color: #fff;
 }
 
 /* Extra large

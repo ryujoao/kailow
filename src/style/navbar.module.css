@@ -9,7 +9,8 @@ nav {
   line-height: 1.4dvh;
   position: fixed;
   z-index: 1000;
-  border: 1px solid #071739;
+  /* border: 1px solid #071739; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
 }
 
 .navContainer {
@@ -160,13 +161,6 @@ nav {
   position: absolute;
 }
 
-/* .navIcons {
-  cursor: pointer;
-  display: flex;
-  gap: 7dvh;
-  padding: 15px
-} */
-
 .navIcons {
   display: flex;
   justify-content: center;
@@ -174,7 +168,7 @@ nav {
 
 .dropdownHome {
   position: absolute;
-  background-color: #CBE4ED;
+  background-color: #bcd4e6 ;
   padding: 20px;
   width: 90px;
   top: 11dvh;
@@ -187,14 +181,13 @@ nav {
   list-style: none;
   line-height: 1;
   font-size: 15px;
-  width: 100%;
+  width: 90px;
   padding: 10px;
   box-sizing: border-box;
 }
 
 .dropdownHomeElements li:hover {
-  background-color: #87ADC6;
-
+  color: #1b9bee;
 }
 
 .dropdownHomeElements {
