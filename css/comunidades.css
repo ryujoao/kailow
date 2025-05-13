@@ -9,10 +9,10 @@
   
   /* NAV BAR */
   .nav-container {
-    height: 90px;
+    height: 70px;
     width: 100%;
     margin: 0 auto;
-    background-color: #245270;
+    background-color: #071739;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,8 +26,8 @@
   }
   
   .logo img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
   }
   
@@ -37,11 +37,11 @@
   
   .nav-categorias {
     display: flex;
-    gap: 20px;
+    gap: 100px;
   }
   
   .nav-categorias a {
-    color: #cfcbcb;
+    color: whitesmoke;
     text-decoration: none;
     font-size: 18px;
     padding: 5px 10px;
@@ -66,7 +66,7 @@
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #245270;
+    color: #071739;
     background-color: #fff;
     transition: border-color 0.3s ease;
   }
@@ -77,7 +77,7 @@
     border: none;
     cursor: pointer;
     font-size: 16px;
-    color: #245270;
+    color: #071739;
     opacity: 0.7;
     transition: opacity 0.3s ease;
   }
@@ -86,6 +86,17 @@
     opacity: 1;
   }
   
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
   .fotoUsuario {
     display: flex;
     align-items: center;
@@ -98,67 +109,106 @@
     cursor: pointer;
   }
 
-  .comunidades {
-    padding: 20px;
-    text-align: center;
+  main {
+    padding: 40px;
   }
-
-  .cards-container {
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .cardsComunidades {
     display: flex;
-    flex-wrap: wrap;
-    gap: px;
-    justify-content: center;
+    gap: 40px;
   }
-
+  
   .card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: left;
-  }
+    width: 560px;
+    height: 280px;
+    background-color: #071739;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .card-img {
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4), 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+  
+  .card h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: bold;
+   
+  }
+  
+  .card p {
+    font-size: 13px;
+    gap: 50px;
+    font-weight: bold;
+  
+  }
+  .imgComunidade{
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: 120px;
+    border-radius: 14px;
   }
 
-  .card-content {
-    padding: 15px;
-  }
-
-  .card-content h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
-  }
-
-  .card-content p {
-    margin: 0 0 15px;
-    color: #555;
-  }
-
-  .btn {
-    background-color: #0073b1;
+  button {
+    background-color: #071739;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-right: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  .imgContainer {
+    position: relative;
+    width: 100%; /* Ajuste conforme necessário */
+    height: 140px; /* Ajuste conforme necessário */
+  }
+  
+  .imgComunidaderes {
+    width: 100%;
+    height: 120px;
+    border-radius: 14px;
+    filter: blur(4px);
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .imgComunidaderee {
+    width: 100px;
+    height: 100px;
+    border-radius: 64px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   object-fit: cover;
+  
   }
 
-  .btn-secondary {
-    background-color: #ddd;
-    color: #333;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
+  .navegadorCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
   }
-
-  .btn:hover, .btn-secondary:hover {
-    opacity: 0.9;
+  
+  .navegadorCard button {
+    background-color: transparent;
+    color: #071739;
+    cursor: pointer;
+    font-weight: bold;
   }

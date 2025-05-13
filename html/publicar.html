@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar Trabalho</title>
+  <link rel="stylesheet" href="../css/publicar.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="nav-container">
+            <div class="logo">
+              <a href="index.html">
+                <img src="../img/kaliwo_icon.png" alt="Logo" />
+              </a>
+              <h1 id="kailow-nav-nome">Kailow</h1>
+            </div>
+    
+            <div class="nav-categorias">
+              <a href="./index.html">Home</a>
+              <a href="./sobre.html">Sobre</a>
+              <a href="./comunidades.html">Minhas Comunidades</a>
+              <a href="./Perfil.html">Perfil</a>
+            </div>
+    
+            <div class="pesquisa">
+              <input type="text" placeholder="Pesquisar..." />
+              <button>🔍</button>
+            </div>
+            <div class="icons">
+              <a href="temaEscuro.html"
+                ><img src="../img/lightbulb.svg" alt="temaClaroOuEscuro"
+              /></a>
+              
+              <a href="./Login.html"
+                ><img src="../img/circle-user-round.svg" alt="Profile"
+              /></a>
+              
+            
+              <img
+                id="icon-acessibilidade"
+                src="../img/person-standing.png"
+                alt="Acessibilidade"
+              />
+            </div>
+          </div>
+        </nav>
+      </header>
+
+  <main>
+    <section class="publicar-trabalho">
+      <h1>Publicar Trabalho</h1>
+      <form action="/publicarTrabalho" method="POST" enctype="multipart/form-data">
+        <label for="titulo">Título do Trabalho:</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Digite o título do trabalho" required>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva o trabalho" required></textarea>
+
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecione uma categoria</option>
+          <option value="design">Design</option>
+          <option value="programacao">Programação</option>
+          <option value="escrita">Escrita</option>
+          <option value="marketing">Marketing</option>
+        </select>
+
+        <label for="arquivo">Anexar Arquivo (opcional):</label>
+        <input type="file" id="arquivo" name="arquivo" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">
+
+        <button type="submit">Publicar</button>
+      </form>
+    </section>
+  </main>
+  <br>
+  <br>
+  <br>  
+  <br>
+  <br>
+  <br>  
+  <br>
+  <br>
+  <br>      
+  <br>
+  <br>
+  <br>  
+
+
+  <!-- FOOTER ------------------------------------------------------------------------------>
+
+  <footer>
+    <div class="primeiraLinhaFooter">
+      <div class="logoFooter">
+          <img src="../img/logoEscura.png" alt="Logo" />
+          <h1 id="kailow-nav-nome">Kailow</h1>
+        </div> 
+  </div>
+    <div class="container-footer">
+        <div class="row-footer">
+            <!-- footer col-->
+            <div class="footer-col">
+                <h4>AJUDA</h4>
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="">Segurança</a></li>
+                    <li><a href="">Como Receber Pagamentos</a></li>
+                    <li><a href="">Problemas com Clientes</a></li>
+                    <li><a href="">Central de Ajuda</a></li>
+                    
+                </ul>
+            </div>
+            <!--end footer col-->
+            <!-- footer col-->
+            <div class="footer-col">
+                <h4>FREELANCER</h4>
+                <ul>
+                  
+                    <li><a href="#">Trabalhos</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Montar Seu Portfólio</a></li>
+                    <li><a href="#">Trabalhos Disponíveis</a></li>
+                    <li><a href="#">Formas de Pagamento</a></li>
+    
+                </ul>
+            </div>
+            <!--end footer col-->
+            <!-- footer col-->
+            <div class="footer-col">
+                <h4>SOBRE</h4>
+                <ul>
+                    <li><a href="#">Termos</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Depoimentos</a></li>
+                </ul>
+            </div>
+            <!--end footer col-->
+            <!-- footer col-->
+            <div class="footer-col">
+                
+
+                <div class="medias-socias">
+                    <a href="#"> <i class="fa fa-facebook"></i> </a>
+                    <a href="#"> <i class="fa fa-instagram"></i> </a>
+                    <a href="#"> <i class="fa fa-twitter"></i> </a>
+                    <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                </div>
+
+            </div>
+            <!--end footer col-->
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

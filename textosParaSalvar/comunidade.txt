@@ -1,0 +1,28 @@
+ <div class="myComunidades">
+  <h1 class="titleMyComunidades">Minhas Comunidades</h1>
+  <div class="ggComunidades">
+    <h2>Comunidade 1</h2>
+  </div>
+    </div>
+
+    <div class="sugComunidades">
+      <h1 class="titleSug"> Sugestôes para você:</h1>
+
+      <div class="cardSug">
+        <div class="sugCards">
+          <h2 class="sugestoes">Restaurante Seringueira</h2>
+        </div>
+
+        <div class="sugCards">
+          <h2 class="sugestoes"></h2>
+        </div>
+
+        <div class="sugCards">
+          <h2 class="sugestoes">  </h2>
+        </div>
+        
+        <div class="sugCards">
+          <h2 class="sugestoes"></h2>
+        </div>
+      </div>
+    </div>

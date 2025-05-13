@@ -7,40 +7,46 @@
     <title>Home</title>
   </head>
   <body>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap');
+      </style>
     <header>
       <nav>
         <div class="nav-container">
           <div class="logo">
-            <img src="../img/kaliwo_icon.png" alt="Logo" />
+            <a href="index.html">
+              <img src="../img/kaliwo_icon.png" alt="Logo" />
+            </a>
             <h1 id="kailow-nav-nome">Kailow</h1>
           </div>
 
           <div class="nav-categorias">
             <a href="./index.html">Home</a>
             <a href="./sobre.html">Sobre</a>
-            <a href="./comunidades.html">Minhas Comunidades</a>
+            <a href="./comunidades.html">Comunidades</a>
             <a href="./Perfil.html">Perfil</a>
           </div>
-
+          <!-- Pesquisa -->
           <div class="pesquisa">
             <input type="text" placeholder="Pesquisar..." />
             <button>🔍</button>
           </div>
+          <!-- Tema claro -->
           <div id="temaEsc" class="icons">
             <a href="#"
               ><img src="../img/lightbulb.svg" alt="temaClaroOuEscuro"
             /></a>
             
+            <!-- Logar -->
             <a href="./login.html"
               ><img src="../img/circle-user-round.svg" alt="Profile"
             /></a>
             
-          
-            <img
+            <!-- Acessibilidade -->
+            <a href="./acessibilidade.html"
+            ><img src="../img/person-standing.png" alt="Acessibilidade"
               id="icon-acessibilidade"
-              src="../img/person-standing.png"
-              alt="Acessibilidade"
-            />
+            /></a>
 
           </div>
         </div>
@@ -79,7 +85,7 @@
         </div>
         <div class="allIcons">
           <div class="ratingReviewSells">
-            <div class="icon">
+            <div class="icon">  
               <h5>Rating</h5>
               <img src="../img/starr.svg" none alt="estrela" />
             </div>
@@ -94,6 +100,8 @@
           </div>
         </div>
       </div>
+
+      <a href="publicar.html">Teste da pagina publicar</a>
 
       <div class="cardMain">
         <div class="card">
@@ -231,10 +239,6 @@
           </div>
       </div>
   </footer>
-
-    
-    
-  
 
     <script src="../js/estrela.js"></script>
   </body>

@@ -13,7 +13,7 @@
   height: 70px;
   width: 100%;
   margin: 0 auto;
-  background-color: #245270;
+  background-color: #071739;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,7 +67,7 @@
   border-radius: 25px;
   outline: none;
   font-size: 16px;
-  color: #245270;
+  color: #071739;
   background-color: #fff;
   transition: border-color 0.3s ease;
 }
@@ -78,7 +78,7 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: #245270;
+  color: #071739;
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
@@ -115,7 +115,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #245270;
+  color: #071739;
   background-color: #ffc0d4;
   font-size: 24px;
 }
@@ -133,7 +133,7 @@
 .card {
   width: 360px;
   height: 90px;
-  background-color: #245270;
+  background-color: #071739;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
@@ -158,9 +158,7 @@
   margin-top: -12px;
 }
 
-.meubottom {
 
-}
 
 
 

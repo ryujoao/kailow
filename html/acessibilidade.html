@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Acessível - Exemplo de Página Acessível</title>
+    <meta name="description" content="Exemplo de página web acessível seguindo as diretrizes de acessibilidade WCAG">
+    <style>
+        /* Estilos com contraste adequado e tamanhos de fonte responsivos */
+        :root {
+            --primary-color: #071739;
+            --secondary-color: #004494;
+            --text-color: #333333;
+            --background-color: #ffffff;
+            --error-color: #d32f2f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin-right: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+        
+        nav a:hover, nav a:focus {
+            background: var(--secondary-color);
+            outline: 2px solid white;
+        }
+        
+        main {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        
+        button, .button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        button:hover, button:focus,
+        .button:hover, .button:focus {
+            background: var(--secondary-color);
+            outline: 2px solid var(--primary-color);
+        }
+        
+        .contrast-control {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f5f5f5;
+        }
+        
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .container h1 {
+            color: white;
+        }
+        
+        /* Estilos para tornar a página responsiva */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        /* Classes para alto contraste - podem ser ativadas via JavaScript */
+        .high-contrast {
+            --text-color: #000000;
+            --background-color: #ffffff;
+            --primary-color: #000080;
+        }
+        
+        .dark-mode {
+            --text-color: #ffffff;
+            --background-color: #121212;
+            --primary-color: #bb86fc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Link de salto para conteúdo principal (útil para usuários de leitores de tela) -->
+    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+    
+    <header role="banner">
+        <div class="container">
+            <h1>Portal Acessível</h1>
+            
+            <!-- Controles de acessibilidade -->
+            <div class="contrast-control" aria-label="Controles de acessibilidade">
+                <button id="increase-font" aria-label="Aumentar tamanho da fonte">A+</button>
+                <button id="decrease-font" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button id="high-contrast" aria-label="Ativar alto contraste">Alto Contraste</button>
+                <button id="dark-mode" aria-label="Ativar modo escuro">Modo Escuro</button>
+                <button id="reset-a11y" aria-label="Redefinir configurações">Resetar</button>
+            </div>
+            
+            
+            
+        </div>
+    </header>
+    
+    
+    
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2023 Portal Acessível. Todos os direitos reservados.</p>
+            <p>Conforme as diretrizes WCAG 2.1 AA.</p>
+            <nav aria-label="Links institucionais">
+                <ul>
+                    <li><a href="#privacy">Política de Privacidade</a></li>
+                    <li><a href="#accessibility">Declaração de Acessibilidade</a></li>
+                    <li><a href="#sitemap">Mapa do Site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    
+    <script>
+        // JavaScript para os controles de acessibilidade
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aumentar fonte
+            document.getElementById('increase-font').addEventListener('click', function() {
+                const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+                document.body.style.fontSize = (currentSize + 1) + 'px';
+            });
+            
+            // Diminuir fonte
+            document.getElementById('decrease-font').addEventListener('click', function() {
+                const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+                if (currentSize > 12) {
+                    document.body.style.fontSize = (currentSize - 1) + 'px';
+                }
+            });
+            
+            // Alto contraste
+            document.getElementById('high-contrast').addEventListener('click', function() {
+                document.body.classList.add('high-contrast');
+                document.body.classList.remove('dark-mode');
+            });
+            
+            // Modo escuro
+            document.getElementById('dark-mode').addEventListener('click', function() {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('high-contrast');
+            });
+            
+            // Resetar configurações
+            document.getElementById('reset-a11y').addEventListener('click', function() {
+                document.body.style.fontSize = '';
+                document.body.classList.remove('high-contrast', 'dark-mode');
+            });
+            
+            // Adicionar foco visível para elementos interativos
+            document.addEventListener('keyup', function(e) {
+                if (e.key === 'Tab') {
+                    const focusableElements = document.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                    focusableElements.forEach(el => {
+                        el.style.outline = el === document.activeElement ? '2px solid var(--primary-color)' : '';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

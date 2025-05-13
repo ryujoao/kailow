@@ -6,13 +6,13 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background:linear-gradient(white, #245270);
+    background:linear-gradient(white, #071739);
    
 }
  
 .container {
     width: 150px;
-    background-color: #245270;
+    background-color: #071739;
     padding: 18px;
     border-radius: 10px;
     width: 500px;

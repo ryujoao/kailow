@@ -3,87 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/comunidades.css" />
     <title>Home</title>
   </head>
 <body>
-    <header>
-      <nav>
-        <div class="nav-container">
-          <div class="logo">
+  <header>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
             <img src="../img/kaliwo_icon.png" alt="Logo" />
-            <h1 id="kailow-nav-nome">Kailow</h1>
-          </div>
+          </a>
+          <h1 id="kailow-nav-nome">Kailow</h1>
+        </div>
 
-          <div class="nav-categorias">
-            <a href="./index.html">Home</a>
-            <a href="./sobre.html">Sobre</a>
-            <a href="#">Minhas Comunidades</a>
-            <a href="./Perfil.html">Perfil</a>
-          </div>
+        <div class="nav-categorias">
+          <a href="./index.html">Home</a>
+          <a href="./sobre.html">Sobre</a>
+          <a href="./comunidades.html">Comunidades</a>
+          <a href="./Perfil.html">Perfil</a>
+        </div>
 
-          <div class="pesquisa">
-            <input type="text" placeholder="Pesquisar..." />
-            <button>🔍</button>
-          </div>
-          <div id="temaEsc" class="icons">
-            <a href="#"
-              ><img src="../img/lightbulb.svg" alt="temaClaroOuEscuro"
-            /></a>
-            
-            <a href="./login.html"
-              ><img src="../img/circle-user-round.svg" alt="Profile"
-            /></a>
-            
+        <div class="pesquisa">
+          <input type="text" placeholder="Pesquisar..." />
+          <button>🔍</button>
+        </div>
+
+        <div id="temaEsc" class="icons">
+          <a href="#"
+            ><img src="../img/lightbulb.svg" alt="temaClaroOuEscuro"
+          /></a>
           
-            <img
-              id="icon-acessibilidade"
-              src="../img/person-standing.png"
-              alt="Acessibilidade"
-            />
-          </div>
-        </div>
-      </nav>
-    </header>
+          <a href="./login.html"
+            ><img src="../img/circle-user-round.svg" alt="Profile"
+          /></a>
+          
+        
+          <img
+            id="icon-acessibilidade"
+            src="../img/person-standing.png"
+            alt="Acessibilidade"
+          />
 
-    <main>
-      <section class="comunidades">
-        <h2>Minhas Comunidades</h2>
-        <div class="cards-container">
-          <!-- Card 1 -->
-          <div class="card">
-            <img src="../img/community1.jpg" alt="Comunidade 1" class="card-img" />
-            <div class="card-content">
-              <h3>Comunidade de Tecnologia</h3>
-              <p>Participe de discussões sobre as últimas tendências em tecnologia.</p>
-              <button class="btn">Entrar</button>
-              <button class="btn-secondary">Sair</button>
-            </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="myComunidades">
+      <h1 class="title">Minhas Comunidades</h1>
+      
+      <div class="cardsComunidades">
+
+        <div class="navegadorCard">
+          <button id="antCard">⟵</button>
+        </div>
+        <div class="card">
+          
+          <div class="imgContainer">
+            <img src="../img/passearComCachorro.jpg" class="imgComunidaderes" alt="Imagem de fundo">
+            <img src="../img/passearComCachorro.jpg" class="imgComunidaderee" alt="Imagem sobreposta">
           </div>
-    
-          <!-- Card 2 -->
+          <h2>Passeio com pets na grande São Paulo</h2>
+          <h5>
+            <img
+              src="../img/map2-pin.png"
+              class="map"
+              alt="Localização SP"
+            />São Paulo
+          </h5>
+          <p>Um espaço dedicado a tutores que buscam os melhores lugares para passear com seus pets na região metropolitana de SP.</p>
+          <button>Sair</button>
+        </div>
           <div class="card">
-            <img src="../img/community2.jpg" alt="Comunidade 2" class="card-img" />
-            <div class="card-content">
-              <h3>Comunidade de Design</h3>
-              <p>Explore ideias criativas e compartilhe seus projetos de design.</p>
-              <button class="btn">Entrar</button>
-              <button class="btn-secondary">Sair</button>
+          
+            <div class="imgContainer">
+              <img src="../img/marketing digital.jpg" class="imgComunidaderes" alt="Imagem de fundo">
+              <img src="../img/marketing digital.jpg" class="imgComunidaderee" alt="Imagem sobreposta">
             </div>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="card">
-            <img src="../img/community3.jpg" alt="Comunidade 3" class="card-img" />
-            <div class="card-content">
-              <h3>Comunidade de Marketing</h3>
-              <p>Aprenda e compartilhe estratégias de marketing com outros profissionais.</p>
-              <button class="btn">Entrar</button>
-              <button class="btn-secondary">Sair</button>
+          <h2>Marketing Digital Moskou</h2>
+          <h5>
+            <img
+              src="../img/map2-pin.png"
+              class="map"
+              alt="Localização SP"
+            />São Paulo
+          </h5>
+            <p>Networking e tendências de marketing digital para freelancers.</p>
+            <button>Sair</button>
+            </div>
+            <div class="card">
+              
+              <div class="imgContainer">
+                <img src="../img/mercado.jpg" class="imgComunidaderes" alt="Imagem de fundo">
+                <img src="../img/mercado.jpg" class="imgComunidaderee" alt="Imagem sobreposta">
+              </div>
+              <h2>Supermercado KiPago</h2>
+              <h5>
+                <img
+                  src="../img/map2-pin.png"
+                  class="map"
+                  alt="Localização SP"
+                />São Paulo
+              </h5>
+              <p>Tudo sobre o universo de supermercados na região! Aqui você encontra dicas, oportunidades de trabalho.</p>
+              <button>Sair</button>
+            </div>
+            <div class="navegadorCard">
+              <button id="proxCard">⟶</button>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+       
+    </section>
+
+    <section class="sugComunidades">
+      <h1 class="title">Sugestões para você</h1>
+      <div class="cardsComunidades">
+        <div class="navegadorCard">
+          <button id="antCard">⟵</button>
+      </div>
+        <div class="card">
+          
+          <div class="imgContainer">
+            <img src="../img/reustarante.jpg" class="imgComunidaderes" alt="Imagem de fundo">
+            <img src="../img/reustarante.jpg" class="imgComunidaderee" alt="Imagem sobreposta">
+          </div>
+          <h2>Restaurante Seringueira</h2>
+          <h5>
+            <img
+             src="/img/map2-pin.png"
+              class="map"
+              alt="Localização SP"
+            />São Paulo
+          </h5>
+          <p>Descubra oportunidades de trabalho e aprendizado no setor de gastronomia.</p>
+
+          <a href="../html/comunidades2.html">
+            <button  >Entrar</button>
+          </a>
+          
+        </div>
+        <div class="card">
+          
+          <div class="imgContainer">
+            <img src="../img/desenvolvedores.jpg" class="imgComunidaderes" alt="Imagem de fundo">
+            <img src="../img/desenvolvedores.jpg" class="imgComunidaderee" alt="Imagem sobreposta">
+          </div>
+          <h2>Desenvolvedores Taparoxo</h2>
+          <h5>
+            <img
+              src="../img/map2-pin.png"
+              class="map"
+              alt="Localização SP"
+            />São Paulo
+          </h5>
+          <p>Uma comunidade para jovens programadores explorarem novas tecnologias e projetos.</p>
+
+          <a href="../html/comunidades2.html">
+            <button  >Entrar</button>
+          </a>
+        </div>
+        <div class="card">
+          
+          <div class="imgContainer">
+            <img src="../img/artigosDeEsportes.jpg" class="imgComunidaderes" alt="Imagem de fundo">
+            <img src="../img/artigosDeEsportes.jpg "class="imgComunidaderee" alt="Imagem sobreposta">
+          </div>
+          <h2>Loja de artigos esportivos Inter League<h2>
+            <h5>
+              <img
+                src="../img/map2-pin.png"
+                class="map"
+                alt="Localização SP"
+              />São Paulo
+            </h5>
+          <p>Conecte-se com profissionais do setor esportivo e explore oportunidades de trabalho.</p>
+
+          <a href="../html/comunidades2.html">
+            <button  >Entrar</button>
+          </a>
+        </div>
+
+        <div class="navegadorCard">
+          <button id="proxCard">⟶</button>
+      </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+   
+ 
     
 </body>

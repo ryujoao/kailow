@@ -9,7 +9,7 @@
     height: 70px;
     width: 100%;
     margin: 0 auto;
-    background-color: #245270;
+    background-color: #071739;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,7 +63,7 @@
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #245270;
+    color: #071739;
     background-color: #fff;
     transition: border-color 0.3s ease;
   }
@@ -74,7 +74,7 @@
     border: none;
     cursor: pointer;
     font-size: 16px;
-    color: #245270;
+    color: #071739;
     opacity: 0.7;
     transition: opacity 0.3s ease;
   }
@@ -189,6 +189,7 @@
   display: flex;
   justify-content: center;
   gap: 4px;
+  
 }
 
 .interestList li {
@@ -213,7 +214,7 @@
 }
 
 .editProfileButton:hover {
-  background-color: #245270; /* Cor ao passar o mouse */
+  background-color: #071739; /* Cor ao passar o mouse */
 }
 
 .profileResume {
@@ -302,7 +303,7 @@ margin-bottom: 10px;
 
 .post-header span {
   font-weight: bold;
-  color: #245270;
+  color: #071739;
   font-size: 16px; 
   cursor: pointer;
 

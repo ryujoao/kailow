@@ -7,40 +7,50 @@
     <link rel="stylesheet" href="../css/editarperfil.css">
 </head>
 <body>
-    <header>
-        <nav>
-          <div class="nav-container">
-            <div class="logo">
-              <img src="../img/kaliwo_icon.png" alt="Logo" />
-              <h1 id="kailow-nav-nome">Kailow</h1>
-            </div>
-  
-            <div class="nav-categorias">
-              <a href="./index.html">Home</a>
-              <a href="./sobre.html">Sobre</a>
-              <a href="./comunidades.html">Minhas Comunidades</a>
-              <a href="#">Contato</a>
-            </div>
-  
-            <div class="pesquisa">
-              <input type="text" placeholder="Pesquisar..." />
-              <button>🔍</button>
-            </div>
-            <div class="fotoUsuario">
-              <a href="./telaHome2.html"><img src="../img/lightbulb.svg" alt="temaClaroOuEscuro"></a>
-              <img src="../img/circle-user-round2.png" alt="Usuário" />
-              <img
-                id="icon-acessibilidade"
-                src="../img/person-standing.png"
-                alt="Acessibilidade"
-              />
+  <header>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../img/kaliwo_icon.png" alt="Logo" />
+          </a>
+          <h1 id="kailow-nav-nome">Kailow</h1>
+        </div>
 
-            </div>
-          </div>
+        <div class="nav-categorias">
+          <a href="./index.html">Home</a>
+          <a href="./sobre.html">Sobre</a>
+          <a href="./comunidades.html">Minhas Comunidades</a>
+          <a href="./Perfil.html">Perfil</a>
+        </div>
+
+        <div class="pesquisa">
+          <input type="text" placeholder="Pesquisar..." />
+          <button>🔍</button>
+        </div>
+
+        <div id="temaEsc" class="icons">
+          <a href="#"
+            ><img src="../img/lightbulb.svg" alt="temaClaroOuEscuro"
+          /></a>
+          
+          <a href="./login.html"
+            ><img src="../img/circle-user-round.svg" alt="Profile"
+          /></a>
+          
+        
+          <img
+            id="icon-acessibilidade"
+            src="../img/person-standing.png"
+            alt="Acessibilidade"
+          />
 
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
+
+             <a id="homeclick"  href="./Perfil.html"><img src="../img/house.svg" alt=""></a>
 
 
               <h2 id="textSeuPerfil">Seu Perfil</h2>
@@ -55,12 +65,44 @@
                 <input type="text" id="nome" name="nome" value="Antonio Kobayashi" required>
             
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" value="antonio@email.com" required>
+                <input type="email" id="email" name="email" value="antonioryu3102@gmail.com" required>
+
+                <label for="senhaAtual">Senha Atual</label>
+                <input type="password" name="senha" id="senhaAtual" placeholder="Digite sua senha atual" required>
             
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" placeholder="Digite sua nova senha">
+
+                <label for="profileDescription">Descrição:</label>
+                <input type="text" id="descricao" name="descricao"  placeholder="Adicione uma descrição sua">
+
+                <label for="curriculo">Currículo (PDF):</label>
+                <input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
+
+                <div class="interesseVagas">
+                  <div class="checkbox-item">
+                    <label for="vaga1">Estágio</label>
+                    <input type="checkbox" id="vaga1" name="vaga1">
+                  </div>
+                  <div class="checkbox-item">
+                    <label for="vaga2">Aprendiz</label>
+                    <input type="checkbox" id="vaga2" name="vaga2">
+                  </div>
+                  <div class="checkbox-item">
+                    <label for="vaga3">Freelancer</label>
+                    <input type="checkbox" id="vaga3" name="vaga3">
+                  </div>
+                  <div class="checkbox-item">
+                    <label for="vaga4">CLT</label>
+                    <input type="checkbox" id="vaga4" name="vaga4">
+                  </div>
+                  <div class="checkbox-item">
+                    <label for="vaga5"></label>
+                  </div>
+                </div>
+
             
-                <button type="submit">Salvar Alterações</button>
+                <button type="submit" >Salvar Alterações</button>
               </form>
             </div>
 

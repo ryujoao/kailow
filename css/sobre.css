@@ -1,128 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    
-  }
+.nav-container {
+  height: 70px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #071739;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
 
-  .nav-container {
-    height: 70px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: #245270;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    color: #fff;
-  }
-  
-  .logo img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-  }
-  
-  .logo h1 {
-    margin: 0;
-  }
-  
-  .nav-categorias {
-    display: flex;
-    gap: 100px;
-  }
-  
-  .nav-categorias a {
-    color: #cfcbcb;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-  }
-  
-  .nav-categorias a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-  }
-  
-  .pesquisa {
-    display: flex;
-    align-items: center;
-    width: 300px;
-  }
-  
-  .pesquisa input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #cfcbcb;
-    border-radius: 25px;
-    outline: none;
-    font-size: 16px;
-    color: #245270;
-    background-color: #fff;
-    transition: border-color 0.3s ease;
-  }
-  
-  .pesquisa button {
-    margin-left: -35px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #245270;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-  }
-  
-  .pesquisa button:hover {
-    opacity: 1;
-  }
-  
-  .icons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .icons img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-  }
-  
-  .perfil{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    font-weight: bold;
-  }
+.logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
 
-  .container {
-    background:#f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin-left: 450px;
-    border-radius: 10px #0000 ;
-    flex-direction: column;
-    border: 1px solid black;
-    border-radius: 5px;
-    border-style: ;
-    height: 500px;
-  }
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
 
-  .container h1 {
-    margin-top: 20px;
-  }
+.logo h1 {
+  margin: 0;
+}
 
-  .container p {
-    margin-top: 20px;
-  }
+.nav-categorias {
+  display: flex;
+  gap: 100px;
+}
+
+.nav-categorias a {
+  color: #cfcbcb;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+
+.nav-categorias a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.pesquisa {
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.pesquisa input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #cfcbcb;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  color: #071739;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.pesquisa button {
+  margin-left: -35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #071739;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.pesquisa button:hover {
+  opacity: 1;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icons img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.perfil {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Sobre */
+body{
+  background: url(../img/azul.jpg);
+
+}
+.title {
+  text-align: center;
+  margin: 50px;
+}
+.title h1 {
+  text-transform: capitalize;
+  font-size: 40px;
+  position: relative;
+  /* display: inline-block; */
+  color: #cdd5db;
+  text-transform: uppercase;
+}
+
+.container {
+  background: #1545aa; 
+  color: #cdd5db;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid rgb(113, 107, 107);
+ 
+}
+
+ul li{
+  list-style: none;
+  font-size: 20px;
+}
+
+p {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 20px;
+}
+ 
+h1{
+  font-size: 25px;
+}
+.single-dev img{
+  margin-right: 30px;
+  border-radius: 50%;
+  width:100px;
+  height:100px;
+ 
+}
