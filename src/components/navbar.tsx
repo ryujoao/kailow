@@ -29,8 +29,8 @@ export function Nav() {
                 </div>
                 <div className={style.navCategorias}>
                     <a href="/sobre">Sobre</a>
-                    <a href="/sobre">Comunidades</a>
-                    <a href="/sobre">Perfil</a>
+                    <a href="/comunidades">Comunidades</a>
+                    <a href="/perfil">Perfil</a>
                 </div>
 
                 <form className={style.formSearch}>

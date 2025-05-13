@@ -1,0 +1,143 @@
+
+  /* Parte do conteúdo do projeto */
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  margin: 0 auto;
+  background-color: #f0f7fa;
+  height: 100vh;
+}
+
+/* Parte das informações do perfil*/
+.profileSection {
+  flex: 1;
+  max-width: 550px;
+}
+
+
+/* O título escrito "perfil" */
+.profileTitle {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #665e5e;
+  text-align: center;
+}
+/* foto de perfil */
+.profileImage {
+  display: flex;
+  justify-content: center;
+  height: 15%; 
+}
+
+.profileImage img {
+  border-radius: 100px;
+}
+
+/* avaliação de perfil */
+.starProfile {
+  padding: 10px;
+  display: center;
+  text-align: center;
+}
+
+.avaliaPerfil {
+  display: inline-block;
+  font-family: bold;
+  font-size: 22px;
+}
+
+/* A escrita depois da foto*/
+.profileInfo {
+  /* padding: 20px; */
+  /* border-radius: 8px; */
+  text-align: center;
+}
+
+
+/* Nome do dono do perfil*/
+.profileName {
+  font-size: 20px;
+  color: #665e5e;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Informações do dono do perfil */
+.profileDescription {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  
+}
+
+/* Quais tipos de estágios buscados*/
+.profileInterests {
+  margin: 20px 0;
+}
+
+.profileInterests h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #665e5e;
+  text-align: center;
+}
+
+.interestList {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.interestList li {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 10px ;
+  padding-left: 15px;
+  position: relative;
+}
+
+.editProfileButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editProfileButton:hover {
+  background-color: #245270; /* Cor ao passar o mouse */
+}
+
+.profileResume {
+  margin: 15px 0;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Botão de editar perfil */
+.editProfileButton {
+    background-color: #ddd;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.editProfileButtpn:hover {
+    background-color: #1a3d56;
+}
