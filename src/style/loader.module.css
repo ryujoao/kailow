@@ -1,7 +1,7 @@
 .loaderContainer {
-       box-sizing: border-box;
+    box-sizing: border-box;
     background-color: #A4B5C4;
-      /* background: linear-gradient(90deg, #071739, #1545aa); */
+    /* background: linear-gradient(90deg, #071739, #1545aa); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,8 +11,8 @@
     background-size: cover;
     overflow: hidden;
 }
-.loaderLogo {
 
+.loaderLogo {
     width: 100px;
     height: 100px;
 }

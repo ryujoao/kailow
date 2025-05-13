@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Loading from '../components/loader';
 
 export default function Login() {
+  const navigate = useNavigate();
   const [isLoggingIn, setIsLoggingIn] = useState(false); // Controla o carregamento após o login
   const [mostrarSenha, setMostrarSenha] = useState(false);
   
@@ -20,16 +21,12 @@ export default function Login() {
       setIsLoggingIn(false);
       navigate('/home');
     }, 3000);
-  }
+  }   
   
   if (isLoggingIn) {
     // Exibe o carregamento após o login
     return <Loading />;
-  }
-  
-  
-    const navigate = useNavigate();
-    
+  } 
     function cadastro() {
       navigate('/cadastro');
     }

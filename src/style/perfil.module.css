@@ -6,7 +6,8 @@
   align-items: center;
   padding-top: 70px;
   margin: 0 auto;
-  background-color: #f0f7fa;
+  background: linear-gradient(90deg, #071739, #1545aa);
+  position: relative ;
   height: 100vh;
 }
 

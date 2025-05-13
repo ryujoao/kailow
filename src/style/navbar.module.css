@@ -9,6 +9,7 @@ nav {
   line-height: 1.4dvh;
   position: fixed;
   z-index: 1000;
+  border: 1px solid #071739;
 }
 
 .navContainer {

@@ -17,11 +17,10 @@
 }
 
 .cardsTitulo {
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 4dvh;
-  color: #fff;
+  font-size: 5.5dvh;
+  margin: 10dvh;
+  color: #ffffff;
+  text-align: center;
 }
 
 .cardsContainerHome {
@@ -32,9 +31,8 @@
 }
 
 .feedTitle {
-  font-size: 6dvh;
+  font-size: 5.5dvh;
   margin: 10dvh;
-
   color: #ffffff;
   text-align: center;
 }
