@@ -11,7 +11,7 @@ export function Footer() {
         // </footer>
         <footer>
             <div className={style.primeiraLinhaFooter}>
-                    <p><div className={style.logoFooter}>
+                <p><div className={style.logoFooter}>
                     <img src="../img/logo.png" alt="Logo" />
                     <h1 id="kailow-nav-nome">Kailow</h1>
                 </div> </p>
@@ -52,19 +52,18 @@ export function Footer() {
                         </ul>
                     </div>
                     <div className={style.footerCol}>
-                        <h4>Deixe seu feedback!</h4>
                         <div className={style.formSub}>
+                            <h4 className={style.feedback}>Deixe seu feedback!</h4>
                             <form>
-                                <input type="email" placeholder="Digite aqui" required />
-                                    <button>Enviar</button>
+                                <input type="email" placeholder="Digite aqui" required className={style.feedbackInput} />
+                                <button className={style.feedbackBtn}>Enviar</button>
                             </form>
-                        </div>
-
-                        <div className={style.mediasSocias}>
-                            <a href="https://www.facebook.com/?locale=pt_BR"> <Icon.Facebook /> </a>
-                            <a href="https://www.instagram.com/"> <Icon.Instagram style={{color:"#fff"}} /> </a>
-                            <a href="https://x.com/?lang=pt"> <Icon.TwitterX /> </a>
-                            <a href="https://www.messenger.com/?locale=pt_BR"> <Icon.Messenger /> </a>
+                            <div className={style.mediasSocias}>
+                                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"> <Icon.Facebook /> </a>
+                                <a href="https://www.instagram.com/" target="_blank"> <Icon.Instagram style={{ color: "#FF1493" }} /> </a>
+                                <a href="https://x.com/?lang=pt" target="_blank"> <Icon.TwitterX style={{ color: "#000" }} /> </a>
+                                <a href="https://www.messenger.com/?locale=pt_BR" target="_blank"> <Icon.Messenger style={{ color: "blue" }} /> </a>
+                            </div>
                         </div>
 
                     </div>

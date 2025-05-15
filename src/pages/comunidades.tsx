@@ -1,5 +1,5 @@
 import styles from "../style/comunidades.module.css"; // Supondo que você tenha um arquivo CSS Module
-import { Nav } from "../components/navbar";
+import Nav from "../components/navbar";
 import * as Icon from 'react-bootstrap-icons';
 import { Footer } from "../components/footer";
 

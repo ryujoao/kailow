@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Nav } from '../components/navbar';
+import Nav from '../components/navbar';
 import style from '../style/perfil.module.css';
 import * as Icon from 'react-bootstrap-icons';
 

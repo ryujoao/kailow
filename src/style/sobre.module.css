@@ -4,13 +4,17 @@
 }
 
 .containerSobre {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 120dvh;
-    min-height: fit-content;
+  background: #071739;
+  color: #cdd5db;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 50px 100px 20px 100px;
+  border-radius: 30px;
+  margin-bottom: 70px;
 }
 
 .tituloSobre {
@@ -19,15 +23,58 @@
     margin-bottom: 30px;
     color: #fff;
 }
+.tituloSobre h1{
+    text-transform: capitalize;
+  font-size: 5.5dvh;
+  position: relative;
+  color: #cdd5db;
+  text-transform: uppercase;
+}
 
 .textoSobre {
-    background: rgba(255, 255, 255, 0.36);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 900px;
-    font-size: 30px;
-    text-align: justify;
+     text-align: center;
+   
+}
+
+ul li {
+    list-style: none;
+  font-size: 20px;
+}
+p{
+     font-size: 20px;
+}
+h1{
+     margin-top: 30px;
+  font-size: 35px;
+}
+
+.singleDev{
+     width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 280px;
+  overflow: hidden;
+}
+
+.singleDev img{
+     width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.devContent p{
+    margin: 0;
+  font-size: 15px;
+}
+
+.devs{
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }

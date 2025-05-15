@@ -1,5 +1,5 @@
 import { Cards } from '../components/cards'
-import { Nav } from '../components/navbar'
+import Nav from '../components/navbar'
 import style from '../style/home.module.css'
 import PerfilHome from '../components/perfilHome'
 

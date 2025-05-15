@@ -12,7 +12,7 @@
 .cardComuContainer {
   position: relative;
   /* padding-top: 10dvh; */
-  padding-bottom: 14dvh;
+  padding-bottom: 10dvh;
 }
 
 .title {
@@ -30,16 +30,17 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  width: 100%;
-  max-width: 1400px;
+  /* width: 100%; */
+  /* max-width: 1400px; */
   gap: 40px;
   padding: 0 1rem;
   margin: 0 auto;
 }
 
 .card {
-  width: 120dvh;
-  height: 35dvh;
+  width: 60dvh;
+  height: 35dvh; 
+  min-width: fit-content;
   min-height: fit-content;
   background-color: #071739;
   border-radius: 15px;
@@ -132,6 +133,14 @@ button {
   object-fit: cover;
 }
 
-.btnVerMais button {
-  background-color: #fff;
+.btnVerMais {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10dvh;
+}
+
+.btnVerMais button:hover {
+  background-color: #BCD4E6;
+  color: #000;
+  
 }

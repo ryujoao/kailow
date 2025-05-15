@@ -3,7 +3,6 @@
     background: linear-gradient(90deg, #071739, #1545aa);
     line-height: 1.6;
     position: relative;
-    justify-content: center;
 }
 
 .containerEditarPerfil {
@@ -21,7 +20,10 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     width: 90dvh;
-    padding: 10px;
+    padding: 40px 0px 40px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .userEditarPerfil {
@@ -60,21 +62,24 @@
 }
 
 .textSeuPerfil {
+    text-align: center;
     font-size: 30px;
-    color: #245270;
+    color: #071739;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .formEditarPerfil {
-    width: 100%;
-    max-width: 400px;
+    width: 70dvh;
+    max-width: 400dvh;
+    min-height: fit-content;
     margin: 20px auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .formEditarPerfil label {
@@ -108,4 +113,15 @@
 
 .formEditarPerfil button:hover {
     background-color: #1b3a4b;
+}
+
+.inputEditarDescricao {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    resize: none;
 }

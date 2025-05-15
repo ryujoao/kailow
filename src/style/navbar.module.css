@@ -196,3 +196,7 @@ nav {
   gap: 20px;
   cursor: pointer;
 }
+
+.activeCategoria{
+  color: #1b9bee !important;
+}

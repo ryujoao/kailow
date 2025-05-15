@@ -1,4 +1,4 @@
-import { Nav } from '../components/navbar';
+import Nav from '../components/navbar';
 import style from '../style/editarPerfil.module.css';
 import * as Icon from 'react-bootstrap-icons'
 
@@ -23,18 +23,18 @@ export default function EditarPerfil() {
             <div className={style.bodyEditarPerfil}>
                 <Nav />
                 <div className={style.containerEditarPerfil}>
-                    <div className={style.cardEditarPerfil}>
                         <h1 className={style.textSeuPerfil}>Seu perfil</h1>
+                    <div className={style.cardEditarPerfil}>
 
                         <div className={style.userEditarPerfil}>
-                            <Icon.PersonCircle style={{ color: "#CDD5DB", height: "15dvh", width: "15dvh", marginBottom:"15px" }} />
+                            <Icon.PersonCircle style={{ color: "#CDD5DB", height: "15dvh", width: "15dvh", marginBottom: "15px" }} />
                             {/* imagem do usuario */}
 
                             <section style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                            <h3>Antonio Kobayashi</h3>
-                            {/* nome usuario */}
+                                <h3>Antonio Kobayashi</h3>
+                                {/* nome usuario */}
 
-                            <Icon.Camera style={{cursor: "pointer", color:"#fff", width: "25px", height:"25px"}}/>
+                                <Icon.Camera style={{ cursor: "pointer", color: "#fff", width: "25px", height: "25px" }} />
                             </section>
                         </div>
 
@@ -43,13 +43,41 @@ export default function EditarPerfil() {
                                 <label className={style.labelEditarPerfil} htmlFor='email'>E-mail</label>
                                 <input className={style.inputEditarPerfil} id='email' type="text" value="antonio@gmail.com" required />
 
+                                <label className={style.labelEditarPerfil} htmlFor='descricao'>Adicione sua descrição</label>
+                                <textarea className={style.inputEditarDescricao} id='descricao' rows={8} placeholder="Digite sua descrição" required></textarea>
+
                                 <label className={style.labelEditarPerfil} htmlFor='senha'>Senha atual</label>
-                                <input className={style.inputEditarPerfil} id='senha' type="password" placeholder="Digite sua nova senha" required />
+                                <input className={style.inputEditarPerfil} id='senha' type="password" placeholder="Digite sua senha" required />
 
-                                <label className={style.labelEditarPerfil} htmlFor='senha'>Nova senha</label>
-                                <input className={style.inputEditarPerfil} id='senha' type="password" placeholder="Digite sua nova senha" required />
+                                <label className={style.labelEditarPerfil} htmlFor='novaSenha'>Nova senha</label>
+                                <input className={style.inputEditarPerfil} id='novaSenha' type="password" placeholder="Digite sua nova senha" required />
 
-                                <button type="submit">Salvar Aterações</button>
+                                <label htmlFor="curriculo">Currículo (PDF):</label>
+                                <input type="file" id="curriculo" name="curriculo" accept=".pdf" required></input>
+
+                                <div className={style.interesseVagas}>
+                                    <div className={style.checkboxItems}>
+                                        <label htmlFor="vaga1">Estágio</label>
+                                        <input type="checkbox" id="vaga1" name="vaga1"/>
+                                    </div>
+                                    <div className={style.checkboxItems}>
+                                        <label htmlFor="vaga2">Aprendiz</label>
+                                        <input type="checkbox" id="vaga2" name="vaga2"/>
+                                    </div>
+                                    <div className={style.checkboxItems}>
+                                        <label htmlFor="vaga3">Freelancer</label>
+                                        <input type="checkbox" id="vaga3" name="vaga3"/>
+                                    </div>
+                                    <div className={style.checkboxItems}>
+                                        <label htmlFor="vaga4">CLT</label>
+                                        <input type="checkbox" id="vaga4" name="vaga4"/>
+                                    </div>
+                                    <div className={style.checkboxItems}>
+                                        <label htmlFor='vaga5'></label>
+                                    </div>
+                                </div>
+
+                                <button type="submit">Salvar Alterações</button>
                             </form>
                         </div >
                     </div>

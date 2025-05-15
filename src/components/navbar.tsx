@@ -1,12 +1,13 @@
 import style from "../style/navbar.module.css"
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import * as Icon from 'react-bootstrap-icons';
 import DropdownHome from "./dropdownHome";
 import { useState } from "react";
 
-export function Nav() {
+export default function Nav() {
 
     const navigate = useNavigate()
+    const location = useLocation();
 
     function home() {
         navigate('/home')
@@ -19,6 +20,11 @@ export function Nav() {
 
     const [mostrarConfig, setMostrarConfig] = useState(false)
 
+    const isActive = (path: string) => location.pathname === path;
+
+
+
+
     return (
 
         <><nav>
@@ -28,9 +34,9 @@ export function Nav() {
                     <h1 className={style.kailow}>Kailow</h1>
                 </div>
                 <div className={style.navCategorias}>
-                    <a href="/sobre">Sobre</a>
-                    <a href="/comunidades">Comunidades</a>
-                    <a href="/perfil">Perfil</a>
+                    <Link to="/sobre" className={isActive("/sobre") ? style.activeCategoria : ""}>Sobre</Link>
+                    <Link to="/comunidades" className={isActive("/comunidades") ? style.activeCategoria : ""}>Comunidades</Link>
+                    <Link to="/perfil" className={isActive("/perfil") ? style.activeCategoria : ""}>Perfil</Link>
                 </div>
 
                 <form className={style.formSearch}>

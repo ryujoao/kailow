@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import styles from "../style/comunidades.module.css";
 import * as Icon from 'react-bootstrap-icons'
 
 
 export function Cards() {
+  const navigate = useNavigate();
   // const [isFilled, setIsFilled] = useState(false);
   // const Fill = () => {
   //   setIsFilled(!isFilled);
@@ -13,6 +15,9 @@ export function Cards() {
   //   setIsFilled2(!isFilled2);
   // };
 
+  function Comunidades() {
+    navigate('/comunidades');
+  }
 
   return (
     <>
@@ -111,7 +116,7 @@ export function Cards() {
         </div>
 
         <div className={styles.btnVerMais}>
-          <button>Ver Mais</button>
+          <button onClick={Comunidades}>Ver Mais</button>
         </div>
       </div>
     </>
