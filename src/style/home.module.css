@@ -4,7 +4,9 @@
   font-family: "Montserrat";
 }
 
+
 .homeContainer {
+  display: flex;
   font-family: "Montserrat", sans-serif;
   background: linear-gradient(90deg, #071739, #1545aa);
   position: relative;
@@ -14,6 +16,7 @@
 .homeBody {
   padding-top: 20dvh;
 }
+
 
 .cardsTitulo {
   font-size: 5.5dvh;

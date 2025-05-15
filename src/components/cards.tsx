@@ -111,7 +111,7 @@ export function Cards() {
         </div>
 
         <div className={styles.btnVerMais}>
-          <button>Ver Mais </button>
+          <button>Ver Mais</button>
         </div>
       </div>
     </>

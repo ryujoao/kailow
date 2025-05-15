@@ -1,4 +1,5 @@
 import style from "../style/footer.module.css"
+import * as Icon from 'react-bootstrap-icons';
 
 export function Footer() {
     return (
@@ -51,19 +52,19 @@ export function Footer() {
                         </ul>
                     </div>
                     <div className={style.footerCol}>
-                        <h4>Se Inscreva!</h4>
+                        <h4>Deixe seu feedback!</h4>
                         <div className={style.formSub}>
                             <form>
-                                <input type="email" placeholder="Digite o seu e-mail" required />
-                                    <button>Inscrever-se</button>
+                                <input type="email" placeholder="Digite aqui" required />
+                                    <button>Enviar</button>
                             </form>
                         </div>
 
                         <div className={style.mediasSocias}>
-                            <a href="#"> <i className="fa fa-facebook"></i> </a>
-                            <a href="#"> <i className="fa fa-instagram"></i> </a>
-                            <a href="#"> <i className="fa fa-twitter"></i> </a>
-                            <a href="#"> <i className="fa fa-linkedin"></i> </a>
+                            <a href="https://www.facebook.com/?locale=pt_BR"> <Icon.Facebook /> </a>
+                            <a href="https://www.instagram.com/"> <Icon.Instagram style={{color:"#fff"}} /> </a>
+                            <a href="https://x.com/?lang=pt"> <Icon.TwitterX /> </a>
+                            <a href="https://www.messenger.com/?locale=pt_BR"> <Icon.Messenger /> </a>
                         </div>
 
                     </div>
