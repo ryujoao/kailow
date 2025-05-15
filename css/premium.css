@@ -1,21 +1,18 @@
-/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  background: url(../img/azul.jpg);
+}
 
-  }
-  body{
-    background: url(../img/azul.jpg);
-  }
-  
-  /* NAV BAR */
-  .nav-container {
+.nav-container {
     height: 70px;
     width: 100%;
     margin: 0 auto;
-    background-color: #071739;
+    background-color: 245270;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,126 +97,223 @@
     height: 40px;
     cursor: pointer;
   }
-  .fotoUsuario {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .fotoUsuario img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-  }
 
-  main {
-    padding: 40px;
-  }
-  
-  .title {
-    font-size: 24px;
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
-  
-  .cardsComunidades {
-    display: flex;
-    gap: 40px;
-  }
-  
-  .card {
-    width: 560px;
-    height: 280px;
-    background-color: #071739;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4), 0px 10px 10px rgba(0, 0, 0, 0.3);
-}
-  
-  .card h2 {
-  margin-top: 10px;
-  font-size: 18px;
-  margin-bottom: 6px;
-  font-weight: bold;
-   
-  }
-  
-  .card p {
-    font-size: 13px;
-    gap: 50px;
-    font-weight: bold;
-  
-  }
-  .imgComunidade{
-    width: 100%;
-    height: 120px;
-    border-radius: 14px;
-  }
-
-  button {
-    background-color: #071739;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  .imgContainer {
-    position: relative;
-    width: 100%; /* Ajuste conforme necessário */
-    height: 140px; /* Ajuste conforme necessário */
-  }
-  
-  .imgComunidaderes {
-    width: 100%;
-    height: 120px;
-    border-radius: 14px;
-    filter: blur(4px);
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .imgComunidaderee {
-    width: 100px;
-    height: 100px;
-    border-radius: 64px;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   object-fit: cover;
-  
-  }
-
-  .navegadorCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .navegadorCard button {
-    background-color: transparent;
-    color: #071739;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  /* Footer */
-footer{
+header {
   background-color: #071739;
+  padding: 10px 20px;
+}
+
+header .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .nav-categorias a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+.navbar {
+  background: #333;
+  font-family: Arial, sans-serif;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list li a {
+  color: white;
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Faz descer para baixo do item pai */  
+  left: 0;
+  background: #245270;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+  border-bottom: 1px solid #245270;
+}
+
+.dropdown-menu li a:hover {
+  background: #245270;
+}
+
+
+/*-----------------------------FINAL DA NAV BAR--------------------------------------------------------*/
+
+
+
+
+.tituloPlano {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-top: 40px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.subPlano {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.containerPlanos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin: 40px 0;
+}
+
+.cardPremium {
+  background: #fff;
+  border: 1.5px solid #e2e2e2;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(36,82,112,0.08);
+  width: 460px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.cardPremium:hover {
+  box-shadow: 0 8px 32px rgba(36,82,112,0.18);
+}
+
+.cardPremium .tag {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #a78bfa;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 4px 18px;
+  border-radius: 12px 12px 0 0;
+
+}
+
+.cardPremium .tag.recomendado {
+  background: #b2e2f2;
+  color: #245270;
+}
+
+.cardPremium.destaque {
+  border: 2.5px solid #a78bfa;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(167,139,250,0.18);
+}
+.preco-antigo {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.preco-novo {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2d1e70;
+  font-weight: bold;
+  margin: 12px 0 8px 0;
+}
+
+.preco-novo .mes {
+  font-size: 1.2rem;
+  color: #222;
+  font-weight: normal;
+}
+
+.descricao-pequena {
+  font-size: 0.78rem;
+  color: #888;
+  text-align: center;
+  max-width: 220px; /* ou ajuste conforme o visual desejado */
+}
+.btnEscolherPlano {
+  width: 50%;
+  padding: 12px 0;
+  margin: 18px 0 0 0;
+  background: transparent;
+  color: #5b21b6;
+  border: 2px solid #a78bfa;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btnEscolherPlano:hover {
+  background: #5b21b6;
+  color: #fff;
+}
+
+.economize {
+  background: #ede9fe;
+  color: #5b21b6;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 4px 16px;
+  font-size: 1.0rem;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.tituloDosPlanos {
+    color: #5b21b6;
+    margin-top: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 19px;
+}
+.descricao-pequena{
+  font-size: 13px;
+}
+
+/* FOOTER */
+
+footer{
+  background-color: gray;
   padding: 50px 0;
 }
 .container-footer{
@@ -338,7 +432,7 @@ justify-content: center;
 .logoFooter {
   display: flex;
   align-items: center;
-  color: white;
+  color: black;
   justify-content: center;
 
 }
@@ -348,4 +442,13 @@ justify-content: center;
   height: 50px;
   margin-right: 10px;
 }
-  
+.sub{
+  font-size: 10px;
+}
+
+
+/*-------------------------------------------------------------------------------------*/
+
+#temaEsc {
+  cursor: pointer;
+}

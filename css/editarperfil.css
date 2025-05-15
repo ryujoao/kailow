@@ -6,7 +6,10 @@
     
   
   }
-  
+
+  body {
+    background: url(../img/azul.jpg);
+  } 
   
   .nav-container {
     height: 70px;

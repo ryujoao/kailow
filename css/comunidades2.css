@@ -1,17 +1,20 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    
-    
+
   }
 
+  body{
+    background: url(../img/azul.jpg);
+  }
+ /* NAV BAR */
   .nav-container {
     height: 70px;
     width: 100%;
     margin: 0 auto;
-    background-color:#071739;
+    background-color: #071739;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,8 +23,8 @@
   
   .logo {
     display: flex;
-      align-items: center;
-      color: #fff;
+    align-items: center;
+    color: #fff;
   }
   
   .logo img {
@@ -40,7 +43,7 @@
   }
   
   .nav-categorias a {
-    color: #cfcbcb;
+    color: whitesmoke;
     text-decoration: none;
     font-size: 18px;
     padding: 5px 10px;
@@ -71,7 +74,7 @@
   }
   
   .pesquisa button {
-    margin-left: -35px;
+   margin-left: -35px;
     background: none;
     border: none;
     cursor: pointer;
@@ -84,6 +87,86 @@
   .pesquisa button:hover {
     opacity: 1;
   }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .fotoUsuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .fotoUsuario img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  main {
+    padding: 40px;
+  }
+
+  .navbar {
+  background: #333;
+  font-family: Arial, sans-serif;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list li a {
+  color: white;
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Faz descer para baixo do item pai */  
+  left: 0;
+  background: #245270;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+  border-bottom: 1px solid #245270;
+}
+
+.dropdown-menu li a:hover {
+  background: #245270;
+}
   
   .icons {
     display: flex;
@@ -130,3 +213,65 @@
     margin-top: 08px;
     font-weight: 700;
   }
+  .container-box {
+    width: 1500px;
+    height: 670px;
+    background-image: linear-gradient(to bottom, #d5d5d5, #d5d6d8, rgb(165, 165, 165));
+    margin-left: 310px;
+    margin-top: -62px;
+  }
+  .container-box h1{
+    color: black;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+  .container-box p{
+    color: #f2f2f2;
+    margin-top: -15px;
+    margin-left: 24px;
+  }
+  .menu  {
+    color: #f2f2f2;
+    margin-top: 45px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  .menu a {
+    outline: none;
+    font-size: 20px;
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 1px;
+    margin-left: px;
+    align-items: center;
+    display: flex;
+    flex-wrap:nowrap;
+    flex-direction: row;
+   font-weight: bold;
+  }
+  .sobre a:hover{
+    font-size: 30px;
+    
+  }
+   .imgTaparoxo img {
+    width: 1400px;
+    height: 500px;
+    margin-left: 40px;
+    
+    border: 1px solid;
+    border-radius: 7px;
+  }
+  .container-sobre{
+    color: white;
+    width: 900px;
+    height: 670px;
+    background-image: linear-gradient(to bottom, #d5d5d5, #d5d6d8, rgb(165, 165, 165));
+    margin-left: 255px;
+    margin-top: -222px;
+    
+  }
+   
+  
+  

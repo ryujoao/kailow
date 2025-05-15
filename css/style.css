@@ -7,96 +7,173 @@
   
 
 }
+body{
+  background: url(../img/azul.jpg);
+}
 
 
 .nav-container {
-  height: 70px;
-  width: 100%;
-  margin: 0 auto;
+    height: 70px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: 245270;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .logo h1 {
+    margin: 0;
+  }
+  
+  .nav-categorias {
+    display: flex;
+    gap: 100px;
+  }
+  
+  .nav-categorias a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-categorias a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .pesquisa {
+    display: flex;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .pesquisa input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cfcbcb;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    color: #071739;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .pesquisa button {
+    margin-left: -35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #071739;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .pesquisa button:hover {
+    opacity: 1;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+header {
   background-color: #071739;
+  padding: 10px 20px;
+}
+
+header .nav-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  align-items: center;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+header .nav-categorias a {
   color: #fff;
-}
-
-.logo img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-}
-
-.logo h1 {
-  margin: 0;
-}
-
-.nav-categorias {
-  display: flex;
-  gap: 100px;
-}
-
-.nav-categorias a {
-  color: whitesmoke;
   text-decoration: none;
-  font-size: 18px;
-  padding: 5px 10px;
-  transition: background-color 0.3s;
+  margin: 0 10px;
 }
 
-.nav-categorias a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+main {
+  padding: 20px;
 }
 
-.pesquisa {
+.navbar {
+  background: #fffdfd;
+  font-family: Arial, sans-serif;
+}
+
+.nav-list {
   display: flex;
-  align-items: center;
-  width: 300px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.pesquisa input {
-  width: 100%;
-  padding: 10px;
-  border: 2px solid #cfcbcb;
-  border-radius: 25px;
-  outline: none;
-  font-size: 16px;
-  color: #071739;
-  background-color: #fff;
-  transition: border-color 0.3s ease;
+.nav-list li {
+  position: relative;
 }
 
-.pesquisa button {
-  margin-left: -35px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: #071739;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+.nav-list li a {
+  color: white;
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
 }
 
-.pesquisa button:hover {
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Faz descer para baixo do item pai */  
+  left: 0;
+  background: #245270;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.dropdown:hover .dropdown-menu {
   opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.icons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.dropdown-menu li a {
+  padding: 10px 20px;
+  border-bottom: 1px solid #245270;
 }
 
-.icons img {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
+.dropdown-menu li a:hover {
+  background: #245270;
 }
 
 
@@ -106,6 +183,8 @@
   margin-left: 100px;
   margin-top: 12px;
   width: 400px;
+  color: white;
+  
 }
 
 /* IMAGEM HOME */
@@ -118,6 +197,9 @@
   color: #071739;
   background-color: #ffc0d4;
   font-size: 24px;
+}
+.opçõesAcces{
+  font-size: 19px;
 }
 
 /*-------------------------------------------------------------------------------------*/
@@ -186,6 +268,7 @@
   gap: 100px;
   margin-left: 11px;
   margin-top: 15px;
+  color: white;
 }
 
 .ratingReviewSells img {
@@ -201,13 +284,16 @@
   justify-content: center;
   align-items: center;
 }
+.h5 {
+  color: white;
+}
 
 /*-------------------------------------------------------------------------------------*/
 
 /* FOOTER */
 
 footer{
-  background-color: gray;
+  background-color: #071739;
   padding: 50px 0;
 }
 .container-footer{
@@ -326,7 +412,7 @@ justify-content: center;
 .logoFooter {
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
   justify-content: center;
 
 }
@@ -339,3 +425,7 @@ justify-content: center;
 
 
 /*-------------------------------------------------------------------------------------*/
+
+#temaEsc {
+  cursor: pointer;
+}

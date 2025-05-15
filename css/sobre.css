@@ -9,7 +9,8 @@
   height: 70px;
   width: 100%;
   margin: 0 auto;
-  background-color: #071739;
+  background-color: transparent;
+  border: 1px solid #071739;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +20,7 @@
 .logo {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #cdd5db;
 }
 
 .logo img {
@@ -38,7 +39,7 @@
 }
 
 .nav-categorias a {
-  color: #cfcbcb;
+  color: #cdd5db;
   text-decoration: none;
   font-size: 18px;
   padding: 5px 10px;
@@ -84,18 +85,15 @@
 }
 
 .icons {
+  margin-right: 100px;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .icons img {
   width: 40px;
   height: 40px;
   cursor: pointer;
-}
-
-.perfil {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -103,9 +101,10 @@
 }
 
 /* Sobre */
-body{
-  background: url(../img/azul.jpg);
 
+
+body {
+  background: url(../img/azul.jpg);
 }
 .title {
   text-align: center;
@@ -113,7 +112,7 @@ body{
 }
 .title h1 {
   text-transform: capitalize;
-  font-size: 40px;
+  font-size: 5.5dvh;
   position: relative;
   /* display: inline-block; */
   color: #cdd5db;
@@ -121,37 +120,193 @@ body{
 }
 
 .container {
-  background: #1545aa; 
+  background: #071739;
   color: #cdd5db;
+  width: 100%;
+  max-width: 1100px;
   text-align: center;
-  width: 90%;
-  max-width: 800px;
+  display: flex;
   margin: 0 auto;
   margin-top: 20px;
-  padding: 20px;
-  border: 2px solid rgb(113, 107, 107);
- 
+  padding: 50px 100px 20px 100px;
+  border-radius: 30px;
+  margin-bottom: 70px;
+}
+.secSobre {
+  text-align: center;
 }
 
-ul li{
+ul li {
   list-style: none;
   font-size: 20px;
 }
 
 p {
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
   font-size: 20px;
 }
- 
-h1{
-  font-size: 25px;
+
+h1 {
+  margin-top: 30px;
+  font-size: 35px;
+}
+.single-dev{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 280px;
+  overflow: hidden;
+   
 }
 .single-dev img{
-  margin-right: 30px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  width:100px;
-  height:100px;
- 
+  object-fit: cover;
 }
+.dev-content p {
+  margin: 0;
+  font-size: 15px;
+}
+.devs{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer{
+  background-color: #071739;
+  padding: 50px 0;
+}
+.container-footer{
+  max-width: 1500px;
+  margin: auto;
+}
+.row-footer{
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.footer-col{
+  width: 25%;
+}
+
+.footer-col h4{
+  font-size: 22px;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500;
+  position: relative; /*Posiciona um elemento em relação à sua posição original, ou seja, relativa a si mesmo*/
+  text-transform: uppercase; /*Deixar todas as letras de um texto em maiúsculas*/
+}
+
+
+.footer-col ul{
+  list-style: none;
+}
+.footer-col ul li{
+  margin: 10px 0;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize; /*Coloca em maiúscula a primeira letra de cada palavra no texto selecionado*/
+  color: white;
+  text-decoration: none; /* remove a decoração de texto, como o sublinhado*/
+  font-weight: 300;
+  display: block; /* define que um elemento deve ocupar uma linha inteira, como um bloco, na página*/
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #cecdcd;
+  padding-left: 10px;
+}
+.footer-col .medias-socias{
+  margin-top: 30px;
+}
+.footer-col .medias-socias {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  border-radius: 50%;
+
+}
+.footer-col .medias-socias  i{
+  font-size: 20px;
+}
+
+.footer-col .medias-socias :hover{
+  color: gray;
+  background-color: white;
+}
+.footer-col .form-sub input{
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  background-color: gray;
+}
+.footer-col .form-sub input::placeholder{
+  color: white;
+}
+.footer-col .form-sub button{
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px; 
+  font-size: 17px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: gray;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: white;        
+}
+/* Responsivo */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+@media (max-width:600px) {
+  .footer-col{
+      width: 100%;
+  }
+
+  }
+
+
+#footerHome {
+  background-color: gray;
+  height: 522px;
+}
+
+.primeiraLinhaFooter {
+  margin-bottom: 100px;
+}
+
+.primeiraLinhaFooter p {
+display: flex;
+justify-content: center;
+}
+
+.logoFooter {
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+
+}
+
+.logoFooter img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+

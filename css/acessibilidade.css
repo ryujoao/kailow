@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body{
+    background: url(../img/azul.jpg);
+  }
+  
+  
+  .nav-container {
+    height: 70px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #071739;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .logo h1 {
+    margin: 0;
+  }
+  
+  .nav-categorias {
+    display: flex;
+    gap: 100px;
+  }
+  
+  .nav-categorias a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-categorias a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .pesquisa {
+    display: flex;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .pesquisa input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cfcbcb;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    color: #071739;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .pesquisa button {
+    margin-left: -35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #071739;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .pesquisa button:hover {
+    opacity: 1;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icons img {
+    height: 40px;
+    cursor: pointer;
+  }
