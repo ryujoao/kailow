@@ -11,7 +11,7 @@ export default function Comunidades() {
             <div className={styles.comuContainer}>
                 {/* Minhas Comunidades */}
                 <section className={styles.myComunidades}>
-                    <h1 className={styles.title}>Minhas Comunidades</h1>
+                    <h1 className={styles.titleComu}>Minhas Comunidades</h1>
 
                     <div className={styles.cardsComunidades}>
 
@@ -39,7 +39,7 @@ export default function Comunidades() {
                                     Um espaço dedicado a tutores que buscam os melhores lugares para
                                     passear com seus pets na região metropolitana de SP.
                                 </p>
-                                <button>Sair</button>
+                                <button className={styles.comunidadesBtn}>Sair</button>
                             </div>
                         </div>
 
@@ -64,9 +64,9 @@ export default function Comunidades() {
                                     Moema
                                 </h5>
                                 <p className={styles.comunidadeDescricao}>
-                                    Networking e tendências de marketing digital para freelancers.
+                                    Networking e tendências de marketing digital para freelancers na Moskou.
                                 </p>
-                                <button>Sair</button>
+                                <button className={styles.comunidadesBtn}>Sair</button>
                             </div>
                         </div>
 
@@ -94,7 +94,7 @@ export default function Comunidades() {
                                     Tudo sobre o universo de supermercados na região! Aqui você
                                     encontra dicas, oportunidades de trabalho.
                                 </p>
-                                <button>Sair</button>
+                                <button className={styles.comunidadesBtn}>Sair</button>
                             </div>
                         </div>
 
@@ -105,7 +105,7 @@ export default function Comunidades() {
 
                 {/* Sugestões para você */}
                 <section className={styles.sugComunidades}>
-                    <h1 className={styles.title}>Sugestões</h1>
+                    <h1 className={styles.titleComu}>Sugestões</h1>
 
                     <div className={styles.cardsComunidades}>
 
@@ -178,7 +178,7 @@ export default function Comunidades() {
                                 />
                             </div>
                             <div className={styles.comunidadesInfo}>
-                                <h2 className={styles.comunidadeSlogan} >Loja de artigos esportivos Inter League</h2>
+                                <h2 className={styles.comunidadeSlogan} >Loja de artigos esportivos InterLeague</h2>
                                 <h5 className={styles.comunidadeLocal}>
                                     <Icon.GeoAltFill className={styles.iconMapComunidades} />
                                     Vila Madalena

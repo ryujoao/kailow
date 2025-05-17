@@ -1,7 +1,6 @@
 footer {
   background-color: #071739;
   padding: 50px 0;
-
 }
 
 .containerFooter {
@@ -11,11 +10,12 @@ footer {
 
 .rowFooter {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .footerCol {
-  width: 25%;
+  width: 22%;
 }
 
 .footerCol h4 {
@@ -103,7 +103,7 @@ footer {
 }
 
 .formSub {
-  width: 40dvh;
+  width:100%;
 }
 
 /* Responsivo */
@@ -130,15 +130,20 @@ footer {
 
 .logoFooter {
   display: flex;
+  flex-direction: row;
   align-items: center;
   color: #cdd5db;
   justify-content: center;
 }
 
 .logoFooter img {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   margin-right: 10px;
+}
+
+.kailowFooter {
+  font-size: 40px;
 }
 
 .mediasSocias a {

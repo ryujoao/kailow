@@ -10,6 +10,8 @@
     padding-bottom: 15dvh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .cardEditarPerfil {
@@ -63,11 +65,10 @@
 
 .textSeuPerfil {
     text-align: center;
-    font-size: 30px;
-    color: #071739;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-size: 5.5dvh;
+    margin-bottom: 14dvh;
+    color: #cdd5db;
+    margin-top: 15px;
 }
 
 .formEditarPerfil {
@@ -75,21 +76,22 @@
     max-width: 400dvh;
     min-height: fit-content;
     margin: 20px auto;
-    padding: 20px;
+    padding: 40px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
 
-.formEditarPerfil label {
+.labelEditarPerfil{
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
     color: #245270;
+    text-align: left;
 }
 
-.formEditarPerfil input {
+.inputEditarPerfil {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -124,4 +126,30 @@
     font-size: 14px;
     box-sizing: border-box;
     resize: none;
+}
+
+
+.interesseVagas {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2dvh;
+}
+
+
+.checkboxItems {
+  display: flex;
+  margin-bottom: 4dvh;
+  gap: 10px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.interesseCheckbox {
+    margin: 0;
+    box-sizing: border-box;
 }

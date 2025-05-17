@@ -1,118 +1,100 @@
+// import { useEffect, useState } from 'react';
 import Nav from '../components/navbar';
 import style from '../style/editarPerfil.module.css';
 import * as Icon from 'react-bootstrap-icons'
+// import { Link } from 'react-router-dom';
+
+export type EditarPerfil = {
+    id: number,
+    descricao: string,
+    // imgUrl: ImageSourcePropType
+    // interesse: string
+}
 
 export default function EditarPerfil() {
 
-    //       const cameraIcon = document.querySelector(".fotoEditarPerfil h3 img");
-    //   const fileInput = document.getElementById("fileInput");
+    // const [editarPerfil, setEditarPerfil] = useState<EditarPerfil[]>()
 
-    //   cameraIcon.addEventListener("click", () => {
-    //     fileInput.click(); // Abre o seletor de arquivos
-    //   });
+    // function fetchEditarPerfil() {
+    //     fetch("http://localhost:3000/perfil")
+    //         .then((response) => response.json())
+    //         .then(data => { console.log("Dados recebidos:", data); setEditarPerfil(data)})
+    // }
 
-    //   fileInput.addEventListener("change", (event) => {
-    //     const file = event.target.files[0];
-    //     if (file) {
-    //       alert(`Arquivo selecionado: ${file.name}`);
-    //       // Aqui você pode implementar a lógica para enviar ou exibir a imagem
-    //     }
-    //   });
+    // useEffect(() => {
+    //     fetchEditarPerfil()
+    // }, [])
+
     return (
         <>
             <div className={style.bodyEditarPerfil}>
                 <Nav />
                 <div className={style.containerEditarPerfil}>
-                        <h1 className={style.textSeuPerfil}>Seu perfil</h1>
-                    <div className={style.cardEditarPerfil}>
+                    <h1 className={style.textSeuPerfil}>Seu perfil</h1>
 
-                        <div className={style.userEditarPerfil}>
-                            <Icon.PersonCircle style={{ color: "#CDD5DB", height: "15dvh", width: "15dvh", marginBottom: "15px" }} />
-                            {/* imagem do usuario */}
+                    {/* {
+                        editarPerfil?.map((item) => ( */}
+                                <div className={style.cardEditarPerfil}>
+                                    <div className={style.userEditarPerfil}>
+                                        <Icon.PersonCircle style={{ color: "#CDD5DB", height: "15dvh", width: "15dvh", marginBottom: "15px" }} />
+                                        {/* imagem do usuario */}
 
-                            <section style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                                <h3>Antonio Kobayashi</h3>
-                                {/* nome usuario */}
+                                        <section style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                                            <h3 style={{ color: "#fff" }}>Antonio Kobayashi</h3>
+                                            {/* nome usuario */}
 
-                                <Icon.Camera style={{ cursor: "pointer", color: "#fff", width: "25px", height: "25px" }} />
-                            </section>
-                        </div>
-
-                        <div className={style.formEditarPerfil}>
-                            <form>
-                                <label className={style.labelEditarPerfil} htmlFor='email'>E-mail</label>
-                                <input className={style.inputEditarPerfil} id='email' type="text" value="antonio@gmail.com" required />
-
-                                <label className={style.labelEditarPerfil} htmlFor='descricao'>Adicione sua descrição</label>
-                                <textarea className={style.inputEditarDescricao} id='descricao' rows={8} placeholder="Digite sua descrição" required></textarea>
-
-                                <label className={style.labelEditarPerfil} htmlFor='senha'>Senha atual</label>
-                                <input className={style.inputEditarPerfil} id='senha' type="password" placeholder="Digite sua senha" required />
-
-                                <label className={style.labelEditarPerfil} htmlFor='novaSenha'>Nova senha</label>
-                                <input className={style.inputEditarPerfil} id='novaSenha' type="password" placeholder="Digite sua nova senha" required />
-
-                                <label htmlFor="curriculo">Currículo (PDF):</label>
-                                <input type="file" id="curriculo" name="curriculo" accept=".pdf" required></input>
-
-                                <div className={style.interesseVagas}>
-                                    <div className={style.checkboxItems}>
-                                        <label htmlFor="vaga1">Estágio</label>
-                                        <input type="checkbox" id="vaga1" name="vaga1"/>
+                                            <Icon.Camera style={{ cursor: "pointer", color: "#fff", width: "25px", height: "25px" }} />
+                                        </section>
                                     </div>
-                                    <div className={style.checkboxItems}>
-                                        <label htmlFor="vaga2">Aprendiz</label>
-                                        <input type="checkbox" id="vaga2" name="vaga2"/>
-                                    </div>
-                                    <div className={style.checkboxItems}>
-                                        <label htmlFor="vaga3">Freelancer</label>
-                                        <input type="checkbox" id="vaga3" name="vaga3"/>
-                                    </div>
-                                    <div className={style.checkboxItems}>
-                                        <label htmlFor="vaga4">CLT</label>
-                                        <input type="checkbox" id="vaga4" name="vaga4"/>
-                                    </div>
-                                    <div className={style.checkboxItems}>
-                                        <label htmlFor='vaga5'></label>
-                                    </div>
+
+                                    <div className={style.formEditarPerfil}>
+                                        <form>
+                                            <label className={style.labelEditarPerfil} htmlFor='email'>E-mail</label>
+                                            <input className={style.inputEditarPerfil} id='email' type="text" value="antonio@gmail.com" required />
+
+                                            <label className={style.labelEditarPerfil} htmlFor='descricao'>Adicione sua descrição</label>
+                                            <textarea className={style.inputEditarDescricao} id='descricao' rows={8} placeholder="Digite sua descrição" ></textarea>
+                                            {/* <textarea className={style.inputEditarDescricao} id='descricao' rows={8} placeholder="Digite sua descrição" >{item.descricao}</textarea> */}
+
+                                            <label className={style.labelEditarPerfil} htmlFor='senha'>Senha atual</label>
+                                            <input className={style.inputEditarPerfil} id='senha' type="password" placeholder="Digite sua senha" required />
+
+                                            <label className={style.labelEditarPerfil} htmlFor='novaSenha'>Nova senha</label>
+                                            <input className={style.inputEditarPerfil} id='novaSenha' type="password" placeholder="Digite sua nova senha" required />
+
+                                            <label className={style.labelEditarPerfil} htmlFor="curriculo">Currículo (PDF):</label>
+                                            <input className={style.inputEditarPerfil} type="file" id="curriculo" name="curriculo" accept=".pdf" ></input>
+
+                                            <div className={style.interesseVagas}>
+                                                <div className={style.checkboxItems}>
+                                                    <label className={style.labelEditarPerfil} htmlFor="vaga1">Estágio</label>
+                                                    <input type="checkbox" id="vaga1" name="vaga1" className={style.interesseCheckbox} />
+                                                </div>
+                                                <div className={style.checkboxItems}>
+                                                    <label className={style.labelEditarPerfil} htmlFor="vaga2">Aprendiz</label>
+                                                    <input type="checkbox" id="vaga2" name="vaga2" className={style.interesseCheckbox} />
+                                                </div>
+                                                <div className={style.checkboxItems}>
+                                                    <label className={style.labelEditarPerfil} htmlFor="vaga3">Freelancer</label>
+                                                    <input type="checkbox" id="vaga3" name="vaga3" className={style.interesseCheckbox} />
+                                                </div>
+                                                <div className={style.checkboxItems}>
+                                                    <label className={style.labelEditarPerfil} htmlFor="vaga4">CLT</label>
+                                                    <input type="checkbox" id="vaga4" name="vaga4" className={style.interesseCheckbox} />
+                                                </div>
+                                            </div>
+
+                                            <button type="submit">Salvar Alterações</button>
+                                        </form>
+                                    </div >
                                 </div>
+                        {/* ))
+                    } */}
 
-                                <button type="submit">Salvar Alterações</button>
-                            </form>
-                        </div >
-                    </div>
+
                 </div >
 
-            </div>
-
-
-
-            {/* <h2 id="textSeuPerfil">Seu Perfil</h2>
-            <div class="fotoEditarPerfil">
-               <img src="../img/iconeDapaginaPErfil.jpg" alt="">
-               <h3>Antonio Kobayashi <img src="../img/camera.svg" alt=""></h3>
-            </div>
-
-            <div class="formEditarPerfil">
-              <form action="/atualizarPerfil" method="POST">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" value="Antonio Kobayashi" required>
-            
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" value="antonio@email.com" required>
-            
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua nova senha">
-            
-                <button type="submit">Salvar Alterações</button>
-              </form>
-            </div>
-
-            
-  
-    
-
-            <input type="file" id="fileInput" style="display: none;" accept="image/*"></input> */}
+            </div >
         </>
     )
 }

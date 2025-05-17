@@ -1,63 +1,52 @@
+/* ...existing code... */
 
-  /* Parte do conteúdo do projeto */
+/* Troque todos os seletores para camelCase e use :global para elementos externos se necessário */
+
 .mainContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 70px;
+  padding: 30px;
+  gap: 40px;
   margin: 0 auto;
-  background: linear-gradient(90deg, #071739, #1545aa);
-  position: relative ;
-  height: 100vh;
 }
 
-/* Parte das informações do perfil*/
 .profileSection {
   flex: 1;
   max-width: 550px;
 }
 
-
-/* O título escrito "perfil" */
 .profileTitle {
   font-size: 24px;
   margin-bottom: 25px;
   color: #665e5e;
   text-align: center;
 }
-/* foto de perfil */
+
 .profileImage {
   display: flex;
   justify-content: center;
-  height: 15%; 
+  height: 15%;
 }
 
 .profileImage img {
   border-radius: 100px;
 }
 
-/* avaliação de perfil */
 .starProfile {
   padding: 10px;
-  display: center;
   text-align: center;
 }
 
 .avaliaPerfil {
   display: inline-block;
-  font-family: bold;
+  font-weight: bold;
   font-size: 22px;
 }
 
-/* A escrita depois da foto*/
 .profileInfo {
-  /* padding: 20px; */
-  /* border-radius: 8px; */
-  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-
-/* Nome do dono do perfil*/
 .profileName {
   font-size: 20px;
   color: #665e5e;
@@ -66,14 +55,11 @@
   text-align: center;
 }
 
-/* Informações do dono do perfil */
 .profileDescription {
   margin-bottom: 20px;
   line-height: 1.5;
-  
 }
 
-/* Quais tipos de estágios buscados*/
 .profileInterests {
   margin: 20px 0;
 }
@@ -95,7 +81,7 @@
 .interestList li {
   background-color: #fff;
   border-radius: 30px;
-  padding: 10px ;
+  padding: 10px;
   padding-left: 15px;
   position: relative;
 }
@@ -103,18 +89,21 @@
 .editProfileButton {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff; /* Cor de fundo */
-  color: #fff; /* Cor do texto */
-  text-decoration: none; /* Remove o sublinhado */
-  border-radius: 5px; /* Bordas arredondadas */
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
   font-size: 16px;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: none;
+  width: 100%;
+  margin-top: 15px;
 }
 
 .editProfileButton:hover {
-  background-color: #245270; /* Cor ao passar o mouse */
+  background-color: #071739;
 }
 
 .profileResume {
@@ -125,20 +114,126 @@
   text-decoration: underline;
 }
 
-/* Botão de editar perfil */
-.editProfileButton {
-    background-color: #ddd;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-    width: 100%;
-    margin-top: 15px;
+.botaoPremium {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgb(14, 14, 87), rgb(84, 84, 242));
+  border-radius: 7px;
+  margin: 20px auto;
+  width: 200px;
 }
 
-.editProfileButtpn:hover {
-    background-color: #1a3d56;
+.botaoPremium a {
+  color: rgb(241, 236, 236);
+  text-decoration: none;
+  font-weight: bold;
 }
+
+.vertical {
+  width: 1px;
+  height: 600px;
+  border: none;
+  background-color: #ddd;
+  margin: 0 auto;
+}
+
+.feedSection {
+  flex: 2;
+  margin-left: 200px;
+}
+
+.feedTitle {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #665e5e;
+  margin-left: 250px;
+}
+
+.postCard {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 800px;
+  height: 430px;
+}
+
+.postHeaderContainer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.imgPerfil2 {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.postHeader {
+  font-size: 16px;
+  color: #665e5e;
+}
+
+.horas {
+  font-size: 10px;
+  color: #665e5e;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postBody {
+  background-color: #dddddd;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 600px;
+  height: 300px;
+}
+
+.comentarios {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.comentariosLista {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.comentarioInput {
+  display: flex;
+  gap: 10px;
+}
+
+.comentarioTexto {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.comentarioBotao {
+  padding: 8px 15px;
+  background-color: #245270;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.comentarioBotao:hover {
+  background-color: #1b3a4b;
+}
+
+/* ...adicione outros estilos camelCase conforme necessário... */

@@ -4,18 +4,18 @@
 }
 
 .comuContainer {
-  position: relative;
+  /* position: relative; */
   padding-top: 10dvh;
   padding-bottom: 20dvh;
 }
 
 .cardComuContainer {
-  position: relative;
+  /* position: relative; */
   /* padding-top: 10dvh; */
   padding-bottom: 10dvh;
 }
 
-.title {
+.titleComu {
   font-size: 5.5dvh;
   margin-bottom: 12dvh;
   margin-top: 15dvh;
@@ -24,24 +24,20 @@
 }
 
 .cardsComunidades {
-  /* display: flex;
-    justify-content: center;
-    gap: 40px; */
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   text-align: center;
-  /* width: 100%; */
-  /* max-width: 1400px; */
-  gap: 40px;
-  padding: 0 1rem;
-  margin: 0 auto;
+  max-width: 1600px;
+  /* padding: 0 1rem; */
+  overflow-x: hidden;
 }
 
 .card {
-  width: 60dvh;
-  height: 35dvh; 
-  min-width: fit-content;
-  min-height: fit-content;
+  width: min(350px, 90vw);
+  /* width: 800px; */
+  height: auto; 
+  /* max-width: 70dvh; */
   background-color: #071739;
   border-radius: 15px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.2);
@@ -49,6 +45,8 @@
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  padding: 0px 20px 20px 20px;
+  margin: 20px;
 }
 
 .card:hover {
@@ -57,6 +55,7 @@
 }
 
 .comunidadeSlogan {
+  flex-wrap: wrap;
   font-size: 18px;
   margin-bottom: 6px;
   font-weight: bold;
@@ -67,9 +66,11 @@
 }
 
 .comunidadeDescricao {
+  text-align: center;
+  flex-wrap: wrap;
   font-size: 15px;
   /* gap: 50px; */
-  width: 500px;
+  width: 100%;
 }
 
 .imgComunidade {
@@ -92,7 +93,7 @@
   padding-right: 5px;
 }
 
-button {
+.comunidadesBtn {
   background-color: #071739;
   color: #fff;
   border: none;
@@ -100,7 +101,12 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: 0.5s ease;
+}
+
+.comunidadesBtn:hover {
+  background-color: #BCD4E6;
+  color: #000;
 }
 
 .imgContainer {
@@ -142,5 +148,4 @@ button {
 .btnVerMais button:hover {
   background-color: #BCD4E6;
   color: #000;
-  
 }

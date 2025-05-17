@@ -23,24 +23,31 @@ nav {
 .kailow {
   color: #CDD5DB;
   font-size: 2rem;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  padding-right: 15px;
+  /* display: flex; */
+  text-align: center;
+  align-items: center;
+  /* height: 100%; */
+  /* white-space: nowrap; */
 }
 
 .navLogo {
+  width: 15dvh;
+  padding-right: 15px;
   display: flex;
   padding-left: 15px;
   cursor: pointer;
+  align-items: center;
+  justify-content: flex-start;
+  /* justify-content: center; */
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .navLogo img {
   width: 32px;
   height: 32px;
-  display: flex;
-  align-self: center;
-  justify-content: center;
+  display: block;
+  object-fit: contain;
 }
 
 .navCategorias {
@@ -168,7 +175,7 @@ nav {
 
 .dropdownHome {
   position: absolute;
-  background-color: #bcd4e6 ;
+  background-color: #bcd4e6;
   padding: 20px;
   width: 90px;
   top: 11dvh;
@@ -197,6 +204,21 @@ nav {
   cursor: pointer;
 }
 
-.activeCategoria{
+.activeCategoria {
   color: #1b9bee !important;
 }
+
+/* @media (max-width: 1024px) {
+  .kailow {
+    font-size: 1.5rem;
+  }
+
+  .navLogo img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navCategorias {
+    gap: 5dvh;
+  }
+} */

@@ -26,7 +26,7 @@ export function Cards() {
 
         <div className={styles.cardComuContainer}>
           {/* Minhas Comunidades */}
-          <section className={styles.myComunidades}>
+          {/* <section className={styles.myComunidades}> */}
 
             <div className={styles.cardsComunidades}>
 
@@ -112,11 +112,11 @@ export function Cards() {
               </div>
 
             </div>
-          </section>
+          {/* </section> */}
         </div>
 
         <div className={styles.btnVerMais}>
-          <button onClick={Comunidades}>Ver Mais</button>
+          <button onClick={Comunidades} className={styles.comunidadesBtn}>Ver Mais</button>
         </div>
       </div>
     </>
