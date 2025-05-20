@@ -8,9 +8,13 @@ import Sobre from './pages/sobre'
 import EditarPerfil from './pages/editarPerfil'
 import Perfil from './pages/perfil'
 import Comunidades from './pages/comunidades'
+import ScrollToTop from './components/ScrollToTop'
+import Configurações from './pages/config'
 
 function App() {
   return (
+    <>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/recuperar" element={<Recuperar />} />
@@ -19,6 +23,7 @@ function App() {
       <Route path="/sobre" element={<Sobre />} />
       <Route path='/editar' element={<EditarPerfil />} />
       <Route path='/comunidades' element={<Comunidades/>} />
+      <Route path='/configuracao' element={<Configurações/>} />
       {/* <Route path="/home" element={
         <ProtectedRoute>
           <Home />
@@ -27,6 +32,7 @@ function App() {
       <Route path='home' element={<Home />}/>
 
     </Routes>
+  </>
   )
 }
 

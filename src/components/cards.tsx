@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "../style/comunidades.module.css";
-import * as Icon from 'react-bootstrap-icons'
+import * as Icon from 'react-bootstrap-icons';
 
 
 export function Cards() {
@@ -14,6 +14,7 @@ export function Cards() {
   // const Fill2 = () => {
   //   setIsFilled2(!isFilled2);
   // };
+
 
   function Comunidades() {
     navigate('/comunidades');

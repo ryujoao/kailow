@@ -18,17 +18,21 @@
   max-width: 1100px;
   text-align: center;
   margin: 0 auto;
-  /* margin-top: 20px; */
   padding: 50px 100px 20px 100px;
   border-radius: 30px;
 }
+.divTitle{
+  text-align: center;
+  margin: 50px;
+}
 
 .tituloSobre {
-  font-size: 40px;
+  text-transform: capitalize;
+  font-size: 5.5dvh;
+  position: relative;
+  /* display: inline-block; */
+  color: #cdd5db;
   text-transform: uppercase;
-  margin-bottom: 10dvh;
-  color: #fff;
-  text-align: center;
 }
 
 .tudoSobre {

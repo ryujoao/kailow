@@ -3,7 +3,6 @@ import Nav from '../components/navbar'
 import style from '../style/home.module.css'
 import PerfilHome from '../components/perfilHome'
 
-
 export default function Home() {
   return (
     <div className={style.homeContainer}>

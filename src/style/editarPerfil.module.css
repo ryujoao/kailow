@@ -15,7 +15,8 @@
 }
 
 .cardEditarPerfil {
-    background: rgba(255, 255, 255, 0.25);
+    /* background: rgba(255, 255, 255, 0.25); */
+    background: #071739;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -43,7 +44,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid #fff;
+    /* border: 5px solid #fff; */
     margin-top: 10px;
     margin-bottom: 10px;
     /* Espaçamento entre a imagem e o nome */
@@ -77,9 +78,7 @@
     min-height: fit-content;
     margin: 20px auto;
     padding: 40px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 
     box-sizing: border-box;
 }
 
@@ -87,7 +86,7 @@
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
-    color: #245270;
+    color: #cdd5db;
     text-align: left;
 }
 
@@ -99,23 +98,12 @@
     border-radius: 5px;
     font-size: 14px;
     box-sizing: border-box;
+    
 }
 
-.formEditarPerfil button {
-    width: 100%;
-    padding: 10px;
-    background-color: #245270;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-.formEditarPerfil button:hover {
-    background-color: #1b3a4b;
-}
+
+
 
 .inputEditarDescricao {
     width: 100%;
@@ -152,4 +140,29 @@
 .interesseCheckbox {
     margin: 0;
     box-sizing: border-box;
+}
+
+.buttonPerfil {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonPerfil button {
+    background-color: #245270;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 35dvh;
+    padding: 14px;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.buttonPerfil button:hover {
+    background-color: #cdd5db;
 }

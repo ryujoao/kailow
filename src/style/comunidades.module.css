@@ -13,6 +13,7 @@
   /* position: relative; */
   /* padding-top: 10dvh; */
   padding-bottom: 10dvh;
+  /* justify-content: space-around; */
 }
 
 .titleComu {
@@ -28,7 +29,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   text-align: center;
-  max-width: 1600px;
+  max-width: 1900px;
   /* padding: 0 1rem; */
   overflow-x: hidden;
 }
