@@ -245,7 +245,7 @@ main {
     font-size: 20px;
     color: #f2f2f2;
     text-decoration: none;
-    padding: 1px;
+    padding: 20px;
     margin-left: px;
     align-items: center;
     display: flex;
@@ -269,21 +269,57 @@ main {
     border: 1px solid;
     border-radius: 7px;
   }
-  .container-sobre{
-    color: white;
-    width: 1500px;
-    height: 220px;
-    background-image: linear-gradient(to bottom, #071739, #1545aa, #1545aa(165, 165, 165));
-    margin-left: 255px;
-    margin-top: -100px;
-    padding: 20px;
-  }
-   .container-sobre h1{
-    color: white;
-   }
-   .container-sobre p{
-    color: #f2f2f2;
-    font-weight: bold;
-   }
-  
-  
+
+       
+        .discussaoContainer {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            background-color: unset;
+            
+        }
+        .discussaoContainer h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        .discussaoContainer p {
+            color: rgb(232, 232, 232);
+        }
+        .comment-box {
+            margin-top: 20px;
+        }
+        .discussaoContainer textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .discussaoContainer button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 630px;
+        }
+       .discussaoContainer button:hover {
+            background: #0056b3;
+        }
+        .comments {
+            margin-top: 20px;
+            color: white;
+        }
+        .comment {
+            background: #e9ecef;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }

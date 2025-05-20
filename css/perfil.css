@@ -170,6 +170,7 @@
 
 /* Informações do dono do perfil */
 .profileDescription {
+  color: white;
   margin-bottom: 20px;
   line-height: 1.5;
   
@@ -221,6 +222,7 @@
 }
 
 .profileResume {
+  color: white;
   margin: 15px 0;
   font-size: 18px;
   display: block;
@@ -289,7 +291,7 @@
 
 .post-card {
     background-color: #f7f7f7;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     margin-bottom: 20px;
     width: 800px;
@@ -380,52 +382,36 @@ margin-bottom: 10px;
 
 -- Estilo para o botão de enviar --
 
-.comentarios {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-.comentarios h4 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #245270;
-}
-
-.comentarios-lista {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 10px;
-}
-
-.comentarios-lista li {
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #333;
-}
-
 .comentario-input {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .comentario-input input {
   flex: 1;
-  padding: 8px;
+  padding: 7px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 13px;
+  background: #f7f7f7;
+  transition: border-color 0.2s;
+}
+
+.comentario-input input:focus {
+  border-color: #245270;
+  outline: none;
 }
 
 .comentario-input button {
-  padding: 8px 15px;
+  padding: 7px 16px;
   background-color: #245270;
   color: #fff;
   border: none;
   border-radius: 5px;
+  font-size: 13px;
   cursor: pointer;
-  font-size: 14px;
+  transition: background 0.2s;
 }
 
 .comentario-input button:hover {
