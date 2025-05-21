@@ -6,7 +6,7 @@
 }
 
 .containerEditarPerfil {
-    padding-top: 15dvh;
+    padding-top: 18dvh;
     padding-bottom: 15dvh;
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@
 
 .textSeuPerfil {
     text-align: center;
-    font-size: 5.5dvh;
+    font-size: 3.2rem;
     margin-bottom: 14dvh;
     color: #cdd5db;
     margin-top: 15px;

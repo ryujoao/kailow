@@ -1,32 +1,37 @@
 .bodyConfig {
     background: linear-gradient(90deg, #071739, #1545aa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 18vh;
+    padding-bottom: 22vh;
+    /* width: 100%; */
 }
 
 
 .configContainer {
-    max-width: 800px;
-    margin: 20px auto;
+    width: 110vh;
+    height: auto;
+    max-width: 1900px;
+    padding: 10vh;
+    /* margin: 20px auto; */
     background-color: #071739;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin-top: 50px;
-    margin-bottom: 50px;
-   
+    /* overflow: hidden; */
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+
 }
 
 /* Cabeçalho */
 .configHeader {
-    padding: 20px;
-    background-color: #071739;
+    /* padding: 20px; */
+    font-size: 3.2rem;
     text-align: center;
-
-}
-
-.configHeader h1 {
-    margin: 0;
+    margin-bottom: 14dvh;
     color: #cdd5db;
-   
 }
 
 .configHeader p {
@@ -41,11 +46,11 @@
 }
 
 .configSection {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-.configSection h2 {
-    font-size: 25px;
+.configTitle {
+    font-size: 5vh;
     margin-bottom: 15px;
     color: #cdd5db;
     padding-bottom: 8px;
@@ -57,29 +62,35 @@
 }
 
 .configItem label {
+    font-size: 2.5vh;
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
     color: #cdd5db;
 }
 
-.configItem input[type="text"],
-.configItem input[type="email"],
-.configItem select {
+.configInput {
     width: 100%;
     padding: 15px;
     /* border: 1px solid #ddd; */
-    border-radius:10px;
+    border-radius: 10px;
     font-size: 14px;
     box-sizing: border-box;
 }
 
-.configItem input[type="text"]:focus,
-.configItem input[type="email"]:focus,
-.configItem select:focus {
-    
+.configInput:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.configTermos {
+    color: #cdd5db;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.configTermos:hover {
+    /* text-decoration: underline #1545aa; */
+    color: #1545aa;
 }
 
 /* Checkboxes e radios */
@@ -89,19 +100,44 @@
 }
 
 .checkbox input {
+    cursor: pointer;
     margin-right: 10px;
 }
 
 /* btn */
 .configFooter {
-    padding: 20px;
-    background-color: #071739;
+    padding-top: 10vh;
+    /* background-color: #071739; */
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
+    justify-content: space-around;
+    /* gap: 10px; */
 }
 
-.btn {
+.btnPrimary {
+    background-color: #245270;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 35dvh;
+    padding: 15px;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    /* align-items: center; */
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+}
+
+.btnPrimary:hover {
+    background-color: #cdd5db;
+}
+
+/* .btnPrimary {
+    width: 50vh;
+    height: 6vh;
+    background-color: #cdd5db;
+    color: #071739;
     padding: 8px 16px;
     border-radius: 4px;
     font-weight: 500;
@@ -110,23 +146,22 @@
     font-size: 14px;
 }
 
-.btnPrimary {
-    background-color: #cdd5db;
-    color: #071739;
-}
-
 .btnPrimary:hover {
     background-color: #dfe8ee;
-}
+} */
 
-.btnSecondary {
+/* .btnSecondary {
     background-color: #071739;
     color: #cdd5db;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
     border: 2px solid #cdd5db;
 }
 
 .btnSecondary:hover {
     background-color: #091d49;
-}
-
-
+} */

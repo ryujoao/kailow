@@ -14,6 +14,9 @@ export default function Perfil() {
   function editar() {
     navigate('/editar');
   }
+  function premium() {
+    navigate('/premium');
+  }
  
  
   function getEditarPerfil() {
@@ -61,8 +64,8 @@ export default function Perfil() {
         Editar perfil
       </button>
     </div>
-    <div className={style.botaoPremium}>
-      <a href="premium.html">Se torne premium</a>
+    <div className={style.botaoPremiumDiv}>
+      <button className={style.botaoPremium} onClick={premium}>Se torne premium</button>
     </div>
   </div>
 </div>

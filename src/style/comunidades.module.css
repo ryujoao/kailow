@@ -5,7 +5,7 @@
 
 .comuContainer {
   /* position: relative; */
-  padding-top: 10dvh;
+  padding-top: 18vh;
   padding-bottom: 20dvh;
 }
 
@@ -17,9 +17,9 @@
 }
 
 .titleComu {
-  font-size: 5.5dvh;
+  font-size: 3.2rem;
   margin-bottom: 12dvh;
-  margin-top: 15dvh;
+  /* margin-top: 15dvh; */
   color: #cdd5db;
   text-align: center;
 }
@@ -37,7 +37,7 @@
 .card {
   width: min(350px, 90vw);
   /* width: 800px; */
-  height: auto; 
+  height: auto;
   /* max-width: 70dvh; */
   background-color: #071739;
   border-radius: 15px;

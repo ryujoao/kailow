@@ -10,6 +10,7 @@ import Perfil from './pages/perfil'
 import Comunidades from './pages/comunidades'
 import ScrollToTop from './components/ScrollToTop'
 import Configurações from './pages/config'
+import Premium from './pages/premium'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path='/editar' element={<EditarPerfil />} />
       <Route path='/comunidades' element={<Comunidades/>} />
       <Route path='/configuracao' element={<Configurações/>} />
+      <Route path='/premium' element={<Premium/>} />
       {/* <Route path="/home" element={
         <ProtectedRoute>
           <Home />

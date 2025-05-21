@@ -5,8 +5,9 @@
 .containerSobre {
   display: flex;
   flex-direction: column;
-  padding-top: 20dvh;
-  margin-bottom: 18dvh;
+  padding-top: 18vh;
+  padding-bottom: 20dvh;
+  /* box-sizing: border-box; */
 }
 
 .cardSobre {
@@ -28,11 +29,12 @@
 
 .tituloSobre {
   text-transform: capitalize;
-  font-size: 5.5dvh;
+  font-size: 3.2rem;
+  /* margin-bottom: 14dvh; */
   position: relative;
   /* display: inline-block; */
   color: #cdd5db;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .tudoSobre {

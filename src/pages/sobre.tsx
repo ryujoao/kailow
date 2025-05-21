@@ -8,10 +8,10 @@ export default function Sobre() {
             <Nav />
 
             <div className={style.containerSobre}>
-                <div className={style.divTitle}>
-                <h1 className={style.tituloSobre}>Sobre</h1>
-                </div>
 
+                <div className={style.divTitle}>
+                <h1 className={style.tituloSobre}>Nossa História</h1>
+                </div>
                 <div className={style.cardSobre}>
 
                     <section className={style.tudoSobre}>
