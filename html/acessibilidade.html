@@ -42,14 +42,61 @@
       <ul class="opçõesAcces">Acessibilidade</ul>
       <ul id="temaEsc">Tema</ul>
        <ul class="opçõesAcces"><a href="Perfil.html">Profile</a></ul>
-      </ul>
-    </li>
-  </ul>
-</nav>
+           </ul>
+           </li>
+           </ul>
+          </nav>
+          <aside class="accessibility-toolbar" aria-label="Ferramentas de acessibilidade">
+        <h3>Ferramentas</h3>
+        <button id="contrast-toggle" aria-pressed="false">Alto Contraste</button>
+        <button id="text-size-toggle" aria-pressed="false">Texto Maior</button>
+        <button id="read-page">Ler Página</button>
+    </aside>
+    
+    <footer role="contentinfo">
+        <p>&copy; 2023 Acessibilidade Digital. Todos os direitos reservados.</p>
+        <p>Esta página foi desenvolvida seguindo as diretrizes WCAG 2.1 nível AA.</p>
+        <p><a href="#main-content">Voltar ao topo</a></p>
+    </footer>
+    
+    <script src="acessibilidade.js"></script>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolbar de Acessibilidade</title>
+    <link rel="stylesheet" href="toolbar-acessibilidade.css">
+</head>
+<body>
+    <!-- Conteúdo principal da página -->
+    <main>
+        <h1>Exemplo de Página com Toolbar de Acessibilidade</h1>
+        <p>Esta página contém uma toolbar de acessibilidade flutuante.</p>
+    </main>
 
-              
-            
-            </div>
-          </div>
-        </nav>
-      </header>
+    <!-- Toolbar de Acessibilidade -->
+    <aside class="accessibility-toolbar" aria-label="Ferramentas de acessibilidade">
+        <button id="contrast-toggle" aria-pressed="false" title="Alternar alto contraste">
+            <span aria-hidden="true">🌓</span> Contraste
+        </button>
+        <button id="text-size-toggle" aria-pressed="false" title="Aumentar tamanho do texto">
+            <span aria-hidden="true">🔍</span> Texto
+        </button>
+        <button id="grayscale-toggle" aria-pressed="false" title="Alternar escala de cinza">
+            <span aria-hidden="true">⚪</span> Cinza
+        </button>
+        <button id="read-page" title="Ler conteúdo da página">
+            <span aria-hidden="true">🔊</span> Ler
+        </button>
+    </aside>
+
+    <script src="toolbar-acessibilidade.js"></script>
+</body>
+</html>
+          
+
+</div>
+</div>
+</nav>
+</header>

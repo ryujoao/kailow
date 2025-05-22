@@ -2,7 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
+  background: url(../img/azul.jpg);
 }
 
 .nav-container {
@@ -99,6 +104,63 @@
   width: 100%;
   font-weight: bold;
 }
+.navbar {
+  background: #fffdfd;
+  font-family: Arial, sans-serif;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list li a {
+  color: white;
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Faz descer para baixo do item pai */  
+  left: 0;
+  background: #245270;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+  border-bottom: 1px solid #245270;
+}
+
+.dropdown-menu li a:hover {
+  background: #245270;
+}
+
+
+
+
+/*-------------------------------------------------------------------------------------*/
 
 /* Sobre */
 
@@ -180,8 +242,10 @@ h1 {
 
 /* Footer */
 footer{
-  background-color: #071739;
-  padding: 50px 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(../img/azul.jpg);
 }
 .container-footer{
   max-width: 1500px;

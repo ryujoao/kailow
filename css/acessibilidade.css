@@ -98,3 +98,77 @@
     height: 40px;
     cursor: pointer;
   }
+  /* Estilos base da toolbar */
+.accessibility-toolbar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 300px;
+}
+
+.accessibility-toolbar button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.accessibility-toolbar button:hover,
+.accessibility-toolbar button:focus {
+    background-color: #e8e8e8;
+    outline: 2px solid #0056b3;
+}
+
+.accessibility-toolbar button[aria-pressed="true"] {
+    background-color: #0056b3;
+    color: white;
+    border-color: #003d7a;
+}
+
+/* Estilos para os modos de acessibilidade */
+.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast a,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3 {
+    color: #ff0 !important;
+}
+
+.big-text {
+    font-size: 20px !important;
+}
+
+.big-text h1 {
+    font-size: 32px !important;
+}
+
+.big-text h2 {
+    font-size: 28px !important;
+}
+
+.grayscale {
+    filter: grayscale(100%) !important;
+}
+
+/* Ícones da toolbar (opcional) */
+.accessibility-toolbar span[aria-hidden="true"] {
+    font-size: 16px;
+}

@@ -1,14 +1,17 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background:url(../img/azul.jpg);
+  box-sizing: border-box;
 }
-
-body{
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
   background: url(../img/azul.jpg);
-}
+} 
 
+
+/* NAV-BAR */
 
 .nav-container {
     height: 70px;
@@ -117,29 +120,35 @@ header .nav-categorias a {
   margin: 0 10px;
 }
 
+
+/* Publicar  */
+
 main {
   padding: 20px;
+  margin: 80px 0px 150px 0px;
 }
 
 .publicar-trabalho {
   max-width: 600px;
   margin: 0 auto;
-  background: #fff;
-  padding: 20px;
+  background: #071739;
+  padding: 45px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.publicar-trabalho h1 {
+h1 {
   text-align: center;
-  color: #071739;
+  color: #cdd5db;
+  margin-bottom: 40px;
 }
 
 .publicar-trabalho label {
   display: block;
   margin-top: 15px;
-  font-size: 14px;
-  color: #071739;
+  
+  font-size: 18px;
+  color: #cdd5db;
 }
 
 .publicar-trabalho input,
@@ -156,23 +165,32 @@ main {
 .publicar-trabalho button {
   width: 100%;
   padding: 10px;
-  background-color: #071739;
-  color: #fff;
+  background-color: #cdd5db;
+  color: #071739;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .publicar-trabalho button:hover {
-  background-color: #1b3a4b;
+  background-color: #dfe8ee;
 }
+
+section .anexo{
+  color: #cdd5db;
+}
+
+
 /* FOOTER */
 
 footer{
-    background-color: gray;
-    padding: 50px 0;
+   max-width: 100vw;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(../img/azul.jpg);
   }
   .container-footer{
     max-width: 1500px;

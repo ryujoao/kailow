@@ -26,3 +26,41 @@
         </div>
       </div>
     </div>
+
+
+
+    .comentario-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.comentario-input input {
+  flex: 1;
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+  background: #f7f7f7;
+  transition: border-color 0.2s;
+}
+
+.comentario-input input:focus {
+  border-color: #245270;
+  outline: none;
+}
+
+.comentario-input button {
+  padding: 7px 16px;
+  background-color: #245270;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.comentario-input button:hover {
+  background-color: #1b3a4b;
+} 

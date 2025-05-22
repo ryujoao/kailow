@@ -1,21 +1,21 @@
-/* Estilos gerais */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(../img/azul.jpg);
+}
 
-  }
-  body{
-    background: url(../img/azul.jpg);
-  }
-  
-  /* NAV BAR */
-  .nav-container {
+
+.nav-container {
     height: 70px;
     width: 100%;
     margin: 0 auto;
-    background-color: #071739;
+    background-color: 245270;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,37 +57,42 @@
   }
   
   .pesquisa {
-    display: flex;
-    align-items: center;
-    width: 300px;
-  }
-  
-  .pesquisa input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #cfcbcb;
-    border-radius: 25px;
-    outline: none;
-    font-size: 16px;
-    color: #071739;
-    background-color: #fff;
-    transition: border-color 0.3s ease;
-  }
-  
-  .pesquisa button {
-    margin-left: -35px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #071739;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-  }
-  
-  .pesquisa button:hover {
-    opacity: 1;
-  }
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 25px;
+  padding: 0 12px 0 18px;
+  height: 38px;
+  width: 260px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  margin-left: 30px;
+}
+
+.pesquisa input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  flex: 1;
+  color: #222;
+  padding: 8px 0;
+}
+
+.pesquisa .btn-search {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #245270;
+  cursor: pointer;
+  padding: 0 6px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.pesquisa .btn-search:hover {
+  color: #5b21b6;
+}
   
   .icons {
     display: flex;
@@ -100,22 +105,85 @@
     height: 40px;
     cursor: pointer;
   }
-  .fotoUsuario {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .fotoUsuario img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-  }
 
-  main {
-    padding: 40px;
-  }
-  
+header {
+  background-color: #071739;
+  padding: 10px 20px;
+}
+
+header .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .nav-categorias a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+.navbar {
+  background: #fffdfd;
+  font-family: Arial, sans-serif;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list li a {
+  color: white;
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Faz descer para baixo do item pai */  
+  left: 0;
+  background: #245270;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+  border-bottom: 1px solid #245270;
+}
+
+.dropdown-menu li a:hover {
+  background: #245270;
+}
+
+
+
+
+/*-------------------------------------------------------------------------------------*/
   .title {
     color: white;
     font-size: 24px;
@@ -220,8 +288,10 @@
 
   /* Footer */
 footer{
-  background-color: #071739;
-  padding: 50px 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(../img/azul.jpg);
 }
 .container-footer{
   max-width: 1500px;

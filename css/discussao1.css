@@ -323,3 +323,44 @@ main {
             margin-bottom: 10px;
             border-radius: 5px;
         }
+
+        .comments-container {
+            max-width: 600px;
+            margin: auto;
+            background: #0336a3 ;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: unset;
+            margin-top: 35px;
+        } 
+         .comments-container h2 {
+            text-align: center;
+            color: white;
+        }
+        .comments-container img{
+          width: 40px;
+          height: 40px;
+          border-radius: 100px;
+          margin-top: -6px;
+          margin-left:9px;
+          
+        }
+
+        .comment {
+            background: unset;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+        .author {
+            font-weight: bold;
+            color: #1545aa;
+          
+        }
+        .comments-container p {
+          margin-left: 20px;
+          padding: 3px;
+        }
