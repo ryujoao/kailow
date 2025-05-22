@@ -12,7 +12,7 @@ export default function Sobre() {
                 <div className={style.divTitle}>
                 <h1 className={style.tituloSobre}>Nossa História</h1>
                 </div>
-                <div className={style.cardSobre}>
+                <       div className={style.cardSobre}>
 
                     <section className={style.tudoSobre}>
                         <p className={style.textoSobre}>
@@ -82,7 +82,7 @@ export default function Sobre() {
                             </div>
                             {/* gabi */}
                             <div className={style.singleDev}>
-                                <img className={style.devImg} alt="gabriely felix de souza" />
+                                <img className={style.devImg} src="../public/img/gabriely.jpg" alt="gabriely felix de souza" />
 
                                 <div className={style.devContent}>
                                     <h2>Gabriely Félix de Souza</h2>
@@ -90,7 +90,7 @@ export default function Sobre() {
                             </div>
                             {/* guilherme */}
                             <div className={style.singleDev}>
-                                <img src="" alt="guilherme uliana dos santos" />
+                                <img src="../public/img/guilherme.jpg" alt="guilherme uliana dos santos" />
                                 <div className={style.devContent}>
                                     <h2>Guilherme Uliana dos Santos</h2>
                                 </div>
@@ -111,14 +111,14 @@ export default function Sobre() {
                             </div>
                             {/* murilo */}
                             <div className={style.singleDev}>
-                                <img src="" alt="murilo leite ribeiro" />
+                                <img src="../public/img/murilo.jpg" alt="murilo leite ribeiro" />
                                 <div className={style.devContent}>
                                     <h2>Murilo Leite Ribeiro</h2>
                                 </div>
                             </div>
                             {/* messias */}
                             <div className={style.singleDev}>
-                                <img src="" alt="pedro messias de oliveira santos" />
+                                <img src="../public/img/messias.jpg" alt="pedro messias de oliveira santos" />
                                 <div className={style.devContent}>
                                     <h2>Pedro Messias de Oliveira Santos</h2>
                                 </div>

@@ -19,7 +19,6 @@
     height: auto;
     background-repeat: no-repeat;
     background-size: cover;
-    /* padding: 100px 0px 100px 0px; */
     padding-top: 10vh;
     padding-bottom: 10vh;
 }
@@ -37,14 +36,14 @@
     background-color: #071739;
     padding: 8dvh;
     border-radius: 10px;
-    width: 65vh;
+    width: 43vh;
     height: auto;
     max-width: 1600px;
 }
 
 .tituloLogin {
-    margin-bottom: 3vh;
-    font-size: 6vh;
+    margin-bottom: 3.2vh;
+    font-size: 4vh;
     color: #fff;
     text-transform: uppercase;
     text-align: center;
@@ -145,11 +144,16 @@
     text-align: center;
     align-self: center;
     font-weight: 370;
-    /* color: #484141; */
     color: #fff;
     position: fixed;
     width: 90vh;
+}
 
+.mensagemRecuperar {
+    color: #cdd5db;
+    text-align: left;
+    font-size: 12.5px;
+    margin-bottom: 3vh;
 }
 
 /* Extra large

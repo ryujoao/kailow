@@ -35,10 +35,10 @@
 }
 
 .card {
-  width: min(350px, 90vw);
-  /* width: 800px; */
+  /* width: min(350px, 90vw); */
+  width: 45vh;
   height: auto;
-  /* max-width: 70dvh; */
+  max-width: 1070px;
   background-color: #071739;
   border-radius: 15px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.2);
@@ -48,6 +48,20 @@
   cursor: pointer;
   padding: 0px 20px 20px 20px;
   margin: 20px;
+}
+
+@media (max-width: 1070px) {
+  .card {
+    width: 30vh;
+  }
+
+  .comunidadeDescricao {
+    font-size: 8px;
+  }
+
+  .comunidadeSlogan {
+    font-size: 12px;
+  }
 }
 
 .card:hover {

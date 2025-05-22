@@ -25,6 +25,9 @@ export default function Recuperar() {
         <>
             <div className={style.bodyLogin}>
                 <div className={style.containerLogin}>
+                    <div className={style.fraseLoginDiv}>
+                        <h2 className={style.fraseLogin}>Encontre oportunidades desde cedo na sua região!</h2>
+                    </div>
                     <div className={style.cardLogin}>
                         <h1 className={style.tituloLogin}>Recuperar senha</h1>
 
@@ -32,25 +35,7 @@ export default function Recuperar() {
                             <label className={style.labelLogin} htmlFor="email">E-mail</label>
                             <input className={style.inputLogin} id="email" type="text" required />
 
-                            <label className={style.labelLogin} htmlFor="senha">Senha</label>
-
-                            <div className={style.inputSenha}>
-                                <input className={style.inputLogin} type={mostrarSenha ? 'text' : 'password'} required />
-
-                                <section onClick={toggleSenha} className={style.olhos}>
-                                    {mostrarSenha ? <Icon.Eye /> : <Icon.EyeSlash />}
-                                </section>
-                            </div>
-
-                            <label className={style.labelLogin} htmlFor="confirmarSenha">Confirmar Senha</label>
-
-                            <div className={style.inputSenha}>
-                                <input className={style.inputLogin} type={mostrarConfirmarSenha ? 'text' : 'password'} required />
-
-                                <section onClick={toggleConfirmarSenha} className={style.olhos}>
-                                    {mostrarConfirmarSenha ? <Icon.Eye /> : <Icon.EyeSlash />}
-                                </section>
-                            </div>
+                            <p className={style.mensagemRecuperar}>* Uma mensagem de confirmação será enviada ao o seu email</p>
 
                             <section className={style.buttonLogin}>
                                 <button type="submit">Recuperar</button>

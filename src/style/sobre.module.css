@@ -8,21 +8,31 @@
   padding-top: 18vh;
   padding-bottom: 20dvh;
   /* box-sizing: border-box; */
+  overflow-x: hidden;
 }
 
 .cardSobre {
   display: flex;
+  align-self: center;
   flex-direction: column;
   background: #071739;
   color: #cdd5db;
-  width: 100%;
-  max-width: 1100px;
+  width: 110vh;
+  max-width: 1050px;
   text-align: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 50px 100px 20px 100px;
   border-radius: 30px;
 }
-.divTitle{
+
+@media (max-width: 1070px) {
+  .cardSobre {
+    width: 75vh;
+    padding: 20px 50px 20px 50px;
+  }
+}
+
+.divTitle {
   text-align: center;
   margin: 50px;
 }

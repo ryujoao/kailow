@@ -105,7 +105,7 @@ export default function Comunidades() {
 
                 {/* Sugestões para você */}
                 <section className={styles.sugComunidades}>
-                    <h1 className={styles.titleComu}>Sugestões</h1>
+                    <h1 className={styles.titleComu} style={{marginTop: "10vh"}}>Sugestões</h1>
 
                     <div className={styles.cardsComunidades}>
 

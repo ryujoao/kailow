@@ -11,30 +11,34 @@ import Comunidades from './pages/comunidades'
 import ScrollToTop from './components/ScrollToTop'
 import Configurações from './pages/config'
 import Premium from './pages/premium'
+import Publicar from './pages/publicar'
+
 
 function App() {
   return (
     <>
-    <ScrollToTop />
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/recuperar" element={<Recuperar />} />
-      <Route path="/cadastro" element={<Cadastro />} />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/recuperar" element={<Recuperar />} />
+        <Route path="/cadastro" element={<Cadastro />} />
         <Route path='/perfil' element={<Perfil />} />
-      <Route path="/sobre" element={<Sobre />} />
-      <Route path='/editar' element={<EditarPerfil />} />
-      <Route path='/comunidades' element={<Comunidades/>} />
-      <Route path='/configuracao' element={<Configurações/>} />
-      <Route path='/premium' element={<Premium/>} />
-      {/* <Route path="/home" element={
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path='/editar' element={<EditarPerfil />} />
+        <Route path='/comunidades' element={<Comunidades />} />
+        <Route path='/configuracao' element={<Configurações />} />
+        <Route path='/premium' element={<Premium />} />
+        <Route path='/publicar' element={<Publicar />} />
+
+        {/* <Route path="/home" element={
         <ProtectedRoute>
           <Home />
         </ProtectedRoute>
       } /> */}
-      <Route path='home' element={<Home />}/>
+        <Route path='home' element={<Home />} />
 
-    </Routes>
-  </>
+      </Routes>
+    </>
   )
 }
 

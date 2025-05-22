@@ -58,7 +58,7 @@ export function Footer() {
                                 <div className={style.formSub}>
                                     <h4 className={style.feedback}>Deixe seu feedback!</h4>
                                     <form>
-                                        <input type="email" placeholder="Digite aqui" required className={style.feedbackInput} />
+                                        <input type="text" placeholder="Digite aqui" required className={style.feedbackInput} />
                                         <button className={style.feedbackBtn}>Enviar</button>
                                     </form>
                                     <div className={style.mediasSocias}>

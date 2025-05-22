@@ -3,33 +3,69 @@ import style from '../style/login.module.css';
 import * as Icon from 'react-bootstrap-icons';
 import { useState } from 'react';
 import Loading from '../components/loader';
+import { useForm } from 'react-hook-form';
+
+type loginType = {
+    email: String,
+    senha: String,
+}
 
 export default function Login() {
+
   const navigate = useNavigate();
   const [isLoggingIn, setIsLoggingIn] = useState(false); // Controla o carregamento após o login
   const [mostrarSenha, setMostrarSenha] = useState(false);
-  
+  const { register, handleSubmit } = useForm<loginType>()
+
   function toggleSenha() {
     setMostrarSenha(!mostrarSenha);
   }
-  
-  function handleLogin(event: React.FormEvent) {
+
+
+  async function handlelogin(data: loginType) {
+
+    console.log(data)
+
+    try {
+      const response = await fetch("http://localhost:3000/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        // console.log("Cadastro realizado com sucesso!");
+        navigate("/home"); // Navega para a página home após o cadastro
+      } else {
+        const res = await response.json()
+        console.error("Erro ao realizar login:", response.statusText);
+        alert(res.error)
+      }
+    } catch (error: any) {
+      console.error("Erro na requisição:", error);
+      alert(error.message)
+    }
+  }
+
+  function handleLoader(event: React.FormEvent) {
     event.preventDefault(); // Evita o comportamento padrão do formulário
     setIsLoggingIn(true); // Ativa o estado de carregamento após o login
-    
+
     setTimeout(() => {
       setIsLoggingIn(false);
       navigate('/home');
     }, 3000);
-  }   
-  
+  }
+
   if (isLoggingIn) {
     // Exibe o carregamento após o login
     return <Loading />;
-  } 
-    function cadastro() {
-      navigate('/cadastro');
-    }
+  }
+  function cadastro() {
+    navigate('/cadastro');
+  }
 
   return (
     <>
@@ -41,14 +77,14 @@ export default function Login() {
           <div className={style.cardLogin}>
             <h1 className={style.tituloLogin}>Bem vindo(a)!</h1>
 
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSubmit(handlelogin)}>
               <label className={style.labelLogin} htmlFor="email">E-mail</label>
-              <input className={style.inputLogin} id="email" type="text" required />
+              <input className={style.inputLogin} id="email" type="email" required {...register("email")} />
 
               <label className={style.labelLogin} htmlFor="senha">Senha</label>
 
               <div className={style.inputSenha}>
-                <input className={style.inputLogin} id="senha" type={mostrarSenha ? 'text' : 'password'} required />
+                <input className={style.inputLogin} id="senha" type={mostrarSenha ? 'text' : 'password'} required {...register("senha")}/>
 
                 <section onClick={toggleSenha} className={style.olhos}>
                   {mostrarSenha ? <Icon.Eye /> : <Icon.EyeSlash />}

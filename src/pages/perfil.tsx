@@ -38,7 +38,8 @@ export default function Perfil() {
     <h1 className={style.profileTitle}>Perfil</h1>
  
     <div className={style.profileImage}>
-      <Icon.PersonCircle className={style.profileIcon} />
+      {/* <Icon.PersonCircle className={style.profileIcon} /> */}
+      <img src="../public/img/userImg.jpg" alt="userImg" />
     </div>
  
     <div className={style.starProfile}>
