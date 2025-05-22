@@ -1,0 +1,93 @@
+.bodySobre {
+  background: linear-gradient(90deg, #071739, #1545aa);
+}
+
+.containerSobre {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20dvh;
+  margin-bottom: 18dvh;
+}
+
+.cardSobre {
+  display: flex;
+  flex-direction: column;
+  background: #071739;
+  color: #cdd5db;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  margin: 0 auto;
+  /* margin-top: 20px; */
+  padding: 50px 100px 20px 100px;
+  border-radius: 30px;
+}
+
+.tituloSobre {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 10dvh;
+  color: #fff;
+  text-align: center;
+}
+
+.tudoSobre {
+  margin: 30px;
+}
+
+.tituloCardSobre {
+  font-size: 5.5dvh;
+  position: relative;
+  color: #cdd5db;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.listaSobre li {
+  list-style: none;
+  font-size: 20px;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.textoSobre {
+  font-size: 20px;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.tituloCardSobre {
+  margin-top: 30px;
+  font-size: 35px;
+}
+
+.singleDev {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 280px;
+  overflow: hidden;
+}
+
+.singleDev img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.devContent h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.devs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

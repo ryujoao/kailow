@@ -1,0 +1,151 @@
+.comuBody {
+  background: linear-gradient(90deg, #071739, #1545aa);
+  /* height: 100vh; */
+}
+
+.comuContainer {
+  /* position: relative; */
+  padding-top: 10dvh;
+  padding-bottom: 20dvh;
+}
+
+.cardComuContainer {
+  /* position: relative; */
+  /* padding-top: 10dvh; */
+  padding-bottom: 10dvh;
+}
+
+.titleComu {
+  font-size: 5.5dvh;
+  margin-bottom: 12dvh;
+  margin-top: 15dvh;
+  color: #cdd5db;
+  text-align: center;
+}
+
+.cardsComunidades {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  max-width: 1600px;
+  /* padding: 0 1rem; */
+  overflow-x: hidden;
+}
+
+.card {
+  width: min(350px, 90vw);
+  /* width: 800px; */
+  height: auto; 
+  /* max-width: 70dvh; */
+  background-color: #071739;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding: 0px 20px 20px 20px;
+  margin: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4), 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.comunidadeSlogan {
+  flex-wrap: wrap;
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.comunidadeLocal {
+  font-size: 14px;
+}
+
+.comunidadeDescricao {
+  text-align: center;
+  flex-wrap: wrap;
+  font-size: 15px;
+  /* gap: 50px; */
+  width: 100%;
+}
+
+.imgComunidade {
+  width: 100%;
+  height: 120px;
+  border-radius: 14px;
+}
+
+.comunidadesInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.iconMapComunidades {
+  padding-right: 5px;
+}
+
+.comunidadesBtn {
+  background-color: #071739;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s ease;
+}
+
+.comunidadesBtn:hover {
+  background-color: #BCD4E6;
+  color: #000;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  /* Ajuste conforme necessário */
+  height: 140px;
+  /* Ajuste conforme necessário */
+}
+
+.imgComunidaderes {
+  width: 100%;
+  height: 120px;
+  border-radius: 14px;
+  filter: blur(4px);
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.imgComunidaderee {
+  width: 100px;
+  height: 100px;
+  border-radius: 64px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.btnVerMais {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10dvh;
+}
+
+.btnVerMais button:hover {
+  background-color: #BCD4E6;
+  color: #000;
+}

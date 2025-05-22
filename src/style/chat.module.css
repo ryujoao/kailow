@@ -1,0 +1,142 @@
+.chatContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 280px;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+  }
+  
+  .chatHeader {
+    background-color: #071739;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .backButton {
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .chatBody {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 0 0 10px 10px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+  }
+  
+  .conversationHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1e1e1;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .conversationHeader h4 {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #071739;
+  }
+  
+  .messagesContainer {
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1;
+  }
+  
+  .message {
+    background-color: #e1e1e1;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    word-wrap: break-word;
+  }
+
+.deleteButton {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+  }
+
+.trashIcon {
+    color: black;
+  }
+  
+  .noMessages {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .inputContainer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .messageInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .sendButton {
+    background-color: #1545aa;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sendButton:hover {
+    background-color: #0d3478;
+  }
+  
+  .userList {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user:hover {
+    background-color: #e1e1e1;
+  }
+  
+  .userIcon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
