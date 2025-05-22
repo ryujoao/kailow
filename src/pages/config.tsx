@@ -8,13 +8,13 @@ export default function Configurações() {
     <>
       <Nav />
       <div className={style.bodyConfig}>
-          <h1 className={style.configHeader}>Configurações</h1>
+        <h1 className={style.configHeader}>Configurações</h1>
         <div className={style.configContainer}>
 
           <div className={style.configMain}>
             <section className={style.configSection}>
               {/* <div className={style.configTitle}> */}
-                <h2 className={style.configTitle}>Preferências de Conta</h2>
+              <h2 className={style.configTitle}>Preferências de Conta</h2>
               {/* </div> */}
               <div className={style.configItem}>
                 <label htmlFor="username">Sua Senha:</label>
@@ -26,7 +26,7 @@ export default function Configurações() {
               </div>
               <div className={style.configItem}>
                 <label htmlFor="language">Idioma</label>
-                <select  className={style.configInput} id="language">
+                <select className={style.configInput} id="language">
                   <option value="pt">Português</option>
                   <option value="en">Inglês</option>
                   <option value="es">Espanhol</option>
@@ -36,7 +36,7 @@ export default function Configurações() {
 
             <section className={style.configSection}>
               {/* <div className={style.configTitle}> */}
-                <h2 className={style.configTitle}>Preferências de Privacidade</h2>
+              <h2 className={style.configTitle}>Preferências de Privacidade</h2>
               {/* </div> */}
               <div className={style.configItem}>
                 <div className={style.checkbox}>
@@ -52,12 +52,14 @@ export default function Configurações() {
               </div>
             </section>
 
-            <h3 className={style.configTermos}>Ler os termos de uso e política de privacidade</h3>
+            <h3 className={style.configTermos} style={{marginBottom: "30px"}}>Ler os termos de uso e política de privacidade</h3>
+            <h3 className={style.configTermos}>Deletar minha conta</h3>
+
           </div>
 
           <section className={style.configFooter}>
-              <button className={style.btnPrimary}>Salvar Alterações</button>
-              {/* <button className={style.btnSecondary}>Cancelar</button> */}
+            <button className={style.btnPrimary}>Salvar Alterações</button>
+            {/* <button className={style.btnSecondary}>Cancelar</button> */}
           </section>
 
 

@@ -68,7 +68,7 @@ export default function Cadastro() {
     return (
         <>
 
-            <div className={style.bodyLogin}>
+            <div className={style.bodyCadastro}>
                 <div className={style.containerLogin}>
                     <div className={style.fraseLoginDiv}>
                         <h2 className={style.fraseLogin}>Encontre oportunidades desde cedo na sua região!</h2>

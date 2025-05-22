@@ -8,7 +8,20 @@
     margin: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+}
+
+.bodyCadastro {
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #071739, #1545aa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* padding: 100px 0px 100px 0px; */
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 .containerLogin {
@@ -24,14 +37,14 @@
     background-color: #071739;
     padding: 8dvh;
     border-radius: 10px;
-    width: 400px;
+    width: 65vh;
     height: auto;
-    min-width: auto;
+    max-width: 1600px;
 }
 
 .tituloLogin {
-    margin-bottom: 7dvh;
-    font-size: 40px;
+    margin-bottom: 3vh;
+    font-size: 6vh;
     color: #fff;
     text-transform: uppercase;
     text-align: center;
@@ -39,7 +52,7 @@
 
 .labelLogin {
     color: #fff;
-    font-size: 16px;
+    font-size: 2.2vh;
     margin-bottom: 5dvh;
     text-align: left;
 }
@@ -125,15 +138,18 @@
     width: 90dvh;
     display: flex;
     align-self: center;
-
 }
 
 .fraseLogin {
     font-size: 45px;
     text-align: center;
+    align-self: center;
     font-weight: 370;
     /* color: #484141; */
     color: #fff;
+    position: fixed;
+    width: 90vh;
+
 }
 
 /* Extra large

@@ -23,7 +23,7 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     width: 90dvh;
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0px 20px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,13 +95,24 @@
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 12px;
     font-size: 14px;
     box-sizing: border-box;
+    outline: none;
     
 }
 
-
+    /* display: inline-block;
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    min-height: 20px;
+    padding: 10px;
+    padding-right: 15px;
+    margin: 7px 0px 20px 0px;
+    border: none;
+    border-radius: 12px;
+    box-sizing: border-box; */
 
 
 
@@ -110,7 +121,7 @@
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 12px;
     font-size: 14px;
     box-sizing: border-box;
     resize: none;
@@ -160,7 +171,7 @@
     border-radius: 30px;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .buttonPerfil button:hover {
