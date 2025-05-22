@@ -182,6 +182,24 @@
   margin: 0 auto;
 } */
 
+.todasOpcoes {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  margin-left: 70px;
+  color: #a0a0a0
+
+
+}
+
+
+
+.excluirEditar {
+  display: flex;
+  flex-direction: row; /* Garante alinhamento horizontal */
+  gap: 12px;           /* Espaço entre os itens, ajuste como preferir */
+}
+
 .feedSection {
   flex: 2;
   margin-left: 20px;

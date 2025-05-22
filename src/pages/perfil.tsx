@@ -219,6 +219,10 @@ export default function Perfil() {
               </div>
               <div className={style.comentarios}>
                 <h4>Comentários:</h4>
+                <div className={style.todasOpcoes}>
+                <h6 >Excluir</h6>
+                <h6>Editar</h6>
+                </div>
                 <ul className={style.comentariosLista}>
                   {comentarios[post.id]?.map((comentario, index) => (
                     <li key={index}>
@@ -241,17 +245,15 @@ export default function Perfil() {
                         <>
                           {comentario}
                           <div className={style.menuContainer}>
-                            <Icon.ThreeDotsVertical
-                              className={style.menuIcon}
-                              onClick={() =>
-                                setMenuComentarioOpen(
-                                  menuComentarioOpen.postId === post.id &&
-                                  menuComentarioOpen.comentarioIndex === index
-                                    ? { postId: null, comentarioIndex: null }
-                                    : { postId, comentarioIndex: index }
-                                )
-                              }
-                            />
+
+
+                           
+
+
+
+                                
+
+                      
                             {menuComentarioOpen.postId === post.id &&
                               menuComentarioOpen.comentarioIndex === index && (
                                 <div className={style.menuDropdown}>
