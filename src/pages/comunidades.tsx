@@ -30,7 +30,7 @@ export default function Comunidades() {
                                 />
                             </div>
                             <div className={styles.comunidadesInfo}>
-                                <h2 className={styles.comunidadeSlogan}>Passeio com pets na grande São Paulo</h2>
+                                <h2 className={styles.comunidadeSlogan}>Passeio com pets MAX</h2>
                                 <h5 className={styles.comunidadeLocal}>
                                     <Icon.GeoAltFill className={styles.iconMapComunidades} />
                                     São Paulo

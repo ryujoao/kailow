@@ -74,7 +74,7 @@ export default function Sobre() {
 
                             {/* bea */}
                             <div className={style.singleDev}>
-                                <img className={style.devImg} src="" alt="ana beatriz paludetto barreto" />
+                                <img className={style.devImg} src="../public/img/anaBeatriz.jpg" alt="ana beatriz paludetto barreto" />
 
                                 <div className={style.devContent}>
                                     <h2>Ana Beatriz Paludetto Barreto</h2>
@@ -97,14 +97,14 @@ export default function Sobre() {
                             </div>
                             {/* ryu */}
                             <div className={style.singleDev}>
-                                <img src="" alt="joão victor ryu tuzino kobayashi" />
+                                <img src="../public/img/joaoRyu.jpg" alt="joão victor ryu tuzino kobayashi" />
                                 <div className={style.devContent}>
                                     <h2>João Victor Ryu Tuzino Kobayashi</h2>
                                 </div>
                             </div>
                             {/* kaio */}
                             <div className={style.singleDev}>
-                                <img src="" alt="kaio gabriel tavares da silva" />
+                                <img src="../public/img/kaio.jpg" alt="kaio gabriel tavares da silva" />
                                 <div className={style.devContent}>
                                     <h2>Kaio Gabriel Tavares da Silva</h2>
                                 </div>
@@ -125,7 +125,7 @@ export default function Sobre() {
                             </div>
                             {/* renan */}
                             <div className={style.singleDev}>
-                                <img src="" alt="renan cabral bernardes" />
+                                <img src="../public/img/renan.jpg" alt="renan cabral bernardes" />
                                 <div className={style.devContent}>
                                     <h2>Renan Cabral Bernardes</h2>
                                 </div>

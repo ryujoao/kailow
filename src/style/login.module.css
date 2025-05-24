@@ -134,19 +134,19 @@
 }
 
 .fraseLoginDiv {
-    width: 90dvh;
+    width: 80dvh;
     display: flex;
     align-self: center;
 }
 
 .fraseLogin {
-    font-size: 45px;
+    font-size: 40px;
     text-align: center;
     align-self: center;
     font-weight: 370;
     color: #fff;
     position: fixed;
-    width: 90vh;
+    width: 80vh;
 }
 
 .mensagemRecuperar {

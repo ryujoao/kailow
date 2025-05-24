@@ -40,11 +40,11 @@
     /* Espaçamento superior opcional */
 }
 
-.userEditarPerfil img {
+.userImg {
     width: 150px;
     height: 150px;
+    object-fit: cover;
     border-radius: 50%;
-    /* border: 5px solid #fff; */
     margin-top: 10px;
     margin-bottom: 10px;
     /* Espaçamento entre a imagem e o nome */
@@ -66,10 +66,10 @@
 
 .textSeuPerfil {
     text-align: center;
-    font-size: 3.2rem;
-    margin-bottom: 14dvh;
+    font-size: 6vh;
+    margin-bottom: 10dvh;
     color: #cdd5db;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 
 .formEditarPerfil {
@@ -78,14 +78,13 @@
     min-height: fit-content;
     margin: 20px auto;
     padding: 40px;
- 
     box-sizing: border-box;
 }
 
 .labelEditarPerfil{
     display: block;
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 16px;
     color: #cdd5db;
     text-align: left;
 }
@@ -102,31 +101,9 @@
     
 }
 
-    /* display: inline-block;
-    width: 100%;
-    min-width: 100%;
-    height: auto;
-    min-height: 20px;
-    padding: 10px;
-    padding-right: 15px;
-    margin: 7px 0px 20px 0px;
-    border: none;
-    border-radius: 12px;
-    box-sizing: border-box; */
-
-
-
-.inputEditarDescricao {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 14px;
-    box-sizing: border-box;
-    resize: none;
+.inputCurriculo {
+    background-color: #fff;
 }
-
 
 .interesseVagas {
   display: flex;

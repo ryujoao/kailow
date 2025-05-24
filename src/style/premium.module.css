@@ -2,7 +2,6 @@
   background: linear-gradient(90deg, #071739, #1545aa);
   padding-top: 20vh;
   padding-bottom: 20vh;
-  /* height: 100vh; */
 }
 
 @media (max-width: 1070px) {
@@ -11,80 +10,86 @@
     flex-wrap: wrap;
     gap: 20px;
   }
+
   .cardPremium {
     width: 220px;
     min-width: 180px;
     height: auto;
     padding: 16px 0;
   }
+
   .tituloDosPlanos {
     font-size: 15px;
   }
-  .preco-novo {
+
+  .precoNovo {
     font-size: 1.5rem;
   }
-  .descricao-pequena {
+
+  .descricaoPequena {
     font-size: 11px;
   }
+
   .btnEscolherPlano {
     font-size: 0.9rem;
     padding: 8px 0;
   }
+
   .beneficiosPlano li {
     font-size: 0.8rem;
   }
-}.tituloPlano {
+}
+
+.tituloPlano {
   text-align: center;
-  font-size: 2.2rem;
-  margin-top: 40px;
-  color: #ffffff;
+  font-size: 6vh;
+  /* margin-top: 40px; */
+  margin-bottom: 5vh;
+  color: #cdd5db;
   font-weight: bold;
 }
+
 .subPlano {
   text-align: center;
-  color: #ffffff;
-  margin-bottom: 30px;
-  font-size: 1.1rem;
+  color: #cdd5db;
+  margin-bottom: 15vh;
+  font-size: 3.5vh;
 }
 
 .containerPlanos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 60px;
+  gap: 48px;
   margin: 40px 0;
 }
 
-
-
 .cardPremium {
+  padding: 18px 5px 18px 5px;
   background: #fff;
   border: 1.5px solid #e2e2e2;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(36,82,112,0.08);
+  box-shadow: 0 4px 16px rgba(36, 82, 112, 0.08);
   width: 360px;
-  height: 480px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  transition: box-shadow 0.2s;
-}
-
-.cardPremium {
-  /* ...seus estilos existentes... */
-  transition: 
+  transition: 0.2s all;
+  /* transition:
     box-shadow 0.2s,
     border-color 0.2s,
-    transform 0.2s;
+    transform 0.2s; */
 }
 
 .cardPremium:hover {
-  box-shadow: 0 12px 36px rgba(36,82,112,0.22);
+  box-shadow: 0 12px 36px rgba(36, 82, 112, 0.22);
   border-color: #5b21b6;
   transform: translateY(-8px) scale(1.03);
   z-index: 2;
 }
+
 .cardPremium .tag {
   position: absolute;
   top: -20px;
@@ -107,15 +112,17 @@
 .cardPremium.destaque {
   border: 2.5px solid #fee155;
   z-index: 2;
-  box-shadow: 0 8px 32px rgba(167,139,250,0.18);
+  box-shadow: 0 8px 32px rgba(167, 139, 250, 0.18);
 }
-.preco-antigo {
+
+.precoAntigo {
   color: #888;
   text-decoration: line-through;
   font-size: 14px;
   margin-bottom: 8px;
 }
-.preco-novo {
+
+.precoNovo {
   width: 100%;
   text-align: center;
   font-size: 2.5rem;
@@ -124,18 +131,20 @@
   margin: 12px 0 8px 0;
 }
 
-.preco-novo .mes {
+.precoNovo .mes {
   font-size: 1.2rem;
   color: #222;
   font-weight: normal;
 }
 
-.descricao-pequena {
-  font-size: 0.78;
+.descricaoPequena {
+  font-size: 11px;
   color: #888;
   text-align: center;
-  max-width: 220px; /* ou ajuste conforme o visual desejado */
+  max-width: 220px;
+  /* ou ajuste conforme o visual desejado */
 }
+
 .btnEscolherPlano {
   width: 50%;
   padding: 12px 0;
@@ -147,7 +156,7 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: 0.2s, color 0.2s;
   letter-spacing: 0.5px;
 }
 
@@ -168,11 +177,52 @@
 }
 
 .tituloDosPlanos {
-    color: #5b21b6;
-    margin-top: 2%;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 19px;
+  color: #5b21b6;
+  margin-top: 2%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 19px;
 }
-.descricao-pequena{
-  font-size: 11px;
+
+.sub {
+  font-size: 10px;
+}
+
+.gratis {
+  font-weight: bold;
+  color: rgb(92, 5, 135);
+  font-size: 16px;
+
+}
+
+.beneficiosPlano {
+  list-style: none;
+  padding: 0;
+  margin: 14px auto 0 auto;
+  width: 85%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.beneficiosPlano li {
+  color: #222;
+  font-size: 0.83rem;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.beneficiosPlano .check {
+  color: #22c55e;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.beneficiosPlano .destaque {
+  color: #5b21b6;
+  font-weight: bold;
 }

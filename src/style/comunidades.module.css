@@ -17,7 +17,7 @@
 }
 
 .titleComu {
-  font-size: 3.2rem;
+  font-size: 6vh;
   margin-bottom: 12dvh;
   /* margin-top: 15dvh; */
   color: #cdd5db;
@@ -36,7 +36,7 @@
 
 .card {
   /* width: min(350px, 90vw); */
-  width: 45vh;
+  width: 50vh;
   height: auto;
   max-width: 1070px;
   background-color: #071739;

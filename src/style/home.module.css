@@ -18,14 +18,9 @@
 }
 
 .cardsTitulo {
-  font-size: 3.2rem;
+  font-size: 6vh;
   margin-bottom: 14dvh;
   color: #cdd5db;
   text-align: center;
 }
 
-/* .cardsContainerHome {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-} */
