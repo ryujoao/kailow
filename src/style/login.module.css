@@ -36,7 +36,7 @@
     background-color: #071739;
     padding: 8dvh;
     border-radius: 10px;
-    width: 43vh;
+    width: 50vh;
     height: auto;
     max-width: 1600px;
 }
@@ -136,13 +136,13 @@
 .fraseLoginDiv {
     width: 80dvh;
     display: flex;
-    align-self: center;
 }
 
 .fraseLogin {
     font-size: 40px;
     text-align: center;
     align-self: center;
+    top: 50%;
     font-weight: 370;
     color: #fff;
     position: fixed;
@@ -156,9 +156,14 @@
     margin-bottom: 3vh;
 }
 
-/* Extra large
-@media (min-width: 1920px) {
-    .bodyLogin {
-        background: black;
-    }
-} */
+.mensagem {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.senhaMsg {
+    color: rgb(255, 0, 0);
+    margin-bottom: 15px;
+    font-size: 15px;
+}

@@ -3,20 +3,28 @@ import style from "../style/login.module.css"
 import { useState } from "react"
 import * as Icon from 'react-bootstrap-icons'
 import { useForm } from "react-hook-form";
+import Loading from "../components/loader";
 
 
 type cadastroType = {
-    nome: String,
-    email: String,
-    telefone: Number,
-    nascimento: Date,
-    senha: String
+    nome: string,
+    email: string,
+    telefone: string,
+    nascimento: string,
+    senha: string
 }
 
 export default function Cadastro() {
 
+    const { register, handleSubmit, formState: { errors } } = useForm<cadastroType>()
     const [mostrarSenha, setMostrarSenha] = useState(false)
-    const { register, handleSubmit } = useForm<cadastroType>()
+    const [mensagem, setMensagem] = useState("")
+    const [isLoggingIn, setIsLoggingIn] = useState(false);
+    const navigate = useNavigate()
+
+    function validarSenha(senha: string) {
+        return senha.length >= 8 || "A senha deve ter pelo menos 8 caracteres";
+    }
 
 
     async function handleCadastro(data: cadastroType) {
@@ -24,6 +32,7 @@ export default function Cadastro() {
         console.log(data)
 
         try {
+
             const response = await fetch("http://localhost:3000/cadastro", {
                 method: "POST",
                 headers: {
@@ -33,16 +42,23 @@ export default function Cadastro() {
             });
 
             if (response.ok) {
+
+                setIsLoggingIn(true)
+                setTimeout(() => {
+                    setIsLoggingIn(false);
+                    navigate("/home");
+                }, 3000);
+
                 console.log("Cadastro realizado com sucesso!");
-                navigate("/home"); // Navega para a página home após o cadastro
             } else {
+
                 const res = await response.json()
                 console.error("Erro ao realizar cadastro:", response.statusText);
-                  alert(res.error)
+                setMensagem(res.error)
             }
-        } catch (error:any) {
+        } catch (error: any) {
             console.error("Erro na requisição:", error);
-            alert(error.message)
+            setMensagem(error.message)
         }
     }
 
@@ -50,12 +66,17 @@ export default function Cadastro() {
         setMostrarSenha(!mostrarSenha)
     }
 
-    const navigate = useNavigate()
+    if (isLoggingIn) {
+        // Exibe o carregamento após o login
+        return <Loading />;
+    }
 
- 
+
     function login() {
         navigate('/')
     }
+
+
 
     return (
         <>
@@ -73,7 +94,7 @@ export default function Cadastro() {
                             <input className={style.inputLogin} id="nome" type="text" required {...register("nome")} />
 
                             <label htmlFor="email" className={style.labelLogin}>E-mail</label>
-                            <input className={style.inputLogin} id="email" type="text" required {...register("email")} />
+                            <input className={style.inputLogin} id="email" type="email" required {...register("email")} />
 
                             <label htmlFor="telefone" className={style.labelLogin}>Telefone</label>
                             <input className={style.inputLogin} id="telefone" type="tel" required {...register("telefone")} />
@@ -84,12 +105,16 @@ export default function Cadastro() {
                             <label htmlFor="senha" className={style.labelLogin}>Senha</label>
 
                             <div className={style.inputSenha}>
-                                <input className={style.inputLogin} id="senha" type={mostrarSenha ? 'text' : 'password'} required {...register("senha")} />
+                                <input className={style.inputLogin} id="senha" type={mostrarSenha ? 'text' : 'password'} required {...register("senha", { validate: validarSenha })} />
 
                                 <section onClick={toggleSenha} className={style.olhos}>
                                     {mostrarSenha ? <Icon.Eye /> : <Icon.EyeSlash />}
                                 </section>
                             </div>
+                                {errors.senha && <div className={style.senhaMsg}>{errors.senha.message}</div>}
+
+                            <div className={style.senhaMsg}></div>
+                            <div className={style.mensagem}>{mensagem}</div>
 
                             <a href="/recuperar" className={style.forgotPassword}>Esqueceu a senha?</a>
 
