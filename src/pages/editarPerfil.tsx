@@ -3,7 +3,7 @@
     import style from '../style/editarPerfil.module.css';
     import * as Icon from 'react-bootstrap-icons'
     import { useForm } from 'react-hook-form';
-    import { Navigate, useNavigate } from 'react-router-dom';
+    import { useNavigate } from 'react-router-dom';
     // import { Link } from 'react-router-dom';
 
     export type editarPerfil = {
