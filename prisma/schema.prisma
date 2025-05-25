@@ -27,3 +27,12 @@ model Login {
   email String
   senha String
 }
+
+model EditarPerfil {
+  id    Int    @id @default(autoincrement())
+  nome String
+  email String
+  descricao String
+  curriculo String
+  imgUrl String
+}
