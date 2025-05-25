@@ -3,12 +3,18 @@ import Nav from '../components/navbar';
 import style from '../style/perfil.module.css';
 import * as Icon from 'react-bootstrap-icons';
 import { useEffect, useState } from 'react';
-import { EditarPerfil } from './editarPerfil';
+// import { EditarPerfil } from './editarPerfil';
 
 export default function Perfil() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const [editarPerfil, setEditarPerfil] = useState<EditarPerfil>();
+  // const [editarPerfil, setEditarPerfil] = useState<EditarPerfil>();
+
+//   <img
+//   className={style.userImg}
+//   src={userImg ? userImg : item.imgUrl || "../public/img/userImg.jpg"}
+//   alt=""
+// />
 
   const [menuOpen, setMenuOpen] = useState<number | null>(null);
 
@@ -50,12 +56,6 @@ export default function Perfil() {
 
   function editar() {
     navigate('/editar');
-  }
-
-  function getEditarPerfil() {
-    fetch(`http://localhost:3000/produto/${id}`)
-      .then((res) => res.json())
-      .then((data) => setEditarPerfil(data));
   }
 
   function editarPost(postId: number) {
@@ -125,10 +125,6 @@ export default function Perfil() {
     alert('Comentário editado com sucesso!');
   }
 
-  useEffect(() => {
-    getEditarPerfil();
-  }, []);
-
   return (
     <>
       <Nav />
@@ -149,7 +145,7 @@ export default function Perfil() {
             </div>
             <div className={style.profileInfo}>
               <h2 className={style.profileName}>Antonio Kobayashi</h2>
-              <p className={style.profileDescricao}>{editarPerfil?.descricao}</p>
+              {/* <p className={style.profileDescricao}>{editarPerfil?.descricao}</p> */}
               <div className={style.profileInteresse}>
                 <h3>Interesses de vaga em:</h3>
                 <ul className={style.listaInteresse}>

@@ -154,3 +154,9 @@
 .buttonPerfil button:hover {
     background-color: #cdd5db;
 }
+
+.mensagem {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
