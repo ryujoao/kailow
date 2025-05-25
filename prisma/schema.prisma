@@ -10,14 +10,14 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = "mysql://root:root@localhost:3306/kailow"
 }
 
 model User {
   id         Int      @id @default(autoincrement())
   nome       String
-  email      String
-  telefone   Int
+  email      String   @unique
+  telefone   String   @unique
   nascimento DateTime @db.Date
   senha      String
 }
