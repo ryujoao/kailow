@@ -13,7 +13,7 @@ export default function Chat() {
     { name: "Antônio", icon: "👨‍💻" },
     { name: "Maria Angela", icon: "👩‍💼" },
     { name: "Isa Emi", icon: "👩‍🎨" },
-    { name: "Ryu", icon: "👨‍🔧" },
+    { name: "Ryu", icon: "👨‍🔧" }
   ];
 
   const toggleChat = () => {

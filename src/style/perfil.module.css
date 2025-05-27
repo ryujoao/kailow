@@ -6,6 +6,7 @@
   padding: 30px;
   gap: 40px;
   margin: 0 auto;
+  max-height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -15,7 +16,6 @@
   }
 
   .profileSection {
-    position: relative; /* Remove o comportamento fixo em telas pequenas */
     border-right: none;
     border-bottom: 1px solid #fff;
     padding-bottom: 20px;
@@ -26,19 +26,20 @@
   }
 }
 
+
+
 .profileSection {
   flex: 1;
   max-width: 550px;
-  border-right: 1px solid #cdd5db;
-  min-width: 300px;
-  position: relative;
+  /* border-right: 1px solid #cdd5db; */
   display: flex;
   justify-content: center;
+  max-height: 100%;
 }
 
 .profileSectionFixed {
   position: fixed; /* Aplica o comportamento fixo */
-  top: 50px;
+  top: 100px;
   left: 0;
   width: 500px; /* Define uma largura fixa */
   height: calc(100% - 100px); /* Reduz a altura para não ocupar toda a tela */
@@ -47,7 +48,7 @@
   flex-direction: column; /* Organiza os itens verticalmente */
   align-items: center; /* Centraliza os itens horizontalmente */
   padding: 20px; /* Adiciona espaçamento interno */
-
+  border-right: 1px solid #cdd5db;
 }
 
 .profileTitle {
@@ -55,7 +56,7 @@
   margin-bottom: 25px;
   color: #cdd5db;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .profileImage {
@@ -192,8 +193,6 @@
 
 }
 
-
-
 .excluirEditar {
   display: flex;
   flex-direction: row; /* Garante alinhamento horizontal */
@@ -210,8 +209,8 @@
   font-size: 24px;
   margin-bottom: 25px;
   color: #cdd5db;
-  margin-left: 250px;
-  margin-top: 80px;
+  margin-left: 410px;
+  margin-top: 130px;
 }
 
 .postCard {
@@ -255,16 +254,38 @@
   background-color: #dddddd;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   width: 600px;
-  height: 300px;
+  display: flex;
+  flex-direction: column;      /* Coloca imagem e lateral em coluna */
+  align-items: center;         /* Centraliza horizontalmente */
+  justify-content: center;     /* Centraliza verticalmente */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.imagem {
+  max-width: 100%;
+  max-height: 500px; /* ou o valor que preferir */
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: #fff;
+  display: block;
+}
+
+.lateral {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Centraliza verticalmente */
+  padding-left: 20px;
 }
 
 .comentarios {
   margin-top: 15px;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: transparent;
   border-radius: 8px;
+  
 }
 
 .comentariosLista {
@@ -274,7 +295,10 @@
 
 .comentarioInput {
   display: flex;
-  gap: 10px;
+  gap: 16px;
+}
+.comentarios h4 {
+  margin-bottom: 7px;
 }
 
 .comentarioTexto {
@@ -287,8 +311,8 @@
 
 .comentarioBotao {
   padding: 8px 15px;
-  background-color: #1545aa;
-  color: #fff;
+  background-color: transparent;
+  color: #665e5e;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -296,7 +320,7 @@
 }
 
 .comentarioBotao:hover {
-  background-color: #1b3a4b;
+  background-color: #ffffff;
 }
 
 .menuContainer {
@@ -345,4 +369,153 @@
   margin-left: auto;
   position: relative;
   cursor: pointer;
+}
+.comentariosLista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comentarioItem {
+  margin-bottom: 18px;
+}
+
+.comentarioLinha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 0 0 0;
+  background-color: transparent;
+}
+
+.comentarioTexto {
+  font-size: 15px;
+  color: #222;
+  background: transparent;
+  word-break: break-word;
+}
+
+.comentarioMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+
+}
+
+.comentarioTempo {
+  font-size: 12px;
+ color: #665e5e;
+  margin-right: 8px;
+}
+
+.comentarioAcao {
+  cursor: pointer;
+  color: #665e5e;
+  font-size: 13px;
+  margin-right: 8px;
+  transition: color 0.2s;
+}
+
+.comentarioAcao:hover {
+  color: #262626;
+  text-decoration: underline;
+}
+
+.comentarioEditInput {
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.legendaPost {
+  font-size: 16px;
+  color: #222;
+  margin: 0;
+  padding-left: 2px;
+  word-break: break-word;
+  background: transparent;
+}
+
+.comentarioAcao {
+  cursor: pointer;
+  color: #8e8e8e;
+  font-size: 15px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  padding: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.comentarioAcao:hover, .comentarioAcao:focus {
+  background: #f2f2f2;
+  color: #262626;
+  outline: none;
+}
+
+.imagem {
+  max-width: 100%;
+  max-height: 220;
+  border-radius: 8;
+  margin-bottom: 0;
+  object-fit: cover;
+  background-color: #fff;
+}          
+        
+.imgCard {
+  color: #888;
+  margin-top: 8px; 
+}
+
+.uploadLabel{
+  cursor: pointer;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comentarioEditInput {
+  width: 100%;
+  padding: 8;
+  border-radius: 6;
+  border: 1px solid #ccc;
+  margin-right: 10;
+  font-size: 16;
+}
+
+.legendaPost {
+  font-size: 16px;
+  color: #222;
+  padding-left: 2px;
+  word-break: break-word;
+  background: transparent;
+  width: 100%;
+  text-align: center;
+}
+
+.comentarioAcao{
+margin-left: 12;
+display: flex;
+align-items: center;
+cursor: pointer;
+padding: 4;
+border-radius: 50%;
+transition: background 0.2s;
+}
+
+.postLegenda {
+  width: 600px;
+  margin: 8px auto 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+id {
+ margin-bottom: 40 
 }
