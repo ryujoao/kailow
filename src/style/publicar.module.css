@@ -1,0 +1,87 @@
+.containerPublicar {
+    background: linear-gradient(90deg, #071739, #1545aa);
+}
+
+.bodyPublicar {
+    padding-top: 18dvh;
+    padding-bottom: 15dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardPublicarTrabalho {
+    background: #071739;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 90dvh;
+    padding: 40px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formPublicar {
+    width: 70dvh;
+    max-width: 400dvh;
+    min-height: fit-content;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tituloPublicar {
+    text-align: center;
+    font-size: 6vh;
+    margin-bottom: 10dvh;
+    color: #cdd5db;
+}
+
+.publicarLabel {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #cdd5db;
+    text-align: left;
+}
+
+.publicarInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+    background-color: #fff;
+}
+
+.buttonPublicar {
+    display: flex;
+    justify-content: center;
+}
+
+.btnPublicar {
+    background-color: #245270;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 35dvh;
+    padding: 14px;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btnPublicar:hover {
+    background-color: #dfe8ee;
+}

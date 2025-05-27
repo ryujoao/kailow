@@ -1,0 +1,49 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* Parte do feed */
+
+
+.postCard {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.postUser {
+    font-size: 16px;
+    color: #665e5e;
+    text-align: left;
+}
+
+.postHoras {
+    font-size: 10px;
+    color: #665e5e; 
+    text-align: left;
+}
+
+.postDescricao {
+    font-size: 14px;
+    color: #665e5e;
+    text-align: left;
+}
+
+.postBody {
+    background-color: #dddddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 700px;
+    height: 300px; 
+    align-self: center;
+}
+
