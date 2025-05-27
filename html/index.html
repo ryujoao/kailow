@@ -26,30 +26,44 @@
               <a href="./comunidades.html">Minhas Comunidades</a>
               <a href="./Perfil.html">Perfil</a>
               <a href="./publicar.html">Publicar</a>
+              <a href="./acessibilidade.html"></a>
             </div>
     
             <div class="pesquisa">
               <input type="text" placeholder="Pesquisar..." />
               <button>🔍</button>
             </div>
-            
-              <nav class="navbar"></nav>
+                        <nav class="navbar"></nav>
   <ul class="nav-list">
     <li class="dropdown">
       <a href="#"><img src="../img/settings.svg" alt="Menu"/></a>
       <ul class="dropdown-menu">
        
       <ul class="opçõesAcces"><a href="acessibilidade.html">Acessibilidade</a></ul>
-      <button id="temaEsc" aria-label="Alternar tema">
-            <span class="light-icon">☀️</span>
-            <span class="dark-icon">🌙</span>
-        </button>
-       <ul class="opçõesAcces"><a href="Perfil.html">Perfil</a></ul>
+      <!-- Toolbar de Acessibilidade -->
+    <div class="accessibility-buttons">
+           <div class="accessibility-dropdown">
+        
+        <div class="dropdown-menu" id="dropdown-menu">
+            <div class="dropdown-section">
+                <button id="contrast-btn" aria-label="Alternar contraste alto">
+                    Alternar Contraste
+                </button>
+            </div>
+            <div class="dropdown-section">
+                
+                <div class="font-controls">
+                    <button id="font-decrease" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">
+                        <i class="fas fa-minus"></i> A-
+                    </button>
+                    <button id="reset-font" aria-label="Tamanho normal da fonte" title="Fonte normal">
+                        A
+                    </button>
+                    <button id="font-increase" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">
+                        A+ <i class="fas fa-plus"></i>
+                    </button>
+                    <ul class="opçõesAcces"><a href="Perfil.html">Perfil</a></ul>
       </ul>
-    </li>
-  </ul>
-</nav>
-
               
             
             </div>
