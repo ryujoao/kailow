@@ -97,7 +97,7 @@ export default function Sobre() {
                             </div>
                             {/* ryu */}
                             <div className={style.singleDev}>
-                                <img src="../public/img/joaoRyu.jpg" alt="joão victor ryu tuzino kobayashi" />
+                                <img src="../public/img/ryu.jpeg" alt="joão victor ryu tuzino kobayashi" />
                                 <div className={style.devContent}>
                                     <h2>João Victor Ryu Tuzino Kobayashi</h2>
                                 </div>
