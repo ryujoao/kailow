@@ -36,3 +36,10 @@ model EditarPerfil {
   curriculo String
   imgUrl String
 }
+
+model Publicar {
+  id Int @id @default(autoincrement())
+  titulo String
+  legenda String
+  anexar String
+}

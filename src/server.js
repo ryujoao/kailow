@@ -4,11 +4,11 @@ const routes = require('./routes/routes')
 const { PrismaClient } = require('@prisma/client')
 
 const app = express()
+app.use(express.json())
 app.use(cors())
 const prisma = new PrismaClient()
 
 // Middleware para processar JSON
-app.use(express.json())
 app.use(routes)
 
 app.listen(3000, () => {
