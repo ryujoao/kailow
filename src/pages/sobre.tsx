@@ -9,12 +9,16 @@ export default function Sobre() {
 
             <div className={style.containerSobre}>
 
-                <div className={style.divTitle}>
-                <h1 className={style.tituloSobre}>Nossa História</h1>
-                </div>
-                <       div className={style.cardSobre}>
+                {/* <div className={style.divTitle}>
+                <h1 className={style.tituloSobre}>Sobre nós</h1>
+                </div> */}
+                          <div className={style.divTitle}>
+                           <h1 className={style.tituloSobre}>Nossa história</h1>
+                           </div>
 
+                < div className={style.cardSobre}>                          
                     <section className={style.tudoSobre}>
+
                         <p className={style.textoSobre}>
                             A proposta do Kailow surgiu da identificação de uma lacuna no mercado:
                             a dificuldade enfrentada por menores de 18 anos em obter uma fonte de
@@ -32,10 +36,15 @@ export default function Sobre() {
                             onde todos podem navegar e encontrar seu lugar no mercado de trabalho.
                         </p>
                     </section>
+                    <div/>
 
+                         <div className={style.divTitle}>
+                        <h1 className={style.tituloSobre}>Diferenciais da plataforma Kailow</h1>
+                        </div>
+
+                    <div className={style.cardSobre}>
                     <section className={style.tudoSobre}>
 
-                        <h1 className={style.tituloCardSobre}>Diferenciais da plataforma Kailow</h1>
 
                         <ul className={style.listaSobre}>
                             <li> ✔ Cadastro Simplificado – Processo ágil com validação de identidade
@@ -49,8 +58,13 @@ export default function Sobre() {
                         </ul>
 
                     </section>
+                    </div>
+                    <div className={style.divTitle}>
+                       <h1 className={style.tituloSobre}>Benefícios para todos os stackholders</h1>
+                    </div>
+                       
+                    <div className={style.cardSobre}>
                     <section className={style.tudoSobre}>
-                        <h1 className={style.tituloCardSobre}>Benefícios para todos os stackholders</h1>
 
                         <ul className={style.listaSobre}>
                             <li><strong>Para adolescentes: </strong>Primeira experiência
@@ -67,8 +81,14 @@ export default function Sobre() {
                             potencial produtivo da adolescência, criando um ecossistema onde todos
                             ganham.</p>
                     </section>
-                    <section className={style.tudoSobre}>
+                    </div>
+
+                       <div className={style.divTitle}>
                         <h1 className={style.tituloCardSobre}>Nossos desenvolvedores</h1>
+                        </div>
+
+                    <div className={style.cardSobre}>
+                    <section className={style.tudoSobre}>
 
                         <div className={style.devs}>
 
@@ -132,6 +152,7 @@ export default function Sobre() {
                             </div>
                         </div>
                     </section>
+                    </div>
                 </div>
             </div>
             <Footer />

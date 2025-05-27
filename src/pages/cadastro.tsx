@@ -42,6 +42,9 @@ export default function Cadastro() {
             });
 
             if (response.ok) {
+                const res = await response.json(); // <-- Pegue o token aqui
+                localStorage.setItem("token", res.token); // <-- Salve o token
+                console.log("Token recebido:", res.token);
 
                 setIsLoggingIn(true)
                 setTimeout(() => {
@@ -111,7 +114,7 @@ export default function Cadastro() {
                                     {mostrarSenha ? <Icon.Eye /> : <Icon.EyeSlash />}
                                 </section>
                             </div>
-                                {errors.senha && <div className={style.senhaMsg}>{errors.senha.message}</div>}
+                            {errors.senha && <div className={style.senhaMsg}>{errors.senha.message}</div>}
 
                             <div className={style.senhaMsg}></div>
                             <div className={style.mensagem}>{mensagem}</div>

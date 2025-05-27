@@ -31,15 +31,17 @@ export default function Login() {
         },
         body: JSON.stringify(data),
       });
-      
+
       if (response.ok) {
-        
+        const res = await response.json(); // <-- Pegue o token aqui
+        localStorage.setItem("token", res.token); // <-- Salve o token
+        console.log("Token recebido:", res.token);
+
         setIsLoggingIn(true)
         setTimeout(() => {
           setIsLoggingIn(false);
           navigate("/home");
         }, 3000);
-
         console.log("Login realizado com sucesso!");
       } else {
 

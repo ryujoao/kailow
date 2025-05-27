@@ -9,10 +9,6 @@ const DropdownHome = () => {
     function cadastro() {
         navigate('/cadastro')
     }
-
-    function login() {
-        navigate('/')
-    }
     function Editar() {
         navigate('/editar')
     }
@@ -20,16 +16,23 @@ const DropdownHome = () => {
         navigate('/configuracao')
     }
 
+    function handleLogout() {
+        localStorage.removeItem("token");
+        console.log("Usuário deslogado com sucesso!");
+        // Redirecione para a tela de login ou inicial
+        navigate("/"); // ou para onde desejar
+    }
+
     return (
         <div className={style.dropdownHome}>
             <div className={style.dropdownHomeCard}>
-            <ul className={style.dropdownHomeElements}>
-                <li onClick={Editar}>Config. pefil</li>
-                <li onClick={Configuracao}>Config. avançadas</li>
-                <li onClick={cadastro}>Acess.</li>
-                <li onClick={login}>Sair</li>
-            </ul>
-        </div>
+                <ul className={style.dropdownHomeElements}>
+                    <li onClick={Editar}>Config. pefil</li>
+                    <li onClick={Configuracao}>Config. avançadas</li>
+                    <li onClick={cadastro}>Acess.</li>
+                    <li onClick={handleLogout}>Sair</li>
+                </ul>
+            </div>
         </div>
     );
 }

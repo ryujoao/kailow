@@ -25,7 +25,9 @@ export default function Comunidades() {
                                 />
                                 <img
                                     src="../public/img/passearComCachorro.jpg"
-                                    className={styles.imgComunidaderee}
+                                    className={styles.imgComunidaderee
+
+                                    }
                                     alt="Imagem sobreposta"
                                 />
                             </div>
@@ -37,9 +39,8 @@ export default function Comunidades() {
                                 </h5>
                                 <p className={styles.comunidadeDescricao} >
                                     Um espaço dedicado a tutores que buscam os melhores lugares para
-                                    passear com seus pets na região metropolitana de SP.
-                                </p>
-                                <button className={styles.comunidadesBtn}>Sair</button>
+                                    passear com seus pets.
+                                </p>    
                             </div>
                         </div>
 
@@ -65,8 +66,7 @@ export default function Comunidades() {
                                 </h5>
                                 <p className={styles.comunidadeDescricao}>
                                     Networking e tendências de marketing digital para freelancers na Moskou.
-                                </p>
-                                <button className={styles.comunidadesBtn}>Sair</button>
+                                </p>  
                             </div>
                         </div>
 
@@ -91,10 +91,9 @@ export default function Comunidades() {
                                     Mooca
                                 </h5>
                                 <p className={styles.comunidadeDescricao}>
-                                    Tudo sobre o universo de supermercados na região! Aqui você
+                                    Supermercados KiPago na região! Aqui você
                                     encontra dicas, oportunidades de trabalho.
-                                </p>
-                                <button className={styles.comunidadesBtn}>Sair</button>
+                                </p>    
                             </div>
                         </div>
 

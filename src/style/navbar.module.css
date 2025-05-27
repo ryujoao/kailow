@@ -2,14 +2,14 @@ nav {
   height: 11dvh;
   max-height: 12dvh;
   width: 100%;
-  /* background: linear-gradient(90deg, #071739, #1545aa); */
-  /* background-color: transparent; */
+  background: linear-gradient(90deg, #071739, #1545aa);
+  /* background-color: #1545aa; */
   display: flex;
   justify-content: center;
   line-height: 1.4dvh;
   position: absolute;
   z-index: 1000;
-  /* border: 1px solid #071739; */
+  /* border: 1px solid #bcd4e6; */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
 }
 

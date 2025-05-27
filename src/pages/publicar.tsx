@@ -24,17 +24,6 @@ export default function Publicar() {
                                     <textarea className={style.publicarInput} id="descricao" name="descricao" rows={8} placeholder="Digite sua legenda" required ></textarea>
                                 </div>
 
-                                {/* <div className={style.selectLabel}>
-                            <label className={style.publicarLabel} htmlFor="categoria">Categoria:</label>
-                            <select className={style.publicarInput} id="categoria" name="categoria" required>
-                                <option value="">Selecione uma categoria</option>
-                                <option value="design">Design</option>
-                                <option value="programacao">Programação</option>
-                                <option value="escrita">Escrita</option>
-                                <option value="marketing">Marketing</option>
-                            </select>
-                        </div> */}
-
                                 <div className={style.selectLabel}>
                                     <label className={style.publicarLabel} htmlFor="arquivo">Anexar imagem</label>
                                     <input className={style.publicarInput} type="file" id="arquivo" name="arquivo" accept=".png, .jpg, .jpeg" />
