@@ -105,7 +105,7 @@ export default function Cadastro() {
                             <label htmlFor="senha" className={style.labelLogin}>Senha</label>
 
                             <div className={style.inputSenha}>
-                                <input className={style.inputLogin} id="senha" type={mostrarSenha ? 'text' : 'password'} required {...register("senha", { validate: validarSenha })} />
+                                <input className={style.inputLogin} id="senha" type={mostrarSenha ? 'text' : 'password'} autoComplete="off" required {...register("senha", { validate: validarSenha })} />
 
                                 <section onClick={toggleSenha} className={style.olhos}>
                                     {mostrarSenha ? <Icon.Eye /> : <Icon.EyeSlash />}
