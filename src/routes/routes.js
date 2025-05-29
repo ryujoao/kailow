@@ -62,7 +62,8 @@ router.post("/cadastro", async (req, res) => {
 
     const payload = {
         id: user.id,
-        email: user.email
+        email: user.email,
+        description: user.description
     }
 
     // palavra secreta -> paodequeijo
@@ -296,6 +297,37 @@ router.post("/configuracao/:id", authenticate, async (req, res) => {
     return res.status(200).json({
         msg: "Senha atualizada com sucesso",
     })
+
+})
+
+router.get("/perfil/:id", authenticate, async (req, res) => {
+    const { id } = req.params;
+
+    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+    if (!user) {
+        return res.status(404).json({ error: "Usuário não encontrado" });
+    }
+
+    return res.status(200).json(user)
+
+})
+
+router.put("/perfil", authenticate, async (req, res) => {
+    const {id, nome, description, email} = req.body
+
+    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+    if (!user) {
+        return res.status(404).json({ error: "Usuário não encontrado" });
+    }
+
+    await prisma.user.update({
+        where: { id: Number(id) },
+        data: { nome, email, description}
+    });
+
+    return res.status(200).json(user)
 
 })
 

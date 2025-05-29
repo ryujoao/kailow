@@ -19,9 +19,9 @@ model User {
   email        String         @unique
   telefone     String         @unique
   nascimento   DateTime       @db.Date
+  description String?
   senha        String
   Login        Login[]
-  EditarPerfil EditarPerfil[]
   Publicar     Publicar[]
 }
 
@@ -33,16 +33,6 @@ model Login {
   User   User   @relation(fields: [userId], references: [id])
 }
 
-model EditarPerfil {
-  id        Int    @id @default(autoincrement())
-  nome      String
-  email     String
-  descricao String
-  curriculo String
-  imgUrl    String
-  userId    Int
-  user      User   @relation(fields: [userId], references: [id])
-}
 
 model Publicar {
   id             Int              @id @default(autoincrement())
@@ -59,6 +49,6 @@ model PublicarPerfil {
   titulo     String
   legenda    String
   anexar     String
-  Publicar   Publicar? @relation(fields: [publicarId], references: [id])
-  publicarId Int?
+  Publicar   Publicar @relation(fields: [publicarId], references: [id])
+  publicarId Int
 }
