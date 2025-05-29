@@ -3,15 +3,15 @@ const jwt = require('jsonwebtoken')
 // Middleware -> Autenticação
 function authenticate(req, res, next) {
     // capturando token da requisição
-    const auhtHeader = req.headers.autorization
+    const authHeader = req.headers.authorization
 
-    if(!auhtHeader || !auhtHeader.startsWith("Bearer")) {
+    if(!authHeader || !authHeader.startsWith("Bearer")) {
         return res.status(401).json({
             msg: "Token não fornecido"
         })
     }
 
-    const [bearer, token] = auhtHeader.split(" ")
+    const [bearer, token] = authHeader.split(" ")
 
     try {
         req.user = jwt.verify(token, "paodequeijo")

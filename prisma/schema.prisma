@@ -22,6 +22,7 @@ model User {
   senha        String
   Login        Login[]
   EditarPerfil EditarPerfil[]
+  Publicar     Publicar[]
 }
 
 model Login {
@@ -29,7 +30,7 @@ model Login {
   email  String
   senha  String
   userId Int
-  User   User  @relation(fields: [userId], references: [id])
+  User   User   @relation(fields: [userId], references: [id])
 }
 
 model EditarPerfil {
@@ -44,8 +45,20 @@ model EditarPerfil {
 }
 
 model Publicar {
-  id      Int    @id @default(autoincrement())
-  titulo  String
-  legenda String
-  anexar  String
+  id             Int              @id @default(autoincrement())
+  titulo         String
+  legenda        String
+  anexar         String
+  userId         Int
+  User           User             @relation(fields: [userId], references: [id])
+  PublicarPerfil PublicarPerfil[]
+}
+
+model PublicarPerfil {
+  id         Int       @id @default(autoincrement())
+  titulo     String
+  legenda    String
+  anexar     String
+  Publicar   Publicar? @relation(fields: [publicarId], references: [id])
+  publicarId Int?
 }

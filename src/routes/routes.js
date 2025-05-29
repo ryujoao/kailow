@@ -6,7 +6,6 @@ const router = express.Router()
 const prisma = new PrismaClient()
 const jwt = require('jsonwebtoken');
 const { authenticate } = require('../middleware/authMiddleware');
-app.use('/uploads', express.static('uploads'));
 
 // Configuração do multer -> middleware para fazer upload de arquivos do cliente para o backend
 const storage = multer.diskStorage({
@@ -127,7 +126,7 @@ router.post("/", async (req, res) => {
     })
 
     console.log("Token gerado:", token)
-    
+
     return res.status(200).json({
         token,
         userId: user.id,
@@ -140,7 +139,7 @@ router.post("/", async (req, res) => {
 router.post('/editar', upload.fields([
     { name: 'imgUrl', maxCount: 1 },
     { name: 'curriculo', maxCount: 3 }
-]), async (req, res) => {
+]), authenticate, async (req, res) => {
     try {
         const { id, descricao } = req.body;
 
@@ -223,13 +222,37 @@ router.post('/editar', upload.fields([
 //     }
 // });
 
+
 // Publicar
-router.post('/publicar', upload.fields([
+router.get("/perfil", authenticate, async (req, res) => {
+    const { id } = req.params
+    const { nome, senha } = req.body
+
+    const user = await prisma.user.findUnique({ where: { id: Number(id) } })
+
+    if (!user) {
+        return res.status(404).json({ error: "*Usuário não encontrado" })
+    }
+
+    const updateUser = await prisma.user.update({
+        where: { id: Number(id) },
+        data: {
+            nome,
+            senha
+        }
+    })
+
+    return res.status(200).json(updateUser)
+
+})
+
+//publicação do perfil
+router.get('/perfil', upload.fields([
     { name: 'anexar', maxCount: 1 },
-]), async (req, res) => {
+]), authenticate, async (req, res) => {
     try {
         const { titulo, legenda } = req.body;
-        
+
         let anexar = null;
         if (req.files && req.files['anexar'] && req.files['anexar'][0]) {
             anexar = req.files['anexar'][0].path;
@@ -250,7 +273,7 @@ router.post('/publicar', upload.fields([
 });
 
 // mudar senha
-router.post("/configuracao/:id", async (req, res) => {
+router.post("/configuracao/:id", authenticate, async (req, res) => {
     const { senha, novaSenha } = req.body;
     const { id } = req.params;
 
