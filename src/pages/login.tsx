@@ -6,6 +6,7 @@ import Loading from '../components/loader';
 import { useForm } from 'react-hook-form';
 
 type loginType = {
+  userId: number,
   email: string,
   senha: string,
 }
@@ -20,9 +21,6 @@ export default function Login() {
 
 
   async function handlelogin(data: loginType) {
-
-    console.log(data)
-
     try {
       const response = await fetch("http://localhost:3000/", {
         method: "POST",
@@ -31,10 +29,15 @@ export default function Login() {
         },
         body: JSON.stringify(data),
       });
-      
+
       if (response.ok) {
-        
-        setIsLoggingIn(true)
+        const res = await response.json(); // Aqui você pega o retorno do backend
+
+        console.log(res)
+        localStorage.setItem("userId", res.userId);
+        localStorage.setItem("token", res.token);
+
+        setIsLoggingIn(true);
         setTimeout(() => {
           setIsLoggingIn(false);
           navigate("/home");
@@ -42,14 +45,13 @@ export default function Login() {
 
         console.log("Login realizado com sucesso!");
       } else {
-
-        const res = await response.json()
+        const res = await response.json();
         console.error("Erro ao realizar login:", response.statusText);
-        setMensagem(res.error)
+        setMensagem(res.error);
       }
     } catch (error: any) {
       console.error("Erro na requisição:", error);
-      setMensagem(error.message)
+      setMensagem(error.message);
     }
   }
 
@@ -78,6 +80,7 @@ export default function Login() {
             <h1 className={style.tituloLogin}>Bem vindo(a)!</h1>
 
             <form onSubmit={handleSubmit(handlelogin)}>
+
               <label className={style.labelLogin} htmlFor="email">E-mail</label>
               <input className={style.inputLogin} id="email" type="email" required {...register("email")} />
 
