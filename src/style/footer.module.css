@@ -1,0 +1,166 @@
+footer {
+  background-color: #071739;
+  padding: 50px 0;
+}
+
+.containerFooter {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.rowFooter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footerCol {
+  width: 22%;
+}
+
+.footerCol h4 {
+  font-size: 22px;
+  color: #cdd5db;
+  margin-bottom: 20px;
+  font-weight: 500;
+  position: relative;
+  /*Posiciona um elemento em relação à sua posição original, ou seja, relativa a si mesmo*/
+  text-transform: uppercase;
+  /*Deixar todas as letras de um texto em maiúsculas*/
+}
+
+.footerCol ul {
+  list-style: none;
+}
+
+.footerCol ul li {
+  margin: 10px 0;
+}
+
+.footerCol ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  /*Coloca em maiúscula a primeira letra de cada palavra no texto selecionado*/
+  color: #cdd5db;
+  text-decoration: none;
+  /* remove a decoração de texto, como o sublinhado*/
+  font-weight: 300;
+  display: block;
+  /* define que um elemento deve ocupar uma linha inteira, como um bloco, na página*/
+  transition: all 0.3s ease;
+}
+
+.footerCol ul li a:hover {
+  color: white;
+  padding-left: 10px;
+}
+
+.footerCol .mediasSocias {
+  margin-top: 30px;
+}
+
+.footerCol .mediasSocias a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  border-radius: 50%;
+  border: 1px solid #cdd5db;
+  transition: all 0.5s ease;
+  background-color: #fff;
+}
+
+.footerCol .formSub input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #cdd5db;
+  color: grey;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.footerCol .formSub input::placeholder {
+  color: grey;
+}
+
+.footerCol .formSub button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 17px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: gray;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: white;
+}
+
+.formSub {
+  width:100%;
+}
+
+/* Responsivo */
+
+@media (max-width: 600px) {
+  .footerCol {
+    width: 100%;
+  }
+}
+
+#footerHome {
+  background-color: gray;
+  height: 522px;
+}
+
+.primeiraLinhaFooter {
+  margin-bottom: 100px;
+}
+
+.primeiraLinhaFooter p {
+  display: flex;
+  justify-content: center;
+}
+
+.logoFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #cdd5db;
+  justify-content: center;
+}
+
+.logoFooter img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.kailowFooter {
+  font-size: 40px;
+}
+
+.mediasSocias a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mediasSocias a:hover {
+  transform: translateY(-10px);
+}
+
+.mediasSocias {
+  display: flex;
+  justify-content: center;
+}
+
+.feedback {
+  text-align: center;
+  font-size: 4dvh;
+}
+

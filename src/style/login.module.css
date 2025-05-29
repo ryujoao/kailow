@@ -1,0 +1,169 @@
+.bodyLogin {
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #071739, #1545aa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bodyCadastro {
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #071739, #1545aa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.containerLogin {
+    display: flex;
+    gap: 20dvh;
+}
+
+.containerLogin button {
+    color: black;
+}
+
+.cardLogin {
+    background-color: #071739;
+    padding: 8dvh;
+    border-radius: 10px;
+    width: 50vh;
+    height: auto;
+    max-width: 1600px;
+}
+
+.tituloLogin {
+    margin-bottom: 3.2vh;
+    font-size: 4vh;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.labelLogin {
+    color: #fff;
+    font-size: 2.2vh;
+    margin-bottom: 5dvh;
+    text-align: left;
+}
+
+.inputLogin {
+    display: inline-block;
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    min-height: 20px;
+    padding: 10px;
+    padding-right: 15px;
+    margin: 7px 0px 20px 0px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.inputSenha {
+    position: relative;
+}
+
+.olhos {
+    position: absolute;
+    top: 45%;
+    right: 20px;
+    transform: translateY(-45%);
+    cursor: pointer;
+}
+
+.buttonLogin {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonLogin button {
+    width: 35dvh;
+    padding: 14px;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    /* align-items: center; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.forgotPassword {
+    display: block;
+    color: #64beff;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.forgotPassword:hover {
+    /* text-decoration: underline; */
+    color: #b4daf5;
+}
+
+.cadastre {
+    color: #64beff;
+    cursor: pointer;
+}
+
+.cadastre:hover {
+    color: #b4daf5;
+}
+
+.fazerLogin {
+    color: #64beff;
+    cursor: pointer;
+}
+
+.criarConta {
+    color: #fff;
+}
+
+.fraseLoginDiv {
+    width: 80dvh;
+    display: flex;
+}
+
+.fraseLogin {
+    font-size: 40px;
+    text-align: center;
+    align-self: center;
+    top: 50%;
+    font-weight: 370;
+    color: #fff;
+    position: fixed;
+    width: 80vh;
+}
+
+.mensagemRecuperar {
+    color: #cdd5db;
+    text-align: left;
+    font-size: 12.5px;
+    margin-bottom: 3vh;
+}
+
+.mensagem {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.senhaMsg {
+    color: rgb(255, 0, 0);
+    margin-bottom: 15px;
+    font-size: 15px;
+}

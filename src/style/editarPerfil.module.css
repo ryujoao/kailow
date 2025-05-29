@@ -1,0 +1,162 @@
+.bodyEditarPerfil {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(90deg, #071739, #1545aa);
+    line-height: 1.6;
+    position: relative;
+}
+
+.containerEditarPerfil {
+    padding-top: 18dvh;
+    padding-bottom: 15dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardEditarPerfil {
+    /* background: rgba(255, 255, 255, 0.25); */
+    background: #071739;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 90dvh;
+    padding: 40px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userEditarPerfil {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Alinha os elementos em coluna */
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 20px; */
+    /* Espaçamento superior opcional */
+}
+
+.userImg {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* Espaçamento entre a imagem e o nome */
+}
+
+.userEditarPerfil h3 {
+    font-size: 20px;
+    color: #245270;
+    text-align: center;
+    margin: 0;
+    /* Remove margens extras */
+    display: flex;
+    /* Alinha o texto e o ícone lado a lado */
+    align-items: center;
+    /* Centraliza verticalmente */
+    gap: 5px;
+    /* Espaçamento entre o texto e o ícone */
+}
+
+.textSeuPerfil {
+    text-align: center;
+    font-size: 6vh;
+    margin-bottom: 10dvh;
+    color: #cdd5db;
+    /* margin-top: 15px; */
+}
+
+.formEditarPerfil {
+    width: 70dvh;
+    max-width: 400dvh;
+    min-height: fit-content;
+    margin: 20px auto;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.labelEditarPerfil{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #cdd5db;
+    text-align: left;
+}
+
+.inputEditarPerfil {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    
+}
+
+.inputCurriculo {
+    background-color: #fff;
+}
+
+.interesseVagas {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2dvh;
+}
+
+
+.checkboxItems {
+  display: flex;
+  margin-bottom: 4dvh;
+  gap: 10px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.interesseCheckbox {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.buttonPerfil {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonPerfil button {
+    background-color: #245270;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 35dvh;
+    padding: 14px;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    align-items: center;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+}
+
+.buttonPerfil button:hover {
+    background-color: #cdd5db;
+}
+
+.mensagem {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 15px;
+}

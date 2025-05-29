@@ -1,0 +1,159 @@
+.chatContainer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 280px;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+.chatHeader {
+    background: linear-gradient(90deg, rgb(14, 14, 87), rgb(84, 84, 242));
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+.chatHeaderUp {
+    /* background-color: #e1e1e1; */
+    /* color: rgb(0, 0, 0); */
+    padding: 10px;
+    /* border-radius: 10px 10px 0px 0px; */
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.backButton {
+    display: flex;
+    cursor: pointer;
+    font-size: 12px;
+    /* margin-bottom: 10px; */
+    color: #000000;
+    text-align: left;
+    align-items: center;
+}
+
+.chatBody {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 0 0 10px 10px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+}
+
+.conversationHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1e1e1;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.conversationHeader h4 {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #000000;
+}
+
+.messagesContainer {
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.message {
+    background-color: #e1e1e1;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.deleteButton {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+}
+
+.trashIcon {
+    color: black;
+}
+
+.noMessages {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.inputContainer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.messageInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.sendButton {
+    background-color: #1545aa;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 11px;
+}
+
+.sendButton:hover {
+    background-color: #0d3478;
+}
+
+.userList {
+    padding: 10px;
+    /* border-bottom: 1px solid #ddd; */
+}
+.userList h4 {
+    padding: 10px;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.user:hover {
+    background-color: #e1e1e1;
+}
+
+.userIcon {
+    margin-right: 10px;
+    font-size: 20px;
+}

@@ -1,0 +1,228 @@
+.premiumBody {
+  background: linear-gradient(90deg, #071739, #1545aa);
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+@media (max-width: 1070px) {
+  .containerPlanos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .cardPremium {
+    width: 220px;
+    min-width: 180px;
+    height: auto;
+    padding: 16px 0;
+  }
+
+  .tituloDosPlanos {
+    font-size: 15px;
+  }
+
+  .precoNovo {
+    font-size: 1.5rem;
+  }
+
+  .descricaoPequena {
+    font-size: 11px;
+  }
+
+  .btnEscolherPlano {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  .beneficiosPlano li {
+    font-size: 0.8rem;
+  }
+}
+
+.tituloPlano {
+  text-align: center;
+  font-size: 6vh;
+  /* margin-top: 40px; */
+  margin-bottom: 5vh;
+  color: #cdd5db;
+  font-weight: bold;
+}
+
+.subPlano {
+  text-align: center;
+  color: #cdd5db;
+  margin-bottom: 15vh;
+  font-size: 3.5vh;
+}
+
+.containerPlanos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px;
+  margin: 40px 0;
+}
+
+.cardPremium {
+  padding: 18px 5px 18px 5px;
+  background: #fff;
+  border: 1.5px solid #e2e2e2;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(36, 82, 112, 0.08);
+  width: 360px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: 0.2s all;
+  /* transition:
+    box-shadow 0.2s,
+    border-color 0.2s,
+    transform 0.2s; */
+}
+
+.cardPremium:hover {
+  box-shadow: 0 12px 36px rgba(36, 82, 112, 0.22);
+  border-color: #5b21b6;
+  transform: translateY(-8px) scale(1.03);
+  z-index: 2;
+}
+
+.cardPremium .tag {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fee155;
+  color: #245270;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 4px 18px;
+  border-radius: 12px 12px 0 0;
+
+}
+
+.cardPremium .tag.recomendado {
+  background: #b2e2f2;
+  color: #245270;
+}
+
+.cardPremium.destaque {
+  border: 2.5px solid #fee155;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(167, 139, 250, 0.18);
+}
+
+.precoAntigo {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.precoNovo {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2d1e70;
+  font-weight: bold;
+  margin: 12px 0 8px 0;
+}
+
+.precoNovo .mes {
+  font-size: 1.2rem;
+  color: #222;
+  font-weight: normal;
+}
+
+.descricaoPequena {
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+  max-width: 220px;
+  /* ou ajuste conforme o visual desejado */
+}
+
+.btnEscolherPlano {
+  width: 50%;
+  padding: 12px 0;
+  margin: 18px 0 0 0;
+  background: transparent;
+  color: #5b21b6;
+  border: 2px solid #a78bfa;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s, color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btnEscolherPlano:hover {
+  background: #5b21b6;
+  color: #fff;
+}
+
+.economize {
+  background: #ede9fe;
+  color: #5b21b6;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 4px 16px;
+  font-size: 1.0rem;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.tituloDosPlanos {
+  color: #5b21b6;
+  margin-top: 2%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 19px;
+}
+
+.sub {
+  font-size: 10px;
+}
+
+.gratis {
+  font-weight: bold;
+  color: rgb(92, 5, 135);
+  font-size: 16px;
+
+}
+
+.beneficiosPlano {
+  list-style: none;
+  padding: 0;
+  margin: 14px auto 0 auto;
+  width: 85%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.beneficiosPlano li {
+  color: #222;
+  font-size: 0.83rem;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.beneficiosPlano .check {
+  color: #22c55e;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.beneficiosPlano .destaque {
+  color: #5b21b6;
+  font-weight: bold;
+}
