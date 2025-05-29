@@ -1,5 +1,5 @@
 
-import style from "../style/perfilHome.module.css"
+import style from "../style/perfilHome3.module.css"
 
 export default function PerfilHome() {
     return (

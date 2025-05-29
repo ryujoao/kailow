@@ -1,4 +1,4 @@
-import style from "../style/perfilHome.module.css";
+import style from "../style/perfilHome2.module.css";
 
 export default function PerfilHome() {
   return (
@@ -23,8 +23,8 @@ export default function PerfilHome() {
 
               <section style={{ paddingLeft: "5dvh" }}>
                 <h3 className={style.postDescricao}>
-                  ✅ Treinamento incluso <br />✅ Gorjetas + benefícios ✅<br />
-                  Flexibilidade de horários ✅ <br /> Oportunidade de crescimento 💬 <br />
+                  ✅ Treinamento incluso <br />✅ Gorjetas + benefícios <br /> ✅
+                  Flexibilidade de horários <br /> ✅ Oportunidade de crescimento <br /> 💬
                   Gosta de atendimento? Venha fazer parte do nosso time! 📩
                   #Vagas #Restaurante #TrabalheConosco
                 </h3>

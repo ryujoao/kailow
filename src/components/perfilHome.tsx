@@ -24,7 +24,7 @@ export default function PerfilHome() {
               <section style={{ paddingLeft: "5dvh" }}>
                 <h3 className={style.postDescricao}>
                   ✅ Exercício + ar livre <br />✅ Flexibilidade de horário <br /> ✅
-                  Bonificação por desempenho ✅ <br />Treinamento incluso 💬<br /> Ama
+                  Bonificação por desempenho <br />✅ Treinamento incluso <br />💬 Ama
                   animais? Venha trabalhar conosco! 📩 #Vagas #PetLove
                   #TrabalheComAmor
                 </h3>
