@@ -5,6 +5,7 @@
   padding: 30px;
   gap: 40px;
   margin: 0 auto;
+  max-height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -15,8 +16,6 @@
   }
 
   .profileSection {
-    position: relative;
-    /* Remove o comportamento fixo em telas pequenas */
     border-right: none;
     border-bottom: 1px solid #fff;
     padding-bottom: 20px;
@@ -27,20 +26,21 @@
   }
 }
 
+
+
 .profileSection {
   flex: 1;
   max-width: 550px;
-  border-right: 1px solid #cdd5db;
-  min-width: 300px;
-  position: relative;
+  /* border-right: 1px solid #cdd5db; */
   display: flex;
   justify-content: center;
+  max-height: 100%;
 }
 
 .profileSectionFixed {
   position: fixed;
   /* Aplica o comportamento fixo */
-  top: 50px;
+  top: 100px;
   left: 0;
   width: 500px;
   /* Define uma largura fixa */
@@ -56,39 +56,35 @@
   /* Centraliza os itens horizontalmente */
   padding: 20px;
   /* Adiciona espaçamento interno */
-
+  border-right: 1px solid #cdd5db;
 }
 
 .profileTitle {
   font-size: 24px;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
   color: #cdd5db;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 .profileImage {
   display: flex;
   justify-content: center;
   height: 15%;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  margin-top: 15px;
 }
 
 .profileImage img {
   border-radius: 100px;
 }
 
-.starProfile {
-  padding: 10px;
-  text-align: center;
-  color: #f7f7f7;
-}
+.fotoPerfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 
-.avaliaPerfil {
-  display: inline-block;
-  font-weight: bold;
-  font-size: 22px;
-  color: #f7f7f7;
 }
 
 .profileInfo {
@@ -108,40 +104,15 @@
 .profileDescricao {
   margin-bottom: 20px;
   line-height: 1.5;
-}
-
-.profileInteresse {
-  margin: 20px 0;
-}
-
-.profileInteresse h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #cdd5db;
-  text-align: center;
-}
-
-.listaInteresse {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  color: #f7f7f7;
-}
-
-.listaInteresse li {
-  background-color: transparent;
-  border-radius: 30px;
-  padding: 10px;
-  padding-left: 15px;
-  position: relative;
+  color: #fff;
 }
 
 .editProfileButton {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #cdd5db;
-  color: #1545aa;
+  background-color: #071739;
+  /* background: #0d2761; */
+  color: #ddd;
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
@@ -150,11 +121,13 @@
   transition: background-color 0.3s ease;
   border: none;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 25px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .editProfileButton:hover {
-  background-color: #071739;
+  
+  background-color: #1545aa;
 }
 
 .profileResume {
@@ -162,8 +135,14 @@
   font-size: 18px;
   display: block;
   text-align: center;
-  text-decoration: underline;
   color: #cdd5db;
+}
+
+.curriculoPerfil {
+  color: #f7f7f7;
+  text-decoration: none;
+  font-size: 16px;
+
 }
 
 .botaoPremium {
@@ -171,25 +150,19 @@
   height: 50px;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgb(14, 14, 87), rgb(84, 84, 242));
+  background: linear-gradient(90deg, rgb(14, 14, 87), rgb(84, 84, 242));
   border-radius: 7px;
   margin: 20px auto;
   width: 200px;
+
 }
 
 .botaoPremium a {
   color: rgb(241, 236, 236);
   text-decoration: none;
   font-weight: bold;
+  
 }
-
-/* .vertical {
-  width: 1px;
-  height: 600px;
-  border: none;
-  background-color: #ddd;
-  margin: 0 auto;
-} */
 
 .todasOpcoes {
   display: flex;
@@ -209,16 +182,22 @@
 
 .feedSection {
   flex: 2;
-  margin-left: 20px;
   min-width: 300px;
+  min-height: 1200px;
+  /* Garante altura mesmo sem posts */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .feedTitle {
-  font-size: 6vh;
+  font-size: 24px;
   margin-bottom: 25px;
   color: #cdd5db;
-  margin-left: 250px;
-  margin-top: 80px;
+  margin-left: 10px;
+  margin-top: 130px;
 }
 
 .postCard {
@@ -263,16 +242,44 @@
   background-color: #dddddd;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   width: 600px;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  /* Coloca imagem e lateral em coluna */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  justify-content: center;
+  /* Centraliza verticalmente */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.imagem {
+  max-width: 100%;
+  max-height: 500px;
+  /* ou o valor que preferir */
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: #fff;
+  display: block;
+}
+
+.lateral {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centraliza verticalmente */
+  padding-left: 20px;
 }
 
 .comentarios {
   margin-top: 15px;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: transparent;
   border-radius: 8px;
+
 }
 
 .comentariosLista {
@@ -282,7 +289,11 @@
 
 .comentarioInput {
   display: flex;
-  gap: 10px;
+  gap: 16px;
+}
+
+.comentarios h4 {
+  margin-bottom: 7px;
 }
 
 .comentarioTexto {
@@ -295,16 +306,18 @@
 
 .comentarioBotao {
   padding: 8px 15px;
-  background-color: #1545aa;
+  background-color: #0d2761;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   font-size: 14px;
+  transition: 0.2s;
 }
 
 .comentarioBotao:hover {
-  background-color: #1b3a4b;
+  background-color: #ffffff;
+  color: #0d2761;
 }
 
 .menuContainer {
@@ -354,4 +367,177 @@
   margin-left: auto;
   position: relative;
   cursor: pointer;
+}
+
+.comentariosLista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comentarioItem {
+  margin-bottom: 18px;
+}
+
+.comentarioLinha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 0 0 0;
+  background-color: transparent;
+}
+
+.comentarioTexto {
+  font-size: 15px;
+  color: #222;
+  background: transparent;
+  word-break: break-word;
+}
+
+.comentarioMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+
+}
+
+.comentarioTempo {
+  font-size: 12px;
+  color: #665e5e;
+  margin-right: 8px;
+}
+
+.comentarioAcao {
+  cursor: pointer;
+  color: #665e5e;
+  font-size: 13px;
+  margin-right: 8px;
+  transition: color 0.2s;
+}
+
+.comentarioAcao:hover {
+  color: #262626;
+  text-decoration: underline;
+}
+
+.comentarioEditInput {
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.legendaPost {
+  font-size: 16px;
+  color: #222;
+  margin: 0;
+  padding-left: 2px;
+  word-break: break-word;
+  background: transparent;
+}
+
+.comentarioAcao {
+  cursor: pointer;
+  color: #8e8e8e;
+  font-size: 15px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  padding: 4px;
+  transition: 0.2s, color 0.2s;
+}
+
+.comentarioAcao:hover,
+.comentarioAcao:focus {
+  background: #f2f2f2;
+  color: #262626;
+  outline: none;
+}
+
+.imagem {
+  max-width: 100%;
+  max-height: 220;
+  border-radius: 8;
+  margin-bottom: 0;
+  object-fit: cover;
+  background-color: #fff;
+}
+
+.imgCard {
+  color: #888;
+  margin-top: 8px;
+}
+
+.uploadLabel {
+  cursor: pointer;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comentarioEditInput {
+  width: 100%;
+  padding: 8;
+  border-radius: 6;
+  border: 1px solid #ccc;
+  margin-right: 10;
+  font-size: 16;
+}
+
+.legendaPost {
+  font-size: 16px;
+  color: #222;
+  padding-left: 2px;
+  word-break: break-word;
+  background: transparent;
+  width: 100%;
+  text-align: center;
+}
+
+.comentarioAcao {
+  margin-left: 12;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.postLegenda {
+  width: 600px;
+  margin: 8px auto 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+id {
+  margin-bottom: 40
+}
+
+.botaoMais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 100px;
+  margin-left: 0;
+  transition: 0.2s;
+}
+
+.botaoMais:hover {
+  background: #102450
 }

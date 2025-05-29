@@ -7,7 +7,7 @@ nav {
   display: flex;
   justify-content: center;
   line-height: 1.4dvh;
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   /* border: 1px solid #bcd4e6; */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
