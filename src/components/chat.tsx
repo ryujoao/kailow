@@ -4,58 +4,18 @@ import * as Icon from "react-bootstrap-icons";
 
 
 export default function Chat() {
-    const [isOpen, setIsOpen] = useState(false);
+ const [isOpen, setIsOpen] = useState(false);
     const [selectedUser, setSelectedUser] = useState<string | null>(null);
     const [messages, setMessages] = useState<{ [user: string]: string[] }>({});
     const [newMessage, setNewMessage] = useState("");
 
     // Lista de usuários com ícones
     const users = [
-        { name: "IA", icon: "🤖" },
         { name: "Antônio", icon: "👨‍💻" },
         { name: "Maria Angela", icon: "👩‍💼" },
         { name: "Isa Emi", icon: "👩‍🎨" },
         { name: "Ryu", icon: "👨‍🔧" },
     ];
-
-    async function sendToAI(message: string): Promise<string> {
-        const response = await fetch("https://api.openai.com/v1/chat/completions", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer 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"
-            },
-            body: JSON.stringify({
-                model: "gpt-3.5-turbo",
-                messages: [{ role: "user", content: message }]
-            })
-        });
-        const data = await response.json();
-        return data.choices?.[0]?.message?.content || "Erro ao obter resposta da IA.";
-    }
-
-    const sendMessage = async () => {
-        if (newMessage.trim() !== "" && selectedUser) {
-            setMessages((prev) => ({
-                ...prev,
-                [selectedUser]: [...(prev[selectedUser] || []), newMessage],
-            }));
-
-            // Se o contato for IA, chama a API e adiciona resposta
-            if (selectedUser === "IA") {
-                const aiResponse = await sendToAI(newMessage);
-                setMessages((prev) => ({
-                    ...prev,
-                    [selectedUser]: [
-                        ...(prev[selectedUser] || []),
-                        `🤖 ${aiResponse}`,
-                    ],
-                }));
-            }
-
-            setNewMessage("");
-        }
-    };
 
     const toggleChat = () => {
         setIsOpen(!isOpen);
@@ -68,15 +28,15 @@ export default function Chat() {
         }
     };
 
-    // const sendMessage = () => {
-    //     if (newMessage.trim() !== "" && selectedUser) {
-    //         setMessages({
-    //             ...messages,
-    //             [selectedUser]: [...(messages[selectedUser] || []), newMessage],
-    //         });
-    //         setNewMessage("");
-    //     }
-    // };
+    const sendMessage = () => {
+        if (newMessage.trim() !== "" && selectedUser) {
+            setMessages({
+                ...messages,
+                [selectedUser]: [...(messages[selectedUser] || []), newMessage],
+            });
+            setNewMessage("");
+        }
+    };
 
     const deleteMessage = (index: number) => {
         if (selectedUser) {

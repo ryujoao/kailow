@@ -64,12 +64,6 @@ export default function Publicar() {
                                     <label className={style.publicarLabel} htmlFor="titulo">Título</label>
                                     <input className={style.publicarInput} type="text" id="titulo" placeholder="Digite o título da publicação" required {...register("titulo")} />
                                 </div>
-
-                                <div className={style.selectLabel}>
-                                    <label className={style.publicarLabel} htmlFor="descricao">Legenda</label>
-                                    <textarea className={style.publicarInput} id="descricao" name="descricao" rows={8} placeholder="Digite sua legenda" required ></textarea>
-                                </div>
-
                                 <div className={style.selectLabel}>
                                     <label className={style.publicarLabel} htmlFor="arquivo">Anexar imagem</label>
                                     <input className={style.publicarInput} type="file" max={1} id="arquivo" accept=".png, .jpg, .jpeg" {...register("anexar")} required />
