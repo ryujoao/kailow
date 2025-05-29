@@ -7,13 +7,15 @@ const prisma = new PrismaClient()
 const jwt = require('jsonwebtoken');
 const { authenticate } = require('../middleware/authMiddleware');
 
-// Configuração do multer
+// Configuração do multer -> middleware para fazer upload de arquivos do cliente para o backend
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         if (file.fieldname === 'imgUrl') {
             cb(null, 'uploads/img');
         } else if (file.fieldname === 'curriculo') {
             cb(null, 'uploads/curriculo');
+        } else if (file.fieldname === 'anexar') {
+            cb(null, 'uploads/anexar');
         } else {
             cb(null, 'uploads/others');
         }
@@ -124,15 +126,16 @@ router.post("/", async (req, res) => {
     })
 
     console.log("Token gerado:", token)
-
+    
     return res.status(200).json({
         token,
+        userId: user.id,
         msg: "Token gerado com sucesso",
     })
 
 })
 
-
+// Editar perfil
 router.post('/editar', upload.fields([
     { name: 'imgUrl', maxCount: 1 },
     { name: 'curriculo', maxCount: 3 }
@@ -157,7 +160,8 @@ router.post('/editar', upload.fields([
                 nome: user.nome,
                 descricao,
                 imgUrl,
-                curriculo
+                curriculo,
+                userId: user.id
             }
         });
 
@@ -168,22 +172,22 @@ router.post('/editar', upload.fields([
     }
 });
 
-    // router.post("/editar", authenticate, async (req, res) => {
-    //     const { id, descricao, curriculo, imgUrl } = req.body;
-    //     console.log(req.user)
+// router.post("/editar", authenticate, async (req, res) => {
+//     const { id, descricao, curriculo, imgUrl } = req.body;
+//     console.log(req.user)
 
-    //     const user = await prisma.user.findUnique({ where: { id: Number(id) } });
+//     const user = await prisma.user.findUnique({ where: { id: Number(id) } });
 
-    //     if (!user) {
-    //         return res.status(404).json({ error: "*Usuário não encontrado" })
-    //     }
+//     if (!user) {
+//         return res.status(404).json({ error: "*Usuário não encontrado" })
+//     }
 
-    //     return res.status(201).json({
-    //         token,
-    //         msg: "Alterações salvas",
-    //     })
+//     return res.status(201).json({
+//         token,
+//         msg: "Alterações salvas",
+//     })
 
-    // })
+// })
 
 // async (req, res) => {
 
@@ -218,26 +222,57 @@ router.post('/editar', upload.fields([
 //     }
 // });
 
-
-router.post("/publicar", async (req, res) => {
-    // recebe os dados do corpo da requisição
-    const { titulo, legenda, anexar } = req.body
-    console.log(titulo, legenda, anexar)
-
-
-    // Criar user
-    const post = await prisma.user.create({
-        data: {
-            titulo,
-            legenda,
-            anexar
+// Publicar
+router.post('/publicar', upload.fields([
+    { name: 'anexar', maxCount: 1 },
+]), async (req, res) => {
+    try {
+        const { titulo, legenda } = req.body;
+        
+        let anexar = null;
+        if (req.files && req.files['anexar'] && req.files['anexar'][0]) {
+            anexar = req.files['anexar'][0].path;
         }
-    })
+        const publicar = await prisma.publicar.create({
+            data: {
+                titulo,
+                legenda,
+                anexar
+            }
+        })
+
+        return res.status(201).json(publicar);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Erro ao salvar alterações" });
+    }
+});
+
+// mudar senha
+router.post("/configuracao/:id", async (req, res) => {
+    const { senha, novaSenha } = req.body;
+    const { id } = req.params;
+
+    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+    if (!user) {
+        return res.status(404).json({ error: "Usuário não encontrado" });
+    }
+
+    if (senha != user.senha) {
+        return res.status(401).json({ error: "*Senha atual incorreta" })
+    }
+
+    // atualiza a senha do usuário na tabela User
+    await prisma.user.update({
+        where: { id: Number(id) },
+        data: { senha: novaSenha }
+    });
 
     return res.status(200).json({
-        msg: "Seu post foi publicado com sucesso",
+        msg: "Senha atualizada com sucesso",
     })
-})
 
+})
 
 module.exports = router

@@ -14,32 +14,38 @@ datasource db {
 }
 
 model User {
-  id         Int      @id @default(autoincrement())
-  nome       String
-  email      String   @unique
-  telefone   String   @unique
-  nascimento DateTime @db.Date
-  senha      String
+  id           Int            @id @default(autoincrement())
+  nome         String
+  email        String         @unique
+  telefone     String         @unique
+  nascimento   DateTime       @db.Date
+  senha        String
+  Login        Login[]
+  EditarPerfil EditarPerfil[]
 }
 
 model Login {
-  id    Int    @id @default(autoincrement())
-  email String
-  senha String
+  id     Int    @id @default(autoincrement())
+  email  String
+  senha  String
+  userId Int
+  User   User  @relation(fields: [userId], references: [id])
 }
 
 model EditarPerfil {
-  id    Int    @id @default(autoincrement())
-  nome String
-  email String
+  id        Int    @id @default(autoincrement())
+  nome      String
+  email     String
   descricao String
   curriculo String
-  imgUrl String
+  imgUrl    String
+  userId    Int
+  user      User   @relation(fields: [userId], references: [id])
 }
 
 model Publicar {
-  id Int @id @default(autoincrement())
-  titulo String
+  id      Int    @id @default(autoincrement())
+  titulo  String
   legenda String
-  anexar String
+  anexar  String
 }
