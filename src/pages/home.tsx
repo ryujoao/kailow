@@ -2,6 +2,8 @@ import { Cards } from '../components/cards'
 import Nav from '../components/navbar'
 import style from '../style/home.module.css'
 import PerfilHome from '../components/perfilHome'
+import PerfilHome2 from '../components/perfilHome2'
+import PerfilHome3 from '../components/perfilHome3'
 import Chat from '../components/chat' 
 
 export default function Home() {
@@ -21,8 +23,8 @@ export default function Home() {
         <section>
           <h2 className={style.cardsTitulo}>Seu Feed</h2>
           <PerfilHome />
-          <PerfilHome />
-          <PerfilHome />
+          <PerfilHome2 />
+          <PerfilHome3 />
         </section>
       </div>
     </div>
