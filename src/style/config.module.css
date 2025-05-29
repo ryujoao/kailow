@@ -1,0 +1,132 @@
+.bodyConfig {
+    background: linear-gradient(90deg, #071739, #1545aa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 18vh;
+    padding-bottom: 22vh;
+}
+
+
+.configContainer {
+    width: 100vh;
+    height: auto;
+    max-width: 1900px;
+    padding: 10vh;
+    background-color: #071739;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Cabeçalho */
+.configHeader {
+    font-size: 6vh;
+    text-align: center;
+    margin-bottom: 14dvh;
+    color: #cdd5db;
+}
+
+
+/* Conteúdo principal */
+.configMain {
+    padding: 20px;
+}
+
+.configSection {
+    margin-bottom: 40px;
+}
+
+.configTitle {
+    font-size: 4vh;
+    margin-bottom: 15px;
+    color: #cdd5db;
+    padding-bottom: 8px;
+}
+
+/* Itens de configuração */
+.configItem {
+    margin-bottom: 15px;
+}
+
+.configItem label {
+    font-size: 2.5vh;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #cdd5db;
+}
+
+.configInput {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.configInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.inputSenha {
+    position: relative;
+}
+
+.olhos {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-45%);
+    cursor: pointer;
+}
+
+.configTermos {
+    color: #cdd5db;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.configTermos:hover {
+    color: #1545aa;
+}
+
+/* Checkboxes e radios */
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox input {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* btn */
+.configFooter {
+    padding-top: 10vh;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.btnPrimary {
+    background-color: #245270;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 35dvh;
+    padding: 15px;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+ 
+}
+
+.btnPrimary:hover {
+    background-color: #cdd5db;
+}
+
