@@ -6,6 +6,7 @@ const router = express.Router()
 const prisma = new PrismaClient()
 const jwt = require('jsonwebtoken');
 const { authenticate } = require('../middleware/authMiddleware');
+app.use('/uploads', express.static('uploads'));
 
 // Configuração do multer -> middleware para fazer upload de arquivos do cliente para o backend
 const storage = multer.diskStorage({
