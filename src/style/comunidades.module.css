@@ -37,7 +37,7 @@
 .card {
   /* width: min(350px, 90vw); */
   width: 50vh;
-  height: 45vh;
+  height: auto;
   max-width: 1070px;
   background-color: #071739;
   border-radius: 15px;
@@ -71,7 +71,7 @@
 
 .comunidadeSlogan {
   flex-wrap: wrap;
-  font-size: 25px;
+  font-size: 22px;
   margin-bottom: 6px;
   font-weight: bold;
 }
