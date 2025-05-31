@@ -18,23 +18,10 @@ export default function Sobre() {
                 <div className={style.cardSobre}>
                     <section className={style.tudoSobre}>
                         <p className={style.textoSobre}>
-                            A proposta do Kailow surgiu da identificação de uma lacuna no
-                            mercado: a dificuldade enfrentada por menores de 18 anos em
-                            obter uma fonte de renda extra. Diante desse desafio,
-                            desenvolvemos uma plataforma digital que permite a jovens, que
-                            ainda não atingiram a maioridade, acessarem oportunidades de
-                            trabalho e gerarem remuneração mensal. O Kailow funciona como um
-                            ambiente integrado, onde os usuários podem tanto contratar
-                            serviços quanto se candidatar a vagas, dependendo do tipo de
-                            cadastro realizado.
+                            Criamos o Kailow para resolver um problema real: a dificuldade de menores de 18 anos encontrarem uma fonte de renda. Nossa plataforma digital conecta jovens a oportunidades de trabalho, permitindo que eles ofereçam serviços ou se candidatem a vagas, tudo de forma simples, segura e acessível.
                         </p>
                         <p className={style.textoSobre}>
-                            O nome "Kailow" é uma combinação de duas palavras: "Kai", que
-                            representa o conceito de "mar" em havaiano, simbolizando a
-                            vastidão de oportunidades disponíveis, e "low", que remete à
-                            ideia de acessibilidade e inclusão. Assim, o Kailow se propõe a
-                            ser um espaço onde todos podem navegar e encontrar seu lugar no
-                            mercado de trabalho.
+                            O nome Kailow une dois conceitos: "Kai" (mar), simbolizando infinitas oportunidades, e "Low" (acessível), reforçando nossa missão de inclusão. Aqui, todo jovem pode navegar e conquistar seu espaço no mercado!
                         </p>
                     </section>
                 </div>
