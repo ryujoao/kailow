@@ -229,36 +229,15 @@ export default function EditarPerfil() {
 
                         <div className={style.formEditarPerfil}>
                             <form onSubmit={handleSubmit(handleAlterarPerfil)}>
-                                <label className={style.labelEditarPerfil} htmlFor="email">
-                                    E-mail
-                                </label>
-                                <input
-                                    className={style.inputEditarPerfil}
-                                    id="email"
-                                    type="text"
-                                    {...register("email")}
-                                />
-                                <label className={style.labelEditarPerfil} htmlFor="email">
-                                    Nome
-                                </label>
-                                <input
-                                    className={style.inputEditarPerfil}
-                                    id="nome"
-                                    type="text"
-                                    {...register("nome")}
-                                />
 
-                                <label className={style.labelEditarPerfil} htmlFor="descricao">
-                                    Adicione sua descrição
-                                </label>
-                                <textarea
-                                    className={style.inputEditarDescricao}
-                                    id="descricao"
-                                    rows={8}
-                                    placeholder="Digite sua descrição"
-                                    {...register("description")}
+                                <label className={style.labelEditarPerfil} htmlFor="nome"> Nome </label>
+                                <input className={style.inputEditarPerfil} id="nome" type="text" {...register("nome")} />
 
-                                />
+                                <label className={style.labelEditarPerfil} htmlFor="email"> E-mail </label>
+                                <input className={style.inputEditarPerfil} id="email" type="text" {...register("email")} />
+
+                                <label className={style.labelEditarPerfil} htmlFor="descricao"> Adicione sua descrição </label>
+                                <textarea className={style.inputEditarDescricao} id="descricao" rows={8} placeholder="Digite sua descrição" {...register("description")} />
 
                                 {/* <label className={style.labelEditarPerfil} htmlFor="curriculo">
                                     Currículo (PDF):
