@@ -1,58 +1,77 @@
 import { useForm } from "react-hook-form";
 import { Footer } from "../components/footer";
-import Nav from "../components/navbar"
-import style from "../style/config.module.css"
-import { useState } from "react";
+import Nav from "../components/navbar";
+import style from "../style/config.module.css";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import * as Icon from "react-bootstrap-icons"
+import * as Icon from "react-bootstrap-icons";
+import { jwtDecode } from "jwt-decode";
 
 type configType = {
-  id: number,
-  senha: string,
-  novaSenha: string
-}
+  id: number;
+  senha: string;
+  novaSenha: string;
+};
 
-export default function Configurações() {
-  
-  const userId = Number(localStorage.getItem("userId"));
-  const { register, handleSubmit } = useForm<configType>({
-    defaultValues: {
-      id: userId,
-    },
-  })
-
-  const [mensagem, setMensagem] = useState("")
+export default function Configuracoes() {
+  const token = localStorage.getItem("token") || "";
+  const [user, setUser] = useState<configType>();
+  const [mensagem, setMensagem] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
   const [mostrarSenha2, setMostrarSenha2] = useState(false);
   const navigate = useNavigate();
 
+  const { register, handleSubmit, reset } = useForm<configType>();
+
+  useEffect(() => {
+    const userDecoded: any = jwtDecode(token);
+
+    findUserById(userDecoded.id, token);
+    reset({ id: userDecoded.id }); // Aqui atualiza o ID no formulário
+
+  }, []);
+
+  async function findUserById(id: number, token: string) {
+    try {
+      const response = await fetch("http://localhost:3000/configuracao/" + id, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data: configType = await response.json();
+      setUser(data);
+    } catch (error) {
+      console.error("Erro ao buscar usuário:", error);
+    }
+  }
+
   async function handleconfig(data: configType) {
-    console.log(data)
+    console.log(data);
 
     try {
       const response = await fetch(`http://localhost:3000/configuracao/${data.id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(data),
       });
 
+      const res = await response.json();
+
       if (response.ok) {
-
-
-        navigate("/")
-
-        console.log("Senha atualizada com sucesso!");
+        setMensagem(res.msg || "Senha atualizada com sucesso!");
+        setTimeout(() => {
+          navigate("/");
+        }, 1500);
       } else {
-
-        const res = await response.json()
-        console.error("Erro ao atualizar senha:", response.statusText);
-        setMensagem(res.error)
+        setMensagem(res.error || "Erro: Senha atual incorreta.");
       }
     } catch (error: any) {
       console.error("Erro na requisição:", error);
-      setMensagem(error.message)
+      setMensagem("Erro na comunicação com o servidor.");
     }
   }
 
@@ -70,34 +89,45 @@ export default function Configurações() {
       <div className={style.bodyConfig}>
         <h1 className={style.configHeader}>Configurações</h1>
         <div className={style.configContainer}>
-
           <div className={style.configMain}>
-
             <form onSubmit={handleSubmit(handleconfig)} method="post">
               <section className={style.configSection}>
                 <h2 className={style.configTitle}>Preferências de Conta</h2>
 
-                <input type="hidden" {...register("id")}/>
+                <input type="hidden" {...register("id")} />
 
                 <div className={style.configItem}>
                   <label htmlFor="senha">Sua Senha:</label>
-
                   <div className={style.inputSenha}>
-                    <input className={style.configInput} type={mostrarSenha ? 'text' : 'password'} id="senha" placeholder="Digite sua senha atual" autoComplete="off" {...register("senha")} />
-
+                    <input
+                      className={style.configInput}
+                      type={mostrarSenha ? "text" : "password"}
+                      id="senha"
+                      placeholder="Digite sua senha atual"
+                      autoComplete="off"
+                      {...register("senha")}
+                    />
                     <section onClick={toggleSenha} className={style.olhos}>
                       {mostrarSenha ? <Icon.Eye /> : <Icon.EyeSlash />}
                     </section>
                   </div>
-                  <div style={{ color: "red" }}>{mensagem}</div>
+                </div>
+
+                <div className={style.erroMensagem} style={{ color: "red", marginBottom: "10px" }}>
+                  {mensagem}
                 </div>
 
                 <div className={style.configItem}>
                   <label htmlFor="novaSenha">Nova Senha:</label>
-
                   <div className={style.inputSenha}>
-                    <input className={style.configInput} type={mostrarSenha2 ? 'text' : 'password'} id="novaSenha" placeholder="Digite uma nova senha" autoComplete="off" {...register("novaSenha")} />
-
+                    <input
+                      className={style.configInput}
+                      type={mostrarSenha2 ? "text" : "password"}
+                      id="novaSenha"
+                      placeholder="Digite uma nova senha"
+                      autoComplete="off"
+                      {...register("novaSenha")}
+                    />
                     <section onClick={toggleSenha2} className={style.olhos}>
                       {mostrarSenha2 ? <Icon.Eye /> : <Icon.EyeSlash />}
                     </section>
@@ -130,22 +160,21 @@ export default function Configurações() {
                 </div>
               </section>
 
-              <h3 className={style.configTermos} style={{ marginBottom: "30px" }}>Ler os termos de uso e política de privacidade</h3>
+              <h3 className={style.configTermos} style={{ marginBottom: "30px" }}>
+                Ler os termos de uso e política de privacidade
+              </h3>
               <h3 className={style.configTermos}>Deletar minha conta</h3>
 
               <section className={style.configFooter}>
-                <button type="submit" className={style.btnPrimary}>Salvar Alterações</button>
+                <button type="submit" className={style.btnPrimary}>
+                  Salvar Alterações
+                </button>
               </section>
-
             </form>
           </div>
-
-
         </div>
-      </div >
+      </div>
       <Footer />
     </>
-
-  )
-
+  );
 }

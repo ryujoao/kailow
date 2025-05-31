@@ -7,7 +7,7 @@ import { jwtDecode } from "jwt-decode";
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 
-type DadosPerfil = {
+export type DadosPerfil = {
     id: number
     description: string;
     nome?: string;
