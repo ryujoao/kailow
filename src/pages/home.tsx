@@ -21,8 +21,6 @@ export default function Home() {
         <section>
           <h2 className={style.cardsTitulo}>Seu Feed</h2>
           <PerfilHome />
-          <PerfilHome />
-          <PerfilHome />
         </section>
       </div>
     </div>
