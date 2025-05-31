@@ -18,10 +18,13 @@ export default function Sobre() {
                 <div className={style.cardSobre}>
                     <section className={style.tudoSobre}>
                         <p className={style.textoSobre}>
-                            Criamos o Kailow para resolver um problema real: a dificuldade de menores de 18 anos encontrarem uma fonte de renda. Nossa plataforma digital conecta jovens a oportunidades de trabalho, permitindo que eles ofereçam serviços ou se candidatem a vagas, tudo de forma simples, segura e acessível.
+                            Criamos o Kailow para resolver um problema real: a dificuldade de menores de 18 anos encontrarem uma fonte de renda.
+                            Nossa plataforma digital conecta jovens a oportunidades de trabalho, permitindo que eles ofereçam serviços ou se
+                            candidatem a vagas, tudo de forma simples, segura e acessível.
                         </p>
                         <p className={style.textoSobre}>
-                            O nome Kailow une dois conceitos: "Kai" (mar), simbolizando infinitas oportunidades, e "Low" (acessível), reforçando nossa missão de inclusão. Aqui, todo jovem pode navegar e conquistar seu espaço no mercado!
+                            O nome Kailow une dois conceitos: "Kai" (mar), simbolizando infinitas oportunidades, e "Low" (acessível), reforçando
+                            nossa missão de inclusão. Aqui, todo jovem pode navegar e conquistar seu espaço no mercado!
                         </p>
                     </section>
                 </div>

@@ -17,10 +17,9 @@
   flex-direction: column;
   background: #071739;
   color: #cdd5db;
-  width: 150vh;
+  width: 200vh;
   max-width: 1050px;
   text-align: center;
-  /* margin: 0 auto; */
   padding: 50px 100px 20px 100px;
   border-radius: 30px;
   margin-bottom: 20px;
@@ -58,7 +57,7 @@
 }
 
 .textoSobre {
-  font-size: 25px;
+  font-size: 26px;
   text-align: justify;
 }
 
