@@ -204,6 +204,7 @@ export default function Perfil() {
       <div className={style.mainContainer}>
         <div className={style.profileSection}>
           <div className={style.profileSectionFixed}>
+            <section>
             <h1 className={style.profileTitle}>Perfil</h1>
             <div className={style.profileImage}>
               {fotoPerfil ? (
@@ -213,12 +214,14 @@ export default function Perfil() {
                 />
               ) : (
                 
-                <Icon.PersonCircle className={style.profileIcon} size={120} />
+                <img src="../public/img/userImg.jpg" alt="" className={style.postIcon}/>
               )}
             </div>
             <div className={style.profileInfo}>
               <h2 className={style.profileName}>{user?.nome}</h2>
+              <section className={style.profileDescricaoDiv}>
               <p className={style.profileDescricao}>{user?.description}</p>
+              </section>
               {/* <strong className={style.profileResume}>
                 Informações pessoais e Curriculum:
               </strong>
@@ -242,25 +245,15 @@ export default function Perfil() {
                 Se torne premium
               </Link>
             </div>
+            </section>
           </div>
         </div>
 
         <div className={style.feedSection}>
           {/* Título e botão "+" lado a lado */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 16,
-              marginBottom: 25,
-            }}
-          >
+          <div style={{ display: "flex", alignItems: "center", gap: 16,  marginBottom: 70,  }} >
             <h2 className={style.feedTitle}>Seu Feed</h2>
-            <button
-              className={style.botaoMais}
-              onClick={() => navigate("/publicar")}
-              aria-label="Adicionar"
-            >
+            <button className={style.botaoMais} onClick={() => navigate("/publicar")} aria-label="Adicionar">
               <Icon.Plus size={22} />
             </button>
           </div>
@@ -282,7 +275,7 @@ export default function Perfil() {
                       }}
                     />
                   ) : (
-                    <Icon.PersonCircle className={style.postIcon} size={40} />
+                  <img src="../public/img/userImg.jpg" alt="" className={style.postIcon}/>
                   )}
                   <h3 className={style.postHeader}>Você publicou isso</h3>
                   <div className={style.menuContainer}>

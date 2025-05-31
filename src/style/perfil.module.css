@@ -4,7 +4,7 @@
   flex-wrap: nowrap;
   padding: 30px;
   gap: 40px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   max-height: 100%;
 }
 
@@ -34,6 +34,7 @@
   /* border-right: 1px solid #cdd5db; */
   display: flex;
   justify-content: center;
+  align-self: center;
   max-height: 100%;
 }
 
@@ -44,7 +45,7 @@
   left: 0;
   width: 500px;
   /* Define uma largura fixa */
-  height: calc(100% - 100px);
+  height: 78vh;
   /* Reduz a altura para não ocupar toda a tela */
   overflow-y: auto;
   /* Permite rolagem se necessário */
@@ -64,19 +65,18 @@
   margin-bottom: 0px;
   color: #cdd5db;
   text-align: center;
-  margin-top: 25px;
+  padding-top: 10px;
 }
 
 .profileImage {
   display: flex;
   justify-content: center;
-  height: 15%;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   margin-top: 15px;
 }
 
 .profileImage img {
-  border-radius: 100px;
+  border-radius: 50%;
 }
 
 .fotoPerfil {
@@ -84,11 +84,10 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-
 }
 
 .profileInfo {
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   text-align: center;
 }
@@ -101,10 +100,17 @@
   text-align: center;
 }
 
-.profileDescricao {
+.profileDescricaoDiv {
+  width: 100%;
+  height: auto;
   margin-bottom: 20px;
-  line-height: 1.5;
+}
+
+.profileDescricao {
+  line-height: 1.5;  
   color: #fff;
+  text-align: center;
+  word-break: break-word; /* para quebrar o texto */
 }
 
 .editProfileButton {
@@ -120,7 +126,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   border: none;
-  width: 100%;
+  width: 40vh;
   margin-top: 25px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -193,11 +199,11 @@
 }
 
 .feedTitle {
-  font-size: 24px;
-  margin-bottom: 25px;
+  font-size: 6vh;
+  /* margin-bottom: 40px; */
   color: #cdd5db;
-  margin-left: 10px;
-  margin-top: 130px;
+  /* margin-left: 10px; */
+  margin-top: 100px;
 }
 
 .postCard {
