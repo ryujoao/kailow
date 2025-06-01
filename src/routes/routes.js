@@ -6,6 +6,7 @@ const router = express.Router()
 const prisma = new PrismaClient()
 const jwt = require('jsonwebtoken');
 const { authenticate } = require('../middleware/authMiddleware');
+const bcrypt = require('bcrypt');
 
 // Configuração do multer -> middleware para fazer upload de arquivos do cliente para o backend
 const storage = multer.diskStorage({
@@ -29,9 +30,13 @@ const upload = multer({ storage });
 
 // Criar user -> Cadastro
 router.post("/cadastro", async (req, res) => {
+
     // recebe os dados do corpo da requisição
     const { nome, email, telefone, nascimento, senha } = req.body
     console.log(nome, email, telefone, nascimento, senha)
+
+    const saltRounds = 10; // nível de segurança
+    const hashedPassword = await bcrypt.hash(senha, saltRounds);
 
     const userExistEmail = await prisma.user.findUnique({
         where: { email }
@@ -56,7 +61,7 @@ router.post("/cadastro", async (req, res) => {
             email,
             telefone,
             nascimento: new Date(nascimento),
-            senha
+            senha: hashedPassword
         }
     })
 
@@ -107,13 +112,15 @@ router.put("/cadastro/:id", async (req, res) => {
 // Login
 router.post("/", async (req, res) => {
     const { email, senha } = req.body
-
+    
     const user = await prisma.user.findUnique({
         where: { email }
     })
+    const passwordMatch = await bcrypt.compare(senha, user.senha);
 
-    if (!user || senha != user.senha) {
-        return res.status(401).json({ error: "*E-mail ou senha incorretos" })
+
+    if (!user || !passwordMatch) {
+        return res.status(401).json({ error: "*E-mail ou senha incorretos" });
     }
 
     const payload = {
@@ -252,7 +259,7 @@ router.get('/perfil', upload.fields([
     { name: 'anexar', maxCount: 1 },
 ]), authenticate, async (req, res) => {
     try {
-        const { titulo, legenda } = req.body;
+        const { legenda } = req.body;
 
         let anexar = null;
         if (req.files && req.files['anexar'] && req.files['anexar'][0]) {
@@ -260,7 +267,6 @@ router.get('/perfil', upload.fields([
         }
         const publicar = await prisma.publicar.create({
             data: {
-                titulo,
                 legenda,
                 anexar
             }
@@ -273,33 +279,30 @@ router.get('/perfil', upload.fields([
     }
 });
 
+
 // mudar senha
 router.post("/configuracao/:id", authenticate, async (req, res) => {
     const { senha, novaSenha } = req.body;
-    const { id } = req.params;
-
-    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
-
-    if (!user) {
-        return res.status(404).json({ error: "Usuário não encontrado" });
+    const id = req.user.id;
+    try {
+        const user = await prisma.user.findUnique({ where: { id } });
+        if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+        const passwordMatch = await bcrypt.compare(senha, user.senha);
+        if (!passwordMatch) return res.status(401).json({ error: "*Senha atual incorreta" });
+        const hashedNewPassword = await bcrypt.hash(novaSenha, 10);
+        await prisma.user.update({
+            where: { id },
+            data: { senha: hashedNewPassword }
+        });
+        return res.status(200).json({ msg: "Senha atualizada com sucesso" });
+    } catch (error) {
+        console.error("Erro ao atualizar senha:", error);
+        return res.status(500).json({ error: "Erro interno no servidor" });
     }
+});
 
-    if (senha != user.senha) {
-        return res.status(401).json({ error: "*Senha atual incorreta" })
-    }
 
-    // atualiza a senha do usuário na tabela User
-    await prisma.user.update({
-        where: { id: Number(id) },
-        data: { senha: novaSenha }
-    });
-
-    return res.status(200).json({
-        msg: "Senha atualizada com sucesso",
-    })
-
-})
-
+// Perfil do usuário
 router.get("/perfil/:id", authenticate, async (req, res) => {
     const { id } = req.params;
 
@@ -314,7 +317,7 @@ router.get("/perfil/:id", authenticate, async (req, res) => {
 })
 
 router.put("/perfil", authenticate, async (req, res) => {
-    const {id, nome, description, email} = req.body
+    const { id, nome, description, email } = req.body
 
     const user = await prisma.user.findUnique({ where: { id: Number(id) } });
 
@@ -324,7 +327,7 @@ router.put("/perfil", authenticate, async (req, res) => {
 
     await prisma.user.update({
         where: { id: Number(id) },
-        data: { nome, email, description}
+        data: { nome, email, description }
     });
 
     return res.status(200).json(user)
