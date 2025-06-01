@@ -4,9 +4,10 @@ import Nav from "../components/navbar"
 import style from "../style/publicar.module.css"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 type publicarType = {
-    titulo: string,
+    // titulo: string,
     legenda: string,
     anexar: FileList | null
 }
@@ -16,6 +17,8 @@ export default function Publicar() {
     const { register, handleSubmit } = useForm<publicarType>()
     const [mensagem, setMensagem] = useState("")
     const navigate = useNavigate();
+    const notifySuccess = () => toast.success("Publicado com sucesso!");
+
 
     async function handlePublicar(data: publicarType) {
 
@@ -23,7 +26,7 @@ export default function Publicar() {
 
         try {
             const formData = new FormData();
-            formData.append("titulo", data.titulo);
+            // formData.append("titulo", data.titulo);
             formData.append("legenda", data.legenda);
 
             if (data.anexar && data.anexar[0]) {
@@ -33,11 +36,15 @@ export default function Publicar() {
             const response = await fetch("http://localhost:3000/publicar", {
                 method: "POST",
                 body: formData,
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`, // se tiver autenticação JWT
+                },
             });
 
             if (response.ok) {
+                notifySuccess();
                 console.log("Publicado com sucesso!");
-                navigate("/perfil")
+                setTimeout(() => navigate("/perfil"), 4000);
             } else {
 
                 const res = await response.json()
@@ -60,10 +67,10 @@ export default function Publicar() {
                     <div className={style.cardPublicarTrabalho}>
                         <div className={style.formPublicar}>
                             <form onSubmit={handleSubmit(handlePublicar)} action="/publicarTrabalho" method="POST" encType="multipart/form-data">
-                                <div className={style.selectLabel}>
+                                {/* <div className={style.selectLabel}>
                                     <label className={style.publicarLabel} htmlFor="titulo">Título</label>
                                     <input className={style.publicarInput} type="text" id="titulo" placeholder="Digite o título da publicação" required {...register("titulo")} />
-                                </div>
+                                </div> */}
                                 <div className={style.selectLabel}>
                                     <label className={style.publicarLabel} htmlFor="arquivo">Anexar imagem</label>
                                     <input className={style.publicarInput} type="file" max={1} id="arquivo" accept=".png, .jpg, .jpeg" {...register("anexar")} required />
@@ -76,12 +83,24 @@ export default function Publicar() {
                                 <div style={{ color: "red" }}>{mensagem}</div>
 
                                 <div className={style.buttonPublicar}>
-                                    <button className={style.btnPublicar} type="submit">Publicar</button>
+                                    <button className={style.btnPublicar} type="submit" >Publicar</button>
                                 </div>
                             </form>
                         </div>
 
                     </div>
+                    <ToastContainer
+                        position="bottom-right"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick={false}
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                    />
 
                 </div>
                 <Footer />

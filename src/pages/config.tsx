@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons";
 import { jwtDecode } from "jwt-decode";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 type configType = {
   id: number;
@@ -14,12 +16,15 @@ type configType = {
 };
 
 export default function Configuracoes() {
+
   const token = localStorage.getItem("token") || "";
   const [user, setUser] = useState<configType>();
   const [mensagem, setMensagem] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
   const [mostrarSenha2, setMostrarSenha2] = useState(false);
   const navigate = useNavigate();
+  const notifySuccess = () => toast.success("Senha atualizada! Redirecionando ao login");
+
 
   const { register, handleSubmit, reset } = useForm<configType>();
 
@@ -62,10 +67,10 @@ export default function Configuracoes() {
       const res = await response.json();
 
       if (response.ok) {
-        setMensagem(res.msg || "Senha atualizada com sucesso!");
-        setTimeout(() => {
-          navigate("/");
-        }, 1500);
+        notifySuccess();
+        // setMensagem(res.msg || "Senha atualizada com sucesso!");
+        setTimeout(() => { navigate("/"); }, 4000);
+        localStorage.removeItem("token");
       } else {
         setMensagem(res.error || "Erro: Senha atual incorreta.");
       }
@@ -172,6 +177,18 @@ export default function Configuracoes() {
               </section>
             </form>
           </div>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </div>
       </div>
       <Footer />

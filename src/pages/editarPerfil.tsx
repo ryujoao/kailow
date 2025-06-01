@@ -6,6 +6,7 @@ import * as Icon from "react-bootstrap-icons";
 import { jwtDecode } from "jwt-decode";
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 export type DadosPerfil = {
     id: number
@@ -19,6 +20,7 @@ export default function EditarPerfil() {
     const [user, setUser] = useState<DadosPerfil>()
     const navigate = useNavigate();
     const token = localStorage.getItem("token") || "";
+    const notifySuccess = () => toast.success("Dados atualizados");
 
     const [fotoPerfil, setFotoPerfil] = useState<string | null>(
         localStorage.getItem("fotoPerfil")
@@ -33,9 +35,9 @@ export default function EditarPerfil() {
 
             body: JSON.stringify(data),
         });
-        navigate("/perfil")
+        notifySuccess();
+        setTimeout(() => navigate("/perfil"), 3000);
     }
-
 
     const { register, handleSubmit } = useForm<DadosPerfil>({
         values: user
@@ -43,9 +45,7 @@ export default function EditarPerfil() {
 
     useEffect(() => {
         const user: DadosPerfil = jwtDecode(token);
-
         findUserById(user.id, token)
-
         console.log(user)
     }, [])
 
@@ -56,7 +56,6 @@ export default function EditarPerfil() {
         })
 
         const data: DadosPerfil = await response.json();
-
         setUser(data)
     }
 
@@ -261,6 +260,18 @@ export default function EditarPerfil() {
                             </form>
                         </div>
                     </div>
+                    <ToastContainer
+                        position="bottom-right"
+                        autoClose={2000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick={false}
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                    />
                 </div>
                 <Footer />
             </div>
