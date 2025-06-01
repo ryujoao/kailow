@@ -8,24 +8,38 @@
   max-height: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1350px) {
   .mainContainer {
-    flex-direction: column;
+    /* flex-direction: column; */
     /* Empilha os itens em telas menores */
     gap: 20px;
+    padding: 10px;
   }
-
-  .profileSection {
+  
+  /* .profileSection {
     border-right: none;
     border-bottom: 1px solid #fff;
     padding-bottom: 20px;
-  }
-
+  } */
+  
   .feedSection {
+    display: flex;
+    flex-direction: column;
     margin-left: 0;
+    width: 60vh;
+    max-width: 100%;
+    min-width: 0;
   }
-}
 
+  .postCard,
+  .postBody,
+  .postLegenda {
+    width: 70vh !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  
+}
 
 
 .profileSection {
@@ -43,7 +57,7 @@
   /* Aplica o comportamento fixo */
   top: 100px;
   left: 0;
-  width: 500px;
+  width: 58vh;
   /* Define uma largura fixa */
   height: 78vh;
   /* Reduz a altura para não ocupar toda a tela */
@@ -187,8 +201,9 @@
 }
 
 .feedSection {
+  max-width: 1350px;
   flex: 2;
-  min-width: 300px;
+  /* min-width: 300px; */
   min-height: 1200px;
   /* Garante altura mesmo sem posts */
   border-radius: 12px;
