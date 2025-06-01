@@ -255,11 +255,12 @@ router.get("/perfil", authenticate, async (req, res) => {
 })
 
 //publicação do perfil
-router.get('/perfil', upload.fields([
+router.post('/publicar', upload.fields([
     { name: 'anexar', maxCount: 1 },
 ]), authenticate, async (req, res) => {
     try {
         const { legenda } = req.body;
+        const userId = req.user.id;
 
         let anexar = null;
         if (req.files && req.files['anexar'] && req.files['anexar'][0]) {
@@ -268,14 +269,15 @@ router.get('/perfil', upload.fields([
         const publicar = await prisma.publicar.create({
             data: {
                 legenda,
-                anexar
+                anexar,
+                userId: userId
             }
         })
 
         return res.status(201).json(publicar);
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: "Erro ao salvar alterações" });
+        return res.status(500).json({ error: "Erro ao salvar publicação" });
     }
 });
 
