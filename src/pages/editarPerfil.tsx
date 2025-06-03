@@ -22,9 +22,7 @@ export default function EditarPerfil() {
     const token = localStorage.getItem("token") || "";
     const notifySuccess = () => toast.success("Dados atualizados");
 
-    const [fotoPerfil, setFotoPerfil] = useState<string | null>(
-        localStorage.getItem("fotoPerfil")
-    );
+
     async function handleAlterarPerfil(data: DadosPerfil) {
         const response = await fetch("http://localhost:3000/perfil", {
             method: "PUT",
@@ -59,6 +57,11 @@ export default function EditarPerfil() {
         setUser(data)
     }
 
+
+    const [fotoPerfil, setFotoPerfil] = useState<string | null>(
+        localStorage.getItem("fotoPerfil")
+    );
+
     function handleFotoPerfilChange(e: React.ChangeEvent<HTMLInputElement>) {
         const file = e.target.files?.[0];
         if (!file) return;
@@ -70,101 +73,6 @@ export default function EditarPerfil() {
         };
         reader.readAsDataURL(file);
     }
-
-    // function handleDescricaoChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-    //     const novo = { ...dadosPerfil, descricao: e.target.value };
-    //     setDadosPerfil(novo);
-    //     localStorage.setItem("dadosPerfil", JSON.stringify(novo));
-    // }
-
-    // function handleCurriculoChange(e: React.ChangeEvent<HTMLInputElement>) {
-    //     const file = e.target.files?.[0];
-    //     if (!file) return;
-    //     const url = URL.createObjectURL(file);
-    //     const novo = { ...dadosPerfil, curriculo: url, curriculoNome: file.name };
-    //     setDadosPerfil(novo);
-    //     localStorage.setItem("dadosPerfil", JSON.stringify(novo));
-    // }
-
-
-    //   const { register, handleSubmit, reset } = useForm<editarPerfil>()
-    //     // const userId = localStorage.getItem("userId");
-    //     const [mensagem, setMensagem] = useState("")
-    //     const fileInputRef = useRef<HTMLInputElement>(null);
-    //     const [userImg, setUserImg] = useState<string | null>(null);
-    //     const navigate = useNavigate()
-
-    //     useEffect(() => {
-    //         const token = localStorage.getItem("token");
-    //         const userId = localStorage.getItem("userId")
-
-    //         if (token) {
-    //             fetch(`http://localhost:3000/editar${userId}`, {
-    //                 headers: {
-    //                     Authorization: `Bearer ${token}`,
-    //                 },
-    //             })
-    //                 .then(res => res.json())
-    //                 .then(userData => {
-    //                     reset({
-    //                         id: userData.id,
-    //                         email: userData.email,
-    //                         nome: userData.nome,
-    //                         descricao: userData.descricao || "",
-    //                         imgUrl: null,
-    //                         curriculo: null
-    //                     });
-
-    //                     if (userData.imgUrl) {
-    //                         setUserImg(`http://localhost:3000/uploads/${userData.imgUrl}`);
-    //                     }
-    //                 });
-    //         }
-    //     }, [reset]);
-
-    //     async function handleEditar(data: editarPerfil) {
-
-    //         console.log(data)
-
-    //         try {
-    //             const formData = new FormData();
-    //             formData.append("id", String(data.id)); // id do usuário logado
-    //             formData.append("descricao", data.descricao);
-    //             console.log(data.id)
-
-    //             // imgUrl e curriculo são FileList | null
-    //             if (data.imgUrl && data.imgUrl[0]) {
-    //                 formData.append("imgUrl", data.imgUrl[0]);
-    //             }
-    //             if (data.curriculo && data.curriculo[0]) {
-    //                 formData.append("curriculo", data.curriculo[0]);
-    //             }
-
-    //             const response = await fetch("http://localhost:3000/editar", {
-    //                 method: "POST",
-    //                 body: formData,
-    //             });
-
-    //             if (response.ok) {
-    //                 console.log("Dados salvos com sucesso!");
-    //                 navigate("/perfil")
-    //             } else {
-
-    //                 const res = await response.json()
-    //                 console.error("Erro ao salvar dados:", response.statusText);
-    //                 setMensagem(res.error)
-    //             }
-    //         } catch (error: any) {
-    //             console.error("Erro na requisição:", error);
-    //             setMensagem(error.message)
-    //         }
-    //     }
-
-    //     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //         if (e.target.files && e.target.files[0]) {
-    //             setUserImg(URL.createObjectURL(e.target.files[0]));
-    //         }
-    //     };
 
     return (
         <>
