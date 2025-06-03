@@ -10,6 +10,7 @@ const prisma = new PrismaClient()
 
 // Middleware para processar JSON
 app.use(routes)
+app.use('/uploads', express.static('uploads'));
 
 app.listen(3000, () => {
 	console.log("Servidor rodando na porta", 3000)

@@ -140,41 +140,41 @@ router.post("/", async (req, res) => {
 })
 
 // Editar perfil
-router.post('/editar', upload.fields([
-    { name: 'imgUrl', maxCount: 1 },
-    { name: 'curriculo', maxCount: 3 }
-]), authenticate, async (req, res) => {
-    try {
-        const { id, descricao } = req.body;
+// router.post('/editar', upload.fields([
+//     { name: 'imgUrl', maxCount: 1 },
+//     { name: 'curriculo', maxCount: 3 }
+// ]), authenticate, async (req, res) => {
+//     try {
+//         const { id, descricao } = req.body;
 
-        // Busca o usuário pelo id
-        const user = await prisma.user.findUnique({ where: { id: Number(id) } });
+//         // Busca o usuário pelo id
+//         const user = await prisma.user.findUnique({ where: { id: Number(id) } });
 
-        if (!user) {
-            return res.status(404).json({ error: "Usuário não encontrado" });
-        }
+//         if (!user) {
+//             return res.status(404).json({ error: "Usuário não encontrado" });
+//         }
 
-        const imgUrl = req.files['imgUrl'] ? req.files['imgUrl'][0].path : null;
-        const curriculo = req.files['curriculo'] ? req.files['curriculo'][0].path : null;
+//         const imgUrl = req.files['imgUrl'] ? req.files['imgUrl'][0].path : null;
+//         const curriculo = req.files['curriculo'] ? req.files['curriculo'][0].path : null;
 
-        // Salva no banco (ajuste conforme sua lógica)
-        const perfil = await prisma.editarPerfil.create({
-            data: {
-                email: user.email,
-                nome: user.nome,
-                descricao,
-                imgUrl,
-                curriculo,
-                userId: user.id
-            }
-        });
+//         // Salva no banco (ajuste conforme sua lógica)
+//         const perfil = await prisma.editarPerfil.create({
+//             data: {
+//                 email: user.email,
+//                 nome: user.nome,
+//                 descricao,
+//                 imgUrl,
+//                 curriculo,
+//                 userId: user.id
+//             }
+//         });
 
-        return res.status(201).json(perfil);
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ error: "Erro ao salvar alterações" });
-    }
-});
+//         return res.status(201).json(perfil);
+//     } catch (error) {
+//         console.error(error);
+//         return res.status(500).json({ error: "Erro ao salvar alterações" });
+//     }
+// });
 
 
 // async (req, res) => {
@@ -259,31 +259,6 @@ router.post("/configuracao/:id", authenticate, async (req, res) => {
 
 
 
-// Editar perfil
-router.get("/perfil/:id", authenticate, async (req, res) => {
-    const { id } = req.params;
-    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
-    if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
-    return res.status(200).json(user);
-});
-
-router.put("/perfil", authenticate, async (req, res) => {
-    const { id, nome, description, email } = req.body   
-
-    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
-
-    if (!user) {
-        return res.status(404).json({ error: "Usuário não encontrado" });
-    }
-
-    await prisma.user.update({
-        where: { id: Number(id) },
-        data: { nome, email, description }
-    });
-
-    return res.status(200).json(user)
-
-})
 
 //publicação do perfil
 router.post('/publicar', upload.fields([
@@ -312,7 +287,7 @@ router.post('/publicar', upload.fields([
     }
 });
 
-// ✅ Rota para listar todas as publicações
+// Rota para listar todas as publicações
 router.get('/publicar', async (req, res) => {
     try {
         const publicar = await prisma.publicar.findMany({
@@ -328,8 +303,8 @@ router.get('/publicar', async (req, res) => {
     }
 });
 
-// ✅ Rota para listar publicações de um usuário específico
-router.get('/perfil/:id/publicacoes', authenticate, async (req, res) => {
+// Rota para listar publicações de um usuário específico
+router.get('/perfil/:id/publicar', authenticate, async (req, res) => {
     const { id } = req.params;
     const publicar = await prisma.publicar.findMany({
         where: { userId: Number(id) },
@@ -338,7 +313,8 @@ router.get('/perfil/:id/publicacoes', authenticate, async (req, res) => {
     res.status(200).json(publicar);
 });
 
-// ✅ Rota para atualizar uma publicação
+
+// Rota para atualizar uma publicação
 router.put('/perfil/:id', async (req, res) => {
     const { id } = req.params;
     const { legenda, anexar } = req.body;
@@ -379,6 +355,33 @@ router.delete('/publicar/:id', async (req, res) => {
     }
 });
 
+
+// Editar perfil
+router.get("/perfil/:id", authenticate, async (req, res) => {
+    const { id } = req.params;
+    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
+    if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+    return res.status(200).json(user);
+});
+
+
+router.put("/perfil", authenticate, async (req, res) => {
+    const { id, nome, description, email } = req.body
+
+    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+    if (!user) {
+        return res.status(404).json({ error: "Usuário não encontrado" });
+    }
+
+    await prisma.user.update({
+        where: { id: Number(id) },
+        data: { nome, email, description }
+    });
+
+    return res.status(200).json(user)
+
+})
 
 
 
