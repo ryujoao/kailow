@@ -14,15 +14,15 @@ datasource db {
 }
 
 model User {
-  id           Int            @id @default(autoincrement())
-  nome         String
-  email        String         @unique
-  telefone     String         @unique
-  nascimento   DateTime       @db.Date
+  id          Int        @id @default(autoincrement())
+  nome        String
+  email       String     @unique
+  telefone    String     @unique
+  nascimento  DateTime   @db.Date
   description String?
-  senha        String
-  Login        Login[]
-  Publicar     Publicar[]
+  senha       String
+  Login       Login[]
+  Publicar    Publicar[]
 }
 
 model Login {
@@ -33,20 +33,10 @@ model Login {
   User   User   @relation(fields: [userId], references: [id])
 }
 
-
 model Publicar {
-  id             Int              @id @default(autoincrement())
-  legenda        String
-  anexar         String
-  userId         Int
-  User           User             @relation(fields: [userId], references: [id])
-  PublicarPerfil PublicarPerfil[]
-}
-
-model PublicarPerfil {
-  id         Int       @id @default(autoincrement())
-  legenda    String
-  anexar     String
-  Publicar   Publicar @relation(fields: [publicarId], references: [id])
-  publicarId Int
+  id      Int     @id @default(autoincrement())
+  legenda String
+  anexar  String?
+  userId  Int
+  user    User    @relation(fields: [userId], references: [id])
 }
