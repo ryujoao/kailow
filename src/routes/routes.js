@@ -139,100 +139,6 @@ router.post("/", async (req, res) => {
 
 })
 
-// Editar perfil
-// router.post('/editar', upload.fields([
-//     { name: 'imgUrl', maxCount: 1 },
-//     { name: 'curriculo', maxCount: 3 }
-// ]), authenticate, async (req, res) => {
-//     try {
-//         const { id, descricao } = req.body;
-
-//         // Busca o usuário pelo id
-//         const user = await prisma.user.findUnique({ where: { id: Number(id) } });
-
-//         if (!user) {
-//             return res.status(404).json({ error: "Usuário não encontrado" });
-//         }
-
-//         const imgUrl = req.files['imgUrl'] ? req.files['imgUrl'][0].path : null;
-//         const curriculo = req.files['curriculo'] ? req.files['curriculo'][0].path : null;
-
-//         // Salva no banco (ajuste conforme sua lógica)
-//         const perfil = await prisma.editarPerfil.create({
-//             data: {
-//                 email: user.email,
-//                 nome: user.nome,
-//                 descricao,
-//                 imgUrl,
-//                 curriculo,
-//                 userId: user.id
-//             }
-//         });
-
-//         return res.status(201).json(perfil);
-//     } catch (error) {
-//         console.error(error);
-//         return res.status(500).json({ error: "Erro ao salvar alterações" });
-//     }
-// });
-
-
-// async (req, res) => {
-
-//     try {
-//         const { id, descricao } = req.body;
-
-//         //busca o usuário pelo id
-//         const user = await prisma.user.findUnique({ where: { id: Number(id) } });
-
-//         if (!user) {
-//             return res.status(404).json({ error: "Usuário não encontrado" });
-//         }
-
-//         const imgUrl = req.files['imgUrl'] ? req.files['imgUrl'][0].path : null;
-//         const curriculo = req.files['curriculo'] ? req.files['curriculo'][0].path : null;
-
-//         // Salva no banco (ajuste conforme sua lógica)
-//         const perfil = await prisma.editarPerfil.create({
-//             data: {
-//                 email: user.email,
-//                 nome: user.nome,
-//                 descricao,
-//                 imgUrl,
-//                 curriculo
-//             }
-//         });
-
-//         return res.status(201).json(perfil);
-//     } catch (error) {
-//         console.error(error);
-//         return res.status(500).json({ error: "Erro ao salvar alterações" });
-//     }
-// });
-
-
-// Publicar
-// router.get("/perfil", authenticate, async (req, res) => {
-//     const { id } = req.params
-//     const { nome, senha } = req.body
-
-//     const user = await prisma.user.findUnique({ where: { id: Number(id) } })
-
-//     if (!user) {
-//         return res.status(404).json({ error: "*Usuário não encontrado" })
-//     }
-
-//     const updateUser = await prisma.user.update({
-//         where: { id: Number(id) },
-//         data: {
-//             nome,
-//             senha
-//         }
-//     })
-
-//     return res.status(200).json(updateUser)
-
-// })
 
 // mudar senha
 router.post("/configuracao/:id", authenticate, async (req, res) => {
@@ -254,11 +160,6 @@ router.post("/configuracao/:id", authenticate, async (req, res) => {
         return res.status(500).json({ error: "Erro interno no servidor" });
     }
 });
-
-
-
-
-
 
 //publicação do perfil
 router.post('/publicar', upload.fields([

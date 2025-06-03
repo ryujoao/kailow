@@ -14,7 +14,8 @@ ALTER TABLE `user` ADD COLUMN `description` VARCHAR(191) NULL;
 CREATE TABLE `Publicar` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `legenda` VARCHAR(191) NOT NULL,
-    `anexar` VARCHAR(191) NULL,
+    `anexar` VARCHAR(191) NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `userId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
