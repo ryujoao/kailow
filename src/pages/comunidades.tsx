@@ -2,8 +2,17 @@ import styles from "../style/comunidades.module.css"; // Supondo que você tenha
 import Nav from "../components/navbar";
 import * as Icon from 'react-bootstrap-icons';
 import { Footer } from "../components/footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Comunidades() {
+
+    const navigate = useNavigate();
+
+    function entrarComunidade() {
+        navigate("/entrarComunidade");
+    }
+
+
     return (
         <div className={styles.comuBody}>
             <Nav />
@@ -40,7 +49,7 @@ export default function Comunidades() {
                                 <p className={styles.comunidadeDescricao} >
                                     Um espaço dedicado a tutores que buscam os melhores lugares para
                                     passear com seus pets.
-                                </p>    
+                                </p>
                             </div>
                         </div>
 
@@ -66,7 +75,7 @@ export default function Comunidades() {
                                 </h5>
                                 <p className={styles.comunidadeDescricao}>
                                     Networking e tendências de marketing digital para freelancers na Moskou.
-                                </p>  
+                                </p>
                             </div>
                         </div>
 
@@ -93,7 +102,7 @@ export default function Comunidades() {
                                 <p className={styles.comunidadeDescricao}>
                                     Supermercados KiPago na região! Aqui você
                                     encontra dicas, oportunidades de trabalho.
-                                </p>    
+                                </p>
                             </div>
                         </div>
 
@@ -104,7 +113,7 @@ export default function Comunidades() {
 
                 {/* Sugestões para você */}
                 <section className={styles.sugComunidades}>
-                    <h1 className={styles.titleComu} style={{marginTop: "10vh"}}>Sugestões</h1>
+                    <h1 className={styles.titleComu} style={{ marginTop: "10vh" }}>Sugestões</h1>
 
                     <div className={styles.cardsComunidades}>
 
@@ -136,7 +145,7 @@ export default function Comunidades() {
                         </div>
 
                         {/* Card 2 */}
-                        <div className={styles.card}>
+                        <div className={styles.card} onClick={ entrarComunidade }>
                             <div className={styles.imgContainer}>
                                 <img
                                     src="../public/img/desenvolvedores.jpg"

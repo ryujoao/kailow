@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons";
 import { jwtDecode } from "jwt-decode";
 import { ToastContainer, toast } from 'react-toastify';
+import Deletar from "../components/deletarConta";
 
 
 type configType = {
@@ -88,6 +89,8 @@ export default function Configuracoes() {
     setMostrarSenha2(!mostrarSenha2);
   }
 
+   const [mostrarConfig, setMostrarConfig] = useState(false)
+
   return (
     <>
       <Nav />
@@ -138,15 +141,6 @@ export default function Configuracoes() {
                     </section>
                   </div>
                 </div>
-
-                <div className={style.configItem}>
-                  <label htmlFor="language">Idioma</label>
-                  <select className={style.configInput} id="language">
-                    <option value="pt">Português</option>
-                    <option value="en">Inglês</option>
-                    <option value="es">Espanhol</option>
-                  </select>
-                </div>
               </section>
 
               <section className={style.configSection}>
@@ -168,7 +162,8 @@ export default function Configuracoes() {
               <h3 className={style.configTermos} style={{ marginBottom: "30px" }}>
                 Ler os termos de uso e política de privacidade
               </h3>
-              <h3 className={style.configTermos}>Deletar minha conta</h3>
+
+              <h3 className={style.configTermos} onClick={() => setMostrarConfig((prevState) => !prevState)}>Deletar minha conta</h3>
 
               <section className={style.configFooter}>
                 <button type="submit" className={style.btnPrimary}>
@@ -190,6 +185,7 @@ export default function Configuracoes() {
             theme="dark"
           />
         </div>
+        {mostrarConfig && <Deletar />}
       </div>
       <Footer />
     </>

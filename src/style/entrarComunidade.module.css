@@ -1,0 +1,253 @@
+/* entrarComunidade.module.css */
+
+.mainContainer {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarHeader {
+  margin-bottom: 30px;
+}
+
+.sidebarHeader h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.sidebarMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.menuItem {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menuItem:hover {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.communityList {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.communityList h3 {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.communityList h4 {
+  font-size: 16px;
+  margin: 0;
+  color: #666;
+}
+
+.currentCommunity {
+  margin-top: auto;
+}
+
+.currentCommunity h3 {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.currentCommunity p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Content Styles */
+.content {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.tabButton {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.tabButton.active {
+  border-bottom: 3px solid #1545aa;
+  color: #1545aa;
+  font-weight: bold;
+}
+
+.tabContent {
+  padding: 20px 0;
+}
+
+/* About Section */
+.aboutSection h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.aboutSection p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.aboutSection strong {
+  color: #1545aa;
+}
+
+/* Discussion Section */
+.discussionSection h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.discussionHeader {
+  margin-bottom: 15px;
+}
+
+.discussionHeader span {
+  color: #666;
+  font-size: 14px;
+}
+
+.discussionHeader p {
+  color: #333;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.discussionText {
+  margin-bottom: 30px;
+}
+
+.discussionText p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.discussionItem {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.discussionItem h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.discussionItem p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.discussionItem a {
+  color: #1545aa;
+  text-decoration: none;
+}
+
+.discussionItem a:hover {
+  text-decoration: underline;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkboxItem input {
+  margin-right: 10px;
+}
+
+.checkboxItem label {
+  color: #555;
+}
+
+/* Jobs Section */
+.jobsSection h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.jobCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.jobCard {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.jobCard h3 {
+  color: #1545aa;
+  margin: 0 0 10px 0;
+}
+
+.jobCard p {
+  color: #555;
+  margin: 5px 0;
+}
+
+.jobNavigation {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.jobNavigation button {
+  padding: 8px 20px;
+  background-color: #1545aa;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.jobNavigation button:hover {
+  background-color: #0d3a8a;
+}

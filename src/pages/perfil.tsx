@@ -56,26 +56,117 @@ export default function Perfil() {
   }
 
   //pegar publicação
+  const [Publicacao] = useState<Publicacao>(() => {
+    const salvo = localStorage.getItem("publicacao");
+    return salvo
+      ? JSON.parse(salvo)
+      : {
+        legenda: "",
+        anexar: "",
+      };
+  });
+
   useEffect(() => {
-    async function fetchPublicacoes() {
-      try {
-        const response = await fetch(`http://localhost:3000/perfil/${id}/publicacoes`, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+    const user: Publicacao = jwtDecode(token);
+    findPublicacaoById(user.id, token)
+    console.log(user)
+  }, [])
 
-        if (response.ok) {
-          const data = await response.json();
-          setPublicacoes(data);
-        } else {
-          console.error("Erro ao buscar publicações");
-        }
-      } catch (error) {
-        console.error("Erro na requisição:", error);
-      }
-    }
+  async function findPublicacaoById(id: number, token: any) {
+    const response = await fetch(`http://localhost:3000/perfil/${id}/publicar`, {
+      headers: { "Authorization": `Bearer ${token}` }
+    });
+    const data: Publicacao[] = await response.json();
+    setPublicacoes(data);
+  }
 
-    fetchPublicacoes();
-  }, [id]);
+  const currentUserId = "usuario123";
+
+  const [comentarios, setComentarios] = useState<{
+    [key: number]: { texto: string; userId: string }[];
+  }>({
+    0: [],
+    1: [],
+    2: [],
+  });
+
+  const [novoComentario, setNovoComentario] = useState<{
+    [key: number]: string;
+  }>({
+    0: "",
+    1: "",
+    2: "",
+  });
+
+  const [comentarioEditando, setComentarioEditando] = useState<{
+    postId: number | null;
+    comentarioIndex: number | null;
+    texto: string;
+  }>({ postId: null, comentarioIndex: null, texto: "" });
+
+  function adicionarComentario(postId: number) {
+    if (novoComentario[postId]?.trim() === "") return;
+    setComentarios((prev) => ({
+      ...prev,
+      [postId]: [
+        ...(prev[postId] || []),
+        { texto: novoComentario[postId], userId: currentUserId },
+      ],
+    }));
+    setNovoComentario((prev) => ({
+      ...prev,
+      [postId]: "",
+    }));
+  }
+
+  function excluirComentario(postId: number, comentarioIndex: number) {
+    setComentarios((prev) => ({
+      ...prev,
+      [postId]: prev[postId].filter((_, index) => index !== comentarioIndex),
+    }));
+  }
+
+  function iniciarEdicaoComentario(postId: number, comentarioIndex: number) {
+    const comentario = comentarios[postId][comentarioIndex];
+    setComentarioEditando({ postId, comentarioIndex, texto: comentario.texto });
+  }
+
+  function salvarEdicaoComentario() {
+    const { postId, comentarioIndex, texto } = comentarioEditando;
+    if (postId === null || comentarioIndex === null || texto.trim() === "")
+      return;
+    setComentarios((prev) => ({
+      ...prev,
+      [postId]: prev[postId].map((comentario, index) =>
+        index === comentarioIndex ? { ...comentario, texto } : comentario
+      ),
+    }));
+    setComentarioEditando({ postId: null, comentarioIndex: null, texto: "" });
+  }
+
+  //   useEffect(() => {
+  //   if (!id) return; // Não faz a requisição se id não existir
+
+  //   async function fetchPublicacoes() {
+  //     try {
+  //       const response = await fetch(`http://localhost:3000/perfil/${id}/publicar`, {
+  //         headers: 
+  //         { "Authorization": `Bearer ${token}` }
+  //       });
+
+  //       if (response.ok) {
+  //         const data = await response.json();
+  //         setPublicacoes(data);
+  //       } else {
+  //         console.error("Erro ao buscar publicações");
+  //       }
+  //     } catch (error) {
+  //       console.error("Erro na requisição:", error);
+  //     }
+  //   }
+
+  //   fetchPublicacoes();
+  // }, [id]);
 
 
   const [fotoPerfil] = useState<string | null>(
@@ -253,20 +344,6 @@ export default function Perfil() {
                 <section className={style.profileDescricaoDiv}>
                   <p className={style.profileDescricao}>{user?.description}</p>
                 </section>
-                {/* <strong className={style.profileResume}>
-                Informações pessoais e Curriculum:
-              </strong>
-              {dadosPerfil.curriculo && (
-                <a
-                  className={style.curriculoPerfil}
-                  href={dadosPerfil.curriculo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
-                >
-                  📄 Abrir Currículo
-                </a>
-              )} */}
                 <button className={style.editProfileButton} onClick={editar}>
                   Editar perfil
                 </button>
@@ -293,19 +370,11 @@ export default function Perfil() {
           <div style={{ marginBottom: 40 }}>
 
             {publicacoes.length === 0 ? (
-              <p>Nenhuma publicação ainda.</p>
+              <p className={style.nenhumaPublic}>Nenhuma publicação ainda.</p>
             ) : (
               publicacoes.map((pub) => (
                 <div key={pub.id} >
                   <div className={style.postCard} >
-                    <div className={style.postBody}>
-                      {pub.anexar && pub.anexar.length > 0 ? (
-                        <img src={URL.createObjectURL(pub.anexar[0])} alt="" />
-                      ) : null}
-                      <div>
-                        <p className={style.legendaPost}>{pub?.legenda}</p>
-                      </div>
-                    </div>
                     <div className={style.postHeaderContainer}>
                       {fotoPerfil ? (
                         <img
@@ -323,7 +392,15 @@ export default function Perfil() {
                         <img src="../public/img/userImg.jpg" alt="" className={style.postIcon} />
                       )}
                       <h3 className={style.postHeader}>{user?.nome}</h3>
-                      {/* <div className={style.menuContainer}>
+                    </div>
+
+                    <div className={style.postBody}>
+                      {pub.anexar && pub.anexar.length > 0 ? (
+                        <img src={`http://localhost:3000/${pub.anexar}`} alt="" className={style.imgPost} />
+                      ) : null}
+                    </div>
+                      <p className={style.legendaPost}>{pub?.legenda}</p>
+                    {/* <div className={style.menuContainer}>
                     <Icon.ThreeDotsVertical
                       className={style.menuIcon}
                       onClick={() =>
@@ -341,6 +418,94 @@ export default function Perfil() {
                       </div>
                     )}
                   </div> */}
+                    <div className={style.comentarios}>
+
+                      <section>
+                        <h4>Comentários:</h4>
+                      </section>
+
+                      <ul className={style.comentariosLista}>
+                        {comentarios[pub.id]?.map((comentario, index) => (
+                          <li key={index} className={style.comentarioItem}>
+                            {comentarioEditando.postId === pub.id &&
+                              comentarioEditando.comentarioIndex === index ? (
+                              // ...
+                              <div className={style.comentarioLinha}>
+                                <input
+                                  type="text"
+                                  value={comentarioEditando.texto}
+                                  onChange={(e) =>
+                                    setComentarioEditando((prev) => ({
+                                      ...prev,
+                                      texto: e.target.value,
+                                    }))
+                                  }
+                                  className={style.comentarioEditInput}
+                                  onKeyDown={(e) => {
+                                    if (e.key === "Enter") salvarEdicaoComentario();
+                                  }}
+                                />
+                                <div className={style.comentarioMeta}>
+                                  <span
+                                    className={style.comentarioAcao}
+                                    onClick={salvarEdicaoComentario}
+                                  >
+                                    Salvar
+                                  </span>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className={style.comentarioLinha}>
+                                <span className={style.comentarioTexto}>
+                                  {comentario.texto}
+                                </span>
+                                <div className={style.comentarioMeta}>
+                                  <span className={style.comentarioTempo}></span>
+                                  {comentario.userId === currentUserId && (
+                                    <>
+                                      <span
+                                        className={style.comentarioAcao}
+                                        onClick={() => iniciarEdicaoComentario(pub.id, index)}
+                                      >
+                                        <Icon.Pencil size={16} />
+                                      </span>
+                                      <span
+                                        className={style.comentarioAcao}
+                                        onClick={() => excluirComentario(pub.id, index)}
+                                      >
+                                        Excluir
+                                      </span>
+                                    </>
+                                  )}
+                                </div>
+                              </div>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className={style.comentarioInput}>
+                        <input
+                          type="text"
+                          placeholder="Escreva um comentário..."
+                          value={novoComentario[pub.id] || ""}
+                          onChange={(e) =>
+                            setNovoComentario((prev) => ({
+                              ...prev,
+                              [pub.id]: e.target.value,
+                            }))
+                          }
+                          className={style.comentarioTexto}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") adicionarComentario(pub.id);
+                          }}
+                        />
+                        <button
+                          onClick={() => adicionarComentario(pub.id)}
+                          className={style.comentarioBotao}
+                        >
+                          Comentar
+                        </button>
+                      </div>
                     </div>
                   </div>
                   {/* <h3 className={style.horas}>{post.horas}</h3> */}
@@ -348,155 +513,30 @@ export default function Perfil() {
                     src={post.imagem}
                     alt="Post"
                     className={style.imagem}
-                  {/* {post.imagem ? (
-                    <>
+                    {/* {post.imagem ? (
+                      <>
                       <img
-                        src={post.imagem}
-                        alt="Post"
-                        className={style.imagem}
+                      src={post.imagem}
+                      alt="Post"
+                      className={style.imagem}
                       />
                       <div className={style.lateral}></div>
-                    </>
-                  ) : (
-                    <label className={style.uploadLabel}>
-                      <Icon.Camera size={32} />
-                      <span className={style.imgCard}>Adicionar imagem</span>
-                      <input
-                      type="file"
-                      accept="image/*"
-                      style={{ display: "none" }}
+                      </>
+                      ) : (
+                        <label className={style.uploadLabel}>
+                        <Icon.Camera size={32} />
+                        <span className={style.imgCard}>Adicionar imagem</span>
+                        <input
+                        type="file"
+                        accept="image/*"
+                        style={{ display: "none" }}
                       onChange={(e) => handleImageChange(e, post.id)}
                       />
                       </label>
                       )} */}
                 </div>
               )))}
-            {/* <div className={style.postLegenda}>
-                  {postEditando.id === post.id ? (
-                    <>
-                      <input
-                        type="text"
-                        value={postEditando.legenda}
-                        onChange={(e) =>
-                          setPostEditando((prev) => ({
-                            ...prev,
-                            legenda: e.target.value,
-                          }))
-                        }
-                        className={style.comentarioEditInput}
-                        placeholder="Digite a legenda..."
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter") salvarEdicaoPost();
-                        }}
-                      />
-                      <span
-                        className={style.comentarioAcao}
-                        onClick={salvarEdicaoPost}
-                      >
-                        Salvar
-                      </span>
-                      <span
-                      className={style.comentarioAcao}
-                      onClick={cancelarEdicaoPost}
-                      >
-                      Cancelar
-                      </span>
-                      </>
-                      ) : (
-                        <>
-                        <p className={style.legendaPost}>{post.legenda}</p>
-                        </>
-                        )} */}
-            {/* </div> */}
-            {/* <div className={style.comentarios}>
-                  <h4>Comentários:</h4>
-                  <ul className={style.comentariosLista}>
-                    {comentarios[post.id]?.map((comentario, index) => (
-                      <li key={index} className={style.comentarioItem}>
-                        {comentarioEditando.postId === post.id &&
-                          comentarioEditando.comentarioIndex === index ? (
-                          <div className={style.comentarioLinha}>
-                            <input
-                              type="text"
-                              value={comentarioEditando.texto}
-                              onChange={(e) =>
-                                setComentarioEditando((prev) => ({
-                                  ...prev,
-                                  texto: e.target.value,
-                                }))
-                              }
-                              className={style.comentarioEditInput}
-                              onKeyDown={(e) => {
-                                if (e.key === "Enter") salvarEdicaoComentario();
-                              }}
-                            />
-                            <div className={style.comentarioMeta}>
-                              <span
-                                className={style.comentarioAcao}
-                                onClick={salvarEdicaoComentario}
-                              >
-                                Salvar
-                              </span>
-                            </div>
-                          </div>
-                        ) : (
-                          <div className={style.comentarioLinha}>
-                            <span className={style.comentarioTexto}>
-                              {comentario.texto}
-                            </span>
-                            <div className={style.comentarioMeta}>
-                              <span className={style.comentarioTempo}></span>
-                              {comentario.userId === currentUserId && (
-                                <>
-                                  <span
-                                    className={style.comentarioAcao}
-                                    onClick={() =>
-                                      iniciarEdicaoComentario(post.id, index)
-                                    }
-                                  >
-                                    <Icon.Pencil size={16} />
-                                  </span>
-                                  <span
-                                    className={style.comentarioAcao}
-                                    onClick={() =>
-                                      excluirComentario(post.id, index)
-                                    }
-                                  >
-                                    Excluir
-                                  </span>
-                                </>
-                              )}
-                            </div>
-                          </div>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className={style.comentarioInput}>
-                    <input
-                      type="text"
-                      placeholder="Escreva um comentário..."
-                      value={novoComentario[post.id] || ""}
-                      onChange={(e) =>
-                        setNovoComentario((prev) => ({
-                          ...prev,
-                          [post.id]: e.target.value,
-                        }))
-                      }
-                      className={style.comentarioTexto}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter") adicionarComentario(post.id);
-                      }}
-                    />
-                    <button
-                      onClick={() => adicionarComentario(post.id)}
-                      className={style.comentarioBotao}
-                    >
-                      Comentar
-                    </button>
-                  </div>
-                </div>
-              </div> */}
+
           </div>
         </div>
       </div>

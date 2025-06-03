@@ -17,9 +17,9 @@ type cadastroType = {
 export default function Cadastro() {
 
     const { register, handleSubmit, formState: { errors } } = useForm<cadastroType>()
+    const [isLoggingIn, setIsLoggingIn] = useState(false);
     const [mostrarSenha, setMostrarSenha] = useState(false)
     const [mensagem, setMensagem] = useState("")
-    const [isLoggingIn, setIsLoggingIn] = useState(false);
     const navigate = useNavigate()
 
     function validarSenha(senha: string) {

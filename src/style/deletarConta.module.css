@@ -1,0 +1,77 @@
+.deletarOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5); /* fundo escurecido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.cardDeletar {
+    background-color: #f9f9f9;
+    color: #222;
+    min-height: 200px;
+    min-width: 350px;
+    padding: 32px 36px; /* aumente o valor lateral aqui */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    /* align-items: center; */
+}
+
+.enunciadoDeletar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px; /* Diminua o espaçamento inferior */
+}
+
+.deletar {
+    color: #d32f2f;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.cardDeletar p {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+.botoesDeletar {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    justify-content: flex-end;      /* Alinha à direita */
+}
+
+.buttonDeletar {
+    background-color: #e0e0e0; 
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.buttonNaoDeletar {
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}

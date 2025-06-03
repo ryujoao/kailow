@@ -22,9 +22,6 @@ export default function Nav() {
 
     const isActive = (path: string) => location.pathname === path;
 
-
-
-
     return (
 
         <><nav>
@@ -34,6 +31,7 @@ export default function Nav() {
                     <h1 className={style.kailow}>Kailow</h1>
                 </div>
                 <div className={style.navCategorias}>
+                    <Link to="/home" className={isActive("/home") ? style.activeCategoria : ""}>Home</Link>
                     <Link to="/sobre" className={isActive("/sobre") ? style.activeCategoria : ""}>Sobre</Link>
                     <Link to="/comunidades" className={isActive("/comunidades") ? style.activeCategoria : ""}>Comunidades</Link>
                     <Link to="/perfil" className={isActive("/perfil") ? style.activeCategoria : ""}>Perfil</Link>

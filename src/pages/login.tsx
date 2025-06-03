@@ -14,9 +14,9 @@ type loginType = {
 export default function Login() {
 
   const { register, handleSubmit } = useForm<loginType>()
+  const [isLoggingIn, setIsLoggingIn] = useState(false); // Controla o carregamento após o login
   const [mostrarSenha, setMostrarSenha] = useState(false);
   const [mensagem, setMensagem] = useState("")
-  const [isLoggingIn, setIsLoggingIn] = useState(false); // Controla o carregamento após o login
   const navigate = useNavigate();
 
 
