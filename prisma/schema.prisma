@@ -34,10 +34,10 @@ model Login {
 }
 
 model Publicar {
-  id        Int      @id @default(autoincrement())
-  legenda   String
-  anexar    String
-  createdAt DateTime @default(now())
-  userId    Int
-  user      User     @relation(fields: [userId], references: [id])
+  id      Int      @id @default(autoincrement())
+  legenda String
+  anexar  String
+  criacao DateTime @default(now())
+  userId  Int
+  user    User     @relation(fields: [userId], references: [id])
 }

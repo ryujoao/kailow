@@ -112,6 +112,11 @@ router.post("/", async (req, res) => {
     const user = await prisma.user.findUnique({
         where: { email }
     })
+
+    if (!user) {
+        return res.status(401).json({ error: "*E-mail ou senha incorretos" });
+    }
+
     const passwordMatch = await bcrypt.compare(senha, user.senha);
 
 
@@ -166,7 +171,7 @@ router.post('/publicar', upload.fields([
     { name: 'anexar', maxCount: 1 },
 ]), authenticate, async (req, res) => {
     try {
-        const { legenda } = req.body;
+        const { legenda, criacao } = req.body;
         const userId = req.user.id;
 
         let anexar = null;
@@ -262,6 +267,7 @@ router.get("/perfil/:id", authenticate, async (req, res) => {
     const { id } = req.params;
     const user = await prisma.user.findUnique({ where: { id: Number(id) } });
     if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+
     return res.status(200).json(user);
 });
 
@@ -275,38 +281,36 @@ router.put("/perfil", authenticate, async (req, res) => {
         return res.status(404).json({ error: "Usuário não encontrado" });
     }
 
-    await prisma.user.update({
+    const userExistEmail = await prisma.user.findUnique({
+        where: { email }
+    })
+
+    if (userExistEmail && userExistEmail.id !== user.id) {
+        return res.status(400).json({ error: "*E-mail já cadastrado" })
+    }
+
+    const updatedUser = await prisma.user.update({
         where: { id: Number(id) },
         data: { nome, email, description }
     });
 
-    return res.status(200).json(user)
-
+    return res.status(200).json(updatedUser)
 })
 
 
-
-
-
-
-// Rota para buscar todas as publicações
-// router.put("/perfil", authenticate, async (req, res) => {
-//     const { id, anexar, legenda } = req.body
-
-//     const user = await prisma.user.findUnique({ where: { id: Number(id) } });
-
-//     if (!user) {
-//         return res.status(404).json({ error: "Usuário não encontrado" });
-//     }
-
-//     await prisma.user.update({
-//         where: { id: Number(id) },
-//         data: { anexar, legenda }
-//     });
-
-//     return res.status(200).json(user)
-
-// })
+//deletar conta
+router.get('/configuracao/:id', authenticate, async (req, res) => {
+    const { id } = req.params;
+    try {
+        const user = await prisma.usuario.findUnique({
+            where: { id: parseInt(id) }
+        });
+        if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(500).json({ error: "Erro ao buscar usuário" });
+    }
+});
 
 
 module.exports = router
