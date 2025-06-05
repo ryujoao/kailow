@@ -18,7 +18,7 @@ type Publicacao = {
   id: number
   anexar: FileList | null
   legenda: string
-  criacao: string;
+  criacao: string; 
 };
 
 export default function Perfil() {

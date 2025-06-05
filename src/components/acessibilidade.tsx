@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "../style/acessibilidade.module.css";
 
-export default function Acessibilidade() {
-    const [open, setOpen] = useState(false);
+interface AcessibilidadeProps {
+    onClose?: () => void;
+    open?: boolean;
+}
+
+export default function Acessibilidade({ onClose, open = true }: AcessibilidadeProps) {
     const [contrast, setContrast] = useState(false);
     const [fontSize, setFontSize] = useState<"small" | "medium" | "large" | "xlarge">("medium");
     const dropdownRef = useRef<HTMLDivElement>(null);
@@ -28,7 +32,7 @@ export default function Acessibilidade() {
                 dropdownRef.current &&
                 !dropdownRef.current.contains(event.target as Node)
             ) {
-                setOpen(false);
+                onClose?.();
             }
         }
         if (open) {
@@ -37,25 +41,44 @@ export default function Acessibilidade() {
         return () => {
             document.removeEventListener("mousedown", handleClick);
         };
-    }, [open]);
+    }, [open, onClose]);
+
+    // APLICAR ACESSIBILIDADE NO BODY (NÃO REMOVE AO FECHAR)
+    useEffect(() => {
+        document.body.classList.remove(
+            styles.highContrast,
+            styles.fontSmall,
+            styles.fontMedium,
+            styles.fontLarge,
+            styles.fontXlarge
+        );
+        if (contrast) document.body.classList.add(styles.highContrast);
+        if (fontSize === "small") document.body.classList.add(styles.fontSmall);
+        if (fontSize === "medium") document.body.classList.add(styles.fontMedium);
+        if (fontSize === "large") document.body.classList.add(styles.fontLarge);
+        if (fontSize === "xlarge") document.body.classList.add(styles.fontXlarge);
+        // Não faz cleanup aqui! As classes só mudam quando o usuário altera.
+    }, [contrast, fontSize, styles]);
 
     function increaseFont() {
         setFontSize((prev) =>
             prev === "small" ? "medium" :
-            prev === "medium" ? "large" :
-            prev === "large" ? "xlarge" : "xlarge"
+                prev === "medium" ? "large" :
+                    prev === "large" ? "xlarge" : "xlarge"
         );
     }
     function decreaseFont() {
         setFontSize((prev) =>
             prev === "xlarge" ? "large" :
-            prev === "large" ? "medium" :
-            prev === "medium" ? "small" : "small"
+                prev === "large" ? "medium" :
+                    prev === "medium" ? "small" : "small"
         );
     }
     function resetFont() {
         setFontSize("medium");
     }
+
+    if (!open) return null;
 
     return (
         <div
@@ -69,16 +92,7 @@ export default function Acessibilidade() {
                 ${fontSize === "xlarge" ? styles.fontXlarge : ""}
             `}
         >
-            {/* <button
-                className={styles.accessibilityToggle}
-                aria-label="Menu de acessibilidade"
-                aria-expanded={open}
-                onClick={() => setOpen((o) => !o)}
-                type="button"
-            >
-                <i className="fas fa-universal-access"></i> Acessibilidade
-            </button> */}
-            <div className={`${styles.dropdownMenu} ${open ? styles.show : ""}`}>
+            <div className={`${styles.dropdownMenu} ${styles.show}`}>
                 <div className={styles.dropdownSection}>
                     <span>
                         <i className="fas fa-adjust"></i> Contraste
@@ -123,6 +137,16 @@ export default function Acessibilidade() {
                         </button>
                     </div>
                 </div>
+                {onClose && (
+                    <button
+                        className={styles.dropdownButton}
+                        onClick={onClose}
+                        style={{ marginTop: 10 }}
+                        type="button"
+                    >
+                        Fechar
+                    </button>
+                )}
             </div>
         </div>
     );

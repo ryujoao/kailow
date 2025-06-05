@@ -92,38 +92,119 @@
 }
 
 /* Contraste alto */
-.highContrast {
-    background: #000 !important;
-    color: #fff !important;
+body.highContrast, body.highContrast * {
+  background: #181c24 !important; /* fundo geral escuro */
+  color: #fff !important;
+  border-color: #222 !important;
 }
 
-.highContrast .dropdownMenu {
-    background: #222 !important;
-    color: #fff !important;
-    border-color: #fff !important;
+/* Cards e áreas de destaque */
+body.highContrast .cardEditarPerfil,
+body.highContrast .jobCard,
+body.highContrast .card,
+body.highContrast .aboutSection,
+body.highContrast .mainContainer,
+body.highContrast .sidebar,
+body.highContrast .dropdownMenu {
+  background: #2d3e5e !important; /* azul claro para cards */
+  color: #fff !important;
+  border: 2px solid #1a4d7a !important; /* borda azul escuro */
+  box-shadow: 0 4px 24px #1a4d7a55 !important;
 }
 
-.highContrast .dropdownSection span {
-    color: #fff !important;
+/* ChatBody (área do chat) */
+body.highContrast .chatBody {
+  background: #22306d !important; /* azul médio */
+  color: #fff !important;
+  border: 2px solid #2d3e5e !important;
+  box-shadow: 0 0 0 4px #2d3e5e33 !important;
 }
 
-.highContrast .dropdownButton,
-.highContrast .fontButton {
-    background: #444 !important;
-    color: #fff !important;
-    border-color: #fff !important;
+/* Headers, menus, abas ativas, botões principais */
+body.highContrast .chatHeader,
+body.highContrast .sidebarHeader,
+body.highContrast .tabButton.active,
+body.highContrast .menuItem.active,
+body.highContrast .footer,
+body.highContrast footer,
+body.highContrast button,
+body.highContrast .btn,
+body.highContrast .sendButton {
+  background: #1a4d7a !important; /* azul escuro forte */
+  color: #fff !important;
+  border: 2px solid #2d3e5e !important;
+}
+
+body.highContrast .cardSobre,
+body.highContrast .postCard {
+  background: #4fa3ff !important;   /* azul claro, bem diferente do fundo */
+  color: #181c24 !important;        /* texto escuro para contraste */
+  border: 3px solid #1a4d7a !important; /* borda azul escuro */
+  box-shadow: 0 4px 24px #1a4d7a33 !important;
+}
+
+/* Botão premium */
+body.highContrast .btnPremium,
+body.highContrast .buttonPremium {
+  background: #7c2ae8 !important; /* roxo forte */
+  color: #ffffff !important;      /* amarelo claro */
+  border: 2px solid #fff !important;
+  font-weight: bold !important;
+}
+
+/* Mensagens do chat */
+body.highContrast .messageUser {
+  background: #3e7cb1 !important; /* azul claro */
+  color: #fff !important;
+  border: 2px solid #1a4d7a !important;
+}
+body.highContrast .messageBot {
+  background: #fff !important; /* branco para máximo contraste */
+  color: #1a4d7a !important;
+  border: 2px solid #3e7cb1 !important;
+}
+
+/* Inputs, selects, textarea */
+body.highContrast input,
+body.highContrast textarea,
+body.highContrast select {
+  background: #2d3e5e !important;
+  color: #fff !important;
+  border: 2px solid #1a4d7a !important;
+}
+
+/* Footer separado */
+body.highContrast .footer,
+body.highContrast footer {
+  background: #181c24 !important;
+  color: #7faaff !important;
+  border-top: 2px solid #2d3e5e !important;
+}
+
+/* Linhas divisórias */
+body.highContrast hr,
+body.highContrast .linha,
+body.highContrast .divider {
+  border-color: #3e7cb1 !important;
+  background: #3e7cb1 !important;
+  height: 3px !important;
+}
+
+/* Links */
+body.highContrast a,
+body.highContrast .link {
+  color: #ffffff !important; /* amarelo claro */
+  text-decoration: none !important;
+  font-weight: bold !important;
+}
+
+/* Checkbox */
+body.highContrast input[type="checkbox"] {
+  accent-color: #3e7cb1 !important;
 }
 
 /* Tamanhos de fonte */
-.fontSmall {
-    font-size: 14px;
-}
-.fontMedium {
-    font-size: 18px;
-}
-.fontLarge {
-    font-size: 22px;
-}
-.fontXlarge {
-    font-size: 28px;
-}
+body.fontSmall, body.fontSmall * { font-size: 14px !important; }
+body.fontMedium, body.fontMedium * { font-size: 16px !important; }
+body.fontLarge, body.fontLarge * { font-size: 20px !important; }
+body.fontXlarge, body.fontXlarge * { font-size: 24px !important; }

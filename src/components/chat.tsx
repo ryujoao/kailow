@@ -1,136 +1,142 @@
 import React, { useState } from "react";
 import styles from "../style/chat.module.css";
-import * as Icon from "react-bootstrap-icons";
 
+// Função para respostas automáticas do robô de suporte
+function getAutoReply(msg: string): string {
+    const lower = msg.toLowerCase();
+    if (lower.includes("currículo") || lower.includes("cv")) {
+        return "Dica: Você pode criar um currículo simples destacando suas habilidades, cursos e experiências, mesmo que sejam projetos pessoais ou voluntariado!";
+    }
+    if (lower.includes("idade") || lower.includes("menor")) {
+        return "Aqui você encontra vagas para jovens a partir de 14 anos, tanto CLT quanto freelancer. Sempre confira os requisitos da vaga!";
+    }
+    if (lower.includes("freela") || lower.includes("freelancer")) {
+        return "Para encontrar vagas de freelancer, acesse a aba 'Vagas' e filtre por tipo de contratação.";
+    }
+    if (lower.includes("clt")) {
+        return "Vagas CLT normalmente exigem documentos como RG, CPF e, em alguns casos, autorização dos responsáveis.";
+    }
+    if (lower.includes("responsável") || lower.includes("autorização")) {
+        return "Algumas empresas podem pedir autorização dos responsáveis para contratação de menores de idade.";
+    }
+    if (lower.includes("como funciona") || lower.includes("ajuda")) {
+        return "Você pode se cadastrar, preencher seu perfil e se candidatar às vagas que mais combinam com você!";
+    }
+    if (lower.includes("primeiro emprego")) {
+        return "Não se preocupe se não tem experiência! Muitas vagas aqui são para o primeiro emprego e valorizam sua vontade de aprender.";
+    }
+    if (lower.includes("contato") || lower.includes("suporte")) {
+        return "Se precisar de ajuda, pode falar comigo por aqui ou enviar um e-mail para suporte@jovememprego.com. Nosso horário de atendimento é das 7:30 às 17h.";
+    }
+    if (lower.includes("horário") || lower.includes("atendimento")) {
+        return "Nosso horário de atendimento é das 7:30 às 17h.";
+    }
+    // Resposta padrão
+    return "Olá! Sou o assistente virtual. Posso te ajudar com dúvidas sobre vagas, cadastro, currículo ou processos seletivos! Nosso horário de atendimento é das 7:30 às 17h.";
+}
+
+// Função para verificar se está no horário de atendimento
+function isWithinBusinessHours() {
+    const now = new Date();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    // Horário de atendimento: 7:30 às 17:00
+    if (hour < 7 || (hour === 7 && minute < 30)) return false;
+    if (hour > 17 || (hour === 17 && minute > 0)) return false;
+    return true;
+}
+
+type Message = {
+    from: "user" | "bot";
+    text: string;
+    time: string;
+};
+
+function getCurrentTimeString() {
+    const now = new Date();
+    return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
 
 export default function Chat() {
- const [isOpen, setIsOpen] = useState(false);
-    const [selectedUser, setSelectedUser] = useState<string | null>(null);
-    const [messages, setMessages] = useState<{ [user: string]: string[] }>({});
+    const [isOpen, setIsOpen] = useState(false);
+    const [messages, setMessages] = useState<Message[]>([]);
     const [newMessage, setNewMessage] = useState("");
 
-    // Lista de usuários com ícones
-    const users = [
-        { name: "Antônio", icon: "👨‍💻" },
-        { name: "Maria Angela", icon: "👩‍💼" },
-        { name: "Isa Emi", icon: "👩‍🎨" },
-        { name: "Ryu", icon: "👨‍🔧" },
-    ];
-
-    const toggleChat = () => {
-        setIsOpen(!isOpen);
-    };
-
-    const selectUser = (user: string) => {
-        setSelectedUser(user);
-        if (!messages[user]) {
-            setMessages({ ...messages, [user]: [] });
-        }
-    };
+    const toggleChat = () => setIsOpen(!isOpen);
 
     const sendMessage = () => {
-        if (newMessage.trim() !== "" && selectedUser) {
-            setMessages({
-                ...messages,
-                [selectedUser]: [...(messages[selectedUser] || []), newMessage],
-            });
-            setNewMessage("");
+        if (newMessage.trim() === "") return;
+        const userMsg: Message = {
+            from: "user",
+            text: newMessage,
+            time: getCurrentTimeString(),
+        };
+        setMessages((msgs) => [...msgs, userMsg]);
+        if (isWithinBusinessHours()) {
+            setTimeout(() => {
+                setMessages((msgs) => [
+                    ...msgs,
+                    {
+                        from: "bot",
+                        text: getAutoReply(newMessage),
+                        time: getCurrentTimeString(),
+                    },
+                ]);
+            }, 1000);
+        } else {
+            setTimeout(() => {
+                setMessages((msgs) => [
+                    ...msgs,
+                    {
+                        from: "bot",
+                        text: "Olá! Nosso horário de atendimento é das 7:30 às 17h. Por favor, envie sua dúvida nesse período para receber uma resposta automática.",
+                        time: getCurrentTimeString(),
+                    },
+                ]);
+            }, 1000);
         }
-    };
-
-    const deleteMessage = (index: number) => {
-        if (selectedUser) {
-            const updatedMessages = [...(messages[selectedUser] || [])];
-            updatedMessages.splice(index, 1);
-            setMessages({ ...messages, [selectedUser]: updatedMessages });
-        }
+        setNewMessage("");
     };
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter") {
-            sendMessage();
-        }
+        if (e.key === "Enter") sendMessage();
     };
 
     return (
         <div className={styles.chatContainer}>
-            {/* Botão para abrir/fechar o chat */}
             <div className={styles.chatHeader} onClick={toggleChat}>
-                <span>{isOpen ? "Fechar Chat" : "Abrir Chat"}</span>
+                <span>{isOpen ? "Fechar Suporte" : "Suporte ao Cliente"}</span>
             </div>
-
-            {/* Corpo do chat */}
             {isOpen && (
                 <div className={styles.chatBody}>
-                    {/* Lista de usuários */}
-                    {!selectedUser && (
-                        <div className={styles.userList}>
-                            <h4>Contatos</h4>
-                            {users.map((user) => (
-                                <div
-                                    key={user.name}
-                                    className={styles.user}
-                                    onClick={() => selectUser(user.name)}
-                                >
-                                    <span className={styles.userIcon}>{user.icon}</span>
-                                    {user.name}
-                                </div>
-                            ))}
-                        </div>
-                    )}
-
-                    {/* Conversa com o usuário selecionado */}
-                    {selectedUser && (
-                        <>
-
-                            {/* Indicativo de conversa */}
-                            <div className={styles.conversationHeader}>
-                                <span className={styles.userIcon}>
-                                    {users.find((user) => user.name === selectedUser)?.icon}
-                                </span>
-                                <h4>{selectedUser}</h4>
+                    <div className={styles.messagesContainer}>
+                        {messages.map((msg, idx) => (
+                            <div
+                                key={idx}
+                                className={
+                                    msg.from === "user"
+                                        ? styles.messageUser
+                                        : styles.messageBot
+                                }
+                            >
+                                <div>{msg.text}</div>
+                                <div className={styles.messageTime}>{msg.time}</div>
                             </div>
-                            <div className={styles.chatHeaderUp}>
-                                {/* Botão de voltar para usuários */}
-                                <div className={styles.backButton} onClick={() => setSelectedUser(null)}>
-                                    <Icon.ArrowLeftShort style={{ width: "15px", height: "15px" }} /> Voltar para contatos
-                                </div>
-                            </div>
-
-                            <div className={styles.messagesContainer}>
-                                {messages[selectedUser]?.length > 0 ? (
-                                    messages[selectedUser].map((msg, index) => (
-                                        <div key={index} className={styles.message}>
-                                            {msg}
-                                            <button
-                                                className={styles.deleteButton}
-                                                onClick={() => deleteMessage(index)}
-                                            >
-                                                <Icon.Trash className={styles.trashIcon} />
-                                            </button>
-                                        </div>
-                                    ))
-                                ) : (
-                                    <p className={styles.noMessages}>Nenhuma mensagem ainda.</p>
-                                )}
-                            </div>
-
-                            {/* Campo de envio de mensagem */}
-                            <div className={styles.inputContainer}>
-                                <input
-                                    type="text"
-                                    className={styles.messageInput}
-                                    placeholder="Digite sua mensagem..."
-                                    value={newMessage}
-                                    onChange={(e) => setNewMessage(e.target.value)}
-                                    onKeyDown={handleKeyPress} // Adicionado para capturar a tecla Enter
-                                />
-                                <button className={styles.sendButton} onClick={sendMessage}>
-                                    Enviar
-                                </button>
-                            </div>
-                        </>
-                    )}
+                        ))}
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <input
+                            type="text"
+                            className={styles.messageInput}
+                            placeholder="Digite sua mensagem..."
+                            value={newMessage}
+                            onChange={(e) => setNewMessage(e.target.value)}
+                            onKeyDown={handleKeyPress}
+                        />
+                        <button className={styles.sendButton} onClick={sendMessage}>
+                            Enviar
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

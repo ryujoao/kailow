@@ -35,11 +35,11 @@ export default function Premium() {
             </p>
             <hr />
             <ul className={style.beneficiosPlano}>
-              <li><span className={style.check}>✔</span> 1 site</li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>Hospedagem Gerenciada para WordPress</span></li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>Cerca de 10.000</span> visitas mensais</li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>10 GB</span> de armazenamento SSD</li>
-              <li><span className={style.check}>✔</span> SSL grátis e domínio incluso (1 ano)</li>
+              <li><span className={style.check}>✔</span> Perfil destacado (bronze)</li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}>Reembolso em 15 dias</span></li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}>Estatísticas de visualizações do perfil</span></li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}></span>Notificação de vagas após 24h da publicação</li>
+        
             </ul>
           </div>
           <hr />
@@ -67,11 +67,11 @@ export default function Premium() {
             </p>
             <hr />
             <ul className={style.beneficiosPlano}>
-              <li><span className={style.check}>✔</span> 1 site</li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>Hospedagem Gerenciada para WordPress</span></li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>Cerca de 10.000</span> visitas mensais</li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>10 GB</span> de armazenamento SSD</li>
-              <li><span className={style.check}>✔</span> SSL grátis e domínio incluso (1 ano)</li>
+              <li><span className={style.check}>✔</span>Perfil VIP (ouro)</li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}>Reembolso em 15 dias</span></li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}>Notificação 12h antes das vagas serem públicas</span></li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}>Teste grátis por 7 dias</span></li>
+           
             </ul>
           </div>
           <hr />
@@ -100,10 +100,10 @@ export default function Premium() {
             <hr />
             <ul className={style.beneficiosPlano}>
               <li><span className={style.check}>✔</span> 1 site</li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>Hospedagem Gerenciada para WordPress</span></li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>Cerca de 10.000</span> visitas mensais</li>
-              <li><span className={style.check}>✔</span> <span className={style.destaque}>10 GB</span> de armazenamento SSD</li>
-              <li><span className={style.check}>✔</span> SSL grátis e domínio incluso (1 ano)</li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}>Reembolso em 15 dias</span></li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}>Notificação 12h antes das vagas serem públicas</span></li>
+              <li><span className={style.check}>✔</span> <span className={style.destaque}></span>Perfil destacado (bronze)</li>
+           
             </ul>
           </div>
         </div>
