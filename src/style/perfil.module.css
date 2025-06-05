@@ -91,6 +91,8 @@
 
 .profileImage img {
   border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
 }
 
 .fotoPerfil {
@@ -214,7 +216,7 @@
 }
 
 .feedTitle {
-  font-size: 3.5vh;
+  font-size: 5vh;
   /* margin-bottom: 40px; */
   color: #cdd5db;
   /* margin-left: 10px; */
@@ -340,10 +342,10 @@
   transition: 0.2s;
 }
 
-.comentarioBotao:hover {
+/* .comentarioBotao:hover {
   background-color: #ffffff;
   color: #0d2761;
-}
+} */
 
 .menuContainer {
   position: relative;
@@ -454,14 +456,19 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-right: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  resize: none;
 }
+
+
 .legendaPost {
   font-size: 16px;
   color: #222;
   padding-left: 0;    
   text-align: left;
   margin-left: 5rem; 
-  width: 100%;
+  width: 40rem;
   background: transparent;
   word-break: break-word;
 }
@@ -511,14 +518,6 @@
   align-items: center;
 }
 
-.comentarioEditInput {
-  width: 100%;
-  padding: 8;
-  border-radius: 6;
-  border: 1px solid #ccc;
-  margin-right: 10;
-  font-size: 16;
-}
 
 
 .comentarioAcao {
@@ -556,4 +555,20 @@
 
 .nenhumaPublic {
   color: white;
+}
+
+.bntSalvar, .bntCancelar {
+  padding: 8px 15px;
+  background-color: #0d2761;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+  margin-top: 1rem;
+}
+
+.bntSalvar {
+  margin-right: 1rem;
 }

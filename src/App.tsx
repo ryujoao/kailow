@@ -37,7 +37,7 @@ function App() {
         <Route path="/teste" element={<ProtectedRoute> <Teste /> </ProtectedRoute>} />
         <Route path="/entrarComunidade" element={<ProtectedRoute> <EntrarComunidade /> </ProtectedRoute>} />
         <Route path="/acessibilidade" element={<ProtectedRoute> <Acessibilidade /> </ProtectedRoute>} />
-         <Route path="/acessibilidade" element={<ProtectedRoute> <PoliticaDePrivacidade /> </ProtectedRoute>} />
+         <Route path="/privacidade" element={<ProtectedRoute> <PoliticaDePrivacidade /> </ProtectedRoute>} />  
 
         {/* Uncomment the line below to enable the Home route */}
         {/* <Route path="/home" element={<Home />} /> */}

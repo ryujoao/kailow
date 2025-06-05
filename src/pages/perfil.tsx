@@ -4,6 +4,7 @@ import style from "../style/perfil.module.css";
 import * as Icon from "react-bootstrap-icons";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
+import TempoDaPublicacao from "../components/dataPostagem";
 
 type DadosPerfil = {
   id: number
@@ -14,10 +15,10 @@ type DadosPerfil = {
 };
 
 type Publicacao = {
-  id: number;
-  anexar: FileList | null;
-  legenda: string;
-  // criadoEm: string;
+  id: number
+  anexar: FileList | null
+  legenda: string
+  criacao: string;
 };
 
 export default function Perfil() {
@@ -26,6 +27,8 @@ export default function Perfil() {
   const [user, setUser] = useState<DadosPerfil>()
   const [publicacoes, setPublicacoes] = useState<Publicacao[]>([]);
   const navigate = useNavigate();
+  const [editandoId, setEditandoId] = useState<number | null>(null);
+  const [novaLegenda, setNovaLegenda] = useState<string>("");
 
 
   // Carrega os dados do editar perfil para o perfil
@@ -55,6 +58,8 @@ export default function Perfil() {
     setUser(data)
   }
 
+
+
   //pegar publicação
   const [Publicacao] = useState<Publicacao>(() => {
     const salvo = localStorage.getItem("publicacao");
@@ -79,6 +84,55 @@ export default function Perfil() {
     const data: Publicacao[] = await response.json();
     setPublicacoes(data);
   }
+
+
+  function iniciarEdicao(pub: { id: any; anexar?: FileList | null; legenda: any; }) {
+    setEditandoId(pub.id);
+    setNovaLegenda(pub.legenda);
+  }
+
+  // Handler para salvar edição
+  async function salvarEdicao(pub: { id: any; anexar: any; legenda?: string; }) {
+    try {
+      const response = await fetch(`http://localhost:3000/perfil/${pub.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ legenda: novaLegenda, anexar: pub.anexar }),
+      });
+      if (response.ok) {
+        const atualizada = await response.json();
+        setPublicacoes((prev) =>
+          prev.map((p) => (p.id === pub.id ? { ...p, legenda: atualizada.legenda } : p))
+        );
+        setEditandoId(null);
+        setNovaLegenda("");
+      }
+    } catch (err) {
+      alert("Erro ao editar publicação");
+    }
+  }
+
+  // Handler para excluir
+  async function excluirPublicacao(id: number) {
+    // if (!window.confirm("Tem certeza que deseja excluir?")) return;
+    try {
+      const response = await fetch(`http://localhost:3000/publicar/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (response.ok) {
+        setPublicacoes((prev) => prev.filter((p) => p.id !== id));
+      }
+    } catch (err) {
+      alert("Erro ao excluir publicação");
+    }
+  }
+
+
+
 
   const currentUserId = "usuario123";
 
@@ -144,31 +198,6 @@ export default function Perfil() {
     setComentarioEditando({ postId: null, comentarioIndex: null, texto: "" });
   }
 
-  //   useEffect(() => {
-  //   if (!id) return; // Não faz a requisição se id não existir
-
-  //   async function fetchPublicacoes() {
-  //     try {
-  //       const response = await fetch(`http://localhost:3000/perfil/${id}/publicar`, {
-  //         headers: 
-  //         { "Authorization": `Bearer ${token}` }
-  //       });
-
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         setPublicacoes(data);
-  //       } else {
-  //         console.error("Erro ao buscar publicações");
-  //       }
-  //     } catch (error) {
-  //       console.error("Erro na requisição:", error);
-  //     }
-  //   }
-
-  //   fetchPublicacoes();
-  // }, [id]);
-
-
   const [fotoPerfil] = useState<string | null>(
     localStorage.getItem("fotoPerfil")
   );
@@ -177,148 +206,7 @@ export default function Perfil() {
     navigate("/editar");
   }
 
-  // const [menuOpen, setMenuOpen] = useState<number | null>(null);
-
-  // const [posts, setPosts] = useState([
-  //   {
-  //     id: 0,
-  //     imagem: "",
-  //     legenda: "Este é o conteúdo do primeiro post.",
-  //     horas: "Há 11 horas",
-  //   },
-  //   {
-  //     id: 1,
-  //     imagem: "",
-  //     legenda: "Este é o conteúdo do segundo post.",
-  //     horas: "Há 5 horas",
-  //   },
-  //   {
-  //     id: 2,
-  //     imagem: "",
-  //     legenda: "Este é o conteúdo do terceiro post.",
-  //     horas: "Agora mesmo",
-  //   },
-  // ]);
-
-  // const currentUserId = "usuario123";
-
-  // const [comentarios, setComentarios] = useState<{
-  //   [key: number]: { texto: string; userId: string }[];
-  // }>({
-  //   0: [],
-  //   1: [],
-  //   2: [],
-  // });
-
-  // const [novoComentario, setNovoComentario] = useState<{
-  //   [key: number]: string;
-  // }>({
-  //   0: "",
-  //   1: "",
-  //   2: "",
-  // });
-
-  // const [comentarioEditando, setComentarioEditando] = useState<{
-  //   postId: number | null;
-  //   comentarioIndex: number | null;
-  //   texto: string;
-  // }>({ postId: null, comentarioIndex: null, texto: "" });
-
-  // const [postEditando, setPostEditando] = useState<{
-  //   id: number | null;
-  //   legenda: string;
-  // }>({
-  //   id: null,
-  //   legenda: "",
-  // });
-
-  // // function handleImageChange(
-  // //   e: React.ChangeEvent<HTMLInputElement>,
-  // //   postId: number
-  // // ) {
-  // //   const file = e.target.files?.[0];
-  // //   if (!file) return;
-  // //   const reader = new FileReader();
-  // //   reader.onloadend = () => {
-  // //     setPosts((prev) =>
-  // //       prev.map((post) =>
-  // //         post.id === postId
-  // //           ? { ...post, imagem: reader.result as string }
-  // //           : post
-  // //       )
-  // //     );
-  // //   };
-  // //   reader.readAsDataURL(file);
-  // // }
-
-
-  // function editarPost(postId: number) {
-  //   const post = posts.find((p) => p.id === postId);
-  //   if (post) {
-  //     setPostEditando({ id: post.id, legenda: post.legenda });
-  //   }
-  //   setMenuOpen(null);
-  // }
-
-  // function salvarEdicaoPost() {
-  //   setPosts((prev) =>
-  //     prev.map((post) =>
-  //       post.id === postEditando.id
-  //         ? { ...post, legenda: postEditando.legenda }
-  //         : post
-  //     )
-  //   );
-  //   setPostEditando({ id: null, legenda: "" });
-  // }
-
-  // function cancelarEdicaoPost() {
-  //   setPostEditando({ id: null, legenda: "" });
-  // }
-
-  // function excluirPost(postId: number) {
-  //   setPosts((prev) => prev.filter((post) => post.id !== postId));
-  //   setMenuOpen(null);
-  // }
-
-  // function adicionarComentario(postId: number) {
-  //   if (novoComentario[postId]?.trim() === "") return;
-  //   setComentarios((prev) => ({
-  //     ...prev,
-  //     [postId]: [
-  //       ...(prev[postId] || []),
-  //       { texto: novoComentario[postId], userId: currentUserId },
-  //     ],
-  //   }));
-  //   setNovoComentario((prev) => ({
-  //     ...prev,
-  //     [postId]: "",
-  //   }));
-  // }
-
-  // function excluirComentario(postId: number, comentarioIndex: number) {
-  //   setComentarios((prev) => ({
-  //     ...prev,
-  //     [postId]: prev[postId].filter((_, index) => index !== comentarioIndex),
-  //   }));
-  // }
-
-  // function iniciarEdicaoComentario(postId: number, comentarioIndex: number) {
-  //   const comentario = comentarios[postId][comentarioIndex];
-  //   setComentarioEditando({ postId, comentarioIndex, texto: comentario.texto });
-  // }
-
-  // function salvarEdicaoComentario() {
-  //   const { postId, comentarioIndex, texto } = comentarioEditando;
-  //   if (postId === null || comentarioIndex === null || texto.trim() === "")
-  //     return;
-  //   setComentarios((prev) => ({
-  //     ...prev,
-  //     [postId]: prev[postId].map((comentario, index) =>
-  //       index === comentarioIndex ? { ...comentario, texto } : comentario
-  //     ),
-  //   }));
-  //   setComentarioEditando({ postId: null, comentarioIndex: null, texto: "" });
-  // }
+  const [menuOpen, setMenuOpen] = useState<number | null>(null);
 
   return (
     <>
@@ -391,33 +279,52 @@ export default function Perfil() {
                       ) : (
                         <img src="../public/img/userImg.jpg" alt="" className={style.postIcon} />
                       )}
+
+                      <section>
                       <h3 className={style.postHeader}>{user?.nome}</h3>
+
+                      {/* Exibe o tempo de publicação */}
+                      <TempoDaPublicacao criacao={pub.criacao} />
+                      </section>
+
+                      <div className={style.menuContainer}>
+
+                        <Icon.ThreeDotsVertical
+                          className={style.menuIcon}
+                          onClick={() =>
+                            setMenuOpen(menuOpen === pub.id ? null : pub.id)
+                          }
+                        />
+                        {menuOpen === pub.id && (
+                          <div className={style.menuDropdown}>
+                            <button onClick={() => iniciarEdicao(pub)}>
+                              Editar
+                            </button>
+                            <button onClick={() => excluirPublicacao(pub.id)}>
+                              Excluir post
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     </div>
+
 
                     <div className={style.postBody}>
                       {pub.anexar && pub.anexar.length > 0 ? (
                         <img src={`http://localhost:3000/${pub.anexar}`} alt="" className={style.imgPost} />
                       ) : null}
                     </div>
-                      <p className={style.legendaPost}>{pub?.legenda}</p>
-                    {/* <div className={style.menuContainer}>
-                    <Icon.ThreeDotsVertical
-                      className={style.menuIcon}
-                      onClick={() =>
-                        setMenuOpen(menuOpen === post.id ? null : post.id)
-                      }
-                    />
-                    {menuOpen === post.id && (
-                      <div className={style.menuDropdown}>
-                        <button onClick={() => editarPost(post.id)}>
-                          Editar
-                        </button>
-                        <button onClick={() => excluirPost(post.id)}>
-                          Excluir post
-                        </button>
-                      </div>
+                    {editandoId === pub.id ? (
+                      <>
+                        <textarea value={novaLegenda} onChange={e => setNovaLegenda(e.target.value)} className={style.comentarioEditInput} rows={5}></textarea>
+                        <button className={style.bntSalvar} onClick={() => salvarEdicao(pub)}>Salvar</button>
+                        <button className={style.bntCancelar} onClick={() => setEditandoId(null)}>Cancelar</button>
+                      </>
+                    ) : (
+                      <p className={style.legendaPost}>{pub.legenda}</p>
                     )}
-                  </div> */}
+
+
                     <div className={style.comentarios}>
 
                       <section>
@@ -448,8 +355,7 @@ export default function Perfil() {
                                 <div className={style.comentarioMeta}>
                                   <span
                                     className={style.comentarioAcao}
-                                    onClick={salvarEdicaoComentario}
-                                  >
+                                    onClick={salvarEdicaoComentario} >
                                     Salvar
                                   </span>
                                 </div>
@@ -471,8 +377,7 @@ export default function Perfil() {
                                       </span>
                                       <span
                                         className={style.comentarioAcao}
-                                        onClick={() => excluirComentario(pub.id, index)}
-                                      >
+                                        onClick={() => excluirComentario(pub.id, index)}>
                                         Excluir
                                       </span>
                                     </>
@@ -508,32 +413,6 @@ export default function Perfil() {
                       </div>
                     </div>
                   </div>
-                  {/* <h3 className={style.horas}>{post.horas}</h3> */}
-                  {/* <img
-                    src={post.imagem}
-                    alt="Post"
-                    className={style.imagem}
-                    {/* {post.imagem ? (
-                      <>
-                      <img
-                      src={post.imagem}
-                      alt="Post"
-                      className={style.imagem}
-                      />
-                      <div className={style.lateral}></div>
-                      </>
-                      ) : (
-                        <label className={style.uploadLabel}>
-                        <Icon.Camera size={32} />
-                        <span className={style.imgCard}>Adicionar imagem</span>
-                        <input
-                        type="file"
-                        accept="image/*"
-                        style={{ display: "none" }}
-                      onChange={(e) => handleImageChange(e, post.id)}
-                      />
-                      </label>
-                      )} */}
                 </div>
               )))}
 

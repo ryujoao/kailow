@@ -25,6 +25,7 @@ export default function Configuracoes() {
   const [mostrarSenha2, setMostrarSenha2] = useState(false);
   const navigate = useNavigate();
   const notifySuccess = () => toast.success("Senha atualizada! Redirecionando ao login");
+  const [mostrarPopup, setMostrarPopup] = useState(false);
 
 
   const { register, handleSubmit, reset } = useForm<configType>();
@@ -70,7 +71,7 @@ export default function Configuracoes() {
       if (response.ok) {
         notifySuccess();
         // setMensagem(res.msg || "Senha atualizada com sucesso!");
-        setTimeout(() => { navigate("/"); }, 4000);
+        setTimeout(() => { navigate("/"); }, 3000);
         localStorage.removeItem("token");
       } else {
         setMensagem(res.error || "Erro: Senha atual incorreta.");
@@ -81,6 +82,18 @@ export default function Configuracoes() {
     }
   }
 
+  // validação para mudar a senha somente se os campos de senha forem preenchidos
+  // useEffect(() => {
+  //   if (user) {
+  //     reset({
+  //       id: user.id,
+  //       senha: "",
+  //       novaSenha: ""
+  //     });
+  //   }
+  // }, [user, reset]);
+  
+
   function toggleSenha() {
     setMostrarSenha(!mostrarSenha);
   }
@@ -89,7 +102,6 @@ export default function Configuracoes() {
     setMostrarSenha2(!mostrarSenha2);
   }
 
-   const [mostrarConfig, setMostrarConfig] = useState(false)
 
   return (
     <>
@@ -98,6 +110,7 @@ export default function Configuracoes() {
         <h1 className={style.configHeader}>Configurações</h1>
         <div className={style.configContainer}>
           <div className={style.configMain}>
+
             <form onSubmit={handleSubmit(handleconfig)} method="post">
               <section className={style.configSection}>
                 <h2 className={style.configTitle}>Preferências de Conta</h2>
@@ -107,14 +120,7 @@ export default function Configuracoes() {
                 <div className={style.configItem}>
                   <label htmlFor="senha">Sua Senha:</label>
                   <div className={style.inputSenha}>
-                    <input
-                      className={style.configInput}
-                      type={mostrarSenha ? "text" : "password"}
-                      id="senha"
-                      placeholder="Digite sua senha atual"
-                      autoComplete="off"
-                      {...register("senha")}
-                    />
+                    <input className={style.configInput} type={mostrarSenha ? "text" : "password"} id="senha" placeholder="Digite sua senha atual" autoComplete="off" {...register("senha")} required/>
                     <section onClick={toggleSenha} className={style.olhos}>
                       {mostrarSenha ? <Icon.Eye /> : <Icon.EyeSlash />}
                     </section>
@@ -128,14 +134,7 @@ export default function Configuracoes() {
                 <div className={style.configItem}>
                   <label htmlFor="novaSenha">Nova Senha:</label>
                   <div className={style.inputSenha}>
-                    <input
-                      className={style.configInput}
-                      type={mostrarSenha2 ? "text" : "password"}
-                      id="novaSenha"
-                      placeholder="Digite uma nova senha"
-                      autoComplete="off"
-                      {...register("novaSenha")}
-                    />
+                    <input className={style.configInput} type={mostrarSenha2 ? "text" : "password"} id="novaSenha" placeholder="Digite uma nova senha" autoComplete="off" {...register("novaSenha")} required/>
                     <section onClick={toggleSenha2} className={style.olhos}>
                       {mostrarSenha2 ? <Icon.Eye /> : <Icon.EyeSlash />}
                     </section>
@@ -159,22 +158,26 @@ export default function Configuracoes() {
                 </div>
               </section>
 
-              <h3 className={style.configTermos} style={{ marginBottom: "30px" }}>
-                Ler os termos de uso e política de privacidade
-              </h3>
+              {/* <section style={{ marginTop: "60px" }} className={style.configSection}> */}
+                <h3 className={style.configTermos} style={{ marginBottom: "30px", width: "30rem" }} onClick={() => navigate("/privacidade")}> 
+                  Ler os termos de uso e política de privacidade
+                </h3>
 
-              <h3 className={style.configTermos} onClick={() => setMostrarConfig((prevState) => !prevState)}>Deletar minha conta</h3>
-
+              {/* </section> */}
               <section className={style.configFooter}>
                 <button type="submit" className={style.btnPrimary}>
                   Salvar Alterações
                 </button>
               </section>
             </form>
+                <h3 className={style.configDeletar} onClick={() => setMostrarPopup(true)}>Desejo deletar minha conta</h3>
+                {mostrarPopup && (
+                  <Deletar onClose={() => setMostrarPopup(false)} />
+                )}
           </div>
           <ToastContainer
             position="bottom-right"
-            autoClose={3000}
+            autoClose={2000}
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick={false}
@@ -185,7 +188,6 @@ export default function Configuracoes() {
             theme="dark"
           />
         </div>
-        {mostrarConfig && <Deletar />}
       </div>
       <Footer />
     </>

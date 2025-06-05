@@ -37,7 +37,7 @@ export default function Publicar() {
 
         if (response.ok) {
             notifySuccess();
-            setTimeout(() => navigate("/perfil"), 3000);
+            setTimeout(() => navigate("/perfil"), 2000);
         } else {
             console.error("Erro ao publicar");
         }
@@ -91,7 +91,7 @@ export default function Publicar() {
                     </div>
                     <ToastContainer
                         position="bottom-right"
-                        autoClose={3000}
+                        autoClose={1500}
                         hideProgressBar={false}
                         newestOnTop={false}
                         closeOnClick={false}

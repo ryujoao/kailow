@@ -12,6 +12,7 @@
   "dependencies": {
     "@prisma/client": "^6.7.0",
     "bootstrap-icons": "^1.11.3",
+    "date-fns": "^4.1.0",
     "express": "^5.1.0",
     "google-fonts": "^1.0.0",
     "jwt-decode": "^4.0.0",

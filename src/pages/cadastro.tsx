@@ -100,7 +100,7 @@ export default function Cadastro() {
                             <input className={style.inputLogin} id="email" type="email" required {...register("email")} />
 
                             <label htmlFor="telefone" className={style.labelLogin}>Telefone</label>
-                            <input className={style.inputLogin} id="telefone" type="tel" required {...register("telefone")} />
+                            <input className={style.inputLogin} id="telefone" type="tel" pattern="[0-9]{11}" required {...register("telefone")} />
 
                             <label htmlFor="data" className={style.labelLogin}>Data de Nascimento</label>
                             <input className={style.inputLogin} id="data" type="date" required {...register("nascimento")} />

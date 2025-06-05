@@ -11,7 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 export type DadosPerfil = {
     id: number
     description: string;
-    nome?: string;
+    nome: string;
     email: string;
 };
 
@@ -19,22 +19,37 @@ export default function EditarPerfil() {
 
     const [user, setUser] = useState<DadosPerfil>()
     const navigate = useNavigate();
+    const [mensagem, setMensagem] = useState("")
     const token = localStorage.getItem("token") || "";
     const notifySuccess = () => toast.success("Dados atualizados");
 
 
     async function handleAlterarPerfil(data: DadosPerfil) {
-        const response = await fetch("http://localhost:3000/perfil", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            },
+        try {
+            const response = await fetch("http://localhost:3000/perfil", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
 
-            body: JSON.stringify(data),
-        });
-        notifySuccess();
-        setTimeout(() => navigate("/perfil"), 3000);
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                notifySuccess();
+                setTimeout(() => navigate("/perfil"), 2000);
+            }
+            else {
+                const res = await response.json();
+                console.error("Erro ao atualizar perfil:", response.statusText);
+                setMensagem(res.error || "Erro ao atualizar perfil");
+            }
+
+        } catch (error: any) {
+            console.error("Erro na requisição:", error);
+            setMensagem(error.message)
+        }
     }
 
     const { register, handleSubmit } = useForm<DadosPerfil>({
@@ -143,25 +158,11 @@ export default function EditarPerfil() {
                                 <label className={style.labelEditarPerfil} htmlFor="email"> E-mail </label>
                                 <input className={style.inputEditarPerfil} id="email" type="text" {...register("email")} />
 
+                                <div className={style.mensagem}>{mensagem}</div>
+
                                 <label className={style.labelEditarPerfil} htmlFor="descricao"> Adicione sua descrição </label>
                                 <textarea className={style.inputEditarDescricao} id="descricao" rows={8} placeholder="Digite sua descrição" {...register("description")} />
 
-                                {/* <label className={style.labelEditarPerfil} htmlFor="curriculo">
-                                    Currículo (PDF):
-                                </label> */}
-                                {/* <input
-                                    className={style.inputEditarPerfil}
-                                    type="file"
-                                    id="curriculo"
-                                    name="curriculo"
-                                    accept=".pdf"
-                                    onChange={handleCurriculoChange}
-                                />
-                                {dadosPerfil.curriculoNome && (
-                                    <span style={{ color: "#fff" }}>
-                                        Arquivo selecionado: {dadosPerfil.curriculoNome}
-                                    </span>
-                                )} */}
                                 <div className={style.botaoSalvar}>
                                     <button className={style.salvar} type="submit">Salvar Alterações</button>
                                 </div>
@@ -170,7 +171,7 @@ export default function EditarPerfil() {
                     </div>
                     <ToastContainer
                         position="bottom-right"
-                        autoClose={2000}
+                        autoClose={1500}
                         hideProgressBar={false}
                         newestOnTop={false}
                         closeOnClick={false}

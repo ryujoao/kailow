@@ -106,7 +106,7 @@
 
 /* btn */
 .configFooter {
-    padding-top: 10vh;
+    padding-top: 6vh;
     display: flex;
     justify-content: space-around;
     
@@ -130,3 +130,15 @@
     background-color: #cdd5db;
 }
 
+.configDeletar {
+    width: 15rem;
+    color: #cdd5db;
+    margin-top: 4rem;
+    font-size: 15px;
+    cursor: pointer;
+     transition: 0.5s all;
+}
+
+.configDeletar:hover {
+    color: #1545aa;
+}

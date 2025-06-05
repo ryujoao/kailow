@@ -1,12 +1,39 @@
-import { useState } from "react";
 import style from "../style/deletarConta.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
-export default function Deletar() {
+
+export default function Deletar({ onClose }: { onClose: () => void }) {
+
+    const token = localStorage.getItem("token") || "";
+    const { id } = useParams();
+    const notifySuccess = () => toast.success("Senha atualizada! Redirecionando ao login");
+    const notifyError = () => toast.error("Erro ao deletar conta");
     const navigate = useNavigate()
 
-    function config() {
-        navigate('/configuracao')
+    //deletar a conta
+
+    async function deletarConta() {
+        // if (!window.confirm("Tem certeza que deseja deletar sua conta?")) return;
+        try {
+            const response = await fetch(`http://localhost:3000/configuracao/${id}`, {
+                method: "DELETE",
+                headers: { Authorization: `Bearer ${token}` },
+            });
+
+            if (response.ok) {
+                notifySuccess();
+                // Limpa o localStorage e redireciona para a tela de login
+                localStorage.clear();
+                setTimeout(() => {
+                    navigate("/");
+                }, 3000);
+            } else {
+                notifyError();
+            }
+        } catch (err) {
+            notifyError();
+        }
     }
 
     return (
@@ -17,8 +44,8 @@ export default function Deletar() {
                     <p>Ao confirmar essa ação, você perderá sua conta permanentemente.</p>
                 </div>
                 <div className={style.botoesDeletar}>
-                    <button className={style.buttonDeletar}>Sim</button>
-                    <button className={style.buttonNaoDeletar} onClick={config}>Não</button>
+                    <button className={style.buttonDeletar} onClick={deletarConta}>Sim</button>
+                    <button className={style.buttonNaoDeletar} onClick={onClose}>Não</button>
                 </div>
             </div>
         </div>
