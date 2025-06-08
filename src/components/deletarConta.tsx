@@ -1,20 +1,17 @@
 import style from "../style/deletarConta.module.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { toast } from "react-toastify";
 
 
-export default function Deletar({ onClose }: { onClose: () => void }) {
+export default function Deletar({ onClose, id }: { onClose: () => void; id: number }) {
 
     const token = localStorage.getItem("token") || "";
-    const { id } = useParams();
-    const notifySuccess = () => toast.success("Senha atualizada! Redirecionando ao login");
+    const notifySuccess = () => toast.success("Sua conta foi deletada.");
     const notifyError = () => toast.error("Erro ao deletar conta");
     const navigate = useNavigate()
 
     //deletar a conta
-
     async function deletarConta() {
-        // if (!window.confirm("Tem certeza que deseja deletar sua conta?")) return;
         try {
             const response = await fetch(`http://localhost:3000/configuracao/${id}`, {
                 method: "DELETE",
@@ -23,7 +20,6 @@ export default function Deletar({ onClose }: { onClose: () => void }) {
 
             if (response.ok) {
                 notifySuccess();
-                // Limpa o localStorage e redireciona para a tela de login
                 localStorage.clear();
                 setTimeout(() => {
                     navigate("/");

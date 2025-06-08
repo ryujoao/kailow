@@ -5,6 +5,8 @@ import * as Icon from "react-bootstrap-icons";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import TempoDaPublicacao from "../components/dataPostagem";
+import axios from "axios"
+
 
 type DadosPerfil = {
   id: number
@@ -18,7 +20,7 @@ type Publicacao = {
   id: number
   anexar: FileList | null
   legenda: string
-  criacao: string; 
+  criacao: string;
 };
 
 export default function Perfil() {
@@ -29,7 +31,7 @@ export default function Perfil() {
   const navigate = useNavigate();
   const [editandoId, setEditandoId] = useState<number | null>(null);
   const [novaLegenda, setNovaLegenda] = useState<string>("");
-
+  const [verificado, setVerificado] = useState(false);
 
   // Carrega os dados do editar perfil para o perfil
   const [dadosPerfil] = useState<DadosPerfil>(() => {
@@ -41,11 +43,26 @@ export default function Perfil() {
 
   useEffect(() => {
     const user: DadosPerfil = jwtDecode(token);
-
     findUserById(user.id, token)
+    verificarIdade(user.id, token)
 
     console.log(user)
   }, [])
+
+
+  async function verificarIdade(id: number, token: string) {
+    try {
+      const response = await axios.get(`http://localhost:3000/perfil/${id}/verificar-idade`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setVerificado(response.data.maiorDeIdade);
+    } catch (error) {
+      console.error("Erro ao verificar idade:", error);
+    }
+  }
 
   async function findUserById(id: number, token: any) {
     const response = await fetch("http://localhost:3000/perfil/" + id, {
@@ -228,7 +245,17 @@ export default function Perfil() {
                 )}
               </div>
               <div className={style.profileInfo}>
-                <h2 className={style.profileName}>{user?.nome}</h2>
+
+                <section style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, }}>
+                  <h2 className={style.profileName}>{user?.nome}</h2>
+                  {verificado && (
+                    <Icon.PatchCheckFill
+                      size={20}
+                      color="green"
+                      title="Verificado" />
+                  )}
+                </section>
+
                 <section className={style.profileDescricaoDiv}>
                   <p className={style.profileDescricao}>{user?.description}</p>
                 </section>
@@ -281,10 +308,19 @@ export default function Perfil() {
                       )}
 
                       <section>
-                      <h3 className={style.postHeader}>{user?.nome}</h3>
+                        <section style={{ display: "flex", justifyContent: "center", gap: 10, }}>
 
-                      {/* Exibe o tempo de publicação */}
-                      <TempoDaPublicacao criacao={pub.criacao} />
+                          <h3 className={style.postHeader}>{user?.nome}</h3>
+                          {verificado && (
+                            <Icon.PatchCheckFill
+                              size={20}
+                              color="green"
+                              title="Verificado" />
+                          )}
+
+                        </section>
+                        {/* Exibe o tempo de publicação */}
+                        <TempoDaPublicacao criacao={pub.criacao} />
                       </section>
 
                       <div className={style.menuContainer}>

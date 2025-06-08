@@ -111,8 +111,6 @@
 .profileName {
   font-size: 20px;
   color: #cdd5db;
-  margin-bottom: 20px;
-  line-height: 1.5;
   text-align: center;
 }
 
@@ -382,12 +380,6 @@
 
 .menuDropdown button:hover {
   background: #f0f0f0;
-}
-
-.postHeaderContainer {
-  display: flex;
-  align-items: center;
-  position: relative;
 }
 
 .menuContainer {

@@ -13,6 +13,7 @@ export type DadosPerfil = {
     description: string;
     nome: string;
     email: string;
+    verificado?: boolean;
 };
 
 export default function EditarPerfil() {

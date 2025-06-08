@@ -25,9 +25,10 @@
 }
 
 .postHoras {
-    font-size: 10px;
-    color: #665e5e; 
+    font-size: 16px;
+    color: #000; 
     text-align: left;
+    font-weight: 400;
 }
 
 .postDescricao {
@@ -234,10 +235,8 @@
 }
 
 .profileName {
-  font-size: 20px;
-  color: #cdd5db;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  font-size: 16px;
+  color: #665e5e;
   text-align: center;
 }
 
@@ -309,11 +308,6 @@
   font-weight: bold;
   
 }
-
-
-
-
-
 
 
 
