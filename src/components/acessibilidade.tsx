@@ -6,18 +6,23 @@ interface AcessibilidadeProps {
     open?: boolean;
 }
 
+const fontSizes = ["small", "medium", "normal",  "large", "xlarge"] as const;
+type FontSize = typeof fontSizes[number];
+
 export default function Acessibilidade({ onClose, open = true }: AcessibilidadeProps) {
     const [contrast, setContrast] = useState(false);
-    const [fontSize, setFontSize] = useState<"small" | "medium" | "large" | "xlarge">("medium");
+    const [fontSize, setFontSize] = useState<FontSize>("normal");
     const dropdownRef = useRef<HTMLDivElement>(null);
 
+    // Carrega preferências salvas
     useEffect(() => {
         const savedContrast = localStorage.getItem("highContrast") === "true";
-        const savedFont = localStorage.getItem("fontSize") as typeof fontSize | null;
+        const savedFont = localStorage.getItem("fontSize") as FontSize | null;
         if (savedContrast) setContrast(true);
-        if (savedFont) setFontSize(savedFont);
+        if (savedFont && fontSizes.includes(savedFont)) setFontSize(savedFont);
     }, []);
 
+    // Salva alterações no localStorage
     useEffect(() => {
         localStorage.setItem("highContrast", String(contrast));
     }, [contrast]);
@@ -26,56 +31,52 @@ export default function Acessibilidade({ onClose, open = true }: AcessibilidadeP
         localStorage.setItem("fontSize", fontSize);
     }, [fontSize]);
 
+    // Fecha dropdown ao clicar fora
     useEffect(() => {
         function handleClick(event: MouseEvent) {
-            if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(event.target as Node)
-            ) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
                 onClose?.();
             }
         }
+
         if (open) {
             document.addEventListener("mousedown", handleClick);
         }
-        return () => {
-            document.removeEventListener("mousedown", handleClick);
-        };
+        return () => document.removeEventListener("mousedown", handleClick);
     }, [open, onClose]);
 
-    // APLICAR ACESSIBILIDADE NO BODY (NÃO REMOVE AO FECHAR)
+    // Aplica estilos de acessibilidade no <body>
     useEffect(() => {
-        document.body.classList.remove(
+        const body = document.body;
+        body.classList.remove(
             styles.highContrast,
+            styles.fontNormal,
             styles.fontSmall,
             styles.fontMedium,
             styles.fontLarge,
             styles.fontXlarge
         );
-        if (contrast) document.body.classList.add(styles.highContrast);
-        if (fontSize === "small") document.body.classList.add(styles.fontSmall);
-        if (fontSize === "medium") document.body.classList.add(styles.fontMedium);
-        if (fontSize === "large") document.body.classList.add(styles.fontLarge);
-        if (fontSize === "xlarge") document.body.classList.add(styles.fontXlarge);
-        // Não faz cleanup aqui! As classes só mudam quando o usuário altera.
-    }, [contrast, fontSize, styles]);
+
+        if (contrast) body.classList.add(styles.highContrast);
+        body.classList.add(styles[`font${capitalize(fontSize)}` as keyof typeof styles]);
+    }, [contrast, fontSize]);
 
     function increaseFont() {
-        setFontSize((prev) =>
-            prev === "small" ? "medium" :
-                prev === "medium" ? "large" :
-                    prev === "large" ? "xlarge" : "xlarge"
-        );
+        const index = fontSizes.indexOf(fontSize);
+        if (index < fontSizes.length - 1) setFontSize(fontSizes[index + 1]);
     }
+
     function decreaseFont() {
-        setFontSize((prev) =>
-            prev === "xlarge" ? "large" :
-                prev === "large" ? "medium" :
-                    prev === "medium" ? "small" : "small"
-        );
+        const index = fontSizes.indexOf(fontSize);
+        if (index > 0) setFontSize(fontSizes[index - 1]);
     }
+
     function resetFont() {
-        setFontSize("medium");
+        setFontSize("normal");
+    }
+
+    function capitalize(value: string) {
+        return value.charAt(0).toUpperCase() + value.slice(1);
     }
 
     if (!open) return null;
@@ -86,10 +87,7 @@ export default function Acessibilidade({ onClose, open = true }: AcessibilidadeP
             className={`
                 ${styles.accessibilityDropdown}
                 ${contrast ? styles.highContrast : ""}
-                ${fontSize === "small" ? styles.fontSmall : ""}
-                ${fontSize === "medium" ? styles.fontMedium : ""}
-                ${fontSize === "large" ? styles.fontLarge : ""}
-                ${fontSize === "xlarge" ? styles.fontXlarge : ""}
+                ${styles[`font${capitalize(fontSize)}`]}
             `}
         >
             <div className={`${styles.dropdownMenu} ${styles.show}`}>
@@ -106,6 +104,7 @@ export default function Acessibilidade({ onClose, open = true }: AcessibilidadeP
                         Alternar Contraste
                     </button>
                 </div>
+
                 <div className={styles.dropdownSection}>
                     <span>
                         <i className="fas fa-font"></i> Tamanho da Fonte
@@ -137,6 +136,7 @@ export default function Acessibilidade({ onClose, open = true }: AcessibilidadeP
                         </button>
                     </div>
                 </div>
+
                 {onClose && (
                     <button
                         className={styles.dropdownButton}

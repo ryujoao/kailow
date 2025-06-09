@@ -6,6 +6,12 @@ import Acessibilidade from "./acessibilidade"; // Importe o componente correto
 const DropdownHome = () => {
     const [showAcessibilidade, setShowAcessibilidade] = useState(false);
     const navigate = useNavigate()
+    const [showDropdown, setShowDropdown] = useState(true);
+
+    function handleAcessibilidadeClick() {
+        setShowDropdown(false);
+        setShowAcessibilidade(true);
+    }
 
     function Editar() {
         navigate('/editar')
@@ -20,28 +26,29 @@ const DropdownHome = () => {
         console.log("Usuário deslogado com sucesso!");
         navigate("/");
     }
- 
-    function handleAcessibilidadeClick() {
-        setShowAcessibilidade(true);
-    }
 
     function handleCloseAcessibilidade() {
         setShowAcessibilidade(false);
+        setShowDropdown(true);
     }
 
     return (
         <>
-            <div className={style.dropdownHome}>
-                <div className={style.dropdownHomeCard}>
-                    <ul className={style.dropdownHomeElements}>
-                        <li onClick={Editar}>Config. pefil</li>
-                        <li onClick={Configuracao}>Config. avançadas</li>
-                        <li onClick={handleAcessibilidadeClick}>Acess.</li>
-                        <li onClick={handleLogout}>Sair</li>
-                    </ul>
+            {showDropdown && (
+                <div className={style.dropdownHome}>
+                    <div className={style.dropdownHomeCard}>
+                        <ul className={style.dropdownHomeElements}>
+                            <li onClick={Editar}>Config. pefil</li>
+                            <li onClick={Configuracao}>Config. avançadas</li>
+                            <li onClick={handleAcessibilidadeClick}>Acess.</li>
+                            <li onClick={handleLogout}>Sair</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            {showAcessibilidade && <Acessibilidade onClose={handleCloseAcessibilidade} open={showAcessibilidade} />}
+            )}
+            {showAcessibilidade && (
+                <Acessibilidade onClose={handleCloseAcessibilidade} />
+            )}
         </>
     );
 }
