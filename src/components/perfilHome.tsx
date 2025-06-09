@@ -186,7 +186,12 @@ export default function PerfilHome() {
                                                         }}
                                                     />
                                                 ) : (
-                                                    <img src="../public/img/userImg.jpg" alt="" className={style.postIcon} />
+                                                    <img src="../public/img/userImg.jpg" alt="" className={style.postIcon} style={{
+                                                        width: 40,
+                                                        height: 40,
+                                                        borderRadius: "50%",
+                                                        objectFit: "cover",
+                                                    }} />
                                                 )}
 
                                                 <section>
