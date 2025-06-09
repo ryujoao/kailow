@@ -42,8 +42,8 @@ export default function Cadastro() {
             });
 
             if (response.ok) {
-                const res = await response.json(); // <-- Pegue o token aqui
-                localStorage.setItem("token", res.token); // <-- Salve o token
+                const res = await response.json(); // <-- Pegua o token aqui
+                localStorage.setItem("token", res.token); // <-- Salva o token
                 console.log("Token recebido:", res.token);
 
                 setIsLoggingIn(true)
@@ -70,7 +70,7 @@ export default function Cadastro() {
     }
 
     if (isLoggingIn) {
-        // Exibe o carregamento após o login
+        // Exibe o loader após o login
         return <Loading />;
     }
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import style from "../style/navbar.module.css"
-import Acessibilidade from "./acessibilidade"; // Importe o componente correto
+import Acessibilidade from "./acessibilidade";
 
 const DropdownHome = () => {
     const [showAcessibilidade, setShowAcessibilidade] = useState(false);

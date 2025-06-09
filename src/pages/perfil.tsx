@@ -12,8 +12,6 @@ type DadosPerfil = {
   id: number
   nome: string
   description: string;
-  // interesse: string[];
-  // curriculo: string;
 };
 
 type Publicacao = {
@@ -134,7 +132,6 @@ export default function Perfil() {
 
   // Handler para excluir
   async function excluirPublicacao(id: number) {
-    // if (!window.confirm("Tem certeza que deseja excluir?")) return;
     try {
       const response = await fetch(`http://localhost:3000/publicar/${id}`, {
         method: "DELETE",
@@ -322,8 +319,8 @@ export default function Perfil() {
                               color="green"
                               title="Verificado" />
                           )}
-
                         </section>
+
                         {/* Exibe o tempo de publicação */}
                         <TempoDaPublicacao criacao={pub.criacao} />
                       </section>

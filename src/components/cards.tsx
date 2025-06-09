@@ -16,8 +16,6 @@ export function Cards() {
       <div className={styles.cardBody}>
 
         <div className={styles.cardComuContainer}>
-          {/* Minhas Comunidades */}
-          {/* <section className={styles.myComunidades}> */}
 
             <div className={styles.cardsComunidades}>
 

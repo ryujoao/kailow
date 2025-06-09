@@ -171,7 +171,6 @@
 
 /* Jobs Section */
 .jobsSection h2 {
-  /* display: flex; */
   color: #fff;
   margin-bottom: 20px;
   flex-wrap: wrap ;
@@ -322,8 +321,6 @@
   font-size: 16px;
   transition: 0.5s all;
 }
-
-
 
 .bntComunidadeDiv {
   position: absolute;

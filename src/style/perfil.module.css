@@ -4,23 +4,15 @@
   flex-wrap: nowrap;
   padding: 30px;
   gap: 40px;
-  /* margin: 0 auto; */
   max-height: 100%;
 }
 
 @media (max-width: 1350px) {
   .mainContainer {
-    /* flex-direction: column; */
     /* Empilha os itens em telas menores */
     gap: 20px;
     padding: 10px;
   }
-
-  /* .profileSection {
-    border-right: none;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 20px;
-  } */
 
   .feedSection {
     display: flex;
@@ -45,7 +37,6 @@
 .profileSection {
   flex: 1;
   max-width: 550px;
-  /* border-right: 1px solid #cdd5db; */
   display: flex;
   justify-content: center;
   align-self: center;
@@ -132,7 +123,6 @@
   display: inline-block;
   padding: 10px 20px;
   background-color: #071739;
-  /* background: #0d2761; */
   color: #ddd;
   text-decoration: none;
   border-radius: 5px;
@@ -203,7 +193,6 @@
 .feedSection {
   max-width: 1350px;
   flex: 2;
-  /* min-width: 300px; */
   min-height: 1200px;
   /* Garante altura mesmo sem posts */
   border-radius: 12px;
@@ -215,9 +204,7 @@
 
 .feedTitle {
   font-size: 5vh;
-  /* margin-bottom: 40px; */
   color: #cdd5db;
-  /* margin-left: 10px; */
   margin-top: 100px;
 }
 
@@ -260,7 +247,6 @@
 }
 
 .postBody {
-  /* background-color: #dddddd; */
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -340,11 +326,6 @@
   font-size: 14px;
   transition: 0.2s;
 }
-
-/* .comentarioBotao:hover {
-  background-color: #ffffff;
-  color: #0d2761;
-} */
 
 .menuContainer {
   position: relative;

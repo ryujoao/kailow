@@ -1,6 +1,5 @@
 import { useState } from "react"
 import style from "../style/login.module.css"
-import * as Icon from 'react-bootstrap-icons'
 import { useNavigate } from "react-router-dom"
 
 export default function Recuperar() {

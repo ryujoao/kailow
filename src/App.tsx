@@ -12,7 +12,6 @@ import ScrollToTop from './components/ScrollToTop'
 import Configurações from './pages/config'
 import Premium from './pages/premium'
 import Publicar from './pages/publicar'
-import Teste from './pages/teste'
 import EntrarComunidade from './pages/entrarComunidade'
 import Acessibilidade from './components/acessibilidade'
 import PoliticaDePrivacidade from './pages/politicaDePrivacidade'
@@ -34,18 +33,9 @@ function App() {
         <Route path='/premium' element={<ProtectedRoute> <Premium /> </ProtectedRoute>} />
         <Route path='/publicar' element={<ProtectedRoute> <Publicar /></ProtectedRoute>} />
         <Route path="/home" element={<ProtectedRoute> <Home /> </ProtectedRoute>} />
-        <Route path="/teste" element={<ProtectedRoute> <Teste /> </ProtectedRoute>} />
         <Route path="/entrarComunidade" element={<ProtectedRoute> <EntrarComunidade /> </ProtectedRoute>} />
         <Route path="/acessibilidade" element={<ProtectedRoute> <Acessibilidade /> </ProtectedRoute>} />
-         <Route path="/privacidade" element={<ProtectedRoute> <PoliticaDePrivacidade /> </ProtectedRoute>} />  
-
-        {/* Uncomment the line below to enable the Home route */}
-        {/* <Route path="/home" element={<Home />} /> */}
-        
-        {/* Uncomment the line below to enable the Teste route */}
-        {/* <Route path="/teste" element={<Teste />} /> */}
-        {/* <Route path="/home" element={<Home /> }/> */}
-
+        <Route path="/privacidade" element={<ProtectedRoute> <PoliticaDePrivacidade /> </ProtectedRoute>} />
       </Routes>
     </>
   )

@@ -34,7 +34,7 @@ export default function Configuracoes() {
     const userDecoded: any = jwtDecode(token);
 
     findUserById(userDecoded.id, token);
-    reset({ id: userDecoded.id }); // Aqui atualiza o ID no formulário
+    reset({ id: userDecoded.id }); // Atualiza o ID no formulário
 
   }, []);
 

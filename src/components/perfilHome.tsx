@@ -164,7 +164,6 @@ export default function PerfilHome() {
                 <div className={style.mainContainer}>
                     <div className={style.feedSection}>
 
-                        {/* {posts.map((post) => ( */}
                         <div style={{ marginBottom: 40 }}>
 
                             {publicacoes.length === 0 ? (

@@ -54,7 +54,6 @@ export default function Nav() {
                     <section className={style.navIcons} onClick={Fill}>
                         <div className={style.iconConfig}>
                             <Icon.Gear style={{ display: isFilled ? "none" : "block", color: "#CDD5DB", height: "4dvh", width: "4dvh", cursor: "pointer" }} onClick={() => setMostrarConfig((prevState) => !prevState)} />
-                            {/* <Icon.Gear style={{display: isFilled ? "block" : "none", color: "#CDD5DB", height: "4.5dvh", width: "4.5dvh", cursor: "pointer" }} /> */}
                         </div>
                         <div className={style.iconConfigFill}>
                             <Icon.GearFill style={{ display: isFilled ? "block" : "none", color: "#CDD5DB", height: "4dvh", width: "4dvh", cursor: "pointer" }} onClick={() => setMostrarConfig((prevState) => !prevState)} />

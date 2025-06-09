@@ -96,7 +96,6 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    /* align-items: center; */
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -111,7 +110,6 @@
 }
 
 .forgotPassword:hover {
-    /* text-decoration: underline; */
     color: #b4daf5;
 }
 

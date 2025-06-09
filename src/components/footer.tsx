@@ -33,9 +33,6 @@ export function Footer() {
                                         <li><a href="/sobre">FAQ</a></li>
                                         <li><a href="/configuracao">Segurança</a></li>
                                         <li><a href="/configuracao">Central de Ajuda</a></li>
-                                        {/* <li><a href="">Problemas com Clientes</a></li>
-                                    <li><a href="">Central de Ajuda</a></li> */}
-
                                     </ul>
                                 </div>
                                 <div className={style.footerCol}>

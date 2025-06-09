@@ -1,7 +1,6 @@
 .loaderContainer {
     box-sizing: border-box;
     background-color: #071739;
-    /* background: linear-gradient(90deg, #071739, #1545aa); */
     display: flex;
     justify-content: center;
     align-items: center;
