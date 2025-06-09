@@ -28,11 +28,15 @@ const upload = multer({ storage });
 router.post("/cadastro", async (req, res) => {
 
     // recebe os dados do corpo da requisição
-    const { nome, email, telefone, nascimento, senha } = req.body
-    console.log(nome, email, telefone, nascimento, senha)
+    const { nome, email, telefone, nascimento, senha, verificado } = req.body
+    console.log(nome, email, telefone, nascimento, senha, verificado)
 
     const saltRounds = 10; // nível de segurança
     const hashedPassword = await bcrypt.hash(senha, saltRounds);
+
+    const nascimentoDate = new Date(nascimento);
+    const idade = new Date().getFullYear() - nascimentoDate.getFullYear();
+    const isAdulto = idade >= 18;
 
     const userExistEmail = await prisma.user.findUnique({
         where: { email }
@@ -57,7 +61,8 @@ router.post("/cadastro", async (req, res) => {
             email,
             telefone,
             nascimento: new Date(nascimento),
-            senha: hashedPassword
+            senha: hashedPassword,
+            verificado: isAdulto
         }
     })
 
@@ -302,15 +307,70 @@ router.put("/perfil", authenticate, async (req, res) => {
 router.get('/configuracao/:id', authenticate, async (req, res) => {
     const { id } = req.params;
     try {
-        const user = await prisma.usuario.findUnique({
+        const user = await prisma.user.findUnique({
             where: { id: parseInt(id) }
         });
+
         if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
         res.status(200).json(user);
+        
     } catch (error) {
         res.status(500).json({ error: "Erro ao buscar usuário" });
+    }   
+});
+
+// deletar conta (DELETE - realmente deleta do banco)
+router.delete('/configuracao/:id', authenticate, async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const user = await prisma.user.findUnique({
+            where: { id: parseInt(id) }
+        });
+
+        if (!user) {
+            return res.status(404).json({ error: "Usuário não encontrado" });
+        }
+
+        await prisma.user.delete({
+            where: { id: parseInt(id) }
+        });
+
+        res.status(200).json({ msg: "Conta deletada com sucesso" });
+    } catch (error) {
+        console.error("Erro ao deletar conta:", error);
+        res.status(500).json({ error: "Erro interno ao deletar conta" });
     }
 });
+
+
+
+// usuario maior de 18 anos
+router.get("/perfil/:id/verificar-idade", async (req, res) => {
+  const id = Number(req.params.id);
+
+  const user = await prisma.user.findUnique({
+    where: { id },
+    select: { nascimento: true },
+  });
+
+  if (!user) {
+    return res.status(404).json({ erro: "Usuário não encontrado" });
+  }
+
+  const hoje = new Date();
+  const nascimento = new Date(user.nascimento);
+  const idade = hoje.getFullYear() - nascimento.getFullYear();
+  const aniversarioJaPassou =
+    hoje.getMonth() > nascimento.getMonth() ||
+    (hoje.getMonth() === nascimento.getMonth() &&
+      hoje.getDate() >= nascimento.getDate());
+
+  const maiorDeIdade = idade > 18 || (idade === 18 && aniversarioJaPassou);
+
+  res.json({ maiorDeIdade });
+});
+
 
 
 module.exports = router

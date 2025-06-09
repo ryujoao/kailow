@@ -19,8 +19,9 @@ model User {
   email       String     @unique
   telefone    String     @unique
   nascimento  DateTime   @db.Date
-  description String?
   senha       String
+  description String?
+  verificado  Boolean    @default(false)
   Login       Login[]
   Publicar    Publicar[]
 }
@@ -30,7 +31,7 @@ model Login {
   email  String
   senha  String
   userId Int
-  User   User   @relation(fields: [userId], references: [id])
+  User   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Publicar {
@@ -39,5 +40,5 @@ model Publicar {
   anexar  String
   criacao DateTime @default(now())
   userId  Int
-  user    User     @relation(fields: [userId], references: [id])
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
