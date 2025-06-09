@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import style from '../style/entrarComunidade.module.css';
 import Nav from "../components/navbar";
+import BotaoComunidade from "../components/bntComunidade";
 
 export default function EntrarComunidade() {
   const [abaAtiva, setAbaAtiva] = useState<"sobre" | "discussao" | "vagas">("sobre");
@@ -54,6 +55,11 @@ export default function EntrarComunidade() {
             >
               Vagas
             </button>
+
+            <section className={style.bntComunidadeDiv}>
+              <BotaoComunidade />
+            </section>
+
           </div>
 
           <div className={style.tabContent}>

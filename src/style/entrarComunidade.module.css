@@ -45,6 +45,7 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-bottom: #fff solid 1px;
 }
 
 .menuItem:hover {
@@ -309,4 +310,22 @@
 
 .chatInputArea button:hover {
   background-color: #0d3a8a;
+}
+
+.bntComunidade {
+  background-color: #071739;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s all;
+}
+
+
+
+.bntComunidadeDiv {
+  position: absolute;
+  right: 4rem;
 }

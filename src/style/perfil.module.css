@@ -15,13 +15,13 @@
     gap: 20px;
     padding: 10px;
   }
-  
+
   /* .profileSection {
     border-right: none;
     border-bottom: 1px solid #fff;
     padding-bottom: 20px;
   } */
-  
+
   .feedSection {
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
     min-width: 0 !important;
     max-width: 100% !important;
   }
-  
+
 }
 
 
@@ -121,10 +121,11 @@
 }
 
 .profileDescricao {
-  line-height: 1.5;  
+  line-height: 1.5;
   color: #fff;
   text-align: center;
-  word-break: break-word; /* para quebrar o texto */
+  word-break: break-word;
+  /* para quebrar o texto */
 }
 
 .editProfileButton {
@@ -146,7 +147,6 @@
 }
 
 .editProfileButton:hover {
-  
   background-color: #1545aa;
 }
 
@@ -181,7 +181,7 @@
   color: rgb(241, 236, 236);
   text-decoration: none;
   font-weight: bold;
-  
+
 }
 
 .todasOpcoes {
@@ -274,7 +274,7 @@
   /* Centraliza verticalmente */
   margin: 0 auto;
   box-sizing: border-box;
- 
+
 }
 
 .imgPost {
@@ -284,10 +284,11 @@
   border-radius: 8px;
   background-color: #fff;
   display: block;
-  margin: 0 auto; /* centraliza horizontalmente */
+  margin: 0 auto;
+  /* centraliza horizontalmente */
   image-rendering: auto;
   image-rendering: crisp-edges;
- 
+
 }
 
 .lateral {
@@ -457,9 +458,9 @@
 .legendaPost {
   font-size: 16px;
   color: #222;
-  padding-left: 0;    
+  padding-left: 0;
   text-align: left;
-  margin-left: 5rem; 
+  margin-left: 5rem;
   width: 40rem;
   background: transparent;
   word-break: break-word;
@@ -549,7 +550,8 @@
   color: white;
 }
 
-.bntSalvar, .bntCancelar {
+.bntSalvar,
+.bntCancelar {
   padding: 8px 15px;
   background-color: #0d2761;
   color: #fff;
