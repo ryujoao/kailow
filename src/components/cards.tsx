@@ -5,16 +5,6 @@ import * as Icon from 'react-bootstrap-icons';
 
 export function Cards() {
   const navigate = useNavigate();
-  // const [isFilled, setIsFilled] = useState(false);
-  // const Fill = () => {
-  //   setIsFilled(!isFilled);
-  // };
-
-  // const [isFilled2, setIsFilled2] = useState(false);
-  // const Fill2 = () => {
-  //   setIsFilled2(!isFilled2);
-  // };
-
 
   function Comunidades() {
     navigate('/comunidades');
@@ -46,7 +36,7 @@ export function Cards() {
                   />
                 </div>
                 <div className={styles.comunidadesInfo}>
-                  <h2 className={styles.comunidadeSlogan} >Restaurante Seringueira</h2>
+                  <h2 className={styles.comunidadeSlogan}>Restaurante Seringueira</h2>
                   <h5 className={styles.comunidadeLocal}>
                     <Icon.GeoAltFill className={styles.iconMapComunidades} />
                     Lapa
@@ -59,7 +49,7 @@ export function Cards() {
               </div>
 
               {/* Card 2 */}
-              <div className={styles.card}>
+              <div className={styles.card} onClick={() => navigate('/entrarComunidade')}>
                 <div className={styles.imgContainer}>
                   <img
                     src="../public/img/desenvolvedores.jpg"
@@ -73,7 +63,7 @@ export function Cards() {
                   />
                 </div>
                 <div className={styles.comunidadesInfo}>
-                  <h2 className={styles.comunidadeSlogan} >Desenvolvedores Taparoxo</h2>
+                  <h2 className={styles.comunidadeSlogan}>Desenvolvedores Taparoxo</h2>
                   <h5 className={styles.comunidadeLocal}>
                     <Icon.GeoAltFill className={styles.iconMapComunidades} />
                     São Paulo
@@ -100,7 +90,7 @@ export function Cards() {
                   />
                 </div>
                 <div className={styles.comunidadesInfo}>
-                  <h2 className={styles.comunidadeSlogan} >Loja de artigos esportivos Inter League</h2>
+                  <h2 className={styles.comunidadeSlogan}>Loja de artigos esportivos Inter League</h2>
                   <h5 className={styles.comunidadeLocal}>
                     <Icon.GeoAltFill className={styles.iconMapComunidades} />
                     Vila Madalena

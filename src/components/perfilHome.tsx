@@ -453,7 +453,7 @@ export default function PerfilHome() {
                                             color="green"
                                             title="Verificado" />
                                     </section>
-                                    
+
                                     <h3 className={style.postHoras}>Há 2 dias</h3>
                                 </section>
                             </section>

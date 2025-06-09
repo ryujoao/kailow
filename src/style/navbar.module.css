@@ -164,6 +164,7 @@ nav {
   -webkit-transition-delay: 9999s;
 }
 
+
 .menu {
   position: absolute;
 }
@@ -173,31 +174,45 @@ nav {
   justify-content: center;
 }
 
+
+
 .dropdownHome {
   position: absolute;
   background-color: #bcd4e6;
-  padding: 20px;
-  width: 90px;
+  padding: 20px 26px 20px 20px;
+  width: 7rem;
   top: 11dvh;
+  right: 2rem;
   text-align: center;
   border-radius: 30px;
-  min-height: fit-content;
 }
 
 .dropdownHomeElements li {
   list-style: none;
-  line-height: 1;
-  font-size: 15px;
-  width: 90px;
+  width: 100%;
   padding: 10px;
   box-sizing: border-box;
 }
 
-.dropdownHomeElements li:hover {
+.dropdownHomeElements li button {
+  width: fit-content;
+  background: transparent;
+  border: none;
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s all;
+  box-sizing: border-box;
+}
+
+.dropdownHomeElements li button:hover {
   color: #1b9bee;
 }
 
 .dropdownHomeElements {
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 20px;

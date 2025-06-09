@@ -38,10 +38,10 @@ const DropdownHome = () => {
                 <div className={style.dropdownHome}>
                     <div className={style.dropdownHomeCard}>
                         <ul className={style.dropdownHomeElements}>
-                            <li onClick={Editar}>Config. pefil</li>
-                            <li onClick={Configuracao}>Config. avançadas</li>
-                            <li onClick={handleAcessibilidadeClick}>Acess.</li>
-                            <li onClick={handleLogout}>Sair</li>
+                            <li><button type="button" onClick={Editar}> Configurações de pefil</button></li>
+                            <li><button type="button" onClick={Configuracao}>Configurações avançadas</button></li>
+                            <li><button type="button" onClick={handleAcessibilidadeClick}>Acessibilidade</button></li>
+                            <li><button type="button" onClick={handleLogout}>Sair</button></li>
                         </ul>
                     </div>
                 </div>
