@@ -13,7 +13,7 @@
 /* Sidebar Styles */
 .sidebar {
   width: 20%;
-  background-color: #bcd4e6;
+  background-color: transparent;
   padding: 20px;
   border-right: 1px solid #ddd;
   display: flex;
@@ -45,11 +45,11 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  border-bottom: #fff solid 1px;
+  color: #fff;
 }
 
 .menuItem:hover {
-  background-color: #e0e0e0;
+  background-color: #e0e0e07a;
   border-radius: 5px;
 }
 
@@ -60,11 +60,11 @@
 }
 
 .communityList h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0 0 5px 0;
-  color: #000;
+  color: #ddd;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .currentCommunity {
@@ -180,12 +180,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px; /* Espaço entre os cards */
-  justify-content: flex-start; /* Ou center, se preferir centralizado */
+  justify-content: center;
 }
 
 .jobCard {
   background: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #cdd5bd;
   border-radius: 8px;
   padding: 20px;
   width: 300px;      /* Largura fixa ou use max-width */

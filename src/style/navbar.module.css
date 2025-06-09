@@ -173,10 +173,10 @@ nav {
 .dropdownHome {
   position: absolute;
   background-color: #bcd4e6;
-  padding: 20px 26px 20px 20px;
+  padding: 20px 35px 20px 20px;
   width: 7rem;
   top: 11dvh;
-  right: 2rem;
+  right: 1.5rem;
   text-align: center;
   border-radius: 30px;
 }

@@ -68,7 +68,7 @@ export default function Sobre() {
 
                 <div className={style.divTitle}>
                     <h1 className={style.tituloCardSobre}>
-                        Benefícios para todos os stackholders
+                        Benefícios para todos os stakeholders
                     </h1>
                 </div>
 

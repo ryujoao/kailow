@@ -37,7 +37,7 @@ export default function Nav() {
                         <Link to="/perfil" className={isActive("/perfil") ? style.activeCategoria : ""}>Perfil</Link>
                     </div>
 
-                    <form className={style.formSearch}>
+                    {/* <form className={style.formSearch}>
                         <label className={style.labelSearch} htmlFor="search">
                             <input className={style.inputSearch} type="text" placeholder="Pesquisa" id="search" />
                             <div className={style.fancyBg}></div>
@@ -49,7 +49,7 @@ export default function Nav() {
                                 </svg>
                             </div>
                         </label>
-                    </form>
+                    </form> */}
 
                     <section className={style.navIcons} onClick={Fill}>
                         <div className={style.iconConfig}>
