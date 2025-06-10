@@ -1,17 +1,39 @@
 import style from "../style/footer.module.css"
 import * as Icon from 'react-bootstrap-icons';
 import { ToastContainer, toast } from 'react-toastify';
+import { useState } from "react";
 
 
 export function Footer() {
+
+    const [form, setForm] = useState({
+        feedback: '',
+    });
+
     const notifySuccess = () => toast.success("Obrigado pelo seu feedback!");
+    
+    const limparCampos = () => {
+        setForm({
+            feedback: '',
+        });
+    };
+
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         notifySuccess();
+        limparCampos();
 
     };
 
+  
 
     return (
         <>
@@ -57,7 +79,7 @@ export function Footer() {
                                     <div className={style.formSub}>
                                         <h4 className={style.feedback}>Deixe seu feedback!</h4>
                                         <form onSubmit={handleSubmit}>
-                                            <input type="text" placeholder="Digite aqui" required className={style.feedbackInput} />
+                                            <input type="text" name="feedback" placeholder="Digite aqui" value={form.feedback} onChange={handleChange} required className={style.feedbackInput} />
                                             <button className={style.feedbackBtn}>Enviar</button>
                                         </form>
                                         <div className={style.mediasSocias}>

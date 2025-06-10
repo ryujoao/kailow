@@ -12,7 +12,7 @@ nav {
 }
 
 .navContainer {
-  width: 88%;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,107 +57,6 @@ nav {
   font-size: 1.2rem;
 }
 
-.formSearch {
-  --input-text-color: #000000;
-  --input-bg-color: #ffffff;
-  --focus-input-bg-color: transparent;
-  --text-color: #949faa;
-  --active-color: #1b9bee;
-  --width-of-input: 200px;
-  --inline-padding-of-input: 1.2em;
-  --gap: 0.9rem;
-}
-
-.formSearch {
-  font-size: 0.9rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  width: 40dvh;
-  max-width: 80dvh;
-  height: 5dvh;
-  max-height: 8dvh;
-  position: relative;
-  isolation: isolate;
-
-}
-
-.fancyBg {
-  position: absolute;
-  width: 100%;
-  inset: 0;
-  background: var(--input-bg-color);
-  border-radius: 30px;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-.labelSearch {
-  width: 100%;
-  padding: 0.8em;
-  height: 40px;
-  padding-inline: var(--inline-padding-of-input);
-  display: flex;
-  align-items: center;
-
-}
-
-.search {
-  position: absolute;
-}
-
-.search {
-  fill: var(--text-color);
-  left: var(--inline-padding-of-input);
-}
-
-.search svg {
-  width: 17px;
-  display: block;
-}
-
-.inputSearch {
-  color: var(--input-text-color);
-  width: 100%;
-  margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
-  background: none;
-  border: none;
-}
-
-.inputSearch:focus {
-  outline: none;
-}
-
-.inputSearch::placeholder {
-  color: var(--text-color);
-  font-size: 1rem;
-
-}
-
-.inputSearch:focus~.fancy-bg {
-  border: 1px solid var(--active-color);
-  background: var(--focus-input-bg-color);
-}
-
-.inputSearch:focus~.search {
-  fill: var(--active-color);
-}
-
-.inputSearch:valid~.close-btn {
-  opacity: 1;
-  visibility: visible;
-}
-
-.inputSearch:-webkit-autofill,
-.inputSearch:-webkit-autofill:hover,
-.inputSearch:-webkit-autofill:focus,
-.inputSearch:-webkit-autofill:active {
-  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
-  -webkit-transition-delay: 9999s;
-}
-
 
 .menu {
   position: absolute;
@@ -176,7 +75,7 @@ nav {
   padding: 20px 35px 20px 20px;
   width: 7rem;
   top: 11dvh;
-  right: 1.5rem;
+  right: 3rem;
   text-align: center;
   border-radius: 30px;
 }

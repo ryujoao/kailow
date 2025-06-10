@@ -118,7 +118,8 @@ export default function Sobre() {
                                 />
 
                                 <div className={style.devContent}>
-                                    <h2>Ana Beatriz Paludetto Barreto</h2>
+                                    <h2>Ana Beatriz</h2>
+                                    <h5 style={{paddingTop: 5}}>Front-End e Designer</h5>
                                 </div>
                             </div>
                             {/* gabi */}
@@ -130,7 +131,8 @@ export default function Sobre() {
                                 />
 
                                 <div className={style.devContent}>
-                                    <h2>Gabriely Félix de Souza</h2>
+                                    <h2>Gabriely Félix</h2>
+                                    <h5 style={{paddingTop: 5}}>Full Stack</h5>
                                 </div>
                             </div>
                             {/* guilherme */}
@@ -140,7 +142,8 @@ export default function Sobre() {
                                     alt="guilherme uliana dos santos"
                                 />
                                 <div className={style.devContent}>
-                                    <h2>Guilherme Uliana dos Santos</h2>
+                                    <h2>Guilherme Uliana</h2>
+                                    <h5 style={{paddingTop: 5}}>Front-End</h5>
                                 </div>
                             </div>
                             {/* ryu */}
@@ -150,7 +153,8 @@ export default function Sobre() {
                                     alt="joão victor ryu tuzino kobayashi"
                                 />
                                 <div className={style.devContent}>
-                                    <h2>João Victor Ryu Tuzino Kobayashi</h2>
+                                    <h2>João Victor Ryu</h2>
+                                    <h5 style={{paddingTop: 5}}>Full Stack</h5>
                                 </div>
                             </div>
                             {/* kaio */}
@@ -160,7 +164,8 @@ export default function Sobre() {
                                     alt="kaio gabriel tavares da silva"
                                 />
                                 <div className={style.devContent}>
-                                    <h2>Kaio Gabriel Tavares da Silva</h2>
+                                    <h2>Kaio Gabriel</h2>
+                                    <h5 style={{paddingTop: 5}}>Front-End</h5>
                                 </div>
                             </div>
                             {/* murilo */}
@@ -171,6 +176,7 @@ export default function Sobre() {
                                 />
                                 <div className={style.devContent}>
                                     <h2>Murilo Leite Ribeiro</h2>
+                                    <h5 style={{paddingTop: 5}}>Front-end e Designer</h5>
                                 </div>
                             </div>
                             {/* messias */}
@@ -180,7 +186,8 @@ export default function Sobre() {
                                     alt="pedro messias de oliveira santos"
                                 />
                                 <div className={style.devContent}>
-                                    <h2>Pedro Messias de Oliveira Santos</h2>
+                                    <h2>Pedro Messias</h2>
+                                    <h5 style={{paddingTop: 5}}>Front-end</h5>
                                 </div>
                             </div>
                             {/* renan */}
@@ -190,7 +197,8 @@ export default function Sobre() {
                                     alt="renan cabral bernardes"
                                 />
                                 <div className={style.devContent}>
-                                    <h2>Renan Cabral Bernardes</h2>
+                                    <h2>Renan Cabral</h2>
+                                    <h5 style={{paddingTop: 5}}>Front-end</h5>
                                 </div>
                             </div>
                         </div>

@@ -161,7 +161,7 @@ export default function EditarPerfil() {
 
                                 <div className={style.mensagem}>{mensagem}</div>
 
-                                <label className={style.labelEditarPerfil} htmlFor="descricao"> Adicione sua descrição </label>
+                                <label className={style.labelEditarPerfil} htmlFor="descricao"> Biografia </label>
                                 <textarea className={style.inputEditarDescricao} id="descricao" rows={8} placeholder="Digite sua descrição" {...register("description")} />
 
                                 <div className={style.botaoSalvar}>

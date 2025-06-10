@@ -15,6 +15,7 @@ import Publicar from './pages/publicar'
 import EntrarComunidade from './pages/entrarComunidade'
 import Acessibilidade from './components/acessibilidade'
 import PoliticaDePrivacidade from './pages/politicaDePrivacidade'
+import OutraComunidade from './pages/outraComunidade'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/entrarComunidade" element={<ProtectedRoute> <EntrarComunidade /> </ProtectedRoute>} />
         <Route path="/acessibilidade" element={<ProtectedRoute> <Acessibilidade /> </ProtectedRoute>} />
         <Route path="/privacidade" element={<ProtectedRoute> <PoliticaDePrivacidade /> </ProtectedRoute>} />
+        <Route path="/outraComunidade" element={<ProtectedRoute> <OutraComunidade /> </ProtectedRoute>} />
       </Routes>
     </>
   )

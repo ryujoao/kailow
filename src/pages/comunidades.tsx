@@ -12,6 +12,10 @@ export default function Comunidades() {
         navigate("/entrarComunidade");
     }
 
+    function outraComunidade() {
+        navigate("/outraComunidade")
+    }
+
 
     return (
         <div className={styles.comuBody}>
@@ -132,7 +136,7 @@ export default function Comunidades() {
                                     alt="Imagem sobreposta"
                                 />
                             </div>
-                            <div className={styles.comunidadesInfo}>
+                            <div className={styles.comunidadesInfo} onClick={ outraComunidade }>
                                 <h2 className={styles.comunidadeSlogan} >Restaurante Seringueira</h2>
                                 <h5 className={styles.comunidadeLocal}>
                                     <Icon.GeoAltFill className={styles.iconMapComunidades} />

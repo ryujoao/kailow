@@ -49,7 +49,7 @@
 }
 
 .menuItem:hover {
-  background-color: #e0e0e07a;
+  background-color: #e0e0e02a;
   border-radius: 5px;
 }
 
@@ -311,7 +311,7 @@
   background-color: #0d3a8a;
 }
 
-.bntComunidade {
+.btnComunidade {
   background-color: #071739;
   color: white;
   border: none;
@@ -322,7 +322,8 @@
   transition: 0.5s all;
 }
 
-.bntComunidadeDiv {
+.btnComunidadeDiv {
   position: absolute;
   right: 4rem;
+  bottom: 8rem;
 }

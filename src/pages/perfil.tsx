@@ -243,7 +243,7 @@ export default function Perfil() {
               </div>
               <div className={style.profileInfo}>
 
-                <section style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, }}>
+                <section style={{ display: "flex", justifyContent: "center", gap: 10, }}>
                   <h2 className={style.profileName}>{user?.nome}</h2>
                   {verificado && (
                     <Icon.PatchCheckFill
@@ -271,7 +271,7 @@ export default function Perfil() {
 
         <div className={style.feedSection}>
           {/* Título e botão "+" lado a lado */}
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 70, }} >
+          <div style={{ display: "flex", gap: 16, marginBottom: 70, }} >
             <h2 className={style.feedTitle}>Seu Feed</h2>
             <button className={style.botaoMais} onClick={() => navigate("/publicar")} aria-label="Adicionar">
               <Icon.Plus size={22} />

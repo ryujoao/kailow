@@ -32,7 +32,7 @@ export default function Home() {
         <Chat />
 
         <section id="feed">
-          <h2 className={style.cardsTitulo}>Seu Feed</h2>
+          <h2 className={style.feedTitulo}>Seu Feed</h2>
           <PerfilHome />
         </section>
       </div>

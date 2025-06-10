@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, use } from "react";
 import style from '../style/entrarComunidade.module.css';
 import Nav from "../components/navbar";
 import BotaoComunidade from "../components/btnComunidade";
@@ -16,11 +16,11 @@ export default function EntrarComunidade() {
         {/* Sidebar */}
         <div className={style.sidebar}>
           <div className={style.communityList}>
-            <h3>Desenvolvedores Taparoxo</h3>
+            <h3>Restaurante Seringueira</h3>
           </div>
 
           <div className={style.sidebarMenu}>
-            <button onClick={() => navigate("/outraComunidade")} className={style.menuItem}>Restaurante Seringueira</button>
+            <button onClick={ () => navigate("/entrarComunidade") } className={style.menuItem}>Desenvolvedores Taparoxo</button>
             <button className={style.menuItem}>Supermercado KiPago</button>
             <button className={style.menuItem}>Markting Digital Moskou</button>
             <button className={style.menuItem}>Passeio com pets MAX</button>
@@ -33,7 +33,7 @@ export default function EntrarComunidade() {
           {/* Imagem da Comunidade */}
           <div className={style.communityImageWrapper}>
             <img
-              src="../img/desenvolvedores.jpg"
+              src="../img/restaurante.jpg"
               alt="Comunidade"
               className={style.communityImage}
             />
@@ -69,18 +69,15 @@ export default function EntrarComunidade() {
               <div className={style.aboutSection}>
                 <h2>Sobre Nós</h2>
                 <p>
-                  Bem-vindo a <strong>Desenvolvedores Taparoxo</strong>, uma empresa inovadora no desenvolvimento de software.
-                  Nossa missão é criar soluções tecnológicas eficientes e escaláveis para empresas de todas as tamanhos.
+                  O <strong>Seringueira</strong> é mais do que um restaurante, <strong>é um espaço onde a gastronomia se conecta com a natureza, a cultura e as pessoas</strong>. Inspirado na força e simbolismo da árvore seringueira, buscamos oferecer experiências autênticas, acolhedoras e cheias de sabor.
                 </p>
                 <p>
-                  Inicialmente com diversas tecnologias modernas, incluindo <strong>React, Node.js</strong>, Python e <strong>Platter</strong>,
-                  oferecendo serviços personalizados do desenvolvimento web e mobile.
+                  Nosso compromisso vai além da <strong>boa comida</strong>. Valorizamos um ambiente de trabalho respeitoso, colaborativo e em constante crescimento. Aqui, cada membro da equipe é <strong>parte essencial</strong> da nossa história, seja na cozinha, no atendimento ou na gestão.
                 </p>
                 <p>
-                  Neste conhecimento é com a qualidade, invenção e entrega de produtos que atendam às necessidades dos nossos clientes.
-                  Se você procura uma equipe dedicada e apaixonada por tecnologia, você veio ao lugar certo.
+                  Se você é apaixonado por gastronomia, gosta de trabalhar em equipe e quer crescer em um ambiente que valoriza pessoas e talentos, o Seringueira pode ser o lugar ideal para você.
                 </p>
-                <p>Caso tenha se interessado em algum vaga ou quer nos dar um feedback sobre sua experiência, entre em contato com nosso e-mail: <strong>desenvolvedorestaparoxo@gmail.com</strong>.</p>
+                <p>Venha fazer parte da nossa equipe e ajude a construir uma experiência única para todos que passam por aqui, entre em contato com nosso e-email: <strong>restauranteseringueira@gmail.com</strong>.</p>
               </div>
             )}
 
@@ -96,34 +93,35 @@ export default function EntrarComunidade() {
                 <h2>Vagas de Emprego</h2>
                 <div className={style.jobCards}>
                   <div className={style.jobCard}>
-                    <h3>Programador Mobile</h3>
-                    <p>Equipe: AppTech Solutions</p>
-                    <p>Localização: São Paulo</p>
-                    <p>Salário: R$ 7.500</p>
+                    <h3>Benefícios (para todas as vagas):</h3>
+                    <p>Refeição no local</p>
+                    <p>Vale-transporte</p>
+                    <p>Bonificação por desempenho (após 3 meses)</p>
+                    <p>Oportunidade de crescimento interno</p>
                   </div>
                   <div className={style.jobCard}>
-                    <h3>Desenvolvedor Front-End</h3>
-                    <p>Equipe: Tech Solutions</p>
-                    <p>Localização: Remoto</p>
-                    <p>Salário: R$ 8.000</p>
+                    <h3>Garçom/Garçonete</h3>
+                    <p>Carga horária: 44 horas semanais (escala 6x1 – com 1 folga semanal)</p>
+                    <p>Requisitos: Boa comunicação, simpatia, experiência com atendimento ao cliente é um diferencial.</p>
+                    <p>Salário: R$ 1.800,00 + gorjetas</p>
                   </div>
                   <div className={style.jobCard}>
-                    <h3>Analista de Dados</h3>
-                    <p>Equipe: DataCorp</p>
-                    <p>Localização: São Paulo</p>
-                    <p>Salário: R$ 6.500</p>
+                    <h3>Cozinheiro(a)</h3>
+                    <p>Carga horária: 44 horas semanais (escala 6x1)</p>
+                    <p>Requisitos: Experiência em cozinha quente, preparo de pratos à la carte e controle de insumos.</p>
+                    <p>Salário: R$ 2.500,00</p>
                   </div>
                   <div className={style.jobCard}>
-                    <h3>Engenheiro de Software</h3>
-                    <p>Equipe: CodeMasters</p>
-                    <p>Localização: Remoto</p>
-                    <p>Salário: R$ 9.000</p>
+                    <h3>Auxiliar de Limpeza</h3>
+                    <p>Carga horária: 44 horas semanais (escala 6x1)</p>
+                    <p>Requisitos: Comprometimento, responsabilidade e atenção aos detalhes.</p>
+                    <p>Salário: R$ 1.500,00</p>
                   </div>
                   <div className={style.jobCard}>
-                    <h3>Engenheiro de Software</h3>
-                    <p>Equipe: CodeMasters</p>
-                    <p>Localização: Remoto</p>
-                    <p>Salário: R$ 9.000</p>
+                    <h3>Recepcionista/Anfitrião(ã)</h3>
+                    <p>Carga horária: 44 horas semanais</p>
+                    <p>Requisitos: Boa comunicação, simpatia, experiência com atendimento ao público.</p>
+                    <p>Salário: R$ 1.900,00</p>
                   </div>
                 </div>
               </div>
@@ -142,20 +140,20 @@ function ChatComponent() {
   >([
     {
       id: 1,
-      user: "Ana",
-      text: "Adorei trabalhar no projeto do supermercado! Aprendi muito sobre integração de APIs.",
+      user: "Sérgio",
+      text: "Restaurante top! Muito boa a infraestrutura do lugar.",
       image: undefined,
     },
     {
       id: 2,
-      user: "Carlos",
-      text: "O desafio do app mobile foi grande, mas a equipe colaborou bastante.",
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=200&h=200",
+      user: "Gilberto",
+      text: "O prato do ano!",
+      image: "https://i.pinimg.com/736x/c0/de/ed/c0deed8625f95b662d4db597b41f8a6b.jpg",
     },
     {
       id: 3,
-      user: "Juliana",
-      text: "Fiquei responsável pelo front-end do restaurante. Foi ótimo usar React!",
+      user: "Robertinho",
+      text: "Pessoal muito simpático e acolhedor",
       image: undefined,
     },
   ]);

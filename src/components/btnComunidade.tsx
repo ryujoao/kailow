@@ -9,7 +9,7 @@ function BotaoComunidade() {
   };
 
   return (
-    <button onClick={alternarEstado} className={style.bntComunidade}>
+    <button onClick={alternarEstado} className={style.btnComunidade}>
       {logado ? 'Sair' : 'Entrar'}
     </button>
   );
