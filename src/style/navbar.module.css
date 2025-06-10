@@ -73,7 +73,7 @@ nav {
   padding: 20px 35px 20px 20px;
   width: 7rem;
   top: 11dvh;
-  right: 3.2rem;
+  right: 1.7rem;
   text-align: center;
   border-radius: 30px;
   max-width: 1070px;
@@ -195,7 +195,7 @@ nav {
   margin: 0;
   padding: 0;
   list-style: none;
-  max-height: 260px;
+  max-height: 290px;
   overflow-y: auto;
 }
 
@@ -224,4 +224,5 @@ nav {
 .suggestionText {
   font-weight: 500;
   color: #fff;
+  line-height: 20px;
 }

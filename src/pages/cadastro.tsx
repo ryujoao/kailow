@@ -139,8 +139,6 @@ export default function Cadastro() {
                             <div className={style.senhaMsg}></div>
                             <div className={style.mensagem}>{mensagem}</div>
 
-                            <a href="/recuperar" className={style.forgotPassword}>Esqueceu a senha?</a>
-
                             <section className={style.buttonLogin}>
                                 <button type="submit" >Cadastrar</button>
                             </section>

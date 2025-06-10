@@ -5,6 +5,7 @@ import DropdownHome from "./dropdownHome";
 import { useState } from "react";
 import SearchBar from "./searchBar";
 import { usuariosCadastrados, comunidadesCadastradas } from "../data/dadosSite";
+import { ToastContainer, toast } from 'react-toastify';
 
 // Mapeamento das comunidades para suas rotas específicas
 const comunidadeRotas: Record<string, string> = {
@@ -17,6 +18,7 @@ export default function Nav() {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const notifyError = () => toast.error("Comunidade não encontrada!");
 
   function home() {
     navigate('/home');
@@ -58,37 +60,51 @@ export default function Nav() {
         navigate(`/comunidades/${encodeURIComponent(comunidadeObj.nome)}`);
       }
     } else if (term !== "" && !term.startsWith("@")) {
-      alert("Comunidade não encontrada!");
+      notifyError()
     }
   };
 
   return (
-    <nav>
-      <div className={style.navContainer}>
-        <div className={style.navLogo} onClick={home}>
-          <img src="/img/logo.png" alt="Logo" />
-          <h1 className={style.kailow}>Kailow</h1>
-        </div>
-        <div className={style.navCategorias}>
-          <Link to="/home" className={isActive("/home") ? style.activeCategoria : ""}>Home</Link>
-          <Link to="/sobre" className={isActive("/sobre") ? style.activeCategoria : ""}>Sobre</Link>
-          <Link to="/comunidades" className={isActive("/comunidades") ? style.activeCategoria : ""}>Comunidades</Link>
-          <Link to="/perfil" className={isActive("/perfil") ? style.activeCategoria : ""}>Perfil</Link>
-        </div>
-
-        {/* Usa o SearchBar e passa a função de busca */}
-        <SearchBar onSearch={handleSearch} />
-
-        <section className={style.navIcons} onClick={Fill}>
-          <div className={style.iconConfig}>
-            <Icon.Gear style={{ display: isFilled ? "none" : "block", color: "#CDD5DB", height: "4dvh", width: "4dvh", cursor: "pointer" }} onClick={() => setMostrarConfig((prevState) => !prevState)} />
+    <>
+      <nav>
+        <div className={style.navContainer}>
+          <div className={style.navLogo} onClick={home}>
+            <img src="/img/logo.png" alt="Logo" />
+            <h1 className={style.kailow}>Kailow</h1>
           </div>
-          <div className={style.iconConfigFill}>
-            <Icon.GearFill style={{ display: isFilled ? "block" : "none", color: "#CDD5DB", height: "4dvh", width: "4dvh", cursor: "pointer" }} onClick={() => setMostrarConfig((prevState) => !prevState)} />
+          <div className={style.navCategorias}>
+            <Link to="/home" className={isActive("/home") ? style.activeCategoria : ""}>Home</Link>
+            <Link to="/sobre" className={isActive("/sobre") ? style.activeCategoria : ""}>Sobre</Link>
+            <Link to="/comunidades" className={isActive("/comunidades") ? style.activeCategoria : ""}>Comunidades</Link>
+            <Link to="/perfil" className={isActive("/perfil") ? style.activeCategoria : ""}>Perfil</Link>
           </div>
-          {mostrarConfig && <DropdownHome />}
-        </section>
-      </div>
-    </nav>
+
+          {/* Usa o SearchBar e passa a função de busca */}
+          <SearchBar onSearch={handleSearch} />
+
+          <section className={style.navIcons} onClick={Fill}>
+            <div className={style.iconConfig}>
+              <Icon.Gear style={{ display: isFilled ? "none" : "block", color: "#CDD5DB", height: "4dvh", width: "4dvh", cursor: "pointer" }} onClick={() => setMostrarConfig((prevState) => !prevState)} />
+            </div>
+            <div className={style.iconConfigFill}>
+              <Icon.GearFill style={{ display: isFilled ? "block" : "none", color: "#CDD5DB", height: "4dvh", width: "4dvh", cursor: "pointer" }} onClick={() => setMostrarConfig((prevState) => !prevState)} />
+            </div>
+            {mostrarConfig && <DropdownHome />}
+          </section>
+        </div>
+      </nav>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+    </>
   );
 }

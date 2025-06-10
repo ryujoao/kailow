@@ -154,10 +154,10 @@ export default function EditarPerfil() {
                             <form onSubmit={handleSubmit(handleAlterarPerfil)}>
 
                                 <label className={style.labelEditarPerfil} htmlFor="nome"> Nome </label>
-                                <input className={style.inputEditarPerfil} id="nome" type="text" {...register("nome")} />
+                                <input className={style.inputEditarPerfil} id="nome" type="text" {...register("nome")} required />
 
                                 <label className={style.labelEditarPerfil} htmlFor="email"> E-mail </label>
-                                <input className={style.inputEditarPerfil} id="email" type="text" {...register("email")} />
+                                <input className={style.inputEditarPerfil} id="email" type="text" {...register("email")} required    />
 
                                 <div className={style.mensagem}>{mensagem}</div>
 

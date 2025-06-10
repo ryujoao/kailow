@@ -6,9 +6,8 @@
   font-family: Arial, sans-serif;
   padding-top: 5rem;
   background: linear-gradient(90deg, #071739, #1545aa);
-  ;
   overflow-x: hidden;
-  min-width: 1600px;
+  /* min-width: 100px; */
 }
 
 /* Sidebar Styles */
@@ -336,7 +335,7 @@
   bottom: 8rem;
 }
 
-@media (min-width: 1700px) {
+/* @media (min-width: 1700px) {
   .mainContainer {
     padding-top: 6rem;
   }
@@ -360,4 +359,4 @@
     bottom: 13.5rem;
   }
 
-}
+} */
