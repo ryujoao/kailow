@@ -140,19 +140,19 @@ function ChatComponent() {
   >([
     {
       id: 1,
-      user: "Sérgio",
+      user: "Sofia",
       text: "Restaurante top! Muito boa a infraestrutura do lugar.",
       image: undefined,
     },
     {
       id: 2,
-      user: "Gilberto",
+      user: "Marcelo",
       text: "O prato do ano!",
       image: "https://i.pinimg.com/736x/c0/de/ed/c0deed8625f95b662d4db597b41f8a6b.jpg",
     },
     {
       id: 3,
-      user: "Robertinho",
+      user: "Cláudia",
       text: "Pessoal muito simpático e acolhedor",
       image: undefined,
     },

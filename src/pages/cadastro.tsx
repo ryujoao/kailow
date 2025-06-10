@@ -14,6 +14,12 @@ type cadastroType = {
     senha: string
 }
 
+function getMaxDate14YearsAgo() {
+    const today = new Date();
+    today.setFullYear(today.getFullYear() - 14);
+    return today.toISOString().split('T')[0];
+}
+
 export default function Cadastro() {
 
     const { register, handleSubmit, formState: { errors } } = useForm<cadastroType>()
@@ -26,6 +32,19 @@ export default function Cadastro() {
         return senha.length >= 8 || "A senha deve ter pelo menos 8 caracteres";
     }
 
+    function validarNascimento(nascimento: string) {
+        const dataNasc = new Date(nascimento);
+        const hoje = new Date();
+        const idade = hoje.getFullYear() - dataNasc.getFullYear();
+        const m = hoje.getMonth() - dataNasc.getMonth();
+        if (
+            idade > 14 ||
+            (idade === 14 && (m > 0 || (m === 0 && hoje.getDate() >= dataNasc.getDate())))
+        ) {
+            return true;
+        }
+        return "Você precisa ter pelo menos 14 anos para se cadastrar.";
+    }
 
     async function handleCadastro(data: cadastroType) {
 
@@ -103,7 +122,8 @@ export default function Cadastro() {
                             <input className={style.inputLogin} id="telefone" type="tel" pattern="[0-9]{11}" required {...register("telefone")} />
 
                             <label htmlFor="data" className={style.labelLogin}>Data de Nascimento</label>
-                            <input className={style.inputLogin} id="data" type="date" required {...register("nascimento")} />
+                            <input className={style.inputLogin} id="data" type="date" required max={getMaxDate14YearsAgo()} {...register("nascimento", { validate: validarNascimento})} />
+                            {errors.nascimento && <div className={style.senhaMsg}>{errors.nascimento.message}</div>}
 
                             <label htmlFor="senha" className={style.labelLogin}>Senha</label>
 

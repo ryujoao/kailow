@@ -7,7 +7,6 @@ import TempoDaPublicacao from "./dataPostagem";
 import { DadosPerfil } from "../pages/editarPerfil";
 import axios from "axios"
 
-
 type Publicacao = {
     id: number
     anexar: FileList | null
@@ -24,7 +23,6 @@ export default function PerfilHome() {
     const [user, setUser] = useState<DadosPerfil>()
     const [verificado, setVerificado] = useState(false);
 
-
     // Carrega os dados do editar perfil para o perfil
     const [dadosPerfil] = useState<DadosPerfil>(() => {
         const salvo = localStorage.getItem("dadosPerfil");
@@ -37,7 +35,6 @@ export default function PerfilHome() {
         const user: DadosPerfil = jwtDecode(token);
         findUserById(user.id, token)
         verificarIdade(user.id, token)
-
         console.log(user)
     }, [])
 
@@ -48,7 +45,6 @@ export default function PerfilHome() {
                     Authorization: `Bearer ${token}`,
                 },
             });
-
             setVerificado(response.data.maiorDeIdade);
         } catch (error) {
             console.error("Erro ao verificar idade:", error);
@@ -60,13 +56,9 @@ export default function PerfilHome() {
             headers:
                 { "Authorization": `Bearer ${token}` }
         })
-
         const data: DadosPerfil = await response.json();
-
         setUser(data)
     }
-
-
 
     const [Publicacao] = useState<Publicacao>(() => {
         const salvo = localStorage.getItem("publicacao");
@@ -92,29 +84,22 @@ export default function PerfilHome() {
         setPublicacoes(data);
     }
 
+    // Comentários dinâmicos e cards fixos (agora com chaves únicas para fixos)
     const [comentarios, setComentarios] = useState<{
-        [key: number]: { texto: string; userId: string }[];
-    }>({
-        0: [],
-        1: [],
-        2: [],
-    });
+        [key: string]: { texto: string; userId: string }[];
+    }>({});
 
     const [novoComentario, setNovoComentario] = useState<{
-        [key: number]: string;
-    }>({
-        0: "",
-        1: "",
-        2: "",
-    });
+        [key: string]: string;
+    }>({});
 
     const [comentarioEditando, setComentarioEditando] = useState<{
-        postId: number | null;
+        postId: string | number | null;
         comentarioIndex: number | null;
         texto: string;
     }>({ postId: null, comentarioIndex: null, texto: "" });
 
-    function adicionarComentario(postId: number) {
+    function adicionarComentario(postId: string | number) {
         if (novoComentario[postId]?.trim() === "") return;
         setComentarios((prev) => ({
             ...prev,
@@ -129,14 +114,14 @@ export default function PerfilHome() {
         }));
     }
 
-    function excluirComentario(postId: number, comentarioIndex: number) {
+    function excluirComentario(postId: string | number, comentarioIndex: number) {
         setComentarios((prev) => ({
             ...prev,
             [postId]: prev[postId].filter((_, index) => index !== comentarioIndex),
         }));
     }
 
-    function iniciarEdicaoComentario(postId: number, comentarioIndex: number) {
+    function iniciarEdicaoComentario(postId: string | number, comentarioIndex: number) {
         const comentario = comentarios[postId][comentarioIndex];
         setComentarioEditando({ postId, comentarioIndex, texto: comentario.texto });
     }
@@ -164,8 +149,8 @@ export default function PerfilHome() {
                 <div className={style.mainContainer}>
                     <div className={style.feedSection}>
 
+                        {/* INÍCIO DAS PUBLICAÇÕES DO USUÁRIO */}
                         <div style={{ marginBottom: 40 }}>
-
                             {publicacoes.length === 0 ? (
                                 <p className={style.nenhumaPublic}></p>
                             ) : (
@@ -204,13 +189,9 @@ export default function PerfilHome() {
                                                                 title="Verificado" />
                                                         )}
                                                     </section>
-
-
-                                                    {/* Exibe o tempo de publicação */}
                                                     <TempoDaPublicacao criacao={pub.criacao} />
                                                 </section>
                                             </div>
-
 
                                             <div className={style.postBody}>
                                                 {pub.anexar && pub.anexar.length > 0 ? (
@@ -220,17 +201,14 @@ export default function PerfilHome() {
                                             <p className={style.legendaPost}>{pub.legenda}</p>
 
                                             <div className={style.comentarios}>
-
                                                 <section>
                                                     <h4>Comentários:</h4>
                                                 </section>
-
                                                 <ul className={style.comentariosLista}>
                                                     {comentarios[pub.id]?.map((comentario, index) => (
                                                         <li key={index} className={style.comentarioItem}>
                                                             {comentarioEditando.postId === pub.id &&
                                                                 comentarioEditando.comentarioIndex === index ? (
-                                                                // ...
                                                                 <div className={style.comentarioLinha}>
                                                                     <input
                                                                         type="text"
@@ -309,37 +287,31 @@ export default function PerfilHome() {
                                         </div>
                                     </div>
                                 )))}
-
                         </div>
+                        {/* FIM DAS PUBLICAÇÕES DO USUÁRIO */}
 
-
+                        {/* INÍCIO CARD: Passeios com pets MAX */}
                         <div className={style.postCard}>
                             <section style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-
                                 <img src="../public/img/passearComCachorro.jpg" alt="" className={style.iconPerfil} />
                                 <section>
                                     <section style={{ display: "flex", justifyContent: "center", gap: 10, }}>
-
                                         <h3 className={style.profileName}>Passeios com pets MAX</h3>
                                         <Icon.PatchCheckFill
                                             size={20}
                                             color="green"
                                             title="Verificado" />
                                     </section>
-
                                     <h3 className={style.postHoras}>Há 5 horas</h3>
                                 </section>
                             </section>
-
                             <div className={style.postBody}>
-                                {" "}
                                 <img
                                     className={style.fotoFeed}
                                     src="../public/img/CACHORRO.png"
                                     alt=""
                                 />
                             </div>
-
                             <section style={{ paddingLeft: "5dvh" }}>
                                 <h3 className={style.postDescricao}>
                                     ✅ Exercício + ar livre <br />✅ Flexibilidade de horário <br /> ✅
@@ -348,17 +320,14 @@ export default function PerfilHome() {
                                     #TrabalheComAmor
                                 </h3>
                             </section>
-
                             <div className={style.comentarios}>
-
                                 <section>
                                     <h4>Comentários:</h4>
                                 </section>
-
                                 <ul className={style.comentariosLista}>
-                                    {comentarios[0]?.map((comentario, index) => (
+                                    {comentarios["fixo-0"]?.map((comentario, index) => (
                                         <li key={index} className={style.comentarioItem}>
-                                            {comentarioEditando.postId === 0 &&
+                                            {comentarioEditando.postId === "fixo-0" &&
                                                 comentarioEditando.comentarioIndex === index ? (
                                                 <div className={style.comentarioLinha}>
                                                     <input
@@ -396,7 +365,7 @@ export default function PerfilHome() {
                                                                 <span
                                                                     className={style.comentarioAcao}
                                                                     onClick={() =>
-                                                                        iniciarEdicaoComentario(0, index)
+                                                                        iniciarEdicaoComentario("fixo-0", index)
                                                                     }
                                                                 >
                                                                     <Icon.Pencil size={16} />
@@ -404,7 +373,7 @@ export default function PerfilHome() {
                                                                 <span
                                                                     className={style.comentarioAcao}
                                                                     onClick={() =>
-                                                                        excluirComentario(0, index)
+                                                                        excluirComentario("fixo-0", index)
                                                                     }
                                                                 >
                                                                     Excluir
@@ -421,20 +390,20 @@ export default function PerfilHome() {
                                     <input
                                         type="text"
                                         placeholder="Escreva um comentário..."
-                                        value={novoComentario[0] || ""}
+                                        value={novoComentario["fixo-0"] || ""}
                                         onChange={(e) =>
                                             setNovoComentario((prev) => ({
                                                 ...prev,
-                                                0: e.target.value,
+                                                ["fixo-0"]: e.target.value,
                                             }))
                                         }
                                         className={style.comentarioTexto}
                                         onKeyDown={(e) => {
-                                            if (e.key === "Enter") adicionarComentario(0);
+                                            if (e.key === "Enter") adicionarComentario("fixo-0");
                                         }}
                                     />
                                     <button
-                                        onClick={() => adicionarComentario(0)}
+                                        onClick={() => adicionarComentario("fixo-0")}
                                         className={style.comentarioBotao}
                                     >
                                         Comentar
@@ -442,35 +411,30 @@ export default function PerfilHome() {
                                 </div>
                             </div>
                         </div>
+                        {/* FIM CARD: Passeios com pets MAX */}
 
+                        {/* INÍCIO CARD: Restaurante Seringueira */}
                         <div className={style.postCard}>
                             <section style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-
                                 <img src="../public/img/supermercado.jpg" alt="" className={style.iconPerfil} />
-
                                 <section>
                                     <section style={{ display: "flex", justifyContent: "center", gap: 10, }}>
-
                                         <h3 className={style.profileName}>Restaurante Seringueira</h3>
                                         <Icon.PatchCheckFill
                                             size={20}
                                             color="green"
                                             title="Verificado" />
                                     </section>
-
                                     <h3 className={style.postHoras}>Há 2 dias</h3>
                                 </section>
                             </section>
-
                             <div className={style.postBody}>
-                                {" "}
                                 <img
                                     className={style.fotoFeed}
                                     src="../public/img/RESTAURANTE.png"
                                     alt=""
                                 />
                             </div>
-
                             <section style={{ paddingLeft: "5dvh" }}>
                                 <h3 className={style.postDescricao}>
                                     ✅ Treinamento incluso <br />✅ Gorjetas + benefícios <br /> ✅
@@ -479,17 +443,14 @@ export default function PerfilHome() {
                                     #Vagas #Restaurante #TrabalheConosco
                                 </h3>
                             </section>
-
                             <div className={style.comentarios}>
-
                                 <section>
                                     <h4>Comentários:</h4>
                                 </section>
-
                                 <ul className={style.comentariosLista}>
-                                    {comentarios[0]?.map((comentario, index) => (
+                                    {comentarios["fixo-1"]?.map((comentario, index) => (
                                         <li key={index} className={style.comentarioItem}>
-                                            {comentarioEditando.postId === 0 &&
+                                            {comentarioEditando.postId === "fixo-1" &&
                                                 comentarioEditando.comentarioIndex === index ? (
                                                 <div className={style.comentarioLinha}>
                                                     <input
@@ -521,14 +482,13 @@ export default function PerfilHome() {
                                                         {comentario.texto}
                                                     </span>
                                                     <div className={style.comentarioMeta}>
-
                                                         <span className={style.comentarioTempo}></span>
                                                         {comentario.userId === currentUserId && (
                                                             <>
                                                                 <span
                                                                     className={style.comentarioAcao}
                                                                     onClick={() =>
-                                                                        iniciarEdicaoComentario(0, index)
+                                                                        iniciarEdicaoComentario("fixo-1", index)
                                                                     }
                                                                 >
                                                                     <Icon.Pencil size={16} />
@@ -536,7 +496,7 @@ export default function PerfilHome() {
                                                                 <span
                                                                     className={style.comentarioAcao}
                                                                     onClick={() =>
-                                                                        excluirComentario(0, index)
+                                                                        excluirComentario("fixo-1", index)
                                                                     }
                                                                 >
                                                                     Excluir
@@ -553,43 +513,41 @@ export default function PerfilHome() {
                                     <input
                                         type="text"
                                         placeholder="Escreva um comentário..."
-                                        value={novoComentario[0] || ""}
+                                        value={novoComentario["fixo-1"] || ""}
                                         onChange={(e) =>
                                             setNovoComentario((prev) => ({
                                                 ...prev,
-                                                0: e.target.value,
+                                                ["fixo-1"]: e.target.value,
                                             }))
                                         }
                                         className={style.comentarioTexto}
                                         onKeyDown={(e) => {
-                                            if (e.key === "Enter") adicionarComentario(0);
+                                            if (e.key === "Enter") adicionarComentario("fixo-1");
                                         }}
                                     />
                                     <button
-                                        onClick={() => adicionarComentario(0)}
+                                        onClick={() => adicionarComentario("fixo-1")}
                                         className={style.comentarioBotao}
                                     >
                                         Comentar
                                     </button>
                                 </div>
                             </div>
-
                         </div>
+                        {/* FIM CARD: Restaurante Seringueira */}
 
+                        {/* INÍCIO CARD: Jerfeson Oliveira */}
                         <div className={style.postCard}>
                             <section style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-
                                 <img src="../public/img/jefersson.jpg" alt="" className={style.iconPerfil} />
-
                                 <section>
                                     <h3 className={style.profileName}>Jerfeson Oliveira</h3>
                                     <h3 className={style.postHoras}>Há 3 dias</h3>
                                 </section>
                             </section>
-
-                            <div className={style.postBody}> <img className={style.fotoFeed} src="../public/img/jefersson.jpg" alt="" /></div>
-
-
+                            <div className={style.postBody}>
+                                <img className={style.fotoFeed} src="../public/img/jefersson.jpg" alt="" />
+                            </div>
                             <section style={{ paddingLeft: "5dvh" }}>
                                 <h3 className={style.postDescricao}>Primeiro dia de trabalho no Supermercado Kipago, muito feliz e realizado👌😁😊
                                     <br />
@@ -598,15 +556,13 @@ export default function PerfilHome() {
                                 </h3>
                             </section>
                             <div className={style.comentarios}>
-
                                 <section>
                                     <h4>Comentários:</h4>
                                 </section>
-
                                 <ul className={style.comentariosLista}>
-                                    {comentarios[0]?.map((comentario, index) => (
+                                    {comentarios["fixo-2"]?.map((comentario, index) => (
                                         <li key={index} className={style.comentarioItem}>
-                                            {comentarioEditando.postId === 0 &&
+                                            {comentarioEditando.postId === "fixo-2" &&
                                                 comentarioEditando.comentarioIndex === index ? (
                                                 <div className={style.comentarioLinha}>
                                                     <input
@@ -644,15 +600,15 @@ export default function PerfilHome() {
                                                                 <span
                                                                     className={style.comentarioAcao}
                                                                     onClick={() =>
-                                                                        iniciarEdicaoComentario(0, index)
+                                                                        iniciarEdicaoComentario("fixo-3", index)
                                                                     }
                                                                 >
                                                                     <Icon.Pencil size={16} />
                                                                 </span>
-                                                                <span
+                                                                <span                                                             
                                                                     className={style.comentarioAcao}
                                                                     onClick={() =>
-                                                                        excluirComentario(0, index)
+                                                                        excluirComentario("fixo-2", index)
                                                                     }
                                                                 >
                                                                     Excluir
@@ -669,28 +625,28 @@ export default function PerfilHome() {
                                     <input
                                         type="text"
                                         placeholder="Escreva um comentário..."
-                                        value={novoComentario[0] || ""}
+                                        value={novoComentario["fixo-2"] || ""}
                                         onChange={(e) =>
                                             setNovoComentario((prev) => ({
                                                 ...prev,
-                                                0: e.target.value,
+                                                ["fixo-2"]: e.target.value,
                                             }))
                                         }
                                         className={style.comentarioTexto}
                                         onKeyDown={(e) => {
-                                            if (e.key === "Enter") adicionarComentario(0);
+                                            if (e.key === "Enter") adicionarComentario("fixo-2");
                                         }}
                                     />
                                     <button
-                                        onClick={() => adicionarComentario(0)}
+                                        onClick={() => adicionarComentario("fixo-2")}
                                         className={style.comentarioBotao}
                                     >
                                         Comentar
                                     </button>
                                 </div>
                             </div>
-
                         </div>
+                        {/* FIM CARD: Jerfeson Oliveira */}
 
                     </div>
                 </div>

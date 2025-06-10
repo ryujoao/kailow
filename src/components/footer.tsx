@@ -18,9 +18,15 @@ export function Footer() {
         });
     };
 
-      const handleChange = (e) => {
+    interface FeedbackForm {
+        feedback: string;
+    }
+
+    interface FeedbackInputEvent extends React.ChangeEvent<HTMLInputElement> {}
+
+    const handleChange = (e: FeedbackInputEvent) => {
         const { name, value } = e.target;
-        setForm((prev) => ({
+        setForm((prev: FeedbackForm) => ({
             ...prev,
             [name]: value,
         }));

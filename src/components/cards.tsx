@@ -20,7 +20,7 @@ export function Cards() {
             <div className={styles.cardsComunidades}>
 
               {/* Card 1 */}
-              <div className={styles.card}>
+              <div className={styles.card} onClick={() => navigate('/outraComunidade')}>
                 <div className={styles.imgContainer}>
                   <img
                     src="../public/img/restaurante.jpg"

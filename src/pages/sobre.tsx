@@ -23,7 +23,7 @@ export default function Sobre() {
                             candidatem a vagas, tudo de forma simples, segura e acessível.
                         </p>
                         <p className={style.textoSobre}>
-                            O nome Kailow une dois conceitos: "Kai" (mar), simbolizando infinitas oportunidades, e "Low" (acessível), reforçando
+                            O nome Kailow une dois conceitos: "Kai" (mar), simbolizando infinitas oportunidades, e "Low" (baixo), reforçando
                             nossa missão de inclusão. Aqui, todo jovem pode navegar e conquistar seu espaço no mercado!
                         </p>
                     </section>

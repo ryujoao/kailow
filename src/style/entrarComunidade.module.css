@@ -5,9 +5,10 @@
   min-height: 100vh;
   font-family: Arial, sans-serif;
   padding-top: 5rem;
-  background: linear-gradient(90deg, #071739, #1545aa);;
-  max-width: 1600px;
+  background: linear-gradient(90deg, #071739, #1545aa);
+  ;
   overflow-x: hidden;
+  min-width: 1600px;
 }
 
 /* Sidebar Styles */
@@ -102,7 +103,7 @@
   max-width: 1500px;
   max-height: 500px;
   object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .tabs {
@@ -173,13 +174,14 @@
 .jobsSection h2 {
   color: #fff;
   margin-bottom: 20px;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
 }
 
 .jobCards {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px; /* Espaço entre os cards */
+  gap: 24px;
+  /* Espaço entre os cards */
   justify-content: center;
 }
 
@@ -188,10 +190,11 @@
   border: 1px solid #cdd5bd;
   border-radius: 8px;
   padding: 20px;
-  width: 300px;      /* Largura fixa ou use max-width */
+  width: 300px;
+  /* Largura fixa ou use max-width */
   box-sizing: border-box;
   margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .jobCard h3 {
@@ -319,11 +322,42 @@
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
-  transition: 0.5s all;
+  transition: 0.8s all;
+}
+
+.btnComunidade:hover {
+  background-color: #BCD4E6;
+  color: #000;
 }
 
 .btnComunidadeDiv {
   position: absolute;
   right: 4rem;
   bottom: 8rem;
+}
+
+@media (min-width: 1700px) {
+  .mainContainer {
+    padding-top: 6rem;
+  }
+
+  .sidebar {
+    width: 20%;
+  }
+
+  .content {
+    padding: 40px;
+  }
+
+  .communityImage {
+    width: 80%;
+    height: auto;
+  }
+
+  .btnComunidadeDiv {
+    position: absolute;
+    right: 4rem;
+    bottom: 13.5rem;
+  }
+
 }
