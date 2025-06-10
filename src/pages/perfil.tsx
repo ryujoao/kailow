@@ -311,7 +311,7 @@ export default function Perfil() {
                       )}
 
                       <section>
-                        <section style={{ display: "flex", justifyContent: "center", gap: 10, }}>
+                        <section style={{ display: "flex", gap: 10, }}>
 
                           <h3 className={style.postHeader}>{user?.nome}</h3>
                           {verificado && (

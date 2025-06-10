@@ -180,7 +180,7 @@ export default function PerfilHome() {
                                                 )}
 
                                                 <section>
-                                                    <section style={{ display: "flex", justifyContent: "center", gap: 10, }}>
+                                                    <section style={{ display: "flex", gap: 10, }}>
                                                         <h2 className={style.profileName}>{user?.nome}</h2>
                                                         {verificado && (
                                                             <Icon.PatchCheckFill
