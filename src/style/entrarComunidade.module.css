@@ -223,7 +223,7 @@
 }
 
 .chatMessages {
-  max-height: 400px;
+  /* max-height: 400px; */
   overflow-y: auto;
   margin-bottom: 16px;
   padding-right: 8px;
@@ -334,29 +334,3 @@
   right: 4rem;
   bottom: 8rem;
 }
-
-/* @media (min-width: 1700px) {
-  .mainContainer {
-    padding-top: 6rem;
-  }
-
-  .sidebar {
-    width: 20%;
-  }
-
-  .content {
-    padding: 40px;
-  }
-
-  .communityImage {
-    width: 80%;
-    height: auto;
-  }
-
-  .btnComunidadeDiv {
-    position: absolute;
-    right: 4rem;
-    bottom: 13.5rem;
-  }
-
-} */

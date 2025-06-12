@@ -1,17 +1,15 @@
-import { useState } from "react"
 import style from "../style/login.module.css"
 import { useNavigate } from "react-router-dom"
+import { toast, ToastContainer } from "react-toastify"
 
 export default function Recuperar() {
-    const [mostrarSenha, setMostrarSenha] = useState(false)
-    const [mostrarConfirmarSenha, setMostrarConfirmarSenha] = useState(false)
+    const notifySuccess = () => toast.success("Um código de recuperação foi enviado para o seu e-mail!");
 
-    function toggleSenha() {
-        setMostrarSenha(!mostrarSenha)
-    }
-
-    function toggleConfirmarSenha() {
-        setMostrarConfirmarSenha(!mostrarConfirmarSenha)
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        notifySuccess();
+        const emailInput = document.getElementById("email") as HTMLInputElement;
+        emailInput.value = "";
     }
 
     const navigate = useNavigate()
@@ -30,14 +28,12 @@ export default function Recuperar() {
                     <div className={style.cardLogin}>
                         <h1 className={style.tituloLogin}>Recuperar senha</h1>
 
-                        <form>
+                        <form >
                             <label className={style.labelLogin} htmlFor="email">E-mail</label>
                             <input className={style.inputLogin} id="email" type="text" required />
 
-                            <p className={style.mensagemRecuperar}>* Uma mensagem de confirmação será enviada ao o seu email</p>
-
                             <section className={style.buttonLogin}>
-                                <button type="submit">Recuperar</button>
+                                <button type="submit" onClick={handleSubmit}>Recuperar</button>
                             </section>
 
                             <section style={{ display: 'flex', justifyContent: "center", gap: "10px" }}>
@@ -47,6 +43,18 @@ export default function Recuperar() {
                         </form>
                     </div>
                 </div >
+                <ToastContainer
+                    position="bottom-right"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
             </div>
         </>
     )

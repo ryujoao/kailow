@@ -69,7 +69,7 @@ export default function Publicar() {
             <div className={style.containerPublicar}>
                 <Nav />
                 <div className={style.bodyPublicar}>
-                    <h1 className={style.tituloPublicar}>Publicar nova vaga</h1>
+                    <h1 className={style.tituloPublicar}>Publicar</h1>
 
                     <div className={style.cardPublicarTrabalho}>
                         <div className={style.formPublicar}>
